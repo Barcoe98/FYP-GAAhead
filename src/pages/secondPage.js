@@ -1,6 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
-import { IonContent, IonHeader, IonToolbar, IonTitle, IonPage } from '@ionic/react';
+import { IonContent, IonHeader, IonToolbar, IonTitle, IonPage, IonRouterLink } from '@ionic/react';
 
 const SecondPage = () => {
   return (
@@ -12,7 +11,7 @@ const SecondPage = () => {
         </IonHeader>
           <IonContent className="ion-padding">
            Second Page content displayed here...........<br></br>
-           Go to <Link to="/home"> Home Page</Link>
+           Go to <IonRouterLink routerLink="/home"> Home Page</IonRouterLink>
           </IonContent>
        </IonPage>
   );

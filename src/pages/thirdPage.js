@@ -1,20 +1,20 @@
-import React  from "react";
+import React from "react";
 import { IonContent, IonHeader, IonToolbar, IonTitle, IonPage, IonRouterLink } from '@ionic/react';
 
-const HomePage = () => {
+const ThirdPage = () => {
   return (
        <IonPage>
         <IonHeader>
           <IonToolbar>
-            <IonTitle>Home Page</IonTitle>
+            <IonTitle>Third Page</IonTitle>
           </IonToolbar>
         </IonHeader>
           <IonContent className="ion-padding">
-           Home Page content displayed here...........<br></br>
-           Go to <IonRouterLink routerLink="/secondpage"> Second Page</IonRouterLink>
+           Third Page content displayed here...........<br></br>
+           Go to <IonRouterLink routerLink="/third"> Home Page</IonRouterLink>
           </IonContent>
        </IonPage>
   );
 };
 
-export default HomePage;
+export default ThirdPage;
