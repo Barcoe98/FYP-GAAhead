@@ -1,0 +1,17 @@
+/*  CSS for Logo Buttons*/
+#logoBtnTheme{
+    /*top - right - bottom - left*/
+    margin: 10px 00px 0px 0px;
+    text-align: center;
+}
+
+/* CSS for Regular buttons*/
+#btnTheme{
+    /*top - right - bottom - left*/
+    margin: 50px 20px 0px 20px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+
+
