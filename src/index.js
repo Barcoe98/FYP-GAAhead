@@ -16,3 +16,4 @@ import '@ionic/react/css/display.css';
 //import './globals/variables.css';
 
 ReactDOM.render(<App/>, document.getElementById("root"));
+
