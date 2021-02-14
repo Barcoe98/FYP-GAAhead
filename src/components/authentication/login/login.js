@@ -1,5 +1,5 @@
 import React, { useRef, useState }from 'react'
-import { IonContent, IonItem, IonInput, IonList, IonButton, IonIcon, IonLabel} from '@ionic/react';
+import { IonContent, IonItem, IonInput, IonList, IonButton, IonIcon, IonLabel, IonAlert} from '@ionic/react';
 import { logoFacebook, logoGoogle } from 'ionicons/icons';
 import { useAuth } from '../../../contexts/authContext'
 import { Redirect, useHistory } from "react-router-dom"
@@ -7,49 +7,61 @@ import "../auth.css";
 import { auth } from '../../../firebase';
 
 const Login = () => {
-  // const emailRef = useRef();
-  // const pwordRef = useRef();
-  // const { login } = useAuth()
-  // const [ error, setError ] = useState("")
-  // const [ loading, setLoading ] = useState(false)
-  // const history = useHistory();
-  // const {setLoggedIn} = useAuth();
+  const { login } = useAuth()
+  const [ email, setEmail ] = useState("")
+  const [ pword, setPword ] = useState("")
 
-//   async function handleLogin(e) {
-//     e.preventDefault()
-//     try { 
-//         setError("")
-//         setLoading(true)
-//         await login("test@test.com", "123456" )
-//         //await login(emailRef.current.value, passworRef.current.value )
+  const [ error, setError ] = useState("")
+  const [ loading, setLoading ] = useState(false)
+  const history = useHistory();
+  const {setLoggedIn} = useAuth();
+  const [showErrorAlert, setShowErrorAlert] = useState(false);
 
-//         setLoggedIn(true)
-//         //history.push("/")
-//         return <Redirect to="/"></Redirect>
-//     } 
-//     catch { 
-//         setError ( 'Failed to Sign in ')
-//         setLoggedIn(false)
-//     }
-//     setLoading(false)
-// }
-
-const handleLogin = async() => {
-  const credential = await auth.signInWithEmailAndPassword("test@test.com", "123456")
-  console.log(credential)
+  async function handleLogin(e) {
+    e.preventDefault()
+    try { 
+        setError("")
+        setLoading(true)
+        await login(email, pword)
+        setLoggedIn(true)
+        history.push("/")
+    } 
+    catch { 
+        setShowErrorAlert(true)
+        setLoggedIn(false)
+    }
+    setLoading(false)
 }
+
   return (<>
     <IonContent>
       <div id="authContainer">
       <IonList>
         <IonLabel id="pgTitle" >Login</IonLabel>
+        <IonAlert
+        isOpen={showErrorAlert}
+        onDidDismiss={() => setShowErrorAlert(false)}
+        backdropDismiss={(true)}
+        header={'Input Error'}
+        message={'Email and Password is <strong>inccorect</strong>!'}
+        buttons={[
+          {
+            text: 'Continue',
+            handler: () => {
+              console.log('Confirm Continue');
+            }
+          }
+        ]}
+      />
           <IonItem id="rndInput">
             <IonLabel position="stacked">Email</IonLabel>
-            <IonInput type="email" required></IonInput>
+            <IonInput value={email} type="email" required
+            onIonChange={(event) => setEmail(event.detail.value)}></IonInput>
           </IonItem>
           <IonItem id="rndInput">
             <IonLabel position="stacked">Password</IonLabel>
-            <IonInput type="password" required></IonInput>
+            <IonInput value={pword} type="password" required
+            onIonChange={(event) => setPword(event.detail.value)} ></IonInput>
           </IonItem>
     
           <IonButton id="btnTheme" expand="block" color="dark" fill="solid" type="submit" onClick={handleLogin}>

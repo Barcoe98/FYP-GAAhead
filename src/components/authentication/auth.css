@@ -10,6 +10,7 @@
 /*Auth CSS for page title*/
 #pgTitle{
     text-align: center;
+    font-weight:bold;
     font-size: 26px;
     padding-bottom: 200px;
 }

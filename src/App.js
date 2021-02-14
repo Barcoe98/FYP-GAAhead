@@ -4,6 +4,8 @@ import SecondPage from './pages/secondPage';
 import ThirdPage from './pages/thirdPage';
 import SignUpPage from './components/authentication/signUp/signUp';
 import LoginPage from './components/authentication/login/login';
+import AuthContextProvider from "./contexts/authContext";
+
 
 import {IonReactRouter } from '@ionic/react-router'
 import {Route , Redirect} from 'react-router-dom'
@@ -13,10 +15,13 @@ import {personCircle, home, settingsOutline } from 'ionicons/icons';
 
 function App() {
   return (
+   
+
    <IonApp>
+   <AuthContextProvider>
     <IonReactRouter> 
       <IonTabs>
-
+      
         <IonRouterOutlet>
           <Route exact path="/home"> <HomePage></HomePage></Route>
           <Route exact path="/secondpage"><SecondPage></SecondPage></Route>
@@ -28,28 +33,22 @@ function App() {
         </IonRouterOutlet>
 
         <IonTabBar slot="bottom">
-
           <IonTabButton tab="me" href="/login">
             <IonIcon icon={personCircle} />
             <IonLabel>Me</IonLabel>
           </IonTabButton>
-
           <IonTabButton tab="home" href="/home">
             <IonIcon icon={home} />
             <IonLabel>Home</IonLabel>
           </IonTabButton>
-
           <IonTabButton tab="settings" href="/signup">
             <IonIcon icon={settingsOutline} />
             <IonLabel>signup</IonLabel>
           </IonTabButton>
-
         </IonTabBar>
-
-          
       </IonTabs>
-
     </IonReactRouter>
+    </AuthContextProvider>
    </IonApp>
   );
 }

@@ -41,7 +41,7 @@ import "../auth.css";
           </ion-row>
         </ion-grid>
 
-        <IonButton expand="block" fill="clear" routerLink="/signup"> 
+        <IonButton expand="block" fill="clear" routerLink="/login"> 
           Have an Account? Login</IonButton>
           
       </IonList>
