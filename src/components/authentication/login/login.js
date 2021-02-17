@@ -25,7 +25,7 @@ const Login = () => {
       //Set loading and errors to false after succesful login
       setStatus({loading: false, emailError: false, pwordError: false})
       setLoggedIn(true)
-      history.push("/")
+      history.push("/manager/home")
     } 
     catch { 
       //Set loading to false after attempted login 
@@ -35,16 +35,6 @@ const Login = () => {
     }
   }
 
-  // <IonAlert
-  //       isOpen={showErrorAlert}
-  //       onDidDismiss={() => setShowErrorAlert(false)}
-  //       backdropDismiss={(true)}
-  //       header={'Input Error'}
-  //       message={'Email and Password is <strong>inccorect</strong>!'}
-  //       buttons={[{
-  //           text: 'Continue',
-  //           handler: () => {console.log('Confirm Continue'); }}]}>
-  //         </IonAlert>
   
   return (<>
     <IonContent>
