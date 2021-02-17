@@ -26,7 +26,7 @@ import "../auth.css";
         await signUp(email, pword)
         //Set loading and errors to false after succesful login
         setStatus({loading: false, emailError: false, pwordError: false})
-        history.push("/")
+        history.push("/manager/homre")
       } catch {
         //Set loading to false after attempted login 
         //set errors to true and display error message

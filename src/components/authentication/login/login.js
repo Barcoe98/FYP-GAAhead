@@ -2,12 +2,12 @@ import React, { useState }from 'react'
 import { IonContent, IonItem, IonInput, IonList, IonButton, IonIcon, IonLabel, IonLoading, IonText} from '@ionic/react';
 import { logoFacebook, logoGoogle } from 'ionicons/icons';
 import { useAuth } from '../../../contexts/authContext'
-import { useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom" 
 import "../auth.css";
 
 
 const Login = () => {
-  const { login } = useAuth()
+  const { login, currentUser } = useAuth()
   const [ email, setEmail ] = useState("")
   const [ pword, setPword ] = useState("")
 
@@ -22,8 +22,6 @@ const Login = () => {
       //Set errors to false before attempting sign in
       setStatus({loading: true, emailError: false, pwordError: false})
       await login(email, pword)
-      //Set loading and errors to false after succesful login
-      setStatus({loading: false, emailError: false, pwordError: false})
       setLoggedIn(true)
       history.push("/manager/home")
     } 
@@ -41,7 +39,6 @@ const Login = () => {
       <div id="authContainer">
       <IonList>
         <IonLabel id="pgTitle" >Login</IonLabel>
-     
           <IonItem id="rndInput">
             <IonLabel position="stacked">Email</IonLabel>
             <IonInput value={email} type="email" required
@@ -76,8 +73,12 @@ const Login = () => {
             </ion-row>
           </ion-grid>
 
+          <IonButton expand="block" fill="clear" routerLink="/forgotpassword"> 
+            Forgot Password ?</IonButton>
+          
           <IonButton expand="block" fill="clear" routerLink="/signup"> 
-            Need an Account? Sign Up</IonButton>
+          Need an Account ? Sign Up</IonButton>
+          
           
       </IonList>
       </div>

@@ -63,7 +63,6 @@ const AuthContextProvider = (props) => {
         updatePassword
     }
      
-
     return (
         <AuthContext.Provider 
         value = {value}  >

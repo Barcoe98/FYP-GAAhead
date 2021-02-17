@@ -2,6 +2,7 @@ import { IonApp, IonRouterOutlet} from '@ionic/react';
 import ManagerTabs from '../src/components/tabs/managerTabs'
 import SignUpPage from './components/authentication/signUp/signUp';
 import LoginPage from './components/authentication/login/login';
+import ForgotPasswordPage from './components/authentication/forgotPassword/forgotPassword';
 import AuthContextProvider from "./contexts/authContext"
 import {IonReactRouter } from '@ionic/react-router'
 import {Route , Redirect} from 'react-router-dom'
@@ -14,6 +15,7 @@ function App() {
           <IonRouterOutlet>
             <Route exact path="/signup"><SignUpPage></SignUpPage></Route>
             <Route exact path="/login"><LoginPage></LoginPage></Route>
+            <Route exact path="/forgotpassword"><ForgotPasswordPage></ForgotPasswordPage></Route>
             <ManagerTabs></ManagerTabs>
             <Redirect exact path="/" to ="/home"></Redirect>
           </IonRouterOutlet>

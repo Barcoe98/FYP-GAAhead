@@ -7,6 +7,8 @@ import HomePage from '../../pages/homePage';
 import SecondPage from '../../pages/secondPage';
 import ThirdPage from '../../pages/thirdPage';
 import SignUpPage from '../authentication/signUp/signUp';
+import ForgotPasswordPage from '../authentication/forgotPassword/forgotPassword';
+
 import LoginPage from '../authentication/login/login';
 
 function ManagerTabs() {
@@ -16,8 +18,6 @@ function ManagerTabs() {
         <Route exact path="/manager/home"> <HomePage></HomePage></Route>
         <Route exact path="/manager/secondpage"><SecondPage></SecondPage></Route>
         <Route exact path="/manager/third"><ThirdPage></ThirdPage></Route>
-        <Route exact path="/signup"><SignUpPage></SignUpPage></Route>
-        <Route exact path="/login"><LoginPage></LoginPage></Route>
         <Redirect exact path="/" to ="/home"></Redirect>
     </IonRouterOutlet>
 
