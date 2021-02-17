@@ -1,9 +1,34 @@
-import React from 'react'
-import { IonContent, IonItem, IonInput, IonList, IonButton, IonIcon, IonLabel} from '@ionic/react';
+import React , { useRef, useState } from 'react'
+import { IonContent, IonItem, IonInput, IonList, IonButton, IonIcon, IonLabel, IonAlert} from '@ionic/react';
 import {logoFacebook, logoGoogle } from 'ionicons/icons';
+import { useAuth } from '../../../contexts/authContext'
+import { Redirect, useHistory } from "react-router-dom"
 import "../auth.css";
 
  const Register = () => {
+
+  const { signUp } = useAuth()
+  const [ email, setEmail ] = useState("")
+  const [ pword, setPword ] = useState("")
+  const [ confrmPword, setConfrmPword ] = useState("")
+  const [showSignUpError, setShowSignUpError] = useState(false);
+  const [showPwordError, setShowPwordError] = useState(false);
+  const history = useHistory()
+
+  async function handleSignUp(e) {
+      e.preventDefault()
+      // if (pword.detail.value !== confrmPword.detail.value) {
+      //   return setShowPwordError(true)
+      // }
+      try {
+        await signUp(email, pword)
+        setShowSignUpError(false)
+        setShowPwordError(false)
+        history.push("/")
+      } catch {
+        setShowSignUpError(true)
+      }
+    }
 
   return (<>
     <IonContent>
@@ -12,18 +37,20 @@ import "../auth.css";
         <IonLabel id="pgTitle" >Create an Account</IonLabel>
         <IonItem id="rndInput">
           <IonLabel position="stacked">Email</IonLabel>
-          <IonInput type="email" id="email" required></IonInput>
+          <IonInput type="email" id="email" required
+          onIonChange={(event) => setEmail(event.detail.value)}></IonInput>
         </IonItem>
         <IonItem id="rndInput">
           <IonLabel position="stacked">Password</IonLabel>
-          <IonInput type="password" id="pword" required></IonInput>
+          <IonInput type="password" id="pword" required
+          onIonChange={(event) => setPword(event.detail.value)}></IonInput>
         </IonItem>
         <IonItem id="rndInput">
           <IonLabel position="stacked">Confirm Password</IonLabel>
           <IonInput type="password" id="confrmPword" required></IonInput>
         </IonItem>
   
-        <IonButton id="btnTheme" expand="block" color="dark" shape="" fill="solid" type="submit">
+        <IonButton onClick={handleSignUp} id="btnTheme" expand="block" color="dark" shape="" fill="solid" type="submit">
           Register
         </IonButton>
         <ion-grid>
@@ -46,6 +73,29 @@ import "../auth.css";
           
       </IonList>
       </div>
+
+      
+      <IonAlert
+        isOpen={showSignUpError}
+        onDidDismiss={() => setShowSignUpError(false)}
+        backdropDismiss={(true)}
+        header={'Sign Up Error'}
+        message={'Please check your details'}
+        buttons={[{
+            text: 'Continue',
+            handler: () => {console.log('Confirm Continue'); }}]}
+          />
+
+      <IonAlert
+        isOpen={showPwordError}
+        onDidDismiss={() => setShowPwordError(false)}
+        backdropDismiss={(true)}
+        header={'Input Error'}
+        message={'Passwords do not <strong>match</strong>'}
+        buttons={[{
+            text: 'Continue',
+            handler: () => {console.log('Confirm Continue'); }}]}
+          />
   </IonContent>
 
     </>)

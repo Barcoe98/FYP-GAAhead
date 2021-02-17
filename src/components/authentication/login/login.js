@@ -4,14 +4,13 @@ import { logoFacebook, logoGoogle } from 'ionicons/icons';
 import { useAuth } from '../../../contexts/authContext'
 import { Redirect, useHistory } from "react-router-dom"
 import "../auth.css";
-import { auth } from '../../../firebase';
+
 
 const Login = () => {
   const { login } = useAuth()
   const [ email, setEmail ] = useState("")
   const [ pword, setPword ] = useState("")
 
-  const [ error, setError ] = useState("")
   const [ loading, setLoading ] = useState(false)
   const history = useHistory();
   const {setLoggedIn} = useAuth();
@@ -20,7 +19,6 @@ const Login = () => {
   async function handleLogin(e) {
     e.preventDefault()
     try { 
-        setError("")
         setLoading(true)
         await login(email, pword)
         setLoggedIn(true)
@@ -44,15 +42,10 @@ const Login = () => {
         backdropDismiss={(true)}
         header={'Input Error'}
         message={'Email and Password is <strong>inccorect</strong>!'}
-        buttons={[
-          {
+        buttons={[{
             text: 'Continue',
-            handler: () => {
-              console.log('Confirm Continue');
-            }
-          }
-        ]}
-      />
+            handler: () => {console.log('Confirm Continue'); }}]}
+          />
           <IonItem id="rndInput">
             <IonLabel position="stacked">Email</IonLabel>
             <IonInput value={email} type="email" required
