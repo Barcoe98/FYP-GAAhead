@@ -1,18 +1,15 @@
 import React  from "react";
-import { IonContent, IonHeader, IonToolbar, IonTitle, IonPage, IonRouterLink } from '@ionic/react';
+import { IonContent, IonPage, IonRouterLink } from '@ionic/react';
+import PageHeader from '../components/headers/pageHeader'
 
 const HomePage = () => {
   return (
        <IonPage>
-        <IonHeader>
-          <IonToolbar>
-            <IonTitle>Home Page</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-          <IonContent className="ion-padding">
-           Home Page content displayed here...........<br></br>
-           Go to <IonRouterLink routerLink="/secondpage"> Second Page</IonRouterLink>
-          </IonContent>
+        <PageHeader></PageHeader>
+        <IonContent className="ion-padding">
+        Fitness Test Page Page content displayed here...........<br></br>
+        Go to <IonRouterLink routerLink="/manager/fitness/test"> Fitness Test Page</IonRouterLink>
+       </IonContent>
        </IonPage>
   );
 };

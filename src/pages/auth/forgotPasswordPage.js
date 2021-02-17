@@ -1,6 +1,6 @@
 import React from "react";
 import { IonPage } from '@ionic/react';
-import ForgotPassword from "../components/authentication/forgotPassword/forgotPassword";
+import ForgotPassword from "../../components/authentication/forgotPassword/forgotPassword";
 
 const ForgotPasswordPage = () => {
   return (

@@ -7,7 +7,7 @@ import "../auth.css";
 
 
 const Login = () => {
-  const { login, currentUser } = useAuth()
+  const { login } = useAuth()
   const [ email, setEmail ] = useState("")
   const [ pword, setPword ] = useState("")
 
