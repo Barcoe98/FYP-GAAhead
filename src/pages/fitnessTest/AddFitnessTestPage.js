@@ -2,7 +2,7 @@ import React from "react";
 import { IonContent, IonPage, IonRouterLink } from '@ionic/react';
 import PageHeader from '../../components/headers/pageHeader'
 
-const AddFitnessTestPage = ({title}) => {
+const AddFitnessTestPage = () => {
   return (
        <IonPage>
         <PageHeader title='Add Fitness Test'></PageHeader>

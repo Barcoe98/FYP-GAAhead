@@ -1,0 +1,38 @@
+#sectionTitle{
+    text-align: center;
+    font-weight: 600;
+    padding: 2px;
+}
+
+#sectionContent{
+    font-size: small;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 25px;
+    margin: 4px 10px 10px 4px;
+}
+
+#pageTitle{
+    text-align: center;
+    font-weight: 600;
+    font-size: larger;
+    
+}
+
+#contentDivider{
+    width:auto;
+    height: 1px;
+    background-color: grey;
+    margin-top: 16px;
+}
+
+#testImg{
+    border-radius: 25px !important;
+    opacity: 0.8;
+    width:90%;
+    height:90%;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
