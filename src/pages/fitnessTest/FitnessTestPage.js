@@ -1,10 +1,8 @@
 import React from "react";
-import { IonContent,IonThumbnail, IonItemDivider, IonRow, IonCol, IonButton, IonGrid, IonList, IonPage, IonLabel, IonItem, IonText, IonIcon, IonTitle, IonImg } from '@ionic/react';
+import { IonContent, IonRow, IonCol, IonButton, IonGrid, IonList, IonPage, IonText, IonIcon} from '@ionic/react';
 import { flame, time, barChart } from 'ionicons/icons';
 import PageHeader from '../../components/headers/pageHeader'
-
 import './fitnessTest.css';
-
 
 const FitnessTestPage = () => {
   return (
