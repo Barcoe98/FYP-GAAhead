@@ -5,7 +5,7 @@ import PageHeader from '../components/headers/pageHeader'
 const HomePage = () => {
   return (
        <IonPage>
-        <PageHeader></PageHeader>
+        <PageHeader title="Home"></PageHeader>
         <IonContent className="ion-padding">
         Fitness Test Page Page content displayed here...........<br></br>
         Go to <IonRouterLink routerLink="/manager/fitness/test"> Fitness Test Page</IonRouterLink>

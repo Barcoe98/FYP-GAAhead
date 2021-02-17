@@ -5,7 +5,7 @@ import { home, barChart, addCircle } from 'ionicons/icons';
 
 import HomePage from '../../pages/homePage';
 import FitnessTestPage from '../../pages/fitnessTest/FitnessTestPage';
-import ThirdPage from '../../pages/fitnessTest/AddFitnessTestPage';
+import AddFitnessTestPage from '../../pages/fitnessTest/AddFitnessTestPage';
 
 
 function ManagerTabs() {
@@ -14,7 +14,7 @@ function ManagerTabs() {
     <IonRouterOutlet>
         <Route exact path="/manager/home"> <HomePage></HomePage></Route>
         <Route exact path="/manager/fitness/test"><FitnessTestPage></FitnessTestPage></Route>
-        <Route exact path="/manager/fitness/test/add"><ThirdPage></ThirdPage></Route>
+        <Route exact path="/manager/fitness/test/add"><AddFitnessTestPage></AddFitnessTestPage></Route>
         <Redirect exact path="/" to ="/home"></Redirect>
     </IonRouterOutlet>
 
@@ -28,7 +28,7 @@ function ManagerTabs() {
           <IonLabel>Home</IonLabel>
         </IonTabButton>
         <IonTabButton tab="settings" href="/manager/fitness/test/add">
-          <IonIcon icon={addCircle} />
+          <IonIcon icon={home} />
           <IonLabel>Add Test</IonLabel>
         </IonTabButton>
     </IonTabBar>
