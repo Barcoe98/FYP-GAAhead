@@ -1,7 +1,7 @@
 import React from "react";
 import { IonContent, IonRow, IonCol, IonButton, IonGrid, IonList, IonPage, IonText, IonIcon} from '@ionic/react';
 import { flame, time, barChart } from 'ionicons/icons';
-import PageHeader from '../../components/headers/pageHeader'
+import PageHeader from '../../components/headers'
 import './fitnessTest.css';
 
 const FitnessTestPage = () => {

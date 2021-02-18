@@ -3,11 +3,11 @@ import {Route , Redirect} from 'react-router-dom'
 import { IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/react';
 import {personCircle, home,  person } from 'ionicons/icons';
 
-import HomePage from '../../pages/homePage';
+import HomePage from '../../../pages/homePage';
 import SecondPage from '../../pages/secondPage';
 import ThirdPage from '../../pages/thirdPage';
-import SignUpPage from '../authentication/signUp/signUp';
-import LoginPage from '../authentication/login/login';
+import SignUpPage from '../../authentication/signUp';
+import LoginPage from '../../authentication/login';
 
 function PlayerTabs() {
 

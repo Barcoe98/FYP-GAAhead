@@ -1,11 +1,10 @@
-import { IonRouterOutlet} from '@ionic/react';
 import { Route , Redirect} from 'react-router-dom'
-import { IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/react';
-import { home, barChart, addCircle } from 'ionicons/icons';
+import { IonRouterOutlet, IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/react';
+import { home, barChart} from 'ionicons/icons';
 
-import HomePage from '../../pages/homePage';
-import FitnessTestPage from '../../pages/fitnessTest/FitnessTestPage';
-import AddFitnessTestPage from '../../pages/fitnessTest/AddFitnessTestPage';
+import HomePage from '../../../pages/homePage';
+import FitnessTestPage from '../../../pages/fitnessTest/FitnessTestPage';
+import AddFitnessTestPage from '../../../pages/fitnessTest/AddFitnessTestPage';
 
 
 function ManagerTabs() {

@@ -1,6 +1,6 @@
 import React from "react";
 import { IonContent, IonIcon, IonCol, IonRow, IonGrid, IonPage, IonCard } from '@ionic/react';
-import PageHeader from '../../components/headers/pageHeader'
+import PageHeader from '../headers'
 import { barbell, calendar, time } from "ionicons/icons";
 import "../../components/fitnessTestCard/fitnessTestCard.css"
 
