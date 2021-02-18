@@ -1,68 +1,36 @@
 import React from "react";
-import { IonContent, IonRow, IonCol, IonButton, IonGrid, IonList, IonPage, IonText, IonIcon} from '@ionic/react';
-import { flame, time, barChart } from 'ionicons/icons';
+import { IonContent, IonIcon, IonCol, IonRow, IonGrid, IonPage, IonCard } from '@ionic/react';
 import PageHeader from '../../components/headers/pageHeader'
-import './fitnessTest.css';
+import { barbell, calendar, time } from "ionicons/icons";
+import "../../components/fitnessTestCard/fitnessTestCard.css"
+
 
 const FitnessTestPage = () => {
   return (
     <IonPage>
-      <PageHeader title=''></PageHeader>
+      <PageHeader title='Fitness Tests'></PageHeader>
         <IonContent>
-        <IonList> 
-          <div id="sectionContent">
-            <img class="center" id="testImg" alt="text" src= "https://res.cloudinary.com/dmikx06rt/image/upload/v1588541857/samples/landscapes/nature-mountains.jpg"></img>
-            <h1 color="dark" id="sectionTitle">Fitness Test Title</h1>
-          </div>
-        
-            <div id="sectionContent">
-              <IonGrid>
+
+        <IonCard href="/manager/fitness/test/add">
+            <IonGrid>
                 <IonRow>
-                  <IonCol>
-                    <IonButton expand="block" color="dark">
-                      <IonIcon icon={flame}></IonIcon>
-                      <IonText>Test</IonText>
-                    </IonButton>
-                  </IonCol>
-                  <IonCol>
-                    <IonButton expand="block" color="dark">
-                      <IonIcon icon={time}></IonIcon>
-                      <IonText>Test</IonText>
-                    </IonButton>
-                  </IonCol>
-                  <IonCol>
-                    <IonButton  expand="block" color="dark">
-                      <IonIcon icon={barChart}></IonIcon><br></br>
-                      <IonText>Test</IonText>
-                    </IonButton>
-                  </IonCol>
+                    <IonCol id="title" size="12">Fitness Test 1</IonCol>
                 </IonRow>
-              </IonGrid>
-
-              <hr id="contentDivider"></hr>
-
-              <h5 color="dark" id="sectionTitle">Stretches/Warm Up</h5>
-              <IonText>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-              sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
-              At vero eos et accusam et justo duo dolores et ea rebum. 
-              </IonText>
-
-              <hr id="contentDivider"></hr>
-
-              <h5 color="dark" id="sectionTitle">Exercises</h5>
-              <IonText>40 Minute Jog at half pace. 2 Minute Plank. 30 push ups. 30 sit ups
-              </IonText>
-
-              <hr id="contentDivider"></hr>
-
-              <h5 color="dark" id="sectionTitle">Warm Down</h5>
-              <IonText>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-              sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
-              At vero eos et accusam et justo duo dolores et ea rebum. 
-              </IonText>
-            </div>
-
-          </IonList>
+                <IonRow>
+                    <IonCol size="1"><IonIcon icon={calendar}></IonIcon></IonCol>
+                    <IonCol size="11">14 September</IonCol>
+                </IonRow>
+                <IonRow>
+                    <IonCol size="1"><IonIcon icon={time}></IonIcon></IonCol>
+                    <IonCol size="11">14:00</IonCol>
+                </IonRow>
+                <IonRow>
+                    <IonCol size="1"><IonIcon icon={barbell}></IonIcon></IonCol>
+                    <IonCol size="11">Difficulty</IonCol>
+                </IonRow>
+            </IonGrid>
+        </IonCard>
+        
         </IonContent>
     </IonPage>
   );
