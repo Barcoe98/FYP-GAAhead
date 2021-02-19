@@ -2,16 +2,16 @@ import React  from "react";
 import { IonContent, IonPage, IonRouterLink } from '@ionic/react';
 import PageHeader from '../components/headers'
 
-const HomePage = () => {
+const MorePage = () => {
   return (
        <IonPage>
-        <PageHeader title="Home Page"></PageHeader>
+        <PageHeader title="More Page"></PageHeader>
         <IonContent className="ion-padding">
-        Home Page content displayed here...........<br></br>
-        Go to <IonRouterLink routerLink="/manager/fitness/test"> Fitness Test Page</IonRouterLink>
+        More Page content displayed here...........<br></br>
+        Go to <IonRouterLink routerLink="/manager/my">My Page</IonRouterLink>
        </IonContent>
        </IonPage>
   );
 };
 
-export default HomePage;
+export default MorePage;
