@@ -36,19 +36,19 @@ const FitnessTestDetailsPage = () => {
                   <IonCol>
                     <IonButton expand="block" color="dark">
                       <IonIcon icon={flame}></IonIcon>
-                      <IonText>Test</IonText>
+                      <IonText>{fitnessTest?.date}</IonText>
                     </IonButton>
                   </IonCol>
                   <IonCol>
                     <IonButton expand="block" color="dark">
                       <IonIcon icon={time}></IonIcon>
-                      <IonText>Test</IonText>
+                      <IonText>{fitnessTest?.time}</IonText>
                     </IonButton>
                   </IonCol>
                   <IonCol>
                     <IonButton  expand="block" color="dark">
                       <IonIcon icon={barChart}></IonIcon><br></br>
-                      <IonText>Test</IonText>
+                      <IonText>{fitnessTest?.difficulty}</IonText>
                     </IonButton>
                   </IonCol>
                 </IonRow>
@@ -57,24 +57,15 @@ const FitnessTestDetailsPage = () => {
               <hr id="contentDivider"></hr>
 
               <h5 color="dark" id="sectionTitle">Stretches/Warm Up</h5>
-              <IonText>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-              sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
-              At vero eos et accusam et justo duo dolores et ea rebum. 
-              </IonText>
+              <IonText>{fitnessTest?.warm_up}</IonText>
 
               <hr id="contentDivider"></hr>
-
               <h5 color="dark" id="sectionTitle">Exercises</h5>
-              <IonText>40 Minute Jog at half pace. 2 Minute Plank. 30 push ups. 30 sit ups
-              </IonText>
+              <IonText>{fitnessTest?.exercises}</IonText>
 
               <hr id="contentDivider"></hr>
-
               <h5 color="dark" id="sectionTitle">Warm Down</h5>
-              <IonText>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-              sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
-              At vero eos et accusam et justo duo dolores et ea rebum. 
-              </IonText>
+              <IonText>{fitnessTest?.warm_down}</IonText>
             </div>
 
           </IonList>
