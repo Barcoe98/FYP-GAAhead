@@ -4,7 +4,7 @@ import { flame, time, barChart } from 'ionicons/icons';
 import PageHeader from '../../components/headers'
 import './fitnessTest.css';
 
-const FitnessTestPage = () => {
+const FitnessTestDetailsPage = () => {
   return (
     <IonPage>
       <PageHeader title=''></PageHeader>
@@ -68,4 +68,4 @@ const FitnessTestPage = () => {
   );
 };
 
-export default FitnessTestPage;
+export default FitnessTestDetailsPage;

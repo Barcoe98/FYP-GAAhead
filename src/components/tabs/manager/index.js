@@ -3,17 +3,15 @@ import { IonRouterOutlet, IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel } 
 import { homeOutline, clipboardOutline, menuOutline, peopleOutline, personOutline} from 'ionicons/icons';
 
 import HomePage from '../../../pages/homePage';
-import FitnessTestPage from '../../../pages/fitnessTest/FitnessTestPage';
-import AddFitnessTestPage from '../../../pages/fitnessTest/AddFitnessTestPage';
 import MorePage from '../../../pages/morePage';
 import MyPage from '../../../pages/myPage';
 import TeamPage from '../../../pages/teamPage';
 import PlannerPage from '../../../pages/plannerPage';
 
-import FitnessTestListPage from '../../fitnessTestCard/index'
-
-
-
+import FitnessTestDetailsPage from '../../../pages/fitnessTest/FitnessTestDetailsPage';
+import AddFitnessTestPage from '../../../pages/fitnessTest/AddFitnessTestPage';
+import FitnessTestCardPage from '../../fitnessTestCard/index'
+import FitnessTestListPage from '../../../pages/fitnessTest/FitnessTestListPage'
 
 
 function ManagerTabs() {
@@ -21,7 +19,7 @@ function ManagerTabs() {
     <IonTabs>
     <IonRouterOutlet>
         <Route exact path="/manager/home"> <HomePage></HomePage></Route>
-        <Route exact path="/manager/fitness/test"><FitnessTestPage></FitnessTestPage></Route>
+        <Route path="/manager/fitness/test/:id"><FitnessTestDetailsPage></FitnessTestDetailsPage></Route>
         <Route exact path="/manager/fitness/test/add"><AddFitnessTestPage></AddFitnessTestPage></Route>
         <Route exact path="/manager/fitness/test/list"><FitnessTestListPage></FitnessTestListPage></Route>
         <Route exact path="/manager/more"><MorePage></MorePage></Route>
