@@ -1,18 +1,33 @@
-import React from "react";
+import React, {useEffect, useState } from "react";
 import { IonContent, IonRow, IonCol, IonButton, IonGrid, IonList, IonPage, IonText, IonIcon} from '@ionic/react';
 import { flame, time, barChart } from 'ionicons/icons';
 import PageHeader from '../../components/headers'
 import './fitnessTest.css';
+import { useParams } from "react-router-dom";
+import { firestore } from '../../firebase'
 
 const FitnessTestDetailsPage = () => {
+
+  const {id} = useParams()
+  const  [fitnessTest, setFitnessTest] =  useState(null)
+
+  useEffect(() => {
+    const fTestRef = firestore.collection('fitness_tests').doc(id)
+    fTestRef.get(id).then(doc => {
+      const fitnessTest = { id: doc.id, ...doc.data()}
+      setFitnessTest(fitnessTest);
+    });
+  }, [id]);
+
+
   return (
     <IonPage>
       <PageHeader title=''></PageHeader>
         <IonContent>
         <IonList> 
           <div id="sectionContent">
-            <img class="center" id="testImg" alt="text" src= "https://res.cloudinary.com/dmikx06rt/image/upload/v1588541857/samples/landscapes/nature-mountains.jpg"></img>
-            <h1 color="dark" id="sectionTitle">Fitness Test Title</h1>
+            <img className="center" id="testImg" alt="text" src= "https://res.cloudinary.com/dmikx06rt/image/upload/v1588541857/samples/landscapes/nature-mountains.jpg"></img>
+            <h1 color="dark" id="sectionTitle">{fitnessTest?.title}</h1>
           </div>
         
             <div id="sectionContent">
