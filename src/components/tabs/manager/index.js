@@ -10,7 +10,7 @@ import PlannerPage from '../../../pages/plannerPage';
 
 import FitnessTestDetailsPage from '../../../pages/fitnessTest/FitnessTestDetailsPage';
 import AddFitnessTestPage from '../../../pages/fitnessTest/AddFitnessTestPage';
-import FitnessTestCardPage from '../../fitnessTestCard/index'
+//import FitnessTestCardPage from '../../fitnessTestCard/index'
 import FitnessTestListPage from '../../../pages/fitnessTest/FitnessTestListPage'
 
 
