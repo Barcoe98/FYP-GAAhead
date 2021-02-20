@@ -1,35 +1,39 @@
-import React from "react";
-import { IonContent, IonIcon, IonCol, IonRow, IonGrid, IonPage, IonCard } from '@ionic/react';
+import React, {useEffect, useState} from "react";
+import { IonContent, IonIcon, IonCol, IonRow, IonGrid, IonPage, IonCard, IonList, IonItem } from '@ionic/react';
 import PageHeader from '../../components/headers'
 import { barbell, calendar, time } from "ionicons/icons";
 import "../../components/fitnessTestCard/fitnessTestCard.css"
 
+import {firestore} from'../../firebase'
+
 
 const FitnessTestPage = () => {
+    const [fitnessTests, setFitnessTests ] = useState([])
+
+  useEffect(() => {
+    const testRef = firestore.collection('fitness_tests')
+    testRef.get().then((snapshot) => {
+      const tests = snapshot.docs.map((doc) => ({ 
+        id:doc.id,
+        ...doc.data(),
+      }))
+      setFitnessTests(tests)
+    })
+   },[]);
+
   return (
     <IonPage>
       <PageHeader title='Fitness Tests'></PageHeader>
         <IonContent>
-
-        <IonCard href="/manager/fitness/test/add">
-            <IonGrid>
-                <IonRow>
-                    <IonCol id="title" size="12">Fitness Test 1</IonCol>
-                </IonRow>
-                <IonRow>
-                    <IonCol size="1"><IonIcon icon={calendar}></IonIcon></IonCol>
-                    <IonCol size="11">14 September</IonCol>
-                </IonRow>
-                <IonRow>
-                    <IonCol size="1"><IonIcon icon={time}></IonIcon></IonCol>
-                    <IonCol size="11">14:00</IonCol>
-                </IonRow>
-                <IonRow>
-                    <IonCol size="1"><IonIcon icon={barbell}></IonIcon></IonCol>
-                    <IonCol size="11">Difficulty</IonCol>
-                </IonRow>
-            </IonGrid>
-        </IonCard>
+        <IonList>
+        {fitnessTests.map((fTest) => 
+            <IonItem button key={fTest.id}
+            routerLink={'/manager/fitness/test/' , fTest.id}>
+            {fTest.title}
+            </IonItem>
+        )}
+        
+        </IonList>
         
         </IonContent>
     </IonPage>
