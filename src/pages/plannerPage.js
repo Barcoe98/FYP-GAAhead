@@ -8,6 +8,7 @@ const PlannerPage = () => {
         <PageHeader title="Planner Page"></PageHeader>
         <IonContent className="ion-padding">
         <IonButton size="large" expand="block" href="/manager/fitness/test/list"> Fitness Tests</IonButton>
+        <IonButton size="large" expand="block" href="/manager/planner/trainingschedule/list"> Training Schedules</IonButton>
        </IonContent>
        </IonPage>
   );

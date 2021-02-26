@@ -2,7 +2,7 @@ import React, {useEffect, useState } from "react";
 import { IonContent, IonRow, IonCol, IonButton, IonGrid, IonList, IonPage, IonText, IonIcon} from '@ionic/react';
 import { flame, time, barChart } from 'ionicons/icons';
 import PageHeader from '../../components/headers'
-import './training.css';
+import './Training.css';
 import { useParams } from "react-router-dom";
 import { firestore } from '../../firebase'
 
