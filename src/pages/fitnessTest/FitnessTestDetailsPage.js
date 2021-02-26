@@ -27,29 +27,24 @@ const FitnessTestDetailsPage = () => {
         <IonList> 
           <div id="sectionContent">
             <img className="center" id="testImg" alt="text" src= "https://res.cloudinary.com/dmikx06rt/image/upload/v1588541857/samples/landscapes/nature-mountains.jpg"></img>
-            <h1 color="dark" id="sectionTitle">{fitnessTest?.title}</h1>
+            <h1 color="dark" id="sectionTitle"> {fitnessTest?.title} </h1>
           </div>
         
             <div id="sectionContent">
               <IonGrid>
                 <IonRow>
-                  <IonCol>
-                    <IonButton expand="block" color="dark">
-                      <IonIcon icon={flame}></IonIcon>
-                      <IonText>{fitnessTest?.date}</IonText>
-                    </IonButton>
+                  <IonCol col-4>
+                      <IonIcon size="large" icon={flame}></IonIcon><br></br>
+                      <IonText className="center">{fitnessTest?.date}</IonText>
                   </IonCol>
-                  <IonCol>
-                    <IonButton expand="block" color="dark">
-                      <IonIcon icon={time}></IonIcon>
-                      <IonText>{fitnessTest?.time}</IonText>
-                    </IonButton>
+                  <IonCol col-4>
+                      <IonIcon size="large" icon={time}></IonIcon><br></br>
+                      <IonText className="center">{fitnessTest?.time}
+                      </IonText>
                   </IonCol>
-                  <IonCol>
-                    <IonButton  expand="block" color="dark">
-                      <IonIcon icon={barChart}></IonIcon><br></br>
-                      <IonText>{fitnessTest?.difficulty}</IonText>
-                    </IonButton>
+                  <IonCol col-4>
+                      <IonIcon className="center" size="large" icon={barChart}></IonIcon><br></br>
+                      <IonText className="center">{fitnessTest?.difficulty}</IonText>
                   </IonCol>
                 </IonRow>
               </IonGrid>

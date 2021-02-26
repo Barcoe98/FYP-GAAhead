@@ -17,7 +17,7 @@ function App() {
             <Route exact path="/login"><LoginPage></LoginPage></Route>
             <Route exact path="/forgotpassword"><ForgotPasswordPage></ForgotPasswordPage></Route>
             <ManagerTabs></ManagerTabs>
-            <Redirect exact path="/" to ="/home"></Redirect>
+            <Redirect exact path="/" to ="/login"></Redirect>
           </IonRouterOutlet>
         </IonReactRouter>
       </AuthContextProvider>

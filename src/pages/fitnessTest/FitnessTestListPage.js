@@ -8,7 +8,7 @@ import {firestore} from'../../firebase'
 
 
 const FitnessTestPage = () => {
-    const [fitnessTests, setFitnessTests ] = useState([])
+  const [fitnessTests, setFitnessTests ] = useState([])
 
   useEffect(() => {
     const testRef = firestore.collection('fitness_tests')
@@ -27,10 +27,27 @@ const FitnessTestPage = () => {
         <IonContent>
         <IonList>
         {fitnessTests.map((fTest) => 
-            <IonItem button key={fTest.id}
-            routerLink={'/manager/fitness/test/' , fTest.id}>
-            {fTest.title}
-            </IonItem>
+       
+            <IonCard key={fTest.id} routerLink={'/manager/fitness/test/' , fTest.id}>
+            <IonGrid>
+                <IonRow>
+                    <IonCol id="title" size="12">{fTest.title}</IonCol>
+                </IonRow>
+                <IonRow>
+                    <IonCol size="1"><IonIcon icon={calendar}></IonIcon></IonCol>
+                    <IonCol size="11">{fTest.date}</IonCol>
+                </IonRow>
+                <IonRow>
+                    <IonCol size="1"><IonIcon icon={time}></IonIcon></IonCol>
+                    <IonCol size="11">{fTest.time}</IonCol>
+                </IonRow>
+                <IonRow>
+                    <IonCol size="1"><IonIcon icon={barbell}></IonIcon></IonCol>
+                    <IonCol size="11">{fTest.difficulty}</IonCol>
+                </IonRow>
+            </IonGrid>
+        </IonCard>
+        
         )}
         
         </IonList>
