@@ -14,10 +14,14 @@ import TrainingScheduleDetailsPage from '../../../pages/training/TrainingSchedul
 import AddTrainingSchedulePage from '../../../pages/training/AddTrainingSchedulePage';
 import TrainingScheduleListPage from '../../../pages/training/TrainingScheduleListPage';
 
-
 import FitnessTestDetailsPage from '../../../pages/fitnessTest/FitnessTestDetailsPage';
 import AddFitnessTestPage from '../../../pages/fitnessTest/AddFitnessTestPage';
 import FitnessTestListPage from '../../../pages/fitnessTest/FitnessTestListPage'
+
+import PlayerListPage from '../../../pages/team/PlayerListPage';
+import PlayerDetailsPage from '../../../pages/team/PlayerDetailsPage';
+
+
 
 
 function ManagerTabs() {
@@ -38,6 +42,10 @@ function ManagerTabs() {
         <Route path="/manager/planner/trainingschedule/:id"><TrainingScheduleDetailsPage></TrainingScheduleDetailsPage></Route>
         <Route exact path="/manager/planner/trainingschedule/add"><AddTrainingSchedulePage></AddTrainingSchedulePage></Route>
         <Route exact path="/manager/planner/trainingschedule/list"><TrainingScheduleListPage></TrainingScheduleListPage></Route>
+
+        <Route path="/manager/team/panel/:id"><PlayerDetailsPage></PlayerDetailsPage></Route>
+        <Route path="/manager/team/panel/list"><PlayerListPage></PlayerListPage></Route>
+
 
         <Redirect exact path="/" to ="/home"></Redirect>
     </IonRouterOutlet>

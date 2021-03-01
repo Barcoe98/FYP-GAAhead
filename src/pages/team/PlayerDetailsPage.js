@@ -2,20 +2,20 @@ import React, {useEffect, useState } from "react";
 import { IonContent, IonRow, IonCol, IonButton, IonGrid, IonList, IonPage, IonText, IonIcon} from '@ionic/react';
 import { flame, time, barChart } from 'ionicons/icons';
 import PageHeader from '../../components/headers'
-import './Training.css';
+//import '../fitnessTest/fitnessTest.css';
 import { useParams } from "react-router-dom";
 import { firestore } from '../../firebase'
 
-const FitnessTestDetailsPage = () => {
+const PlayerDetailsPage = () => {
 
   const {id} = useParams()
-  const  [trainingSchedule, setTrainingSchedule] =  useState(null)
+  const  [players, setPlayers] =  useState(null)
 
   useEffect(() => {
-    const tScheduleRef = firestore.collection('training_schedules').doc(id)
-    tScheduleRef.get(id).then(doc => {
-      const trainingSchedules = { id: doc.id, ...doc.data()}
-      setTrainingSchedule(trainingSchedules);
+    const playerRef = firestore.collection('players').doc(id)
+    playerRef.get(id).then(doc => {
+      const players = { id: doc.id, ...doc.data()}
+      setPlayers(players);
     });
   }, [id]);
 
@@ -25,39 +25,56 @@ const FitnessTestDetailsPage = () => {
         <IonContent>
         <IonList id="bg-color"> 
           <div id="bg-img"></div>
-          <h1 id="sectionTitle"> {trainingSchedule?.title} </h1>
+          <h1 id="sectionTitle"> {players?.name} </h1>
          
             <div id="sectionContent">
               <IonGrid>
                 <IonRow>
                   <IonCol col-4>
                       <IonIcon size="large" icon={flame}></IonIcon><br></br>
-                      <IonText className="center">{trainingSchedule?.date}</IonText>
+                      <IonText className="center">{players?.age}</IonText>
                   </IonCol>
                   <IonCol col-4>
                       <IonIcon size="large" icon={time}></IonIcon><br></br>
-                      <IonText className="center">{trainingSchedule?.time}
+                      <IonText className="center">{players?.position}
                       </IonText>
-                  </IonCol>
-                  <IonCol col-4>
-                      <IonIcon className="center" size="large" icon={barChart}></IonIcon><br></br>
-                      <IonText className="center">{trainingSchedule?.difficulty}</IonText>
                   </IonCol>
                 </IonRow>
               </IonGrid>
 
               <hr id="contentDivider"></hr>
 
-              <h5 color="dark" id="sectionTitle">Stretches/Warm Up</h5>
-              <IonText>{trainingSchedule?.warm_up}</IonText>
+              
+              <IonGrid>
+                <IonRow>
+                  <IonCol col-4>
+                      <IonIcon size="large" icon={flame}></IonIcon><br></br>
+                      <IonText className="center">{players?.hooks}</IonText>
+                  </IonCol>
+                  <IonCol col-4>
+                      <IonIcon size="large" icon={time}></IonIcon><br></br>
+                      <IonText className="center">{players?.blocks}
+                      </IonText>
+                  </IonCol>
+                  <IonCol col-4>
+                      <IonIcon className="center" size="large" icon={barChart}></IonIcon><br></br>
+                      <IonText className="center">{players?.distance}</IonText>
+                  </IonCol>
+                </IonRow>
+              </IonGrid>
+
+              <hr id="contentDivider"></hr>
+
+              <h5 color="dark" id="sectionTitle">Bio</h5>
+              <IonText>{players?.warm_up}</IonText>
 
               <hr id="contentDivider"></hr>
               <h5 color="dark" id="sectionTitle">Exercises</h5>
-              <IonText>{trainingSchedule?.exercises}</IonText>
+              <IonText>{players?.exercises}</IonText>
 
               <hr id="contentDivider"></hr>
               <h5 color="dark" id="sectionTitle">Warm Down</h5>
-              <IonText>{trainingSchedule?.warm_down}</IonText>
+              <IonText>{players?.warm_down}</IonText>
             </div>
 
           </IonList>
@@ -66,4 +83,4 @@ const FitnessTestDetailsPage = () => {
   );
 };
 
-export default FitnessTestDetailsPage;
+export default PlayerDetailsPage;
