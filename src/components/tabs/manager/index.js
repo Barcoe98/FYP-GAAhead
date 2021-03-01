@@ -8,6 +8,8 @@ import MyPage from '../../../pages/myPage';
 import TeamPage from '../../../pages/teamPage';
 import PlannerPage from '../../../pages/plannerPage';
 
+import "../navbar.css"
+
 import TrainingScheduleDetailsPage from '../../../pages/training/TrainingScheduleDetailsPage';
 import AddTrainingSchedulePage from '../../../pages/training/AddTrainingSchedulePage';
 import TrainingScheduleListPage from '../../../pages/training/TrainingScheduleListPage';
@@ -20,7 +22,8 @@ import FitnessTestListPage from '../../../pages/fitnessTest/FitnessTestListPage'
 
 function ManagerTabs() {
   return (
-    <IonTabs>
+
+    <IonTabs id="ManagerNavbar" >
     <IonRouterOutlet>
         <Route exact path="/manager/home"> <HomePage></HomePage></Route>
         <Route exact path="/manager/more"><MorePage></MorePage></Route>
@@ -39,24 +42,24 @@ function ManagerTabs() {
         <Redirect exact path="/" to ="/home"></Redirect>
     </IonRouterOutlet>
 
-    <IonTabBar slot="bottom">
-        <IonTabButton tab="my" href="/manager/my">
+    <IonTabBar id="ManagerNavbar" slot="bottom">
+        <IonTabButton id="ManagerNavbar" tab="my" href="/manager/my">
           <IonIcon icon={personOutline} />
           <IonLabel>My</IonLabel>
         </IonTabButton>
-        <IonTabButton tab="planner" href="/manager/planner">
+        <IonTabButton id="ManagerNavbar" tab="planner" href="/manager/planner">
           <IonIcon icon={clipboardOutline} />
           <IonLabel>Planner</IonLabel>
         </IonTabButton>
-        <IonTabButton tab="home" href="/manager/home">
+        <IonTabButton id="ManagerNavbar"  tab="home" href="/manager/home">
           <IonIcon icon={homeOutline} />
           <IonLabel>Home</IonLabel>
         </IonTabButton>
-        <IonTabButton tab="team" href="/manager/team">
+        <IonTabButton id="ManagerNavbar"   tab="team" href="/manager/team">
           <IonIcon icon={peopleOutline} />
           <IonLabel>Team</IonLabel>
         </IonTabButton>
-        <IonTabButton tab="more" href="/manager/more">
+        <IonTabButton id="ManagerNavbar"  tab="more" href="/manager/more">
           <IonIcon icon={menuOutline} />
           <IonLabel>More</IonLabel>
         </IonTabButton>

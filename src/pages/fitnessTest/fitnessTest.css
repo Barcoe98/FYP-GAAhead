@@ -2,39 +2,37 @@
     text-align: center;
     font-weight: 600;
     padding: 2px;
+    color: white;
 }
 
 #sectionContent{
     font-size: small;
     padding: 10px;
-    border: 1px solid black;
+    border: 1px solid white;
     border-radius: 25px;
     margin: 4px 10px 10px 4px;
+    color: white;
 }
 
 #pageTitle{
     text-align: center;
     font-weight: 600;
     font-size: larger;
-    
+}
+
+#bg-color{
+    background-color: black;
+}
+
+#bg-img{
+    background-image: url("https://res.cloudinary.com/dmikx06rt/image/upload/v1614343037/FYP-GAAhead/sport-4637549_640_fzllpq.jpg");
+    opacity: 0.4;
+    min-height:426;
 }
 
 #contentDivider{
     width:auto;
     height: 1px;
-    background-color: grey;
+    background-color: whitesmoke;
     margin-top: 16px;
 }
-
-#testImg{
-    border-radius: 25px !important;
-    opacity: 0.8;
-    width:90%;
-    height:90%;
-    text-align: center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-

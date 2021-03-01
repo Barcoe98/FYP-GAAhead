@@ -22,14 +22,11 @@ const FitnessTestDetailsPage = () => {
 
   return (
     <IonPage>
-      <PageHeader title=''></PageHeader>
         <IonContent>
-        <IonList> 
-          <div id="sectionContent">
-            <img className="center" id="testImg" alt="text" src= "https://res.cloudinary.com/dmikx06rt/image/upload/v1588541857/samples/landscapes/nature-mountains.jpg"></img>
-            <h1 color="dark" id="sectionTitle"> {trainingSchedule?.title} </h1>
-          </div>
-        
+        <IonList id="bg-color"> 
+          <div id="bg-img"></div>
+          <h1 id="sectionTitle"> {trainingSchedule?.title} </h1>
+         
             <div id="sectionContent">
               <IonGrid>
                 <IonRow>
