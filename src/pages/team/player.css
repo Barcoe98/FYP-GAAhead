@@ -1,0 +1,16 @@
+/* Player Cards in Grid View CSS*/
+#grid-cards{
+  width: 40%;
+  display: inline-block;
+
+}
+
+/* Player Title CSS*/
+#pTitle{
+  padding: 4px;
+}
+
+/* Player Content CSS*/
+#pIcon, #pContent{
+  padding: 0px;
+}

@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from "react";
-import { IonContent, IonIcon, IonCol, IonRow, IonGrid, IonPage, IonCard, IonList } from '@ionic/react';
+import { IonContent, IonIcon, IonCol, IonRow, IonGrid, IonPage, IonCard, IonList, IonImg, IonCardSubtitle } from '@ionic/react';
 import PageHeader from '../../components/headers'
 import { barbell, calendar, time } from "ionicons/icons";
 import {firestore} from'../../firebase'
+import "./player.css"
 
 
 const PlayerListPage = () => {
@@ -26,18 +27,20 @@ const PlayerListPage = () => {
         <IonList>
         {players.map((player) => 
        
-            <IonCard key={player.id} routerLink={'/manager/team/panel/' , player.id}>
+            <IonCard id="grid-cards" key={player.id} routerLink={'/manager/team/panel/' , player.id}>
             <IonGrid>
+            <IonImg src="https://res.cloudinary.com/dmikx06rt/image/upload/v1614630566/FYP-GAAhead/profilePic_boakip.jpg"></IonImg>
                 <IonRow>
-                    <IonCol id="title" size="12">{player.name}</IonCol>
+                    <IonCol id="pTitle" size="12">
+                    <IonCardSubtitle>{player.name}</IonCardSubtitle>
+                    </IonCol>
                 </IonRow>
                 <IonRow>
-                    <IonCol size="1"><IonIcon icon={calendar}></IonIcon></IonCol>
-                    <IonCol size="11">{player.age}</IonCol>
+                    <IonCol id="pAge" size="12">{player.age}</IonCol>
                 </IonRow>
                 <IonRow>
-                    <IonCol size="1"><IonIcon icon={time}></IonIcon></IonCol>
-                    <IonCol size="11">{player.position}</IonCol>
+                    <IonCol id="pPosition" size="12">{player.position}</IonCol>
+                   
                 </IonRow>
             </IonGrid>
         </IonCard>
