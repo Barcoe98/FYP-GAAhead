@@ -1,86 +1,101 @@
 import React, {useEffect, useState } from "react";
 import { IonContent, IonRow, IonCol, IonButton, IonGrid, IonList, IonPage, IonText, IonIcon} from '@ionic/react';
-import { flame, time, barChart } from 'ionicons/icons';
+import { flame, time, barChart, informationCircleOutline } from 'ionicons/icons';
 import PageHeader from '../../components/headers'
-//import '../fitnessTest/fitnessTest.css';
 import { useParams } from "react-router-dom";
 import { firestore } from '../../firebase'
+import './player.css';
+
 
 const PlayerDetailsPage = () => {
-
   const {id} = useParams()
-  const  [players, setPlayers] =  useState(null)
+  const  [player, setPlayer] =  useState(null)
 
   useEffect(() => {
     const playerRef = firestore.collection('players').doc(id)
     playerRef.get(id).then(doc => {
       const players = { id: doc.id, ...doc.data()}
-      setPlayers(players);
+      setPlayer(players);
     });
   }, [id]);
-
 
   return (
     <IonPage>
         <IonContent>
-        <IonList id="bg-color"> 
-          <div id="bg-img"></div>
-          <h1 id="sectionTitle"> {players?.name} </h1>
-         
+        <IonList id="p-bg-color"> 
+        <div id="p-bg-img"></div>
+          <h1 id="sectionTitle">{player?.name}</h1>
+
             <div id="sectionContent">
               <IonGrid>
                 <IonRow>
-                  <IonCol col-4>
-                      <IonIcon size="large" icon={flame}></IonIcon><br></br>
-                      <IonText className="center">{players?.age}</IonText>
+                  <IonCol size="3">
+                    <IonRow id="fIcon">
+                      <IonCol> <IonIcon size="large" icon={informationCircleOutline}></IonIcon></IonCol>
+                    </IonRow>
+                    <IonRow>
+                      <IonCol>{player?.date}</IonCol>
+                    </IonRow>
                   </IonCol>
-                  <IonCol col-4>
-                      <IonIcon size="large" icon={time}></IonIcon><br></br>
-                      <IonText className="center">{players?.position}
-                      </IonText>
+
+                  <IonCol size="3">
+                    <IonRow id="fIcon">
+                      <IonCol><IonIcon size="large" icon={informationCircleOutline}></IonIcon></IonCol>
+                    </IonRow>
+                    <IonRow>
+                      <IonCol>{player?.hooks}</IonCol>
+                    </IonRow>
+                  </IonCol>
+
+                  <IonCol size="3">
+                    <IonRow id="fIcon">
+                      <IonCol> <IonIcon size="large" icon={informationCircleOutline}></IonIcon></IonCol>
+                    </IonRow>
+                    <IonRow>
+                      <IonCol>{player?.blocks}</IonCol>
+                    </IonRow>
+                  </IonCol>
+
+                  <IonCol size="3">
+                    <IonRow id="fIcon">
+                      <IonCol> <IonIcon size="large" icon={informationCircleOutline}></IonIcon></IonCol>
+                    </IonRow>
+                    <IonRow>
+                      <IonCol>{player?.difficulty}</IonCol>
+                    </IonRow>
                   </IonCol>
                 </IonRow>
               </IonGrid>
-
-              <hr id="contentDivider"></hr>
 
               
-              <IonGrid>
-                <IonRow>
-                  <IonCol col-4>
-                      <IonIcon size="large" icon={flame}></IonIcon><br></br>
-                      <IonText className="center">{players?.hooks}</IonText>
-                  </IonCol>
-                  <IonCol col-4>
-                      <IonIcon size="large" icon={time}></IonIcon><br></br>
-                      <IonText className="center">{players?.blocks}
-                      </IonText>
-                  </IonCol>
-                  <IonCol col-4>
-                      <IonIcon className="center" size="large" icon={barChart}></IonIcon><br></br>
-                      <IonText className="center">{players?.distance}</IonText>
-                  </IonCol>
-                </IonRow>
-              </IonGrid>
 
               <hr id="contentDivider"></hr>
-
-              <h5 color="dark" id="sectionTitle">Bio</h5>
-              <IonText>{players?.warm_up}</IonText>
+              <h5 id="sectionTitle">Biography</h5>
+              <IonText>First Name:{player?.fName}</IonText><br></br>
+              <IonText>Last Name:{player?.lName}</IonText><br></br>
+              <IonText>Age:{player?.age}</IonText><br></br>
+              <IonText>Weight:{player?.weight}</IonText><br></br>
+              <IonText>Height:{player?.height}</IonText><br></br>
+              <IonText>Position:{player?.position}</IonText>
 
               <hr id="contentDivider"></hr>
-              <h5 color="dark" id="sectionTitle">Exercises</h5>
-              <IonText>{players?.exercises}</IonText>
+              <h5 id="sectionTitle">Injuries</h5>
+              <IonText>{player?.injuries}</IonText>
 
               <hr id="contentDivider"></hr>
-              <h5 color="dark" id="sectionTitle">Warm Down</h5>
-              <IonText>{players?.warm_down}</IonText>
+              <h5 id="sectionTitle">Infomation Area</h5>
+              <IonText>{player?.info}</IonText>
+
+              <hr id="contentDivider"></hr>
+              <h5 id="sectionTitle">More</h5>
+              <IonText>{player?.More}</IonText>
             </div>
 
           </IonList>
         </IonContent>
     </IonPage>
   );
+  
 };
 
 export default PlayerDetailsPage;

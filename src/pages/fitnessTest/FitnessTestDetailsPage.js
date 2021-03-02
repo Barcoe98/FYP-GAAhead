@@ -1,6 +1,6 @@
 import React, {useEffect, useState } from "react";
 import { IonContent, IonRow, IonCol, IonButton, IonGrid, IonList, IonPage, IonText, IonIcon} from '@ionic/react';
-import { flame, time, barChart } from 'ionicons/icons';
+import { flame, time, barChart, calendar } from 'ionicons/icons';
 import PageHeader from '../../components/headers'
 import './fitnessTest.css';
 import { useParams } from "react-router-dom";
@@ -22,27 +22,42 @@ const FitnessTestDetailsPage = () => {
 
   return (
     <IonPage>
+    <PageHeader title=""></PageHeader>
         <IonContent>
-        <IonList id="bg-color"> 
-          <div id="bg-img"></div>
-          <h1 id="sectionTitle"> {fitnessTest?.title} </h1>
-        
+        <IonList id="ft-bg-color"> 
+        <div id="ft-bg-img"></div>
+          <h1 id="sectionTitle">{fitnessTest?.title} </h1>
+
             <div id="sectionContent">
               <IonGrid>
                 <IonRow>
-                  <IonCol col-4>
-                      <IonIcon size="large" icon={flame}></IonIcon><br></br>
-                      <IonText className="center">{fitnessTest?.date}</IonText>
+                  <IonCol size="4">
+                  <IonRow id="fIcon">
+                    <IonCol> <IonIcon size="large" icon={calendar}></IonIcon></IonCol>
+                    </IonRow>
+                    <IonRow>
+                      <IonCol>{fitnessTest?.date}</IonCol>
+                    </IonRow>
                   </IonCol>
-                  <IonCol col-4>
-                      <IonIcon size="large" icon={time}></IonIcon><br></br>
-                      <IonText className="center">{fitnessTest?.time}
-                      </IonText>
+
+                  <IonCol size="4">
+                    <IonRow id="fIcon">
+                      <IonCol><IonIcon size="large" icon={time}></IonIcon></IonCol>
+                    </IonRow>
+                    <IonRow>
+                      <IonCol>{fitnessTest?.time}</IonCol>
+                    </IonRow>
                   </IonCol>
-                  <IonCol col-4>
-                      <IonIcon className="center" size="large" icon={barChart}></IonIcon><br></br>
-                      <IonText className="center">{fitnessTest?.difficulty}</IonText>
+
+                  <IonCol size="4">
+                  <IonRow id="fIcon">
+                    <IonCol> <IonIcon size="large" icon={flame}></IonIcon></IonCol>
+                    </IonRow>
+                    <IonRow>
+                      <IonCol>{fitnessTest?.difficulty}</IonCol>
+                    </IonRow>
                   </IonCol>
+
                 </IonRow>
               </IonGrid>
 

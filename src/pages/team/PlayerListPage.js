@@ -28,25 +28,21 @@ const PlayerListPage = () => {
           {players.map((player) => 
             <IonCard id="playerGridCards" key={player.id} routerLink={'/manager/team/panel/' , player.id}>
             <IonImg id="pImage" src="https://res.cloudinary.com/dmikx06rt/image/upload/v1614630566/FYP-GAAhead/profilePic_boakip.jpg"></IonImg>
-            <IonGrid>
-                  <IonRow id="pName">
-                    {player.name}
-                  </IonRow>
-                  <IonRow id="pAge">
-                    {player.age}
-                  </IonRow>
-                  <IonRow id="pPosition">
-                    {player.position}
-                  </IonRow>
+              <IonGrid>
+                <IonRow id="pName">
+                  {player.name}
+                </IonRow>
+                <IonRow id="pAge">
+                  {player.age}
+                </IonRow>
+                <IonRow id="pPosition">
+                  {player.position}
+                </IonRow>
               </IonGrid>
-          </IonCard>
+            </IonCard>
           )}
         </IonList>
         </IonContent>
-          <IonInfiniteScroll threshold="10px" id="infinite-scroll">
-            <IonInfiniteScrollContent loading-spinner="bubbles" loading-text="Loading more data...">
-            </IonInfiniteScrollContent>
-          </IonInfiniteScroll>
     </IonPage>
   );
 };

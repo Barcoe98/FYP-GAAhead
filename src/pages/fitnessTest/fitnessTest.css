@@ -1,3 +1,30 @@
+/* Fitnesst Test Cards*/
+/* Fitness Test Cards in Grid View CSS*/
+#ftGridCards{
+    width: 40%;
+    display: inline-block;
+    background-color: black;
+    color: whitesmoke;
+    margin-bottom: -1%;
+    opacity: 0.9;
+}
+
+/* Text for Fitnesst Test Cards*/
+#fDate, #fDifficulty, #fTime{
+    padding: 3px;
+}
+
+/* Title for Fitnesst Test Cards*/
+#fTitle{
+    padding: 4px;
+    font-weight: bold;
+    font-size: large;
+}
+
+
+
+/* Fitness Test Details */
+/* Title for Fitness Test Details*/
 #sectionTitle{
     text-align: center;
     font-weight: 600;
@@ -5,16 +32,7 @@
     color: white;
 }
 
-/* Player Cards in Grid View CSS*/
-#grid-cards{
-    display: inline-block;
-  
-}
-
-#fDifficulty{
-    padding-left: 1%;
-}
-  
+/* Content for Fitness Test Details*/
 #sectionContent{
     font-size: small;
     padding: 10px;
@@ -22,24 +40,29 @@
     border-radius: 25px;
     margin: 4px 10px 10px 4px;
     color: white;
+    text-align: justify;
+    opacity: 0.9;
 }
 
-#pageTitle{
-    text-align: center;
-    font-weight: 600;
-    font-size: larger;
+#fIcon{
+    position: relative;
+    padding: 0px;
 }
 
-#bg-color{
+/* CSS for background color*/
+#ft-bg-color{
     background-color: black;
+    opacity: 0.95;
 }
 
-#bg-img{
+/* CSS for background Image*/
+#ft-bg-img{
     background-image: url("https://res.cloudinary.com/dmikx06rt/image/upload/v1614343037/FYP-GAAhead/sport-4637549_640_fzllpq.jpg");
     opacity: 0.4;
     min-height:426;
 }
 
+/* Line to Divide sections*/
 #contentDivider{
     width:auto;
     height: 1px;

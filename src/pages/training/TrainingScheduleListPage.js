@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
 import { IonContent, IonIcon, IonCol, IonRow, IonGrid, IonPage, IonCard, IonList } from '@ionic/react';
 import PageHeader from '../../components/headers'
-import { barbell, calendar, time } from "ionicons/icons";
+import { barbell, calendar, flame, time } from "ionicons/icons";
 import {firestore} from'../../firebase'
-
+import "./Training.css"
 
 const TrainingSchedulePage = () => {
   const [trainingSchedules, setTrainingSchedules ] = useState([])
@@ -21,35 +21,31 @@ const TrainingSchedulePage = () => {
 
   return (
     <IonPage>
-      <PageHeader title='Training Schedule Tests'></PageHeader>
+      <PageHeader title='Training Schedules'></PageHeader>
         <IonContent>
         <IonList>
         {trainingSchedules.map((tSchedule) => 
-       
-            <IonCard key={tSchedule.id} routerLink={'/manager/planner/trainingschedule/' , tSchedule.id}>
+            <IonCard id="tsGridCards" key={tSchedule.id} routerLink={'/manager/planner/trainingschedule/' , tSchedule.id}>
             <IonGrid>
                 <IonRow>
-                    <IonCol id="title" size="12">{tSchedule.title}</IonCol>
+                    {tSchedule.title}
                 </IonRow>
                 <IonRow>
                     <IonCol size="1"><IonIcon icon={calendar}></IonIcon></IonCol>
-                    <IonCol size="11">{tSchedule.date}</IonCol>
+                    <IonCol id="tsDate" size="11">{tSchedule.date}</IonCol>
                 </IonRow>
                 <IonRow>
                     <IonCol size="1"><IonIcon icon={time}></IonIcon></IonCol>
-                    <IonCol size="11">{tSchedule.time}</IonCol>
+                    <IonCol id="tsTime" size="11">{tSchedule.time}</IonCol>
                 </IonRow>
                 <IonRow>
-                    <IonCol size="1"><IonIcon icon={barbell}></IonIcon></IonCol>
-                    <IonCol size="11">{tSchedule.difficulty}</IonCol>
+                    <IonCol size="1"><IonIcon icon={flame}></IonIcon></IonCol>
+                    <IonCol id="tsDifficulty" size="11">{tSchedule.difficulty}</IonCol>
                 </IonRow>
             </IonGrid>
         </IonCard>
-        
         )}
-        
         </IonList>
-        
         </IonContent>
     </IonPage>
   );

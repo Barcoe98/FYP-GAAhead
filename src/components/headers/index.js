@@ -1,12 +1,12 @@
 import React from "react";
 import { IonButtons, IonHeader, IonToolbar, IonTitle, IonBackButton } from '@ionic/react';
 
-const FitnessTestPage = ({title}) => {
+const PageHeader = ({title}) => {
   return (
         <IonHeader>
           <IonToolbar>
             <IonTitle>{`${title}`}</IonTitle>
-            <IonButtons slot="start">
+            <IonButtons color="danger" slot="start">
                 <IonBackButton></IonBackButton>
             </IonButtons>
           </IonToolbar>
@@ -14,4 +14,4 @@ const FitnessTestPage = ({title}) => {
   );
 };
 
-export default FitnessTestPage;
+export default PageHeader;
