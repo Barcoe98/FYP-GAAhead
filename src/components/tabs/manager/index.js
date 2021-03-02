@@ -21,6 +21,10 @@ import FitnessTestListPage from '../../../pages/fitnessTest/FitnessTestListPage'
 import PlayerListPage from '../../../pages/team/PlayerListPage';
 import PlayerDetailsPage from '../../../pages/team/PlayerDetailsPage';
 
+import DiaryEntriesListPage from '../../../pages/diary/DiaryEntryListPage';
+import DiaryEntryDetailsPage from '../../../pages/diary/DiaryEntryDetailsPage';
+
+
 
 
 
@@ -46,6 +50,8 @@ function ManagerTabs() {
         <Route path="/manager/team/panel/:id"><PlayerDetailsPage></PlayerDetailsPage></Route>
         <Route path="/manager/team/panel/list"><PlayerListPage></PlayerListPage></Route>
 
+        <Route path="/player/diary-entries/:id"><DiaryEntryDetailsPage></DiaryEntryDetailsPage></Route>
+        <Route path="/player/diary-entries/list"><DiaryEntriesListPage></DiaryEntriesListPage></Route>
 
         <Redirect exact path="/" to ="/home"></Redirect>
     </IonRouterOutlet>

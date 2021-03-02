@@ -1,21 +1,19 @@
-/* Fitnesst Test Cards*/
+/* Diary Entry Cards*/
 /* Fitness Test Cards in Grid View CSS*/
-#ftGridCards{
-    width: 40%;
-    display: inline-block;
+#dGridCards{
     background-color: black;
     color: whitesmoke;
     margin-bottom: -1%;
     opacity: 0.9;
 }
 
-/* Text for Fitness Test Cards*/
-#fDate, #fDifficulty, #fTime{
+/* Text for Diary Entry  Cards*/
+#dDate, #dDifficulty, #dTime{
     padding: 3px;
 }
 
-/* Title for Fitness Test Cards*/
-#fTitle{
+/* Title for Diary Entry  Cards*/
+#dTitle{
     padding: 4px;
     font-weight: bold;
     font-size: large;
@@ -23,8 +21,8 @@
 
 
 
-/* Fitness Test Details */
-/* Title for Fitness Test Details*/
+/* Diary Entry Details */
+/* Title for Diary Entry  Details*/
 #sectionTitle{
     text-align: center;
     font-weight: 600;
@@ -32,7 +30,7 @@
     color: white;
 }
 
-/* Content for Fitness Test Details*/
+/* Content for Diary Entry  Details*/
 #sectionContent{
     font-size: small;
     padding: 10px;
@@ -44,22 +42,25 @@
     opacity: 0.9;
 }
 
-#fIcon{
+#dIcon{
     position: relative;
     padding: 0px;
 }
 
 /* CSS for background color*/
-#ft-bg-color{
+#d-bg-color{
     background-color: black;
     opacity: 0.95;
 }
 
 /* CSS for background Image*/
-#ft-bg-img{
-    background-image: url("https://res.cloudinary.com/dmikx06rt/image/upload/v1614343037/FYP-GAAhead/sport-4637549_640_fzllpq.jpg");
-    opacity: 0.4;
-    min-height:426;
+#d-bg-img{
+    background-image: url("https://res.cloudinary.com/dmikx06rt/image/upload/v1614708839/FYP-GAAhead/chicken-1199243__340_xlz1io.webp");
+    opacity: 0.9;
+    min-height: 280px;
+    max-height: 400px;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 /* Line to Divide sections*/
