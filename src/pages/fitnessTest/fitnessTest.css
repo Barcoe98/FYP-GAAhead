@@ -5,6 +5,16 @@
     color: white;
 }
 
+/* Player Cards in Grid View CSS*/
+#grid-cards{
+    display: inline-block;
+  
+}
+
+#fDifficulty{
+    padding-left: 1%;
+}
+  
 #sectionContent{
     font-size: small;
     padding: 10px;

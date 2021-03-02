@@ -1,16 +1,22 @@
 /* Player Cards in Grid View CSS*/
-#grid-cards{
+#playerGridCards{
   width: 40%;
   display: inline-block;
-
+  background-color: black;
+  color: whitesmoke;
 }
 
 /* Player Title CSS*/
-#pTitle{
-  padding: 4px;
+#pName{
+  font-size: large;
+  font-weight: bold;
+  /*top - right - bottom - left*/
+  padding: 6px 0px 0px 0px;
 }
 
-/* Player Content CSS*/
-#pIcon, #pContent{
-  padding: 0px;
+/* Player Age, Position CSS*/
+#pAge, #pPosition{
+   /*top - right - bottom - left*/
+   padding: 2px 0px 0px 0px;
+   opacity: 0.8;
 }

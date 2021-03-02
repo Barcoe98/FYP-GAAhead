@@ -1,0 +1,31 @@
+/* Player Cards in Grid View CSS*/
+#grid-cards{
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+}
+
+
+/* Player Content CSS
+#pAge, #pPosition{
+  padding: 0px;
+}
+*/
+
+#row1{
+  background-color: lightslategray;
+  padding: 10px;
+  text-align: center;
+}
+
+#row2{
+  background-color:lightgrey;
+  padding: 10px;
+  text-align: center;
+}
+
+#row3{
+  background-color:lightsteelblue;
+  padding: 10px;
+  text-align: center;
+}

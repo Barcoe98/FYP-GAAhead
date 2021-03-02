@@ -28,22 +28,22 @@ const FitnessTestPage = () => {
         <IonList>
         {fitnessTests.map((fTest) => 
        
-            <IonCard key={fTest.id} routerLink={'/manager/fitness/test/' , fTest.id}>
+            <IonCard id="grid-cards" key={fTest.id} routerLink={'/manager/fitness/test/' , fTest.id}>
             <IonGrid>
                 <IonRow>
                     <IonCol id="title" size="12">{fTest.title}</IonCol>
                 </IonRow>
                 <IonRow>
-                    <IonCol size="1"><IonIcon icon={calendar}></IonIcon></IonCol>
-                    <IonCol size="11">{fTest.date}</IonCol>
+                    <IonCol size="2"><IonIcon icon={calendar}></IonIcon></IonCol>
+                    <IonCol id="fDifficulty" size="10">{fTest.date}</IonCol>
                 </IonRow>
                 <IonRow>
-                    <IonCol size="1"><IonIcon icon={time}></IonIcon></IonCol>
-                    <IonCol size="11">{fTest.time}</IonCol>
+                    <IonCol size="2"><IonIcon icon={time}></IonIcon></IonCol>
+                    <IonCol id="fDifficulty" size="10">{fTest.time}</IonCol>
                 </IonRow>
                 <IonRow>
-                    <IonCol size="1"><IonIcon icon={barbell}></IonIcon></IonCol>
-                    <IonCol size="11">{fTest.difficulty}</IonCol>
+                    <IonCol id="fDifficulty" size="2"><IonIcon icon={barbell}></IonIcon></IonCol>
+                    <IonCol id="fDifficulty" size="10">{fTest.difficulty}</IonCol>
                 </IonRow>
             </IonGrid>
         </IonCard>

@@ -6,10 +6,12 @@ const MorePage = () => {
   return (
     <IonPage>
     <PageHeader title="More Page"></PageHeader>
-    <IonContent className="ion-padding">
-    <IonButton size="large" expand="block" href="/manager/fitness/test/list"> Fitness Tests</IonButton>
-    <IonButton size="large" expand="block" href="/manager/planner/trainingschedule/list"> Training Schedules</IonButton>
-   </IonContent>
+      <IonContent className="ion-padding">
+        <IonButton size="large" expand="block" href=""> Feature 1</IonButton>
+        <IonButton size="large" expand="block" href=""> Feature 2</IonButton>
+        <IonButton size="large" expand="block" href=""> Feature 3</IonButton>
+        <IonButton size="large" expand="block" href=""> Feature 4</IonButton>
+    </IonContent>
    </IonPage>
   );
 };
