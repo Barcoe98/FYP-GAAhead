@@ -69,3 +69,11 @@
     background-color: whitesmoke;
     margin-top: 16px;
 }
+
+/* Auth CSS ID or input fields*/
+#rndInput {
+    margin: 25px 20px 0px 30px;
+    border-radius: 8px;
+    border: 2px solid grey;
+    color: black;
+}

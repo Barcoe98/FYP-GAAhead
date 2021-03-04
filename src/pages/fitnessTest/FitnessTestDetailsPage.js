@@ -26,7 +26,7 @@ const FitnessTestDetailsPage = () => {
         <IonContent>
         <IonList id="ft-bg-color"> 
         <div id="ft-bg-img"></div>
-          <h1 id="sectionTitle">{fitnessTest?.title} </h1>
+          <h1 id="sectionTitle">{fitnessTest?.title}</h1>
 
             <div id="sectionContent">
               <IonGrid>

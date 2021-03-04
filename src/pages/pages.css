@@ -14,5 +14,113 @@
 #row3{
   background-color:lightsteelblue;
   padding: 10px;
+}
+
+
+
+#navLnk{
+  color: white;
+  width:100%;
+  margin-left:auto;
+  display:block;
+  padding: 70px 0;
   text-align: center;
 }
+
+/* red - #ff3b30*/
+/* yellow - #ffcc00*/
+/* orange - #ff9500*/
+/* green - #4cd963*/
+/* teal blue - #5ac7fa*/
+/* blue - #007bff*/
+/* purple - #5856d6*/
+/* pink - #ff2d54*/
+
+
+/* red - #ff3b30*/
+#navBtnRed{
+  background-color:#ff3b30;
+  background-image: url("https://res.cloudinary.com/dmikx06rt/image/upload/v1614343037/FYP-GAAhead/sport-4637549_640_fzllpq.jpg");
+  background-blend-mode: multiply;
+  display:inline-block;
+  border: 2px solid white;
+  font-size:x-large;
+  font-weight: bold;
+}
+
+/* yellow - #ffcc00*/
+#navBtnYlw{
+  background-color:#ffcc00;
+  background-image: url("https://res.cloudinary.com/dmikx06rt/image/upload/v1614343037/FYP-GAAhead/sport-4637549_640_fzllpq.jpg");
+  background-blend-mode: multiply;
+  display:inline-block;
+  border: 2px solid white;
+  font-size:x-large;
+  font-weight: bold;
+}
+
+/* orange - #ff9500*/
+#navBtnOrg{
+  background-color:#f69c55;
+  background-image: url("https://res.cloudinary.com/dmikx06rt/image/upload/v1614343037/FYP-GAAhead/sport-4637549_640_fzllpq.jpg");
+  background-blend-mode: multiply;
+  display:inline-block;
+  border: 2px solid white;
+  font-size:x-large;
+  font-weight: bold;
+}
+
+/* green - #4cd963*/
+#navBtnGrn{
+  background-color:#4cd963;
+  background-image: url("https://res.cloudinary.com/dmikx06rt/image/upload/v1614343037/FYP-GAAhead/sport-4637549_640_fzllpq.jpg");
+  background-blend-mode: multiply;
+  display:inline-block;
+  border: 2px solid white;
+  font-size:x-large;
+  font-weight: bold;
+}
+
+/* teal blue - #5ac7fa*/
+#navBtnTeal{
+  background-image: url("https://res.cloudinary.com/dmikx06rt/image/upload/v1614343037/FYP-GAAhead/sport-4637549_640_fzllpq.jpg");
+  background-blend-mode: multiply;
+  background-color:#5ac7fa;
+
+  display:inline-block;
+  border: 2px solid white;
+  font-size:x-large;
+  font-weight: bold;
+}
+
+/* blue - #007bff*/
+#navBtnBlue{
+  background-color:#007bff;
+  background-image: url("https://res.cloudinary.com/dmikx06rt/image/upload/v1614343037/FYP-GAAhead/sport-4637549_640_fzllpq.jpg");
+  background-blend-mode: multiply;
+  display:inline-block;
+  border: 2px solid white;
+  font-size:x-large;
+  font-weight: bold;
+}
+
+/* purple - #5856d6*/
+#navBtnPrpl{
+  background-color:#5856d6;
+  display:inline-block;
+  border: 2px solid white;
+  font-size:x-large;
+  font-weight: bold;
+}
+
+/* pink - #ff2d54*/
+#navBtnPnk{
+  background-color:#ff2d54;
+  background-image: url("https://res.cloudinary.com/dmikx06rt/image/upload/v1614343037/FYP-GAAhead/sport-4637549_640_fzllpq.jpg");
+  background-blend-mode: multiply;
+  display:inline-block;
+  border: 2px solid white;
+  font-size:x-large;
+  font-weight: bold;
+}
+

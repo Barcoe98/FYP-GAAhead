@@ -25,7 +25,7 @@ const FitnessTestPage = () => {
         <IonContent>
         <IonList>
         {fitnessTests.map((fTest) => 
-            <IonCard id="ftGridCards" key={fTest.id} routerLink={'/manager/fitness/test/' , fTest.id}>
+            <IonCard id="ftGridCards" key={fTest.id} routerLink={'/manager/fitness/test/{$'}>
             <IonGrid>
                 <IonRow id="fTitle">
                     {fTest.title}
