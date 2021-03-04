@@ -48,10 +48,10 @@ function ManagerTabs() {
         <Route exact path="/manager/planner/trainingschedule/list"><TrainingScheduleListPage></TrainingScheduleListPage></Route>
 
         <Route path="/manager/team/panel/:id"><PlayerDetailsPage></PlayerDetailsPage></Route>
-        <Route path="/manager/team/panel/list"><PlayerListPage></PlayerListPage></Route>
+        <Route exact path="/manager/team/panel/list"><PlayerListPage></PlayerListPage></Route>
 
         <Route path="/player/diary-entries/:id"><DiaryEntryDetailsPage></DiaryEntryDetailsPage></Route>
-        <Route path="/player/diary-entries/list"><DiaryEntriesListPage></DiaryEntriesListPage></Route>
+        <Route exact path="/player/diary-entries/list"><DiaryEntriesListPage></DiaryEntriesListPage></Route>
 
         <Redirect exact path="/" to ="/home"></Redirect>
     </IonRouterOutlet>

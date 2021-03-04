@@ -1,16 +1,41 @@
 import React  from "react";
-import { IonButton, IonContent, IonPage} from '@ionic/react';
+import { IonButton, IonContent, IonPage, IonGrid, IonCol, IonRow} from '@ionic/react';
 import PageHeader from '../components/headers'
 
 const PlannerPage = () => {
   return (
-       <IonPage>
-        <PageHeader title="Planner Page"></PageHeader>
-        <IonContent className="ion-padding">
-        <IonButton size="large" expand="block" href="/manager/fitness/test/list"> Fitness Tests</IonButton>
-        <IonButton size="large" expand="block" href="/manager/planner/trainingschedule/list"> Training Schedules</IonButton>
-       </IonContent>
-       </IonPage>
+    <IonPage>
+    <PageHeader title="More Page"></PageHeader>
+      <IonContent id="pg-Sze">
+      <IonGrid>
+
+      <IonRow>
+        <IonCol id="navBtnRed" size="12">
+          <ion-router-link id="navLnk" href="/manager/fitness/test/list">Fitness Tests</ion-router-link>
+        </IonCol>
+      </IonRow>
+
+      <IonRow>
+        <IonCol id="navBtnYlw" size="12">
+          <ion-router-link id="navLnk" href="/manager/planner/trainingschedule/list">Training Schedules</ion-router-link>
+        </IonCol>
+      </IonRow>
+
+      <IonRow>
+        <IonCol id="navBtnGrn" size="12">
+          <ion-router-link id="navLnk" href="#">Work Out Routines</ion-router-link>
+        </IonCol>
+      </IonRow>
+
+      <IonRow>
+        <IonCol id="navBtnTeal" size="12">
+          <ion-router-link id="navLnk" href="/">Extra Feature</ion-router-link>
+        </IonCol>
+      </IonRow>
+
+    </IonGrid>
+    </IonContent>
+   </IonPage>
   );
 };
 
