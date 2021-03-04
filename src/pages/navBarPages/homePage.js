@@ -1,6 +1,7 @@
 import React  from "react";
 import { IonContent, IonPage, IonRouterLink } from '@ionic/react';
-import PageHeader from '../components/headers'
+import PageHeader from '../../components/headers/index'
+import "../pages.css"
 
 const HomePage = () => {
   return (

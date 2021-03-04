@@ -2,11 +2,11 @@ import { Route , Redirect} from 'react-router-dom'
 import { IonRouterOutlet, IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/react';
 import { homeOutline, clipboardOutline, menuOutline, peopleOutline, personOutline} from 'ionicons/icons';
 
-import HomePage from '../../../pages/homePage';
-import MorePage from '../../../pages/morePage';
-import MyPage from '../../../pages/myPage';
-import TeamPage from '../../../pages/teamPage';
-import PlannerPage from '../../../pages/plannerPage';
+import HomePage from '../../../pages/navBarPages/homePage';
+import MorePage from '../../../pages/navBarPages/morePage';
+import MyPage from '../../../pages/navBarPages/myPage';
+import TeamPage from '../../../pages/navBarPages/teamPage';
+import PlannerPage from '../../../pages/navBarPages/plannerPage';
 
 import "../navbar.css"
 
@@ -23,9 +23,6 @@ import PlayerDetailsPage from '../../../pages/team/PlayerDetailsPage';
 
 import DiaryEntriesListPage from '../../../pages/diary/DiaryEntryListPage';
 import DiaryEntryDetailsPage from '../../../pages/diary/DiaryEntryDetailsPage';
-
-
-
 
 
 function ManagerTabs() {

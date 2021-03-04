@@ -1,6 +1,7 @@
 import React  from "react";
-import { IonButton, IonContent, IonPage, IonGrid, IonCol, IonRow} from '@ionic/react';
-import PageHeader from '../components/headers'
+import { IonContent, IonPage, IonGrid, IonCol, IonRow} from '@ionic/react';
+import PageHeader from '../../components/headers/index'
+import "../pages.css"
 
 const PlannerPage = () => {
   return (

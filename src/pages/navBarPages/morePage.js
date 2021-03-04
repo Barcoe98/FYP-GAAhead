@@ -1,10 +1,9 @@
 import React  from "react";
 import { IonContent, IonPage, IonRow, IonGrid, IonCol} from '@ionic/react';
-import PageHeader from '../components/headers'
-import "./pages.css"
+import PageHeader from '../../components/headers/index'
+import "../pages.css"
 
-
-const TeamPage = () => {
+const MorePage = () => {
   return (
     <IonPage>
     <PageHeader title="More Page"></PageHeader>
@@ -13,28 +12,28 @@ const TeamPage = () => {
 
       <IonRow>
         <IonCol id="navBtnRed" size="12">
-          <ion-router-link id="navLnk" href="/manager">My Team</ion-router-link>
+          <ion-router-link id="navLnk" href="/player/diary-entries/list">Diary Entries</ion-router-link>
         </IonCol>
       </IonRow>
 
       <IonRow>
         <IonCol id="navBtnOrg" size="6">
-          <ion-router-link id="navLnk" href="#">Players</ion-router-link>
+          <ion-router-link id="navLnk" href="#">Feature 1</ion-router-link>
         </IonCol>
         <IonCol id="navBtnYlw" size="6">
-          <ion-router-link id="navLnk" href="#">Panel Selector</ion-router-link>
+          <ion-router-link id="navLnk" href="#">Feature 2</ion-router-link>
         </IonCol>
       </IonRow>
 
       <IonRow>
         <IonCol id="navBtnGrn" size="12">
-          <ion-router-link id="navLnk" href="#">Team Statistics</ion-router-link>
+          <ion-router-link id="navLnk" href="#">Feature 3</ion-router-link>
         </IonCol>
       </IonRow>
 
       <IonRow>
         <IonCol id="navBtnTeal" size="6">
-          <ion-router-link id="navLnk" href="/">Score Tracker</ion-router-link>
+          <ion-router-link id="navLnk" href="/">Feature 4</ion-router-link>
         </IonCol>
        
         <IonCol id="navBtnBlue" size="6">
@@ -49,4 +48,4 @@ const TeamPage = () => {
   );
 };
 
-export default TeamPage;
+export default MorePage;
