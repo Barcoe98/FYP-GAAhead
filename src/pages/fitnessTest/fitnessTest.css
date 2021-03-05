@@ -70,10 +70,107 @@
     margin-top: 16px;
 }
 
-/* Auth CSS ID or input fields*/
-#rndInput {
-    margin: 25px 20px 0px 30px;
-    border-radius: 8px;
-    border: 2px solid grey;
+/* Add Fitness Test */
+/* CSS ID or input fields*/
+#rnd-input{
+    border: 2px solid black;
     color: black;
+    border-radius: 8px;
+    background-color: grey;
 }
+
+#pg-bg{
+    background-color: grey;
+}
+
+#pg-bg-gry{
+    background-color: grey;
+}
+
+/* red - #ff3b30*/
+/* yellow - #ffcc00*/
+/* orange - #ff9500*/
+/* green - #4cd963*/
+/* teal blue - #5ac7fa*/
+/* blue - #007bff*/
+/* purple - #5856d6*/
+/* pink - #ff2d54*/
+
+/* CSS ID or input fields*/
+#itm-divider-teal {
+    color: black;
+    font-size: larger;
+    text-align: center;
+    padding: 4px;
+    background-color:#5ac7fa;
+    opacity: 0.95;
+    border-radius: 4px;
+}
+
+/* CSS ID or input fields*/
+#itm-divider-red {
+    color: black;
+    font-size: larger;
+    text-align: center;
+    padding: 4px;
+    background-color:#ff3b30;
+    opacity: 0.95;
+    border-radius: 4px;
+}
+
+/* CSS ID or input fields*/
+#itm-divider-org {
+    color: black;
+    font-size: larger;
+    text-align: center;
+    padding: 4px;
+    background-color:#ff9500;
+    opacity: 0.95;
+    border-radius: 4px;
+}
+
+/* CSS ID or input fields*/
+#itm-divider-ylw {
+    color: black;
+    font-size: larger;
+    text-align: center;
+    padding: 4px;
+    background-color:#ffcc00;
+    opacity: 0.95;
+    border-radius: 4px;
+}
+
+/* CSS ID or input fields*/
+#itm-divider-grn {
+    color: black;
+    font-size: larger;
+    text-align: center;
+    padding: 4px;
+    background-color:#4cd963;
+    opacity: 0.95;
+    border-radius: 4px;
+}
+
+/* CSS ID or input fields*/
+#itm-divider-blue {
+    color: black;
+    font-size: larger;
+    text-align: center;
+    padding: 4px;
+    background-color:#007bff;
+    opacity: 0.95;
+    border-radius: 4px;
+}
+
+/* CSS ID or input fields*/
+#itm-divider-prpl {
+    color: black;
+    font-size: larger;
+    text-align: center;
+    padding: 4px;
+    background-color:#5856d6;
+    opacity: 0.95;
+    border-radius: 4px;
+}
+
+

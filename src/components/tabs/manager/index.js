@@ -48,6 +48,7 @@ function ManagerTabs() {
         <Route exact path="/manager/team/panel/list"><PlayerListPage></PlayerListPage></Route>
 
         <Route path="/player/diary-entries/:id"><DiaryEntryDetailsPage></DiaryEntryDetailsPage></Route>
+        <Route exact path="/player/diary-entries/add"><DiaryEntriesListPage></DiaryEntriesListPage></Route>
         <Route exact path="/player/diary-entries/list"><DiaryEntriesListPage></DiaryEntriesListPage></Route>
 
         <Redirect exact path="/" to ="/home"></Redirect>

@@ -1,5 +1,6 @@
 import React, {useState} from "react";
-import { IonContent, IonLoading ,IonButton, IonInput, IonLabel, IonItem, IonList, IonPage, IonRange, IonItemDivider, IonTextarea} from '@ionic/react';
+import { IonCol, IonRow, IonContent, IonGrid, IonLoading ,IonButton, IonInput, IonLabel, IonItem, IonList, IonPage, IonRange, IonItemDivider, IonTextarea, IonIcon, IonDatetime} from '@ionic/react';
+import { barbell, calendar, flame, time } from "ionicons/icons";
 import PageHeader from '../../components/headers'
 import './fitnessTest.css';
 
@@ -32,128 +33,222 @@ const AddFitnessTestPage = () => {
 
 
   return (
-    <IonPage>
+    <IonPage >
     <PageHeader title="Add Fitness Test"></PageHeader>
-      <IonContent>
-        <IonList>
-        <IonItem id="rndInput">
-          <IonLabel position="stacked">Title</IonLabel>
-          <IonInput value={title} type="text" required
-          onIonChange={(event) => setTitle(event.detail.value)}></IonInput>
-        </IonItem>
+      <IonContent id="pg-bg">
+        <IonGrid id="pg-bg">
 
-        <IonItem id="rndInput">
-          <IonLabel position="stacked">Date</IonLabel>
-          <IonInput value={date} type="date" required
-          onIonChange={(event) => setDate(event.detail.value)} ></IonInput>
-        </IonItem>
+          <IonRow>
+          <IonCol>
+            <IonItemDivider id="itm-divider-red">
+              <IonLabel >
+                Fitness Test Details
+              </IonLabel>
+            </IonItemDivider>
+          </IonCol>
+        </IonRow>
 
-        <IonItem id="rndInput">
-          <IonLabel position="stacked">Time</IonLabel>
-          <IonInput value={time} type="time" required
-          onIonChange={(event) => setTime(event.detail.value)}></IonInput>
-        </IonItem>
+        {/*Title Input Fields & Labels*/ }
+        <IonRow id>
+          <IonCol >
+            <IonItem color="dark" id="rnd-input">
+              <IonLabel position="stacked">Title</IonLabel>
+              <IonInput position="stacked" placeholder="Enter Title" value={title} type="text" required
+              onIonChange={(event) => setTitle(event.detail.value)}></IonInput>
+            </IonItem>
+          </IonCol>
+        </IonRow>
 
-        <IonItem id="rndInput">
-          <IonLabel position="stacked">Total Calories</IonLabel>
-          <IonInput value={totalCalories} type="number" required
-          onIonChange={(event) => setTotalCalories(event.detail.value)} ></IonInput>
-        </IonItem>
+        {/*Time & Date Input Fields & Labels*/ }
+        <IonRow>
+          <IonCol size="6">
+            <IonItem color="dark" id="rnd-input">
+              <IonLabel position="stacked">Time</IonLabel>
+              <IonDatetime placeholder="Select Time" ></IonDatetime>
+            </IonItem>         
+          </IonCol>
+          
+          <IonCol size="6">
+            <IonItem color="dark" id="rnd-input">
+              <IonLabel position="stacked">Date</IonLabel>
+              <IonDatetime  placeholder="Select Date" ></IonDatetime>
+            </IonItem>          
+          </IonCol>
+        </IonRow>
 
-        <IonItem id="rndInput">
-          <IonLabel position="stacked">Steps</IonLabel>
-          <IonInput value={steps} type="number" required
-          onIonChange={(event) => setSteps(event.detail.value)} ></IonInput>
-        </IonItem>
+        {/*Total Calories Input Fields & Labels*/ }
+        <IonRow>
+          <IonCol>
+            <IonItem color="dark" id="rnd-input">
+              <IonLabel position="stacked">Total Calories</IonLabel>
+              <IonInput value={totalCalories} type="number" required
+              onIonChange={(e) => setTotalCalories(e.detail.value)} >
+              </IonInput>
+            </IonItem>   
+          </IonCol>
+        </IonRow>
 
-        <IonItem id="rndInput">
-          <IonLabel position="stacked">Litres of Water</IonLabel>
-          <IonInput value={litresWater} type="number" required
-          onIonChange={(event) => setLitresWater(event.detail.value)} ></IonInput>
-        </IonItem>
+        {/*Water Input Fields & Labels*/ }
+        <IonRow>
+          <IonCol size="4">
+            <IonItem color="dark" id="rnd-input">
+              <IonLabel position="stacked">Water</IonLabel>
+              <IonInput placeholder="Enter Litres of Water Drank" value={litresWater} type="number" required
+              onIonChange={(e) => setLitresWater(e.detail.value)} ></IonInput>
+            </IonItem>
+          </IonCol>
 
-        <IonItem id="rndInput">
-          <IonLabel position="stacked">Hours of Sleep</IonLabel>
-          <IonInput value={hrsSleep} type="text" required
-          onIonChange={(event) => setHrsSleep(event.detail.value)} ></IonInput>
-        </IonItem>
+          {/*Steps Input Fields & Labels*/ }
+          <IonCol size="4">
+            <IonItem color="dark" id="rnd-input">
+              <IonLabel position="floating">Steps</IonLabel>
+              <IonInput placeholder="Enter Steps" value={steps} type="number" required
+              onIonChange={(e) => setSteps(e.detail.value)} ></IonInput>
+            </IonItem>    
+          </IonCol>
 
-        <IonItem id="rndInput">
-          <IonLabel position="stacked">Breakfast Calories</IonLabel>
-          <IonInput value={breakfastCal} type="text" required
-          onIonChange={(event) => setBreakfastCal(event.detail.value)} ></IonInput>
-        </IonItem>
-        <IonItem id="rndInput">
-          <IonLabel position="stacked">Breakfast</IonLabel>
-          <IonTextarea value={breakfastDesc} type="text" required
-          onIonChange={(event) => setBreakfastDesc(event.detail.value)} ></IonTextarea>
-        </IonItem>
+          {/*Hours of Sleep Input Fields & Labels*/ }
+          <IonCol size="4">
+            <IonItem color="dark" id="rnd-input">
+            <IonLabel position="stacked">Sleep</IonLabel>
+            <IonInput placeholder="Enter Hours Slept" value={hrsSleep} type="text" required
+            onIonChange={(e) => setHrsSleep(e.detail.value)} ></IonInput>
+            </IonItem>
+          </IonCol>
+        </IonRow>
 
-        <IonItem id="rndInput">
-          <IonLabel position="stacked">Lunch Calories</IonLabel>
-          <IonInput value={lunchCal} type="text" required
-          onIonChange={(event) => setLunchCal(event.detail.value)} ></IonInput>
-        </IonItem>
-        <IonItem id="rndInput">
-          <IonLabel position="stacked">Lunch</IonLabel>
-          <IonTextarea value={lunchDesc} type="text" required
-          onIonChange={(event) => setLunchDesc(event.detail.value)} ></IonTextarea>
-        </IonItem>
+        <IonRow>
+          <IonCol>
+            <IonItemDivider id="itm-divider-ylw">
+              <IonLabel >
+                Breakfast
+              </IonLabel>
+            </IonItemDivider>
+          </IonCol>
+        </IonRow>
 
-        <IonItem id="rndInput">
-          <IonLabel position="stacked">Dinner Calories</IonLabel>
-          <IonInput value={dinnerCal} type="text" required
-          onIonChange={(event) => setDinnerCal(event.detail.value)} ></IonInput>
-        </IonItem>
-        <IonItem id="rndInput">
-          <IonLabel position="stacked">Dinner</IonLabel>
-          <IonTextarea value={dinnerDesc} type="text" required
-          onIonChange={(event) => setDinnerDesc(event.detail.value)} ></IonTextarea>
-        </IonItem>
+        {/*Breakfast  Input Fields & Labels*/ }
+        <IonRow>
+          <IonCol>
+            <IonItem color="dark" id="rnd-input">
+              <IonLabel position="stacked">Calories</IonLabel>
+              <IonInput placeholder="Enter Breakfast Calories" value={breakfastCal} type="text" required
+              onIonChange={(e) => setBreakfastCal(e.detail.value)} ></IonInput>
+              <IonLabel position="stacked">Food Details</IonLabel>
+              <IonTextarea placeholder="Enter Food Details for Breakfast" value={breakfastDesc} rows="5" type="text" required
+              onIonChange={(e) => setBreakfastDesc(e.detail.value)} ></IonTextarea>
+            </IonItem>
+          </IonCol>
+        </IonRow>
 
-        <IonItem id="rndInput">
-          <IonLabel position="stacked">Supper Calories</IonLabel>
-          <IonInput value={supperCal} type="text" required
-          onIonChange={(event) => setSupperCal(event.detail.value)} ></IonInput>
-        </IonItem>
-        <IonItem id="rndInput">
-          <IonLabel position="stacked">Supper</IonLabel>
-          <IonTextarea value={supperDesc} type="text" required
-          onIonChange={(event) => setSupperDesc(event.detail.value)} ></IonTextarea>
-        </IonItem>
+        <IonRow>
+          <IonCol>
+            <IonItemDivider id="itm-divider-org">
+              <IonLabel>
+                Lunch
+              </IonLabel>
+            </IonItemDivider>
+          </IonCol>
+        </IonRow>
 
-        <IonItem id="rndInput">
-          <IonLabel position="stacked">Snacks Calories</IonLabel>
-          <IonInput value={snacksCal} type="text" required
-          onIonChange={(event) => setSnacksCal(event.detail.value)} ></IonInput>
-        </IonItem>
-        <IonItem id="rndInput">
-          <IonLabel position="stacked">Snacks</IonLabel>
-          <IonTextarea value={snacksDesc} type="text" required
-          onIonChange={(event) => setSnacksDesc(event.detail.value)} ></IonTextarea>
-        </IonItem>
+        {/*Lunch  Input Fields & Labels*/ }
+        <IonRow>
+          <IonCol>
+            <IonItem color="dark" id="rnd-input">
+              <IonLabel position="stacked">Calories</IonLabel>
+              <IonInput placeholder="Enter Lunch Calories" value={lunchCal} type="text" required
+              onIonChange={(e) => setLunchCal(e.detail.value)} ></IonInput>
+              <IonLabel position="stacked">Food Details</IonLabel>
+              <IonTextarea  placeholder="Enter Food Details for lunch" rows="5" value={lunchDesc} type="text" required
+              onIonChange={(e) => setLunchDesc(e.detail.value)} ></IonTextarea>
+            </IonItem>
+          </IonCol>
+        </IonRow>
 
-        <IonItemDivider>Dual Knobs</IonItemDivider>
-          <IonItem>
-            <IonRange dualKnobs={true} min={0} max={60} step={3} snaps={true} />
-          </IonItem>
-          <IonItem>
-            <IonLabel>Value: lower: 0 upper: 200</IonLabel>
-          </IonItem>
+        <IonRow>
+          <IonCol>
+            <IonItemDivider id="itm-divider-grn">
+              <IonLabel>
+                Dinner
+              </IonLabel>
+            </IonItemDivider>
+          </IonCol>
+        </IonRow>
+
+        {/*Dinner Input Fields & Labels*/ }
+        <IonRow>
+          <IonCol>
+            <IonItem color="dark" id="rnd-input">
+              <IonLabel position="stacked">Calories</IonLabel>
+              <IonInput placeholder="Enter Dinner Calories" value={dinnerCal} type="text" required
+              onIonChange={(e) => setDinnerCal(e.detail.value)} ></IonInput>
+              <IonLabel position="stacked">Food Details</IonLabel>
+              <IonTextarea placeholder="Enter Food Details for Dinner" rows="5" value={dinnerDesc} type="text" required
+              onIonChange={(e) => setDinnerDesc(e.detail.value)} ></IonTextarea>
+            </IonItem>
+          </IonCol>
+        </IonRow>
+
+        <IonRow>
+          <IonCol>
+            <IonItemDivider id="itm-divider-teal">
+              <IonLabel>
+                Evening Meal
+              </IonLabel>
+            </IonItemDivider>
+          </IonCol>
+        </IonRow>
+
+        {/*Evening Meal Input Fields & Labels*/ }
+        <IonRow>
+          <IonCol>
+            <IonItem color="dark" id="rnd-input">
+              <IonLabel  position="stacked">Calories</IonLabel>
+              <IonInput placeholder="Enter Evening Meal Calories" value={supperCal} type="text"
+              onIonChange={(e) => setSupperCal(e.detail.value)} ></IonInput>
+              <IonLabel position="stacked">Food Details</IonLabel>
+              <IonTextarea placeholder="Enter Food Details for Evening Meal" rows="5" value={supperDesc} type="text"
+              onIonChange={(e) => setSupperDesc(e.detail.value)} ></IonTextarea>
+            </IonItem>
+          </IonCol>
+        </IonRow>
+
+        <IonRow>
+          <IonCol>
+            <IonItemDivider id="itm-divider-prpl">
+              <IonLabel>
+                Daily Snacks
+              </IonLabel>
+            </IonItemDivider>
+          </IonCol>
+        </IonRow>
+      
+        {/*Daily Snack Input Fields & Labels*/ }
+        <IonRow>
+          <IonCol>
+            <IonItem color="dark" id="rnd-input">
+              <IonLabel position="stacked">Calories</IonLabel>
+              <IonInput placeholder="Enter Daily Snack Calories" value={snacksCal} type="text" required
+              onIonChange={(e) => setSnacksCal(e.detail.value)} ></IonInput>
+              <IonLabel position="stacked">Food Details</IonLabel>
+              <IonTextarea placeholder="Enter Food Details for Daily Snacks" rows="5" value={snacksDesc} type="text" required
+              onIonChange={(e) => setSnacksDesc(e.detail.value)} ></IonTextarea>
+            </IonItem>
+          </IonCol>
+        </IonRow>
 
         
-
-        <IonLoading isOpen={status.loading}></IonLoading>
-        <IonButton id="btnTheme" expand="block" color="dark" fill="solid" type="submit" >
-          add Fitness Test 
-        </IonButton>
-
-        <IonItemDivider>With Snaps & Ticks</IonItemDivider>
-          <IonItem>
-            <IonRange min={1000} max={2000} step={100} snaps={true} color="secondary" />
-          </IonItem>
+        {/*Button Input Fields & Labels*/ }
+        <IonRow>
+          <IonCol>
+          <IonLoading isOpen={status.loading}></IonLoading>
+            <IonButton id="btnTheme" expand="block" color="dark" fill="solid" type="submit" >
+              add Fitness Test 
+            </IonButton>
+          </IonCol>
+        </IonRow>
           
-      </IonList>
+          </IonGrid>
       </IonContent>
     </IonPage>
   );

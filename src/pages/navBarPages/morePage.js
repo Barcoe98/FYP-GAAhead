@@ -18,7 +18,7 @@ const MorePage = () => {
 
       <IonRow>
         <IonCol id="navBtnOrg" size="6">
-          <ion-router-link id="navLnk" href="#">Feature 1</ion-router-link>
+          <ion-router-link id="navLnk" href="/manager/fitness/test/add">Add Fitness Test</ion-router-link>
         </IonCol>
         <IonCol id="navBtnYlw" size="6">
           <ion-router-link id="navLnk" href="#">Feature 2</ion-router-link>
