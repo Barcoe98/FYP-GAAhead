@@ -48,7 +48,7 @@ const AddFitnessTestPage = () => {
         {/*Title Input Fields & Labels*/ }
         <IonRow id>
           <IonCol >
-            <IonItem color="dark" id="rnd-input">
+            <IonItem id="rnd-input">
               <IonLabel position="stacked">Title</IonLabel>
               <IonInput position="stacked" placeholder="Enter Title" value={title} type="text" required
               onIonChange={(e) => setTitle(e.detail.value)}></IonInput>
@@ -59,14 +59,14 @@ const AddFitnessTestPage = () => {
         {/*Time & Date Input Fields & Labels*/ }
         <IonRow>
           <IonCol size="6">
-            <IonItem color="dark" id="rnd-input">
+            <IonItem  id="rnd-input">
               <IonLabel position="stacked">Time</IonLabel>
               <IonDatetime onIonChange={(e) => setTime(e.detail.value)} displayFormat="h:mm A" pickerFormat="h:mm A" value={time} placeholder="Select Time"></IonDatetime>
             </IonItem>         
           </IonCol>
           
           <IonCol size="6">
-            <IonItem color="dark" id="rnd-input">
+            <IonItem id="rnd-input">
               <IonLabel position="stacked">Date</IonLabel>
               <IonDatetime onIonChange={(e) => setDate(e.detail.value)} value={date} placeholder="Select Date" ></IonDatetime>
             </IonItem>          
@@ -76,7 +76,7 @@ const AddFitnessTestPage = () => {
         {/*Total Calories Input Fields & Labels*/ }
         <IonRow>
           <IonCol>
-          <IonItem color="dark" id="rnd-input">
+          <IonItem id="rnd-input">
           <IonLabel>Difficulty</IonLabel>  
           <IonSelect value={difficulty} onIonChange={(e) => setDifficulty(e.detail.value)} placeholder="Select One">  
             <ion-select-option value="easy">Easy</ion-select-option>  

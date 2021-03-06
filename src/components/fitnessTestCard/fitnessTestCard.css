@@ -1,4 +1,22 @@
-#title{
-   font-weight: 800;
-   font-size: larger;
+/* Fitnesst Test Cards*/
+/* Fitness Test Cards in Grid View CSS*/
+#ftGridCards{
+   width: 40%;
+   display: inline-block;
+   background-color: black;
+   color: whitesmoke;
+   margin-bottom: -1%;
+   opacity: 0.9;
+}
+
+/* Text for Fitness Test Cards*/
+#fDate, #fDifficulty, #fTime{
+   padding: 3px;
+}
+
+/* Title for Fitness Test Cards*/
+#fTitle{
+   padding: 4px;
+   font-weight: bold;
+   font-size: large;
 }

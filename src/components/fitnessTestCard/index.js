@@ -1,39 +1,31 @@
 import React from "react";
 import { IonContent, IonIcon, IonCol, IonRow, IonGrid, IonPage, IonCard } from '@ionic/react';
-import PageHeader from '../headers'
-import { barbell, calendar, time } from "ionicons/icons";
+import { flame, calendar, time } from "ionicons/icons";
 import "../../components/fitnessTestCard/fitnessTestCard.css"
 
 
-const FitnessTestPage = () => {
+const FitnessTestCard = ({fTest}) => {
   return (
-    <IonPage>
-      <PageHeader title='Fitness Tests'></PageHeader>
-        <IonContent>
-
-        <IonCard href="/manager/fitness/test/add">
-            <IonGrid>
-                <IonRow>
-                    <IonCol id="title" size="12">Fitness Test 1</IonCol>
-                </IonRow>
-                <IonRow>
-                    <IonCol size="1"><IonIcon icon={calendar}></IonIcon></IonCol>
-                    <IonCol size="11">14 September</IonCol>
-                </IonRow>
-                <IonRow>
-                    <IonCol size="1"><IonIcon icon={time}></IonIcon></IonCol>
-                    <IonCol size="11">14:00</IonCol>
-                </IonRow>
-                <IonRow>
-                    <IonCol size="1"><IonIcon icon={barbell}></IonIcon></IonCol>
-                    <IonCol size="11">Difficulty</IonCol>
-                </IonRow>
-            </IonGrid>
-        </IonCard>
-        
-        </IonContent>
-    </IonPage>
+    <IonCard id="ftGridCards" key={fTest.id} routerLink={'/manager/fitness/test/{$'}>
+      <IonGrid>
+        <IonRow id="fTitle">
+            {fTest.title}
+        </IonRow>
+        <IonRow>
+            <IonCol size="2"><IonIcon icon={calendar}></IonIcon></IonCol>
+            <IonCol id="fDate" size="10">{fTest.date}</IonCol>
+        </IonRow>
+        <IonRow>
+            <IonCol size="2"><IonIcon icon={time}></IonIcon></IonCol>
+            <IonCol id="fTime" size="10">{fTest.time}</IonCol>
+        </IonRow>
+        <IonRow>
+            <IonCol size="2"><IonIcon icon={flame}></IonIcon></IonCol>
+            <IonCol id="fDifficulty" size="10">{fTest.difficulty}</IonCol>
+        </IonRow>
+      </IonGrid>
+    </IonCard>
   );
 };
 
-export default FitnessTestPage;
+export default FitnessTestCard;
