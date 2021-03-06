@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { IonSelect, IonCol, IonRow, IonContent, IonGrid, IonLoading ,IonButton, IonInput, IonLabel, IonItem, IonList, IonPage, IonRange, IonItemDivider, IonTextarea, IonIcon, IonDatetime} from '@ionic/react';
 import PageHeader from '../../components/headers'
+import ItemDivider from '../../components/textInputs/itemDivider'
 import './fitnessTest.css';
 
 
@@ -76,8 +77,7 @@ const AddFitnessTestPage = () => {
           </IonItem>
           </IonCol>
         </IonRow>
-
-      
+        
         <IonRow>
           <IonCol>
             <IonItemDivider id="itm-divider-ylw">
