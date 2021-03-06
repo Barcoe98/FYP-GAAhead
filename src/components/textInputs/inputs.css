@@ -1,3 +1,13 @@
+/* Add Fitness Test */
+/* CSS ID or input fields*/
+#rnd-input{
+  border: 2px solid black;
+  color: black;
+  border-radius: 8px;
+  background-color: grey;
+}
+
+
 /* red - #ff3b30*/
 /* yellow - #ffcc00*/
 /* orange - #ff9500*/

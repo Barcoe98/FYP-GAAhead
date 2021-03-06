@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import { IonSelect, IonCol, IonRow, IonContent, IonGrid, IonLoading ,IonButton, IonInput, IonLabel, IonItem, IonList, IonPage, IonRange, IonItemDivider, IonTextarea, IonIcon, IonDatetime} from '@ionic/react';
 import PageHeader from '../../components/headers'
 import ItemDivider from '../../components/textInputs/itemDivider'
+import ContentArea from '../../components/textInputs/contentArea'
+
 import './fitnessTest.css';
 
 
@@ -14,10 +16,7 @@ const AddFitnessTestPage = () => {
   const [ lunchCal, setLunchCal ] = useState("")
   const [ dinnerCal, setDinnerCal ] = useState("")
 
-
   const [ status, setStatus ] = useState({loading: false, emailError: false, pwordError: false})
-
-
 
   return (
     <IonPage >
@@ -77,6 +76,7 @@ const AddFitnessTestPage = () => {
           </IonItem>
           </IonCol>
         </IonRow>
+        
         
         <IonRow>
           <IonCol>
