@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
-import { IonContent, IonIcon, IonCol, IonRow, IonGrid, IonPage, IonCard, IonList } from '@ionic/react';
+import { IonContent, IonPage, IonList } from '@ionic/react';
 import PageHeader from '../../components/headers'
-import { barbell, calendar, flame, time } from "ionicons/icons";
+import TrainingScheduleCard from '../../components/cards/trainingScheduleCard/index'
 import {firestore} from'../../firebase'
 import "./Training.css"
 
@@ -23,29 +23,11 @@ const TrainingSchedulePage = () => {
     <IonPage>
       <PageHeader title='Training Schedules'></PageHeader>
         <IonContent>
-        <IonList>
-        {trainingSchedules.map((tSchedule) => 
-            <IonCard id="tsGridCards" key={tSchedule.id} routerLink={'/manager/planner/trainingschedule/' , tSchedule.id}>
-            <IonGrid>
-                <IonRow>
-                    {tSchedule.title}
-                </IonRow>
-                <IonRow>
-                    <IonCol size="1"><IonIcon icon={calendar}></IonIcon></IonCol>
-                    <IonCol id="tsDate" size="11">{tSchedule.date}</IonCol>
-                </IonRow>
-                <IonRow>
-                    <IonCol size="1"><IonIcon icon={time}></IonIcon></IonCol>
-                    <IonCol id="tsTime" size="11">{tSchedule.time}</IonCol>
-                </IonRow>
-                <IonRow>
-                    <IonCol size="1"><IonIcon icon={flame}></IonIcon></IonCol>
-                    <IonCol id="tsDifficulty" size="11">{tSchedule.difficulty}</IonCol>
-                </IonRow>
-            </IonGrid>
-        </IonCard>
-        )}
-        </IonList>
+          <IonList>
+          {trainingSchedules.map((tSchedule) => 
+            <TrainingScheduleCard tSchedule={tSchedule}></TrainingScheduleCard>
+          )}
+          </IonList>
         </IonContent>
     </IonPage>
   );

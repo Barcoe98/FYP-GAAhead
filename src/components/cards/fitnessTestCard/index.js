@@ -1,12 +1,12 @@
 import React from "react";
-import { IonContent, IonIcon, IonCol, IonRow, IonGrid, IonPage, IonCard } from '@ionic/react';
+import { IonIcon, IonCol, IonRow, IonGrid, IonCard } from '@ionic/react';
 import { flame, calendar, time } from "ionicons/icons";
-import "../../components/fitnessTestCard/fitnessTestCard.css"
+import "./fitnessTestCard.css"
 
 
 const FitnessTestCard = ({fTest}) => {
   return (
-    <IonCard id="ftGridCards" key={fTest.id} routerLink={'/manager/fitness/test/{$'}>
+    <IonCard id="ftGridCards" key={fTest.id} routerLink={'/manager/fitness/test/', fTest.id}>
       <IonGrid>
         <IonRow id="fTitle">
             {fTest.title}

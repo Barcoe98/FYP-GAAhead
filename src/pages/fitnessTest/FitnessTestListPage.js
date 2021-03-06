@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import { IonContent, IonIcon, IonCol, IonRow, IonGrid, IonPage, IonCard, IonList, IonItem } from '@ionic/react';
 import PageHeader from '../../components/headers'
 import { barbell, calendar, flame, time } from "ionicons/icons";
-import FitnessTestCard from '../../components/fitnessTestCard/index'
+import FitnessTestCard from '../../components/cards/fitnessTestCard/index'
 import {firestore} from'../../firebase'
 import "./fitnessTest.css"
 
