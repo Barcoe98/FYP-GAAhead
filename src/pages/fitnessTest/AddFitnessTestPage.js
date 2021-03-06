@@ -24,7 +24,7 @@ const AddFitnessTestPage = () => {
 
   const handleAdd = async () => {
     const fTestsRef = firestore.collection('fitness_tests')
-    const fTestData = {title, date, time, difficulty}
+    const fTestData = {title, date, time, difficulty, warmUp, exercises, warmDown}
     const fTestRef = await fTestsRef.add(fTestData)
     console.log('Added', fTestRef.id )
   }
