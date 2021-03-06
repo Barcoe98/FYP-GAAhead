@@ -71,75 +71,26 @@ const AddFitnessTestPage = () => {
             <ion-select-option value="e">Easy</ion-select-option>  
             <ion-select-option value="m">Moderate</ion-select-option>  
             <ion-select-option value="h">Hard</ion-select-option>  
-            <ion-select-option value="vh">Very Hrad</ion-select-option> 
+            <ion-select-option value="vh">Very Hard</ion-select-option> 
           </IonSelect>  
           </IonItem>
           </IonCol>
         </IonRow>
-        
-        
-        <IonRow>
-          <IonCol>
-            <IonItemDivider id="itm-divider-ylw">
-              <IonLabel >
-                Warm Up
-              </IonLabel>
-            </IonItemDivider>
-          </IonCol>
-        </IonRow>
 
+        
         {/*Warm Up Stretches Input Fields & Labels*/ }
-        <IonRow>
-          <IonCol>
-            <IonItem color="dark" id="rnd-input">
-              <IonLabel position="stacked">Details</IonLabel>
-              <IonTextarea placeholder="Enter Warm Up Stretches" rows="5" type="text" required ></IonTextarea>
-            </IonItem>
-          </IonCol>
-        </IonRow>
-
-        <IonRow>
-          <IonCol>
-            <IonItemDivider id="itm-divider-grn">
-              <IonLabel >
-                Exercises
-              </IonLabel>
-            </IonItemDivider>
-          </IonCol>
-        </IonRow>
+        <ItemDivider dividerLabel="Warm Up"></ItemDivider>
+        <ContentArea txtAreaLbl="Details" placeholderText="Enter Warm Up Details"></ContentArea>
 
         {/*Exercises Input Fields & Labels*/ }
-        <IonRow>
-          <IonCol>
-            <IonItem color="dark" id="rnd-input">
-              <IonLabel position="stacked">Details</IonLabel>
-              <IonTextarea placeholder="Enter Fitness Test Exercises" rows="5" type="text" required ></IonTextarea>
-            </IonItem>
-          </IonCol>
-        </IonRow>
-
-        <IonRow>
-          <IonCol>
-            <IonItemDivider id="itm-divider-teal">
-              <IonLabel >
-                Warm Down
-              </IonLabel>
-            </IonItemDivider>
-          </IonCol>
-        </IonRow>
+        <ItemDivider dividerLabel="Exercises"></ItemDivider>
+        <ContentArea txtAreaLbl="Details" placeholderText="Enter Exercise Details"></ContentArea>
 
         {/*Warm Down Input Fields & Labels*/ }
-        <IonRow>
-          <IonCol>
-            <IonItem color="dark" id="rnd-input">
-              <IonLabel position="stacked">Details</IonLabel>
-              <IonTextarea placeholder="Enter Warm Down Stretches" rows="5" type="text" required ></IonTextarea>
-            </IonItem>
-          </IonCol>
-        </IonRow>
+        <ItemDivider dividerLabel="Warm Down"></ItemDivider>
+        <ContentArea txtAreaLbl="Details" placeholderText="Enter Warm Down Details"></ContentArea>
 
 
-        
         {/* Add Button*/ }
         <IonRow>
           <IonCol>
