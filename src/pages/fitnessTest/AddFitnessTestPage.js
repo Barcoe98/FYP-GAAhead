@@ -3,6 +3,9 @@ import { IonSelect, IonCol, IonRow, IonContent, IonGrid, IonLoading ,IonButton, 
 import PageHeader from '../../components/headers'
 import ItemDivider from '../../components/textInputs/itemDivider'
 import ContentArea from '../../components/textInputs/contentArea'
+import {firestore} from '../../firebase'
+import { useAuth } from '../../contexts/authContext'
+
 
 import './fitnessTest.css';
 
@@ -13,10 +16,18 @@ const AddFitnessTestPage = () => {
   const [ date, setDate ] = useState("")
   const [ time, setTime ] = useState("")
   const [ difficulty, setDifficulty ] = useState("")
-  const [ lunchCal, setLunchCal ] = useState("")
-  const [ dinnerCal, setDinnerCal ] = useState("")
+  const [ warmUp, setWarmUp ] = useState("")
+  const [ exercises, setExercises ] = useState("")
+  const [ warmDown, setWarmDown ] = useState("")
 
   const [ status, setStatus ] = useState({loading: false, emailError: false, pwordError: false})
+
+  const handleAdd = async () => {
+    const fTestsRef = firestore.collection('fitness_tests')
+    const fTestData = {title, date, time, difficulty}
+    const fTestRef = await fTestsRef.add(fTestData)
+    console.log('Added', fTestRef.id )
+  }
 
   return (
     <IonPage >
@@ -40,7 +51,7 @@ const AddFitnessTestPage = () => {
             <IonItem color="dark" id="rnd-input">
               <IonLabel position="stacked">Title</IonLabel>
               <IonInput position="stacked" placeholder="Enter Title" value={title} type="text" required
-              onIonChange={(event) => setTitle(event.detail.value)}></IonInput>
+              onIonChange={(e) => setTitle(e.detail.value)}></IonInput>
             </IonItem>
           </IonCol>
         </IonRow>
@@ -50,14 +61,14 @@ const AddFitnessTestPage = () => {
           <IonCol size="6">
             <IonItem color="dark" id="rnd-input">
               <IonLabel position="stacked">Time</IonLabel>
-              <IonDatetime displayFormat="h:mm A" pickerFormat="h:mm A" value={time} placeholder="Select Time" ></IonDatetime>
+              <IonDatetime onIonChange={(e) => setTime(e.detail.value)} displayFormat="h:mm A" pickerFormat="h:mm A" value={time} placeholder="Select Time"></IonDatetime>
             </IonItem>         
           </IonCol>
           
           <IonCol size="6">
             <IonItem color="dark" id="rnd-input">
               <IonLabel position="stacked">Date</IonLabel>
-              <IonDatetime value={date} placeholder="Select Date" ></IonDatetime>
+              <IonDatetime onIonChange={(e) => setDate(e.detail.value)} value={date} placeholder="Select Date" ></IonDatetime>
             </IonItem>          
           </IonCol>
         </IonRow>
@@ -67,35 +78,35 @@ const AddFitnessTestPage = () => {
           <IonCol>
           <IonItem color="dark" id="rnd-input">
           <IonLabel>Difficulty</IonLabel>  
-          <IonSelect placeholder="Select One">  
-            <ion-select-option value="e">Easy</ion-select-option>  
-            <ion-select-option value="m">Moderate</ion-select-option>  
-            <ion-select-option value="h">Hard</ion-select-option>  
-            <ion-select-option value="vh">Very Hard</ion-select-option> 
+          <IonSelect value={difficulty} onIonChange={(e) => setDifficulty(e.detail.value)} placeholder="Select One">  
+            <ion-select-option value="easy">Easy</ion-select-option>  
+            <ion-select-option value="moderate">Moderate</ion-select-option>  
+            <ion-select-option value="hard">Hard</ion-select-option>  
+            <ion-select-option value="very hard">Very Hard</ion-select-option> 
           </IonSelect>  
           </IonItem>
           </IonCol>
         </IonRow>
 
-        
+
         {/*Warm Up Stretches Input Fields & Labels*/ }
         <ItemDivider dividerLabel="Warm Up"></ItemDivider>
-        <ContentArea txtAreaLbl="Details" placeholderText="Enter Warm Up Details"></ContentArea>
+        <ContentArea value={warmUp} onIonChange={(e) => setWarmUp(e.detail.value)} txtAreaLbl="Details" placeholderText="Enter Warm Up Details"></ContentArea>
 
         {/*Exercises Input Fields & Labels*/ }
         <ItemDivider dividerLabel="Exercises"></ItemDivider>
-        <ContentArea txtAreaLbl="Details" placeholderText="Enter Exercise Details"></ContentArea>
+        <ContentArea value={exercises} onIonChange={(e) => setExercises(e.detail.value)} txtAreaLbl="Details" placeholderText="Enter Exercise Details"></ContentArea>
 
         {/*Warm Down Input Fields & Labels*/ }
         <ItemDivider dividerLabel="Warm Down"></ItemDivider>
-        <ContentArea txtAreaLbl="Details" placeholderText="Enter Warm Down Details"></ContentArea>
+        <ContentArea value={warmDown} onIonChange={(e) => setWarmDown(e.detail.value)} txtAreaLbl="Details" placeholderText="Enter Warm Down Details"></ContentArea>
 
 
         {/* Add Button*/ }
         <IonRow>
           <IonCol>
           <IonLoading isOpen={status.loading}></IonLoading>
-            <IonButton id="btnTheme" expand="block" color="dark" fill="solid" type="submit" >
+            <IonButton onClick={handleAdd} id="btnTheme" expand="block" color="dark" fill="solid" type="submit" >
               add Fitness Test 
             </IonButton>
           </IonCol>
