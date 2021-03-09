@@ -35,9 +35,7 @@ const AddFitnessTestPage = () => {
           <IonRow>
             <IonCol>
               <IonItemDivider id="itm-divider-red">
-                <IonLabel >
-                  Fitness Test Details
-                </IonLabel>
+                <IonLabel>Fitness Test Details</IonLabel>
               </IonItemDivider>
             </IonCol>
           </IonRow>
@@ -61,7 +59,6 @@ const AddFitnessTestPage = () => {
                 <IonDatetime onIonChange={(e) => setTime(e.detail.value)} displayFormat="h:mm A" pickerFormat="h:mm A" value={time} placeholder="Select Time"></IonDatetime>
               </IonItem>         
             </IonCol>
-            
             <IonCol size="6">
               <IonItem id="rnd-input">
                 <IonLabel position="stacked">Date</IonLabel>
@@ -85,7 +82,6 @@ const AddFitnessTestPage = () => {
             </IonCol>
           </IonRow>
 
-
           {/*Warm Up Stretches Input Fields & Labels*/ }
           <ItemDivider dividerLabel="Warm Up"></ItemDivider>
           <ContentArea value={warmUp} onIonChange={(e) => setWarmUp(e.detail.value)} txtAreaLbl="Details" placeholderText="Enter Warm Up Details"></ContentArea>
@@ -98,13 +94,11 @@ const AddFitnessTestPage = () => {
           <ItemDivider dividerLabel="Warm Down"></ItemDivider>
           <ContentArea value={warmDown} onIonChange={(e) => setWarmDown(e.detail.value)} txtAreaLbl="Details" placeholderText="Enter Warm Down Details"></ContentArea>
 
-
           {/* Add Button*/ }
           <IonRow>
             <IonCol>
-            <IonLoading isOpen={status.loading}></IonLoading>
-              <IonButton onClick={handleAdd} id="btnTheme" expand="block" color="dark" fill="solid" type="submit" >add Fitness Test 
-              </IonButton>
+              <IonLoading isOpen={status.loading}></IonLoading>
+              <IonButton onClick={handleAdd} id="btnTheme" expand="block" color="dark" fill="solid" type="submit" >add Fitness Test </IonButton>
             </IonCol>
           </IonRow>
           

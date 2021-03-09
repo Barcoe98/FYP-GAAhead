@@ -21,7 +21,7 @@ const MorePage = () => {
           <ion-router-link id="navLnk" href="/manager/fitness/test/add">Add Fitness Test</ion-router-link>
         </IonCol>
         <IonCol id="navBtnYlw" size="6">
-          <ion-router-link id="navLnk" href="#">Feature 2</ion-router-link>
+          <ion-router-link id="navLnk" href="/player/fitness/test/add-results">Fitness Test Results</ion-router-link>
         </IonCol>
       </IonRow>
 

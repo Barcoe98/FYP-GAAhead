@@ -9,11 +9,12 @@ import TeamPage from '../../../pages/navBarPages/teamPage';
 import PlannerPage from '../../../pages/navBarPages/plannerPage';
 
 import TrainingScheduleDetailsPage from '../../../pages/trainingSchedule/TrainingScheduleDetailsPage';
-import AddTrainingSchedulePage from '../../../pages/trainingSchedule/AddTrainingSchedulePage';
 import TrainingScheduleListPage from '../../../pages/trainingSchedule/TrainingScheduleListPage';
 
 import FitnessTestDetailsPage from '../../../pages/fitnessTest/FitnessTestDetailsPage';
 import AddFitnessTestPage from '../../../pages/fitnessTest/AddFitnessTestPage';
+import AddFitnessTestResultsPage from '../../../pages/fitnessTest/AddFitnessTestResultsPage';
+
 import FitnessTestListPage from '../../../pages/fitnessTest/FitnessTestListPage'
 
 import PlayerListPage from '../../../pages/team/PlayerListPage';
@@ -37,10 +38,10 @@ function ManagerTabs() {
 
         <Route path="/manager/fitness/test/:id"><FitnessTestDetailsPage></FitnessTestDetailsPage></Route>
         <Route exact path="/manager/fitness/test/add"><AddFitnessTestPage></AddFitnessTestPage></Route>
+        <Route exact path="/player/fitness/test/add-results"><AddFitnessTestResultsPage></AddFitnessTestResultsPage></Route>
         <Route exact path="/manager/fitness/test/list"><FitnessTestListPage></FitnessTestListPage></Route>
 
         <Route path="/manager/planner/trainingschedule/:id"><TrainingScheduleDetailsPage></TrainingScheduleDetailsPage></Route>
-        <Route exact path="/manager/planner/trainingschedule/add"><AddTrainingSchedulePage></AddTrainingSchedulePage></Route>
         <Route exact path="/manager/planner/trainingschedule/list"><TrainingScheduleListPage></TrainingScheduleListPage></Route>
 
         <Route path="/manager/team/panel/:id"><PlayerDetailsPage></PlayerDetailsPage></Route>
@@ -61,10 +62,6 @@ function ManagerTabs() {
         <IonTabButton id="ManagerNavbar" tab="planner" href="/manager/planner">
           <IonIcon icon={clipboardOutline} />
           <IonLabel>Planner</IonLabel>
-        </IonTabButton>
-        <IonTabButton id="ManagerNavbar"  tab="home" href="/manager/home">
-          <IonIcon icon={homeOutline} />
-          <IonLabel>Home</IonLabel>
         </IonTabButton>
         <IonTabButton id="ManagerNavbar"   tab="team" href="/manager/team">
           <IonIcon icon={peopleOutline} />

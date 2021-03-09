@@ -1,6 +1,8 @@
 import React from "react";
 import { IonContent, IonRow, IonCol, IonGrid, IonList, IonText, IonIcon} from '@ionic/react';
 import { flame, time, calendar } from 'ionicons/icons';
+import LinkButton from '../../buttons/linkButton/index'
+
 import './fitnessTestDetails.css'
 
 const FitnessTestDetails = ({fitnessTest}) => {
@@ -19,12 +21,10 @@ const FitnessTestDetails = ({fitnessTest}) => {
                   <IonRow id="fIcon"><IonCol><IonIcon size="large" icon={calendar}></IonIcon></IonCol></IonRow>
                   <IonRow><IonCol>{fitnessTest?.date}</IonCol></IonRow>
                 </IonCol>
-
                 <IonCol size="4">
                   <IonRow id="fIcon"><IonCol><IonIcon size="large" icon={time}></IonIcon></IonCol></IonRow>
                   <IonRow><IonCol>{fitnessTest?.time}</IonCol></IonRow>
                 </IonCol>
-
                 <IonCol size="4">
                   <IonRow id="fIcon"><IonCol><IonIcon size="large" icon={flame}></IonIcon></IonCol></IonRow>
                   <IonRow><IonCol>{fitnessTest?.difficulty}</IonCol></IonRow>
@@ -43,8 +43,10 @@ const FitnessTestDetails = ({fitnessTest}) => {
             <hr id="contentDivider"></hr>
             <h5 color="dark" id="sectionTitle">Warm Down</h5>
             <IonText>{fitnessTest?.warm_down}</IonText>
-
           </div>
+
+          <LinkButton href="/player/fitness/test/add-results" btnName="Enter Results"></LinkButton>
+
         </IonList>
     </IonContent>
 
