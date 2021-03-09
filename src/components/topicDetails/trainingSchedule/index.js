@@ -1,12 +1,12 @@
 import React from "react";
 import { IonContent, IonRow, IonCol, IonGrid, IonList, IonText, IonIcon} from '@ionic/react';
 import { flame, time, calendar } from 'ionicons/icons';
-import './fitnessTestDetails.css'
+import './trainingScheduleDetails.css'
+
 
 const TrainingScheduleDetails = ({trainingSchedule}) => {
 
   return (
-
   <IonContent>
     <IonList id="ts-bg-color"> 
     <div id="ts-bg-img"></div>
@@ -48,7 +48,6 @@ const TrainingScheduleDetails = ({trainingSchedule}) => {
 
       </IonList>
     </IonContent>
-
     );
   };
   

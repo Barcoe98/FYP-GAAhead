@@ -3,10 +3,8 @@ import { IonPage } from '@ionic/react';
 import PageHeader from '../../components/headers'
 import TrainingScheduleDetails from '../../components/topicDetails/trainingSchedule/index'
 
-
 import { useParams } from "react-router-dom";
 import { firestore } from '../../firebase'
-import './Training.css';
 
 
 const TrainingScheduleDetailsPage = () => {

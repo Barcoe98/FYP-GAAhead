@@ -3,11 +3,9 @@ import { IonPage } from '@ionic/react';
 import PageHeader from '../../components/headers'
 import FitnessTestDetails from '../../components/topicDetails/fitnessTests/index'
 
-
-import './fitnessTest.css';
-
 import { useParams } from "react-router-dom";
 import { firestore } from '../../firebase'
+
 
 const FitnessTestDetailsPage = () => {
 
@@ -21,7 +19,6 @@ const FitnessTestDetailsPage = () => {
       setFitnessTest(fitnessTest);
     });
   }, [id]);
-
 
   return (
     <IonPage>

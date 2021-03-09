@@ -2,8 +2,8 @@ import React, {useEffect, useState} from "react";
 import { IonContent, IonPage, IonList } from '@ionic/react';
 import PageHeaderAdd from '../../components/headers/addHeader/index'
 import TrainingScheduleCard from '../../components/cards/trainingScheduleCard/index'
+
 import {firestore} from'../../firebase'
-import "./Training.css"
 
 const TrainingSchedulePage = () => {
   const [trainingSchedules, setTrainingSchedules ] = useState([])
