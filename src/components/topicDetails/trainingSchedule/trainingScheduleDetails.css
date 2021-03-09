@@ -1,0 +1,46 @@
+/* Training Session Details */
+/* Title for Training Session */
+#sectionTitle{
+  text-align: center;
+  font-weight: 600;
+  padding: 2px;
+  color: white;
+}
+
+/* Content for Training Session Details*/
+#sectionContent{
+  font-size: small;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 25px;
+  margin: 4px 10px 10px 4px;
+  color: white;
+  text-align: justify;
+  opacity: 0.9;
+}
+
+#fIcon{
+  position: relative;
+  padding: 0px;
+}
+
+/* CSS for background color*/
+#ts-bg-color{
+  background-color: black;
+  opacity: 0.95;
+}
+
+/* CSS for background Image*/
+#ts-bg-img{
+  background-image: url("https://res.cloudinary.com/dmikx06rt/image/upload/v1614342908/FYP-GAAhead/dumbbell-1966702_640_nnljil.jpg");
+  opacity: 0.8;
+  min-height:300px;
+}
+
+/* Line to Divide sections*/
+#contentDivider{
+  width:auto;
+  height: 1px;
+  background-color: whitesmoke;
+  margin-top: 16px;
+}
