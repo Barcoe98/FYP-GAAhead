@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from "react";
-import { IonContent, IonIcon, IonCol, IonRow, IonGrid, IonPage, IonCard, IonList, IonCardTitle, IonCardSubtitle } from '@ionic/react';
+import { IonContent, IonPage, IonList} from '@ionic/react';
 import PageHeader from '../../components/headers'
-import {calendar } from "ionicons/icons";
+import DiaryEntryCard from '../../components/cards/diaryCard/index'
+
 import {firestore} from'../../firebase'
 
 
@@ -24,19 +25,7 @@ const DiaryEntriesListPage = () => {
       <PageHeader title='My Diary Entries'></PageHeader>
         <IonContent>
         <IonList>
-        {diaryEntries.map((diaryEntry) => 
-            <IonCard id="deGridCards"  key={diaryEntry.id} routerLink={'/player/diary-entries/' , diaryEntry.id}>
-            <IonGrid>
-                <IonRow>
-                    <IonCardTitle id="title" size="12">{diaryEntry.title}</IonCardTitle>
-                </IonRow>
-                <IonRow>
-                    <IonCol size="2"><IonIcon icon={calendar}></IonIcon></IonCol>
-                    <IonCol id="dDate"size="10">{diaryEntry.date}</IonCol>
-                </IonRow>
-            </IonGrid>
-        </IonCard>    
-        )}
+          {diaryEntries.map((diaryEntry) => <DiaryEntryCard diaryEntry={diaryEntry}></DiaryEntryCard> )}
         </IonList>
         </IonContent>
     </IonPage>

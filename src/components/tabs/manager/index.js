@@ -8,11 +8,9 @@ import MyPage from '../../../pages/navBarPages/myPage';
 import TeamPage from '../../../pages/navBarPages/teamPage';
 import PlannerPage from '../../../pages/navBarPages/plannerPage';
 
-import "../navbar.css"
-
-import TrainingScheduleDetailsPage from '../../../pages/training/TrainingScheduleDetailsPage';
-import AddTrainingSchedulePage from '../../../pages/training/AddTrainingSchedulePage';
-import TrainingScheduleListPage from '../../../pages/training/TrainingScheduleListPage';
+import TrainingScheduleDetailsPage from '../../../pages/trainingSchedule/TrainingScheduleDetailsPage';
+import AddTrainingSchedulePage from '../../../pages/trainingSchedule/AddTrainingSchedulePage';
+import TrainingScheduleListPage from '../../../pages/trainingSchedule/TrainingScheduleListPage';
 
 import FitnessTestDetailsPage from '../../../pages/fitnessTest/FitnessTestDetailsPage';
 import AddFitnessTestPage from '../../../pages/fitnessTest/AddFitnessTestPage';
@@ -24,6 +22,7 @@ import PlayerDetailsPage from '../../../pages/team/PlayerDetailsPage';
 import DiaryEntriesListPage from '../../../pages/diary/DiaryEntryListPage';
 import DiaryEntryDetailsPage from '../../../pages/diary/DiaryEntryDetailsPage';
 
+import "../navbar.css"
 
 function ManagerTabs() {
   return (

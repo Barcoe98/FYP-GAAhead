@@ -3,14 +3,14 @@ import { IonButtons, IonHeader, IonToolbar, IonTitle, IonBackButton } from '@ion
 
 const PageHeader = ({title}) => {
   return (
-        <IonHeader>
-          <IonToolbar>
-            <IonTitle>{`${title}`}</IonTitle>
-            <IonButtons color="danger" slot="start">
-                <IonBackButton></IonBackButton>
-            </IonButtons>
-          </IonToolbar>
-        </IonHeader>
+    <IonHeader>
+      <IonToolbar>
+        <IonTitle>{`${title}`}</IonTitle>
+        <IonButtons color="danger" slot="start">
+          <IonBackButton></IonBackButton>
+        </IonButtons>
+      </IonToolbar>
+    </IonHeader>
   );
 };
 

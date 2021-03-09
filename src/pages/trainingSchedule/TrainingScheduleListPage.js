@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { IonContent, IonPage, IonList } from '@ionic/react';
-import PageHeader from '../../components/headers'
+import PageHeaderAdd from '../../components/headers/addHeader/index'
 import TrainingScheduleCard from '../../components/cards/trainingScheduleCard/index'
 import {firestore} from'../../firebase'
 import "./Training.css"
@@ -21,7 +21,7 @@ const TrainingSchedulePage = () => {
 
   return (
     <IonPage>
-      <PageHeader title='Training Schedules'></PageHeader>
+      <PageHeaderAdd title='Training Schedules'></PageHeaderAdd>
         <IonContent>
           <IonList>
           {trainingSchedules.map((tSchedule) => 
