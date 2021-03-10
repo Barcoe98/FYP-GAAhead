@@ -14,7 +14,7 @@ const PageHeaderDelete = ({title, action }) => {
           <IonBackButton></IonBackButton>
         </IonButtons>
         <IonButtons slot="end">
-          <IonButton color="danger" onclick={action}>
+          <IonButton color="dark" onclick={action}>
             <IonIcon size="large" icon={trashBin}></IonIcon>
           </IonButton>
         </IonButtons>

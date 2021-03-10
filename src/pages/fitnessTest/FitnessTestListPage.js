@@ -1,10 +1,8 @@
 import React, {useEffect, useState} from "react";
-import { IonContent, IonIcon, IonCol, IonRow, IonGrid, IonPage, IonCard, IonList, IonItem } from '@ionic/react';
-import PageHeader from '../../components/headers'
-import { barbell, calendar, flame, time } from "ionicons/icons";
+import { IonContent,  IonPage, IonList } from '@ionic/react';
+import PageHeaderAdd from '../../components/headers/addHeader/index'
 import FitnessTestCard from '../../components/cards/fitnessTestCard/index'
 import {firestore} from'../../firebase'
-import PageHeaderDelete from "../../components/headers/deleteHeader";
 
 const FitnessTestPage = () => {
   const [fitnessTests, setFitnessTests ] = useState([])
@@ -22,6 +20,7 @@ const FitnessTestPage = () => {
 
   return (
     <IonPage>
+    <PageHeaderAdd title=" Add Fitness Test" href="/manager/fitness/test/add"></PageHeaderAdd>
       <IonContent>
           <IonList>
             {fitnessTests.map((fTest) => 

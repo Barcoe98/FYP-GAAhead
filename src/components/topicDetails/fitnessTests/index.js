@@ -4,13 +4,10 @@ import { flame, time, calendar } from 'ionicons/icons';
 import LinkButton from '../../buttons/linkButton/index'
 
 import './fitnessTestDetails.css'
-import PageHeaderDelete from "../../headers/deleteHeader";
-
 
 const FitnessTestDetails = ({fitnessTest}) => {
 
   return (
-
     <IonContent>
       <IonList id="ft-bg-color"> 
       <div id="ft-bg-img"></div>

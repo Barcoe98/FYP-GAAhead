@@ -1,5 +1,5 @@
 import React, {useEffect, useState } from "react";
-import { IonPage, IonButton, IonAlert } from '@ionic/react';
+import { IonPage } from '@ionic/react';
 import PageHeaderDelete from '../../components/headers/deleteHeader/index'
 import FitnessTestDetails from '../../components/topicDetails/fitnessTests/index'
 
