@@ -1,16 +1,20 @@
 import React, {useEffect, useState } from "react";
-import { IonPage, IonButton } from '@ionic/react';
-import PageHeader from '../../components/headers'
+import { IonPage, IonButton, IonAlert } from '@ionic/react';
+import PageHeaderDelete from '../../components/headers/deleteHeader/index'
 import FitnessTestDetails from '../../components/topicDetails/fitnessTests/index'
 
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { firestore } from '../../firebase'
 
 
 const FitnessTestDetailsPage = () => {
 
   const {id} = useParams()
+  const history = useHistory();
+
   const  [fitnessTest, setFitnessTest] =  useState(null)
+  const  [delAlert, setDelAlert] = useState(false);
+
 
   useEffect(() => {
     const fTestRef = firestore.collection('fitness_tests').doc(id)
@@ -20,10 +24,38 @@ const FitnessTestDetailsPage = () => {
     });
   }, [id]);
 
+  const handleDelete = async () => {
+   
+  }
+
   return (
     <IonPage>
-      <PageHeader title=""></PageHeader>
+      <PageHeaderDelete title="" action={()=>setDelAlert(true)}></PageHeaderDelete>
       <FitnessTestDetails fitnessTest={fitnessTest}></FitnessTestDetails>
+
+      <IonAlert 
+          isOpen={delAlert}
+          onDidDismiss={() => setDelAlert(false)}
+          message={'Are You sure you want to delete'}
+          buttons={[
+            {
+              text: 'Cancel',
+              handler: async () => {
+                console.log('Confirm Cancel');
+                setDelAlert(false)
+              }
+            },
+            {
+              text: 'Confirm',
+              handler: async () => {
+                const fTestRef = firestore.collection('fitness_tests').doc(id)
+                await fTestRef.delete()
+                console.log('Confirm Okay');
+                history.goBack();
+              }
+            }
+          ]}
+        />
     </IonPage>
   );
 };

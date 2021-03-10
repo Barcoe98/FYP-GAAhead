@@ -1,8 +1,10 @@
 import React from "react";
 import { IonButtons, IonButton, IonHeader, IonToolbar, IonTitle, IonBackButton, IonIcon } from '@ionic/react';
-import { addCircle } from "ionicons/icons";
+import { trashBin } from "ionicons/icons";
+import { useHistory, useParams } from "react-router";
+import {firestore} from '../../../firebase'
 
-const PageHeaderAdd = ({title, href}) => {
+const PageHeaderDelete = ({title, action }) => {
 
   return (
     <IonHeader>
@@ -11,10 +13,9 @@ const PageHeaderAdd = ({title, href}) => {
         <IonButtons slot="start">
           <IonBackButton></IonBackButton>
         </IonButtons>
-
         <IonButtons slot="end">
-          <IonButton color="danger" href={href}>
-            <IonIcon size="large" icon={addCircle}></IonIcon>
+          <IonButton color="danger" onclick={action}>
+            <IonIcon size="large" icon={trashBin}></IonIcon>
           </IonButton>
         </IonButtons>
       </IonToolbar>
@@ -22,4 +23,4 @@ const PageHeaderAdd = ({title, href}) => {
   );
 };
 
-export default PageHeaderAdd;
+export default PageHeaderDelete;

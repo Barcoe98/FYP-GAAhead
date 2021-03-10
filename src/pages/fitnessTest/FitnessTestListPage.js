@@ -4,6 +4,7 @@ import PageHeader from '../../components/headers'
 import { barbell, calendar, flame, time } from "ionicons/icons";
 import FitnessTestCard from '../../components/cards/fitnessTestCard/index'
 import {firestore} from'../../firebase'
+import PageHeaderDelete from "../../components/headers/deleteHeader";
 
 const FitnessTestPage = () => {
   const [fitnessTests, setFitnessTests ] = useState([])
@@ -21,7 +22,6 @@ const FitnessTestPage = () => {
 
   return (
     <IonPage>
-      <PageHeader title='Fitness Tests'></PageHeader>
       <IonContent>
           <IonList>
             {fitnessTests.map((fTest) => 

@@ -4,6 +4,8 @@ import { flame, time, calendar } from 'ionicons/icons';
 import LinkButton from '../../buttons/linkButton/index'
 
 import './fitnessTestDetails.css'
+import PageHeaderDelete from "../../headers/deleteHeader";
+
 
 const FitnessTestDetails = ({fitnessTest}) => {
 
@@ -46,7 +48,6 @@ const FitnessTestDetails = ({fitnessTest}) => {
           </div>
 
           <LinkButton href="/player/fitness/test/add-results" btnName="Enter Results"></LinkButton>
-
         </IonList>
     </IonContent>
 
