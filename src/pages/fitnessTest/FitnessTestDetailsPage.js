@@ -5,16 +5,15 @@ import FitnessTestDetails from '../../components/topicDetails/fitnessTests/index
 
 import { useParams, useHistory } from "react-router-dom";
 import { firestore } from '../../firebase'
+import AlertDelete from "../../components/alerts/deleteAlert";
 
 
 const FitnessTestDetailsPage = () => {
 
   const {id} = useParams()
   const history = useHistory();
-
   const  [fitnessTest, setFitnessTest] =  useState(null)
   const  [delAlert, setDelAlert] = useState(false);
-
 
   useEffect(() => {
     const fTestRef = firestore.collection('fitness_tests').doc(id)
@@ -25,37 +24,17 @@ const FitnessTestDetailsPage = () => {
   }, [id]);
 
   const handleDelete = async () => {
-   
+    const fTestRef = firestore.collection('fitness_tests').doc(id)
+    await fTestRef.delete()
+    console.log('Confirm Okay');
+    history.goBack();
   }
 
   return (
     <IonPage>
       <PageHeaderDelete title="" action={()=>setDelAlert(true)}></PageHeaderDelete>
       <FitnessTestDetails fitnessTest={fitnessTest}></FitnessTestDetails>
-
-      <IonAlert 
-          isOpen={delAlert}
-          onDidDismiss={() => setDelAlert(false)}
-          message={'Are You sure you want to delete'}
-          buttons={[
-            {
-              text: 'Cancel',
-              handler: async () => {
-                console.log('Confirm Cancel');
-                setDelAlert(false)
-              }
-            },
-            {
-              text: 'Confirm',
-              handler: async () => {
-                const fTestRef = firestore.collection('fitness_tests').doc(id)
-                await fTestRef.delete()
-                console.log('Confirm Okay');
-                history.goBack();
-              }
-            }
-          ]}
-        />
+      <AlertDelete delAlert={delAlert} setDelAlert={() => setDelAlert(false)} handleDelete={handleDelete}></AlertDelete>
     </IonPage>
   );
 };
