@@ -29,9 +29,7 @@ const AddFitnessTestPage = () => {
   }
 
   return (
-
-    
-    <IonPage >
+    <IonPage>
     <PageHeader title="Add Fitness Test"></PageHeader>
       <IonContent id="ft-pg-bg">
         <IonGrid id="ft-pg-bg">

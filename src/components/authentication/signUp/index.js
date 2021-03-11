@@ -1,8 +1,10 @@
 import React , {useState } from 'react'
-import { IonContent, IonLoading, IonItem, IonInput, IonText, IonList, IonButton, IonIcon, IonLabel, IonAlert} from '@ionic/react';
+import { IonContent, IonLoading, IonItem, IonInput, IonText, IonList, IonButton, IonIcon, IonLabel, IonSelect} from '@ionic/react';
 import {logoFacebook, logoGoogle } from 'ionicons/icons';
 import { useAuth } from '../../../contexts/authContext'
 import { useHistory } from "react-router-dom"
+import {firestore} from '../../../firebase'
+
 import "../auth.css";
 
  const Register = () => {
@@ -10,6 +12,7 @@ import "../auth.css";
   const { signUp } = useAuth()
   const [ email, setEmail ] = useState("")
   const [ pword, setPword ] = useState("")
+  const [ userType, setUserType ] = useState("")
   //const [ confrmPword, setConfrmPword ] = useState("")
   const [ status, setStatus ] = useState({loading: false, emailError: false, pwordError: false})
   const history = useHistory()
@@ -24,9 +27,15 @@ import "../auth.css";
         //Set errors to false before attempting sign up
         setStatus({loading: true, emailError: false, pwordError: false})
         await signUp(email, pword)
-        //Set loading and errors to false after succesful login
+
+        //Create user document in BD
+        const userRef = firestore.collection('users')
+        const userData = {email, pword, userType}
+        await userRef.add(userData)
+
+        //Set loading and errors to false after successful login
         setStatus({loading: false, emailError: false, pwordError: false})
-        history.push("/manager/homre")
+        history.push("/manager/home")
       } catch {
         //Set loading to false after attempted login 
         //set errors to true and display error message
@@ -42,12 +51,19 @@ import "../auth.css";
         <IonLabel id="pgTitle" >Create an Account</IonLabel>
 
         <IonItem id="rndInput">
+        <IonLabel>Type of User</IonLabel>  
+        <IonSelect value={userType} onIonChange={(e) => setUserType(e.detail.value)} placeholder="Select type of User you are">  
+          <ion-select-option value="manager">Manager</ion-select-option>  
+          <ion-select-option value="player">Player</ion-select-option>  
+        </IonSelect>  
+        </IonItem>
+        
+        <IonItem id="rndInput">
           <IonLabel position="stacked">Email</IonLabel>
           <IonInput type="email" id="email" required
           onIonChange={(event) => setEmail(event.detail.value)}></IonInput>
         </IonItem>
         {status.emailError && <IonText color="danger"> Email Error</IonText> }
-
 
         <IonItem id="rndInput">
           <IonLabel position="stacked">Password</IonLabel>
@@ -60,7 +76,6 @@ import "../auth.css";
           <IonInput type="password" id="confrmPword" required></IonInput>
         </IonItem>
         {status.pwordError && <IonText color="danger"> Password Error</IonText> }
-
   
         <IonButton onClick={handleSignUp} id="btnTheme" expand="block" color="dark" shape="" fill="solid" type="submit">
           Register
