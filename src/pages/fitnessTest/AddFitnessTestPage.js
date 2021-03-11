@@ -48,7 +48,7 @@ const AddFitnessTestPage = () => {
             <IonCol >
               <IonItem id="rnd-input">
                 <IonLabel position="stacked">Title</IonLabel>
-                <IonInput required position="stacked" placeholder="Enter Title" value={title} type="text" required
+                <IonInput required clearInput="true" position="stacked" pattern="" placeholder="Enter Title" value={title} type="text"
                 onIonChange={(e) => setTitle(e.detail.value)}></IonInput>
               </IonItem>
             </IonCol>
@@ -59,13 +59,15 @@ const AddFitnessTestPage = () => {
             <IonCol size="6">
               <IonItem  id="rnd-input">
                 <IonLabel position="stacked">Time</IonLabel>
-                <IonDatetime required onIonChange={(e) => setTime(e.detail.value)} displayFormat="h:mm A" pickerFormat="h:mm A" value={time} placeholder="Select Time"></IonDatetime>
-              </IonItem>         
+                <IonInput required clearInput="true" position="stacked" placeholder="Enter Time" value={time} type="text" 
+                onIonChange={(e) => setTime(e.detail.value)}></IonInput>
+                </IonItem>         
             </IonCol>
             <IonCol size="6">
               <IonItem id="rnd-input">
                 <IonLabel position="stacked">Date</IonLabel>
-                <IonDatetime required onIonChange={(e) => setDate(e.detail.value)} value={date} placeholder="Select Date" ></IonDatetime>
+                <IonInput required clearInput="true" position="stacked" placeholder="Enter Date" value={date} type="text" 
+                onIonChange={(e) => setDate(e.detail.value)}></IonInput>
               </IonItem>          
             </IonCol>
           </IonRow>
