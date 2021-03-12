@@ -3,13 +3,14 @@ import { IonContent, IonLoading, IonItem, IonInput, IonText, IonList, IonButton,
 import { logoFacebook, logoGoogle } from 'ionicons/icons';
 import { useAuth} from '../../../contexts/authContext'
 import { useHistory } from "react-router-dom"
+
 import {firestore} from '../../../firebase'
 
 import "../auth.css";
 
  const Register = () => {
 
-  const { signUp, currentUser, setLoggedIn } = useAuth()
+  const { signUp, currentUser } = useAuth()
 
   const [ email, setEmail ] = useState("")
   const [ pword, setPword ] = useState("")
@@ -23,22 +24,21 @@ import "../auth.css";
       try {
         //set loading to true, which displays loading icon
         //Set errors to false before attempting sign up
-        //setStatus({loading: true, emailError: false, pwordError: false})
-
+        setStatus({loading: true, emailError: false, pwordError: false})
         console.log('Btn pressed')
         await signUp(email, pword)        
         console.log("user created ")
         console.log("user signed in")
 
-        console.log(currentUser.uid)
-        const userRef = firestore.collection('users').doc(currentUser.uid).collection('my_profile')
-        const userData = {email, userType}
-        await userRef.add(userData)
+        //console.log(currentUser.uid)
+        // const userRef = firestore.collection('users').doc(currentUser.uid).collection('my_profile')
+        // const userData = {email, userType}
+        // await userRef.add(userData)
         //console.log("user Added")
         //Create user document in DB
        
         //Set loading and errors to false after successful login
-        //setStatus({loading: false, emailError: false, pwordError: false})
+        setStatus({loading: false, emailError: false, pwordError: false})
         history.push("/manager/home")
         console.log(currentUser.uid)
 
@@ -48,6 +48,10 @@ import "../auth.css";
         //setStatus({loading: false, emailError: true, pwordError: true})
 
       }
+        const userRef = firestore.collection('users').doc(currentUser.uid).collection('my_profile')
+        const userData = {email, userType}
+        await userRef.add(userData)
+        console.log(currentUser.uid)
     }
 
   return (<>

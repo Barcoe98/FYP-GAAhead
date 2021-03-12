@@ -3,6 +3,7 @@ import { IonSelect, IonCol, IonRow, IonContent, IonGrid, IonLoading ,IonButton, 
 import PageHeader from '../../components/headers'
 import ItemDivider from '../../components/textInputs/itemDivider'
 import ContentArea from '../../components/textInputs/contentArea'
+import { useAuth} from '../../contexts/authContext'
 
 import {firestore} from '../../firebase'
 import { useHistory } from "react-router-dom";
@@ -18,11 +19,12 @@ const AddFitnessTestPage = () => {
   const [ exercises, setExercises ] = useState("")
   const [ warmDown, setWarmDown ] = useState("")
   
+  const { currentUser } = useAuth()
   const history = useHistory();
   const [ status, setStatus ] = useState({loading: false, emailError: false, pwordError: false})
 
   const handleAdd = async () => {
-    const fTestsRef = firestore.collection('fitness_tests')
+    const fTestsRef = firestore.collection('users').doc(currentUser?.uid).collection('fitness_tests')
     const fTestData = {title, date, time, difficulty, warmUp, exercises, warmDown}
     await fTestsRef.add(fTestData)
     history.goBack();
