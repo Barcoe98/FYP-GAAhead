@@ -1,7 +1,7 @@
 import React , {useState } from 'react'
 import { IonContent, IonLoading, IonItem, IonInput, IonText, IonList, IonButton, IonIcon, IonLabel, IonSelect} from '@ionic/react';
-import {logoFacebook, logoGoogle } from 'ionicons/icons';
-import { useAuth } from '../../../contexts/authContext'
+import { logoFacebook, logoGoogle } from 'ionicons/icons';
+import { useAuth} from '../../../contexts/authContext'
 import { useHistory } from "react-router-dom"
 import {firestore} from '../../../firebase'
 
@@ -9,7 +9,8 @@ import "../auth.css";
 
  const Register = () => {
 
-  const { signUp } = useAuth()
+  const { signUp, currentUser, setLoggedIn } = useAuth()
+
   const [ email, setEmail ] = useState("")
   const [ pword, setPword ] = useState("")
   const [ userType, setUserType ] = useState("")
@@ -19,27 +20,32 @@ import "../auth.css";
 
   async function handleSignUp(e) {
       e.preventDefault()
-      // if (pword.detail.value !== confrmPword.detail.value) {
-      //   return setShowPwordError(true)
-      // }
       try {
-        //set loading to true , which displays loading icon
+        //set loading to true, which displays loading icon
         //Set errors to false before attempting sign up
-        setStatus({loading: true, emailError: false, pwordError: false})
-        await signUp(email, pword)
+        //setStatus({loading: true, emailError: false, pwordError: false})
 
-        //Create user document in BD
-        const userRef = firestore.collection('users')
-        const userData = {email, pword, userType}
+        console.log('Btn pressed')
+        await signUp(email, pword)        
+        console.log("user created ")
+        console.log("user signed in")
+
+        console.log(currentUser.uid)
+        const userRef = firestore.collection('users').doc(currentUser.uid).collection('my_profile')
+        const userData = {email, userType}
         await userRef.add(userData)
-
+        //console.log("user Added")
+        //Create user document in DB
+       
         //Set loading and errors to false after successful login
-        setStatus({loading: false, emailError: false, pwordError: false})
+        //setStatus({loading: false, emailError: false, pwordError: false})
         history.push("/manager/home")
+        console.log(currentUser.uid)
+
       } catch {
         //Set loading to false after attempted login 
         //set errors to true and display error message
-        setStatus({loading: false, emailError: true, pwordError: true})
+        //setStatus({loading: false, emailError: true, pwordError: true})
 
       }
     }
@@ -57,7 +63,7 @@ import "../auth.css";
           <ion-select-option value="player">Player</ion-select-option>  
         </IonSelect>  
         </IonItem>
-        
+
         <IonItem id="rndInput">
           <IonLabel position="stacked">Email</IonLabel>
           <IonInput type="email" id="email" required

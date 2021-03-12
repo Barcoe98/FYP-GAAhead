@@ -8,6 +8,7 @@ import {IonReactRouter } from '@ionic/react-router'
 import {Route , Redirect} from 'react-router-dom'
 
 function App() {
+
   return (
     <IonApp>
       <AuthContextProvider>
