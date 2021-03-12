@@ -14,26 +14,27 @@ const AddFitnessTestResultsPage = () => {
   const [ status, setStatus ] = useState({loading: false, emailError: false, pwordError: false})
 
   const {id} = useParams()
-  const [ date, setDate ] = useState("")
   const [ time, setTime ] = useState("")
-  const [ exercises, setExercises ] = useState("")
   const { currentUser } = useAuth()
   const [ userType, setUserType ] = useState("")
+  const userId = currentUser?.uid
+
 
  
   useEffect(() => {
-    const userTypeRef = firestore.collection('users').doc('1kK33jibmLZ2RAEb7lF4u9g9STf2')
-  .collection('my_profile').doc('Jw2htGYNV2A0naMySRjX')
+    const userTypeRef = firestore.collection('users').doc(userId)
+  .collection('my_profile').doc('eFhe5pzwn8NoyS55FghW')
   
     userTypeRef.get(id).then(doc => {
       const userType = { id: doc.id, ...doc.data()}
       setUserType(userType);
     });
-  }, [id, currentUser?.uid]);
+  }, [id]);
 
   const handleSaveResults = async () => {
 
     console.log(userType?.userType)
+    console.log(userId)
 
     // const fTestsResultsRef = firestore.collection('fitness_tests').collection('results')
     // const fTestsRef = firestore.collection('users').doc(currentUser?.uid)
