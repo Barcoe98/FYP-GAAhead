@@ -1,0 +1,75 @@
+/* Fitness Test Details */
+/* Title for Fitness Test Details*/
+
+/* red - #ff3b30*/
+/* yellow - #ffcc00*/
+/* orange - #ff9500*/
+/* green - #4cd963*/
+/* teal blue - #5ac7fa*/
+/* blue - #007bff*/
+/* purple - #5856d6*/
+/* pink - #ff2d54*/
+
+
+#myName{
+  text-align: center;
+  font-weight: 600;
+  padding: 2px;
+  color: black;
+  opacity: 1;
+
+}
+
+#myEmail{
+  text-align: center;
+  padding: 0px;
+  margin-top: 0%;
+  opacity: 1;
+  color: black;
+}
+
+#myIcon{
+  position: relative;
+  padding: 0px;
+  color: black;
+}
+
+/* Content title for My Profile Details*/
+#myContentTitle{
+  text-align: center;
+  font-weight: 600;
+  padding: 2px;
+  color: black;
+}
+
+/* Content section for My Profile Details*/
+#myContent{
+  font-size: small;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 25px;
+  margin: 4px 4px 10px 4px;
+  color: black;
+  text-align: justify;
+  opacity: 0.9;
+}
+
+/* CSS for background color*/
+#my-bg-color{
+  background-color: white;
+  opacity: 0.95;
+}
+
+/* CSS for background Image*/
+#my-bg-img{
+  background-image: url("https://res.cloudinary.com/dmikx06rt/image/upload/v1614895089/FYP-GAAhead/croke-park-football-generic_fn4osr.jpg");
+  opacity: 0.8;
+  min-height:340px;
+}
+
+
+
+
+
+
+

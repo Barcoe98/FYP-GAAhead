@@ -5,22 +5,29 @@ import ItemDivider from '../../components/textInputs/itemDivider'
 import ContentArea from '../../components/textInputs/contentArea'
 
 import {firestore} from '../../firebase'
+import { useParams, useHistory } from "react-router-dom";
 import { useAuth } from '../../contexts/authContext'
 
 
 const AddFitnessTestResultsPage = () => {
 
+  const {id} = useParams()
   const [ date, setDate ] = useState("")
   const [ time, setTime ] = useState("")
   const [ exercises, setExercises ] = useState("")
+  const { currentUser } = useAuth()
+
 
   const [ status, setStatus ] = useState({loading: false, emailError: false, pwordError: false})
 
   const handleSaveResults = async () => {
     const fTestsResultsRef = firestore.collection('fitness_tests').collection('results')
+    const fTestsRef = firestore.collection('users').doc(currentUser?.uid)
+    //.collection('fitness_tests').doc(id).collection(results)
+
     const fTestResultsData = {date, time, exercises}
     const fTestRef = await fTestsResultsRef.add(fTestResultsData)
-    console.log('Added', fTestRef.id )
+    console.log('Added', fTestRef.id)
   }
 
   return (

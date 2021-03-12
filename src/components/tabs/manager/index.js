@@ -4,7 +4,7 @@ import { homeOutline, clipboardOutline, menuOutline, peopleOutline, personOutlin
 
 import HomePage from '../../../pages/navBarPages/homePage';
 import MorePage from '../../../pages/navBarPages/morePage';
-import MyPage from '../../../pages/navBarPages/myPage';
+import MyProfilePage from '../../../pages/navBarPages/myProfilePage';
 import TeamPage from '../../../pages/navBarPages/teamPage';
 import PlannerPage from '../../../pages/navBarPages/plannerPage';
 
@@ -30,9 +30,9 @@ function ManagerTabs() {
 
     <IonTabs id="ManagerNavbar" >
     <IonRouterOutlet>
-        <Route exact path="/manager/home"> <HomePage></HomePage></Route>
+        <Route exact path="/manager/home"><HomePage></HomePage></Route>
         <Route exact path="/manager/more"><MorePage></MorePage></Route>
-        <Route exact path="/manager/my"><MyPage></MyPage></Route>
+        <Route path="/manager/my-profile"><MyProfilePage></MyProfilePage></Route>
         <Route exact path="/manager/team"><TeamPage></TeamPage></Route>
         <Route exact path="/manager/planner"><PlannerPage></PlannerPage></Route>
 
@@ -55,9 +55,9 @@ function ManagerTabs() {
     </IonRouterOutlet>
 
     <IonTabBar id="ManagerNavbar" slot="bottom">
-        <IonTabButton id="ManagerNavbar" tab="my" href="/manager/my">
+        <IonTabButton id="ManagerNavbar" tab="my-profile" href="/manager/my-profile">
           <IonIcon icon={personOutline} />
-          <IonLabel>My</IonLabel>
+          <IonLabel>My Profile</IonLabel>
         </IonTabButton>
         <IonTabButton id="ManagerNavbar" tab="planner" href="/manager/planner">
           <IonIcon icon={clipboardOutline} />
