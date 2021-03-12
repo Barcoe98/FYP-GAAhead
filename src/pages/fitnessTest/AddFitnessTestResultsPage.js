@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { IonSelect, IonCol, IonRow, IonContent, IonGrid, IonLoading ,IonButton, IonInput, IonLabel, IonItem, IonPage, IonItemDivider, IonDatetime} from '@ionic/react';
 import PageHeader from '../../components/headers'
 import ItemDivider from '../../components/textInputs/itemDivider'
@@ -11,23 +11,36 @@ import { useAuth } from '../../contexts/authContext'
 
 const AddFitnessTestResultsPage = () => {
 
+  const [ status, setStatus ] = useState({loading: false, emailError: false, pwordError: false})
+
   const {id} = useParams()
   const [ date, setDate ] = useState("")
   const [ time, setTime ] = useState("")
   const [ exercises, setExercises ] = useState("")
   const { currentUser } = useAuth()
+  const [ userType, setUserType ] = useState("")
 
-
-  const [ status, setStatus ] = useState({loading: false, emailError: false, pwordError: false})
+ 
+  useEffect(() => {
+    const userTypeRef = firestore.collection('users').doc('1kK33jibmLZ2RAEb7lF4u9g9STf2')
+  .collection('my_profile').doc('Jw2htGYNV2A0naMySRjX')
+  
+    userTypeRef.get(id).then(doc => {
+      const userType = { id: doc.id, ...doc.data()}
+      setUserType(userType);
+    });
+  }, [id, currentUser?.uid]);
 
   const handleSaveResults = async () => {
-    const fTestsResultsRef = firestore.collection('fitness_tests').collection('results')
-    const fTestsRef = firestore.collection('users').doc(currentUser?.uid)
-    //.collection('fitness_tests').doc(id).collection(results)
 
-    const fTestResultsData = {date, time, exercises}
-    const fTestRef = await fTestsResultsRef.add(fTestResultsData)
-    console.log('Added', fTestRef.id)
+    console.log(userType?.userType)
+
+    // const fTestsResultsRef = firestore.collection('fitness_tests').collection('results')
+    // const fTestsRef = firestore.collection('users').doc(currentUser?.uid)
+    // //.collection('fitness_tests').doc(id).collection(results)
+
+    // const fTestResultsData = {date, time, exercises}
+    // const fTestRef = await fTestsResultsRef.add(fTestResultsData)
   }
 
   return (

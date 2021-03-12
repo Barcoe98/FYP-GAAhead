@@ -24,10 +24,13 @@ import DiaryEntriesListPage from '../../../pages/diary/DiaryEntryListPage';
 import DiaryEntryDetailsPage from '../../../pages/diary/DiaryEntryDetailsPage';
 
 import "../navbar.css"
+// import { useAuth} from '../../contexts/authContext'
+
 
 function ManagerTabs() {
-  return (
 
+
+  return (
     <IonTabs id="ManagerNavbar" >
     <IonRouterOutlet>
         <Route exact path="/manager/home"><HomePage></HomePage></Route>

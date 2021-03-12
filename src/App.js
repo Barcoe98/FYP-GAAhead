@@ -7,7 +7,17 @@ import AuthContextProvider from "./contexts/authContext"
 import {IonReactRouter } from '@ionic/react-router'
 import {Route , Redirect} from 'react-router-dom'
 
+// import { useAuth} from '../../contexts/authContext'
+// import {firestore} from'../../firebase'
+
+
 function App() {
+
+  // const { currentUser } = useAuth()
+  // const userTypeRef = firestore.collection('users').doc(currentUser?.uid)
+  // .collection('my_profile').get('userType')
+
+  // console.log(userTypeRef)
 
   return (
     <IonApp>
