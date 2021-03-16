@@ -1,47 +1,15 @@
-import React, {useState, useEffect} from "react";
-import { IonSelect, IonCol, IonRow, IonContent, IonGrid, IonLoading ,IonButton, IonInput, IonLabel, IonItem, IonPage, IonItemDivider, IonDatetime} from '@ionic/react';
+import React, {useState} from "react";
+import { IonCol, IonRow, IonContent, IonGrid, IonLoading ,IonButton, IonInput, IonLabel, IonItem, IonPage, IonItemDivider, IonDatetime} from '@ionic/react';
 import PageHeader from '../../components/headers'
-import ItemDivider from '../../components/textInputs/itemDivider'
-import ContentArea from '../../components/textInputs/contentArea'
-
-import {firestore} from '../../firebase'
-import { useParams, useHistory } from "react-router-dom";
-import { useAuth } from '../../contexts/authContext'
 
 
 const AddFitnessTestResultsPage = () => {
 
   const [ status, setStatus ] = useState({loading: false, emailError: false, pwordError: false})
-
-  const {id} = useParams()
   const [ time, setTime ] = useState("")
-  const { currentUser } = useAuth()
-  const [ userType, setUserType ] = useState("")
-  const userId = currentUser?.uid
-
-
- 
-  useEffect(() => {
-    const userTypeRef = firestore.collection('users').doc(userId)
-  .collection('my_profile').doc('eFhe5pzwn8NoyS55FghW')
-  
-    userTypeRef.get(id).then(doc => {
-      const userType = { id: doc.id, ...doc.data()}
-      setUserType(userType);
-    });
-  }, [id]);
 
   const handleSaveResults = async () => {
-
-    console.log(userType?.userType)
-    console.log(userId)
-
-    // const fTestsResultsRef = firestore.collection('fitness_tests').collection('results')
-    // const fTestsRef = firestore.collection('users').doc(currentUser?.uid)
-    // //.collection('fitness_tests').doc(id).collection(results)
-
-    // const fTestResultsData = {date, time, exercises}
-    // const fTestRef = await fTestsResultsRef.add(fTestResultsData)
+    
   }
 
   return (

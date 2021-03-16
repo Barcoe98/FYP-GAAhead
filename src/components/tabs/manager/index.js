@@ -24,11 +24,9 @@ import DiaryEntriesListPage from '../../../pages/diary/DiaryEntryListPage';
 import DiaryEntryDetailsPage from '../../../pages/diary/DiaryEntryDetailsPage';
 
 import "../navbar.css"
-// import { useAuth} from '../../contexts/authContext'
 
 
-function ManagerTabs() {
-
+const ManagerTabs = () => { 
 
   return (
     <IonTabs id="ManagerNavbar" >
