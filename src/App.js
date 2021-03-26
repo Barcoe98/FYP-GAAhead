@@ -1,5 +1,6 @@
 import { IonApp, IonRouterOutlet} from '@ionic/react';
 import ManagerTabs from './components/tabs/manager/index'
+import PlayerTabs from './components/tabs/player/index'
 import SignUpPage from './components/authentication/signUp/index';
 import LoginPage from './components/authentication/login/index';
 import ForgotPasswordPage from './components/authentication/forgotPassword/index';
@@ -7,17 +8,23 @@ import AuthContextProvider from "./contexts/authContext"
 import {IonReactRouter } from '@ionic/react-router'
 import {Route , Redirect} from 'react-router-dom'
 
-// import { useAuth} from '../../contexts/authContext'
-// import {firestore} from'../../firebase'
+import { useAuth} from '././contexts/authContext'
+import {firestore} from'./firebase'
 
+function ManagerNavBar(props) {
+  return <ManagerTabs></ManagerTabs>
+}
 
-function App() {
+function PlayerNavBar(props) {
+  return <PlayerTabs></PlayerTabs>
+}
 
-  // const { currentUser } = useAuth()
-  // const userTypeRef = firestore.collection('users').doc(currentUser?.uid)
-  // .collection('my_profile').get('userType')
+function App(props) {
 
-  // console.log(userTypeRef)
+  const { currentUser } = useAuth()
+  const userTypeRef = firestore.collection('users').doc(currentUser?.uid)
+  .collection('my_profile').get('userType')
+  console.log(userTypeRef)
 
   return (
     <IonApp>
@@ -27,7 +34,8 @@ function App() {
             <Route exact path="/signup"><SignUpPage></SignUpPage></Route>
             <Route exact path="/login"><LoginPage></LoginPage></Route>
             <Route exact path="/forgotpassword"><ForgotPasswordPage></ForgotPasswordPage></Route>
-            <ManagerTabs></ManagerTabs>
+           
+
             <Redirect exact path="/" to ="/login"></Redirect>
           </IonRouterOutlet>
         </IonReactRouter>
