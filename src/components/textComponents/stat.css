@@ -1,0 +1,36 @@
+/* Fitness Test Details */
+/* Title for Fitness Test Details*/
+
+
+/* Content section for My Profile Details*/
+#myStat{
+  font-size: small;
+  padding: 6px;
+  border: 1px solid black;
+  background-color: #5ac7fa;
+  border-radius: 20px;
+  color: black;
+  text-align: justify;
+}
+
+#myStatVar{
+  font-size: large;
+  display: flex;
+  justify-content: center;
+}
+
+#myStatTitle{
+  font-size: small;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
