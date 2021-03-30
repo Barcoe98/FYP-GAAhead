@@ -6,7 +6,7 @@ import "../pages.css"
 const PlannerPage = () => {
   return (
     <IonPage>
-    <PageHeader title="More Page"></PageHeader>
+    <PageHeader title="Planners"></PageHeader>
       <IonContent id="pg-Sze">
       <IonGrid>
 

@@ -6,7 +6,7 @@ import "../pages.css"
 const TeamPage = () => {
   return (
     <IonPage>
-    <PageHeader title="More Page"></PageHeader>
+    <PageHeader title="My Team"></PageHeader>
       <IonContent id="pg-Sze">
       <IonGrid>
 
@@ -17,32 +17,24 @@ const TeamPage = () => {
       </IonRow>
 
       <IonRow>
-        <IonCol id="navBtnOrg" size="6">
-          <ion-router-link id="navLnk" href="#">Players</ion-router-link>
-        </IonCol>
-        <IonCol id="navBtnYlw" size="6">
-          <ion-router-link id="navLnk" href="#">Panel Selector</ion-router-link>
+        <IonCol id="navBtnBlue" size="12">
+          <ion-router-link id="navLnk" href="#">Extra Feature</ion-router-link>
         </IonCol>
       </IonRow>
 
       <IonRow>
         <IonCol id="navBtnGrn" size="12">
-          <ion-router-link id="navLnk" href="#">Team Statistics</ion-router-link>
+          <ion-router-link id="navLnk" href="">Team Statistics</ion-router-link>
         </IonCol>
       </IonRow>
 
       <IonRow>
-        <IonCol id="navBtnTeal" size="6">
-          <ion-router-link id="navLnk" href="/">Score Tracker</ion-router-link>
-        </IonCol>
-       
-        <IonCol id="navBtnBlue" size="6">
-          <ion-router-link id="navLnk" href="#">Feature 5</ion-router-link>
+        <IonCol id="navBtnYlw" size="12">
+          <ion-router-link id="navLnk" href="#">Panel Selector</ion-router-link>
         </IonCol>
       </IonRow>
 
     </IonGrid>
-      
     </IonContent>
    </IonPage>
   );

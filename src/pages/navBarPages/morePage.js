@@ -1,6 +1,9 @@
 import React  from "react";
-import { IonContent, IonPage, IonRow, IonGrid, IonCol} from '@ionic/react';
+import { IonContent, IonPage, IonList, IonLabel, IonItem, IonIcon} from '@ionic/react';
 import PageHeader from '../../components/headers/index'
+import { informationCircle, helpCircle, logOut, apps } from 'ionicons/icons';
+
+
 import "../pages.css"
 
 const MorePage = () => {
@@ -8,40 +11,33 @@ const MorePage = () => {
     <IonPage>
     <PageHeader title="More Page"></PageHeader>
       <IonContent id="pg-Sze">
-      <IonGrid>
+      <IonList>
 
-      <IonRow>
-        <IonCol id="navBtnRed" size="12">
-          <ion-router-link id="navLnk" href="/player/diary-entries/list">Diary Entries</ion-router-link>
-        </IonCol>
-      </IonRow>
+      <IonItem>
+        <IonIcon size="" icon={informationCircle}></IonIcon>
+        <IonLabel>About</IonLabel>
+      </IonItem>
 
-      <IonRow>
-        <IonCol id="navBtnOrg" size="6">
-          <ion-router-link id="navLnk" href="/manager/fitness/test/add">Add Fitness Test</ion-router-link>
-        </IonCol>
-        <IonCol id="navBtnYlw" size="6">
-          <ion-router-link id="navLnk" href="/player/fitness/test/add-results">Fitness Test Results</ion-router-link>
-        </IonCol>
-      </IonRow>
+      <IonItem>
+        <IonIcon size="" icon={helpCircle}></IonIcon>
+        <IonLabel >App Tutorial</IonLabel>
+      </IonItem>
 
-      <IonRow>
-        <IonCol id="navBtnGrn" size="12">
-          <ion-router-link id="navLnk" href="#">Feature 3</ion-router-link>
-        </IonCol>
-      </IonRow>
+      <IonItem>
+        <IonIcon size="" icon={apps}></IonIcon>
+        <IonLabel>Another Item</IonLabel>
+      </IonItem>
 
-      <IonRow>
-        <IonCol id="navBtnTeal" size="6">
-          <ion-router-link id="navLnk" href="/">Feature 4</ion-router-link>
-        </IonCol>
-       
-        <IonCol id="navBtnBlue" size="6">
-          <ion-router-link id="navLnk" href="#">Feature 5</ion-router-link>
-        </IonCol>
-      </IonRow>
+      <IonItem>
+        <IonIcon size="" icon={apps}></IonIcon>
+        <IonLabel>Another Item 2</IonLabel>
+      </IonItem>
+    </IonList>
 
-    </IonGrid>
+    <IonItem>
+      <IonIcon color="danger" size="" icon={logOut}></IonIcon>
+      <IonLabel color="danger">Logout</IonLabel>
+    </IonItem>
       
     </IonContent>
    </IonPage>

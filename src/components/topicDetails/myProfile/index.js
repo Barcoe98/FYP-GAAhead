@@ -37,7 +37,7 @@ const MyProfileDetails = () => {
 
           <div id="myContent">
             <h5 color="dark" id="myContentTitle">Player Stats</h5>
-            <StatContent statTitle="Speed" statValue="8.27" ></StatContent>
+            <StatContent statTitle="Speed(100m)" statValue="8.27" ></StatContent>
             <StatContent statTitle="Hooks" statValue="7" ></StatContent>
             <StatContent statTitle="Blocks" statValue="4" ></StatContent>
             <StatContent statTitle="Distance Covered" statValue="12.5" ></StatContent>
