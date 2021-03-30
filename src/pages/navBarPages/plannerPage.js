@@ -18,7 +18,7 @@ const PlannerPage = () => {
 
       <IonRow>
         <IonCol id="navBtnYlw" size="12">
-          <ion-router-link id="navLnk" href="/manager/planner/trainingschedule/list">Training Schedules</ion-router-link>
+          <ion-router-link id="navLnk" href="/manager/trainingschedule/list">Training Schedules</ion-router-link>
         </IonCol>
       </IonRow>
 

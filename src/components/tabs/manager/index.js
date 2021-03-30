@@ -49,8 +49,8 @@ const ManagerTabs = () => {
         <Route exact path="/manager/workout/add"><AddWorkoutRoutinePage></AddWorkoutRoutinePage></Route>
         <Route exact path="/manager/workout/list"><WorkoutRoutineListPage></WorkoutRoutineListPage></Route>
 
-        <Route path="/manager/planner/trainingschedule/:id"><TrainingScheduleDetailsPage></TrainingScheduleDetailsPage></Route>
-        <Route exact path="/manager/planner/trainingschedule/list"><TrainingScheduleListPage></TrainingScheduleListPage></Route>
+        <Route path="/manager/trainingschedule/:id"><TrainingScheduleDetailsPage></TrainingScheduleDetailsPage></Route>
+        <Route exact path="/manager/trainingschedule/list"><TrainingScheduleListPage></TrainingScheduleListPage></Route>
 
         <Route path="/manager/team/panel/:id"><PlayerDetailsPage></PlayerDetailsPage></Route>
         <Route exact path="/manager/team/panel/list"><PlayerListPage></PlayerListPage></Route>

@@ -5,15 +5,17 @@ import TrainingScheduleDetails from '../../components/topicDetails/trainingSched
 
 import { useParams } from "react-router-dom";
 import { firestore } from '../../firebase'
+import { useAuth} from '../../contexts/authContext'
 
 
 const TrainingScheduleDetailsPage = () => {
 
   const {id} = useParams()
+  const { currentUser } = useAuth()
   const  [trainingSchedule, setTrainingSchedule] =  useState(null)
 
   useEffect(() => {
-    const tScheduleRef = firestore.collection('training_schedules').doc(id)
+    const tScheduleRef = firestore.collection('users').doc(currentUser?.uid).collection('training_schedules')
     tScheduleRef.get(id).then(doc => {
       const trainingSchedules = { id: doc.id, ...doc.data()}
       setTrainingSchedule(trainingSchedules);
