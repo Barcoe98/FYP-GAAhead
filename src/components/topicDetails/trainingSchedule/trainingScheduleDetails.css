@@ -19,9 +19,24 @@
   opacity: 0.9;
 }
 
+/* Line to Divide sections*/
+#contentDivider{
+  width:auto;
+  height: 1px;
+  background-color: whitesmoke;
+  margin-top: 16px;
+}
+
 #tIcon{
   position: relative;
   padding: 0px;
+  display: flex;
+  justify-content: center;
+}
+
+#tRow{
+  display:block;
+  justify-content: center;
 }
 
 /* CSS for background color*/
@@ -35,6 +50,8 @@
   background-image: url("https://res.cloudinary.com/dmikx06rt/image/upload/v1614342908/FYP-GAAhead/dumbbell-1966702_640_nnljil.jpg");
   opacity: 0.8;
   min-height:300px;
+  display: block;
+  margin: auto;
 }
 
 /* Line to Divide sections*/

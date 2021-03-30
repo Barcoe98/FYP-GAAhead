@@ -4,6 +4,7 @@ import { flame, time, calendar } from 'ionicons/icons';
 import LinkButton from '../../buttons/linkButton/index'
 
 import './fitnessTestDetails.css'
+import StatBar from "../../textComponents/statBar";
 
 const FitnessTestDetails = ({fitnessTest}) => {
 
@@ -14,22 +15,11 @@ const FitnessTestDetails = ({fitnessTest}) => {
         <h1 id="sectionTitle">{fitnessTest?.title}</h1>
 
           <div id="sectionContent">
-            <IonGrid>
-              <IonRow>
-                <IonCol size="4">
-                  <IonRow id="fIcon"><IonCol><IonIcon size="large" icon={calendar}></IonIcon></IonCol></IonRow>
-                  <IonRow><IonCol>{fitnessTest?.date}</IonCol></IonRow>
-                </IonCol>
-                <IonCol size="4">
-                  <IonRow id="fIcon"><IonCol><IonIcon size="large" icon={time}></IonIcon></IonCol></IonRow>
-                  <IonRow><IonCol>{fitnessTest?.time}</IonCol></IonRow>
-                </IonCol>
-                <IonCol size="4">
-                  <IonRow id="fIcon"><IonCol><IonIcon size="large" icon={flame}></IonIcon></IonCol></IonRow>
-                  <IonRow><IonCol>{fitnessTest?.difficulty}</IonCol></IonRow>
-                </IonCol>
-              </IonRow>
-            </IonGrid>
+            <StatBar 
+              timeVar={fitnessTest?.time} 
+              difficultyVar={fitnessTest?.difficulty} 
+              dateVar={fitnessTest?.date}>
+            </StatBar>
 
             <hr id="contentDivider"></hr>
             <h5 color="dark" id="sectionTitle">Stretches/Warm Up</h5>

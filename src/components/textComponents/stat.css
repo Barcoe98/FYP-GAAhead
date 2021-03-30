@@ -25,6 +25,27 @@
   justify-content: center;
 }
 
+#myStatIcon{
+  font-size: small;
+  display: flex;
+  justify-content: center;
+}
+
+/* Stat Bar for Training Schedule*/
+#tStatVar{
+  font-size: medium;
+  display: flex;
+  padding-top: 6px;
+  justify-content: center;
+}
+
+#tStatIcon{
+  position: relative;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+}
+
 
 
 

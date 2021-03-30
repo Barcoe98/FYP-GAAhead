@@ -2,6 +2,7 @@ import React from "react";
 import { IonContent, IonRow, IonCol, IonGrid, IonList, IonText, IonIcon} from '@ionic/react';
 import { flame, time, calendar } from 'ionicons/icons';
 import './trainingScheduleDetails.css'
+import StatBar from "../../textComponents/statBar";
 
 
 const TrainingScheduleDetails = ({trainingSchedule}) => {
@@ -13,25 +14,11 @@ const TrainingScheduleDetails = ({trainingSchedule}) => {
       <h1 id="sectionTitle">{trainingSchedule?.title}</h1>
 
         <div id="sectionContent">
-          <IonGrid>
-            <IonRow>
-              <IonCol size="4">
-                <IonRow id="tIcon"><IonCol> <IonIcon size="large" icon={calendar}></IonIcon></IonCol></IonRow>
-                <IonRow><IonCol>{trainingSchedule?.date}</IonCol></IonRow>
-              </IonCol>
-
-              <IonCol size="4">
-                <IonRow id="tIcon"><IonCol><IonIcon size="large" icon={time}></IonIcon></IonCol></IonRow>
-                <IonRow><IonCol>{trainingSchedule?.time}</IonCol></IonRow>
-              </IonCol>
-
-              <IonCol size="4">
-                <IonRow id="tIcon"><IonCol> <IonIcon size="large" icon={flame}></IonIcon></IonCol></IonRow>
-                <IonRow><IonCol>{trainingSchedule?.difficulty}</IonCol></IonRow>
-              </IonCol>
-
-            </IonRow>
-          </IonGrid>
+         <StatBar 
+            timeVar={trainingSchedule?.time} 
+            difficultyVar={trainingSchedule?.difficulty} 
+            dateVar={trainingSchedule?.date}>
+          </StatBar>
 
           <hr id="contentDivider"></hr>
           <h5 color="dark" id="sectionTitle">Stretches/Warm Up</h5>
