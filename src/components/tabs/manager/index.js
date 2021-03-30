@@ -15,6 +15,9 @@ import FitnessTestDetailsPage from '../../../pages/fitnessTest/FitnessTestDetail
 import AddFitnessTestPage from '../../../pages/fitnessTest/AddFitnessTestPage';
 import AddFitnessTestResultsPage from '../../../pages/fitnessTest/AddFitnessTestResultsPage';
 
+import WorkoutRoutineDetailsPage from '../../../pages/fitnessTest/FitnessTestDetailsPage';
+import AddWorkoutRoutinePage from '../../../pages/';
+
 import FitnessTestListPage from '../../../pages/fitnessTest/FitnessTestListPage'
 
 import PlayerListPage from '../../../pages/team/PlayerListPage';
