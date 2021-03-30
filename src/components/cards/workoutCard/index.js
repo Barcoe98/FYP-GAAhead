@@ -1,12 +1,12 @@
 import React from "react";
 import { IonIcon, IonCol, IonRow, IonGrid, IonCard } from '@ionic/react';
 import { flame, calendar, time } from "ionicons/icons";
-import "./fitnessTestCard.css"
+import "./workoutCard.css"
 
 
 const WorkoutCard = ({workout}) => {
   return (
-    <IonCard id="wGridCards" key={workout.id} routerLink={'/manager/workout/test/', workout.id}>
+    <IonCard id="wGridCards" key={workout.id} routerLink={'/manager/workout/', workout.id}>
       <IonGrid>
         <IonRow id="wTitle">
             {workout.title}

@@ -25,7 +25,7 @@ const WorkoutPage = () => {
 
   return (
     <IonPage>
-    <PageHeaderAdd title=" Add Workout Routine" href="/manager/workout/add"></PageHeaderAdd>
+    <PageHeaderAdd title="Workouts" href="/manager/workout/add"></PageHeaderAdd>
       <IonContent>
           <IonList>
             {workouts.map((workout) => <WorkoutCard workout={workout}></WorkoutCard>)}
