@@ -12,13 +12,13 @@ import TrainingScheduleDetailsPage from '../../../pages/trainingSchedule/Trainin
 import TrainingScheduleListPage from '../../../pages/trainingSchedule/TrainingScheduleListPage';
 
 import FitnessTestDetailsPage from '../../../pages/fitnessTest/FitnessTestDetailsPage';
+import FitnessTestListPage from '../../../pages/fitnessTest/FitnessTestListPage'
 import AddFitnessTestPage from '../../../pages/fitnessTest/AddFitnessTestPage';
 import AddFitnessTestResultsPage from '../../../pages/fitnessTest/AddFitnessTestResultsPage';
 
-import WorkoutRoutineDetailsPage from '../../../pages/fitnessTest/FitnessTestDetailsPage';
-import AddWorkoutRoutinePage from '../../../pages/';
-
-import FitnessTestListPage from '../../../pages/fitnessTest/FitnessTestListPage'
+import WorkoutRoutineDetailsPage from '../../../pages/workoutRoutine/WorkoutDetailsPage';
+import WorkoutRoutineListPage from '../../../pages/trainingSchedule/TrainingScheduleListPage';
+import AddWorkoutRoutinePage from '../../../pages/workoutRoutine/AddWorkoutPage';
 
 import PlayerListPage from '../../../pages/team/PlayerListPage';
 import PlayerDetailsPage from '../../../pages/team/PlayerDetailsPage';
@@ -44,6 +44,10 @@ const ManagerTabs = () => {
         <Route exact path="/manager/fitness/test/add"><AddFitnessTestPage></AddFitnessTestPage></Route>
         <Route exact path="/player/fitness/test/add-results"><AddFitnessTestResultsPage></AddFitnessTestResultsPage></Route>
         <Route exact path="/manager/fitness/test/list"><FitnessTestListPage></FitnessTestListPage></Route>
+
+        <Route path="/manager/workout/:id"><WorkoutRoutineDetailsPage></WorkoutRoutineDetailsPage></Route>
+        <Route exact path="/manager/workout/add"><AddWorkoutRoutinePage></AddWorkoutRoutinePage></Route>
+        <Route exact path="/manager/workout/list"><WorkoutRoutineListPage></WorkoutRoutineListPage></Route>
 
         <Route path="/manager/planner/trainingschedule/:id"><TrainingScheduleDetailsPage></TrainingScheduleDetailsPage></Route>
         <Route exact path="/manager/planner/trainingschedule/list"><TrainingScheduleListPage></TrainingScheduleListPage></Route>
