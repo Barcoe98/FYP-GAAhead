@@ -32,14 +32,14 @@
 }
 
 /* Stat Bar for Training Schedule*/
-#tStatVar{
+#StatVar{
   font-size: medium;
   display: flex;
   padding-top: 6px;
   justify-content: center;
 }
 
-#tStatIcon{
+#StatIcon{
   position: relative;
   padding: 0px;
   display: flex;

@@ -1,12 +1,10 @@
 import React from "react";
-import { IonContent, IonRow, IonCol, IonGrid, IonList, IonText, IonIcon} from '@ionic/react';
-import { flame, time, calendar } from 'ionicons/icons';
-import './trainingScheduleDetails.css'
+import { IonContent, IonList, IonText} from '@ionic/react';
 import StatBar from "../../textComponents/statBar";
 
+import './trainingScheduleDetails.css'
 
 const TrainingScheduleDetails = ({trainingSchedule}) => {
-
   return (
   <IonContent>
     <IonList id="ts-bg-color"> 

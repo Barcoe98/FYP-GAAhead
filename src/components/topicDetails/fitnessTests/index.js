@@ -1,13 +1,11 @@
 import React from "react";
-import { IonContent, IonRow, IonCol, IonGrid, IonList, IonText, IonIcon} from '@ionic/react';
-import { flame, time, calendar } from 'ionicons/icons';
+import { IonContent, IonList, IonText} from '@ionic/react';
 import LinkButton from '../../buttons/linkButton/index'
-
-import './fitnessTestDetails.css'
 import StatBar from "../../textComponents/statBar";
 
-const FitnessTestDetails = ({fitnessTest}) => {
+import './fitnessTestDetails.css'
 
+const FitnessTestDetails = ({fitnessTest}) => {
   return (
     <IonContent>
       <IonList id="ft-bg-color"> 
@@ -37,7 +35,6 @@ const FitnessTestDetails = ({fitnessTest}) => {
           <LinkButton href="/player/fitness/test/add-results" btnName="Enter Results"></LinkButton>
         </IonList>
     </IonContent>
-
   );
 };
 

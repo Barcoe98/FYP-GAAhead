@@ -27,10 +27,6 @@
   margin-top: 16px;
 }
 
-#fIcon{
-  position: relative;
-  padding: 0px;
-}
 
 /* CSS for background color*/
 #ft-bg-color{
@@ -40,9 +36,11 @@
 
 /* CSS for background Image*/
 #ft-bg-img{
-  background-image: url("https://res.cloudinary.com/dmikx06rt/image/upload/v1614343037/FYP-GAAhead/sport-4637549_640_fzllpq.jpg");
-  opacity: 0.4;
-  min-height:426;
+  background-image: url("https://res.cloudinary.com/dmikx06rt/image/upload/v1614342908/FYP-GAAhead/dumbbell-1966702_640_nnljil.jpg");
+  opacity: 0.8;
+  min-height:300px;
+  display: block;
+  margin: auto;
 }
 
 
