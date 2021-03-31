@@ -1,20 +1,41 @@
 /* Match Cards*/
 
-/* Text for Fitness Test Cards*/
-#mDate, #mDifficulty, #mTime{
-  padding: 3px;
+/* Common CSS */
+#mCompetition, #mVenue, #mTime, #mDate {
+  color: black;
+  padding: 12px;
+  font-weight: 600;
+  display: block;
+  margin: auto;
+  text-align: center;
+  font-size: 14px;
 }
 
-/* Title for Fitness Test Cards*/
-#mTitle{
-  padding: 4px;
-  font-weight: bold;
-  font-size: large;
+/*Match Date CSS */
+#mDate{
+  background-color: #005E82 !important;
+  color: white !important;
+  padding: 5px !important;
 }
 
-/* Title for Fitness Test Cards*/
+/*Match Time CSS */
+#mTime {
+  background-color: #005E82;
+  color: white !important;
+}
+
+/* Logo for both teams*/
 #mLogo{
-  padding: 4px;
-  font-weight: bold;
-  font-size: large;
+  background-image: url("https://res.cloudinary.com/dmikx06rt/image/upload/v1617222477/FYP-GAAhead/b_wCrest_d2vjke.jpg");
 }
+
+#mTeamName{
+  color: black;
+  padding-top: 10px;
+  display: block;
+  margin: auto;
+  font-weight: 600;
+  text-align: center;
+  font-size: medium;
+}
+
