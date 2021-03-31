@@ -1,0 +1,75 @@
+#statVar {
+  display: block;
+  margin: auto;
+  text-align: center;  
+
+}
+
+#statTitle {
+  display: block;
+  margin: auto;
+  text-align: center;  
+
+}
+
+#homeStat {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+#centerStat {
+  display: block;
+  margin: auto;
+  text-align: center;  
+}
+
+
+/*VSBar File*/
+#vsText{
+  color: white;
+  font-size: larger;
+  display: block;
+  margin: auto;
+  text-align: center; 
+}
+#vsBarHeader{
+  color: white;
+  font-size: larger;
+  display: block;
+  margin: auto;
+  text-align: center; 
+  background-color: gray;
+}
+
+#teamName{
+  color: white;
+  font-size: larger;
+  display: block;
+  margin: auto;
+  text-align: center; 
+  padding: 10px;
+}
+
+#teamScore{
+  color: white;
+  font-size: larger;
+  display: block;
+  margin: auto;
+  text-align: center; 
+  padding: 10px;
+  font-weight: bold;
+  font-size: x-large;
+}
+
+#logo{
+  width: 100px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+  text-align: center; 
+}
+

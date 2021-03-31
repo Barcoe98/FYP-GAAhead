@@ -22,7 +22,7 @@ import AddWorkoutRoutinePage from '../../../pages/workoutRoutine/AddWorkoutPage'
 
 import MatchDetailsPage from '../../../pages/match/MatchDetailsPage';
 import MatchListPage from '../../../pages/match/MatchListPage';
-import AddMatchPage from '../../../pages/match/addMatch';
+import AddMatchPage from '../../../pages/match/addMatchPage';
 
 import PlayerListPage from '../../../pages/team/PlayerListPage';
 import PlayerDetailsPage from '../../../pages/team/PlayerDetailsPage';
