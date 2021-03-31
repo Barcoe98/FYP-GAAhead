@@ -1,12 +1,16 @@
 import React, {useState} from "react";
-import {IonPage} from '@ionic/react';
+import { IonSelect, IonCol, IonRow, IonContent, IonGrid, IonLoading ,IonButton, IonInput, IonLabel, IonItem, IonPage, IonItemDivider} from '@ionic/react';
 import PageHeader from '../../components/headers'
-import Form from "../../components/forms";
+import ItemDivider from '../../components/textInputs/itemDivider'
+import ContentArea from '../../components/textInputs/contentArea'
 import { useAuth} from '../../contexts/authContext'
+
 import {firestore} from '../../firebase'
 import { useHistory } from "react-router-dom";
+import Form from "../../components/forms";
 
-const AddTrainingPage = () => {
+
+const AddWorkoutPage = () => {
 
   const [ title, setTitle ] = useState("")
   const [ date, setDate ] = useState("")
@@ -21,15 +25,15 @@ const AddTrainingPage = () => {
   const [ status, setStatus ] = useState({loading: false, emailError: false, pwordError: false})
 
   const handleAdd = async () => {
-    const trainingRef = firestore.collection('users').doc(currentUser?.uid).collection('training_schedules')
-    const trainingData = {title, date, time, difficulty, warmUp, exercises, warmDown}
-    await trainingRef.add(trainingData)
+    const workoutRef = firestore.collection('users').doc(currentUser?.uid).collection('workouts')
+    const workoutData = {title, date, time, difficulty, warmUp, exercises, warmDown}
+    await workoutRef.add(workoutData)
     history.goBack();
   }
 
   return (
     <IonPage>
-    <PageHeader title="Add Training Schedule"></PageHeader>
+    <PageHeader title="Add Workout Routine"></PageHeader>
 
       <Form
         title={title} date={date} time={time} difficulty={difficulty}
@@ -49,4 +53,4 @@ const AddTrainingPage = () => {
   );
 };
 
-export default AddTrainingPage;
+export default AddWorkoutPage;

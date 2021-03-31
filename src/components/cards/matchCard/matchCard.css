@@ -1,0 +1,20 @@
+/* Match Cards*/
+
+/* Text for Fitness Test Cards*/
+#mDate, #mDifficulty, #mTime{
+  padding: 3px;
+}
+
+/* Title for Fitness Test Cards*/
+#mTitle{
+  padding: 4px;
+  font-weight: bold;
+  font-size: large;
+}
+
+/* Title for Fitness Test Cards*/
+#mLogo{
+  padding: 4px;
+  font-weight: bold;
+  font-size: large;
+}

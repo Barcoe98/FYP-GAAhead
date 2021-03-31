@@ -20,6 +20,10 @@ import WorkoutRoutineDetailsPage from '../../../pages/workoutRoutine/WorkoutDeta
 import WorkoutRoutineListPage from '../../../pages/workoutRoutine/WorkoutListPage';
 import AddWorkoutRoutinePage from '../../../pages/workoutRoutine/AddWorkoutPage';
 
+import MatchDetailsPage from '../../../pages/match/MatchDetailsPage';
+import MatchListPage from '../../../pages/match/MatchListPage';
+import AddMatchPage from '../../../pages/match/addMatch';
+
 import PlayerListPage from '../../../pages/team/PlayerListPage';
 import PlayerDetailsPage from '../../../pages/team/PlayerDetailsPage';
 
@@ -48,6 +52,10 @@ const ManagerTabs = () => {
         <Route path="/manager/workout/:id"><WorkoutRoutineDetailsPage></WorkoutRoutineDetailsPage></Route>
         <Route exact path="/manager/workout/add"><AddWorkoutRoutinePage></AddWorkoutRoutinePage></Route>
         <Route exact path="/manager/workout/list"><WorkoutRoutineListPage></WorkoutRoutineListPage></Route>
+
+        <Route path="/manager/match/:id"><MatchDetailsPage></MatchDetailsPage></Route>
+        <Route exact path="/manager/match/add"><AddMatchPage></AddMatchPage></Route>
+        <Route exact path="/manager/match/list"><MatchListPage></MatchListPage></Route>
 
         <Route path="/manager/trainingschedule/:id"><TrainingScheduleDetailsPage></TrainingScheduleDetailsPage></Route>
         <Route exact path="/manager/trainingschedule/list"><TrainingScheduleListPage></TrainingScheduleListPage></Route>
