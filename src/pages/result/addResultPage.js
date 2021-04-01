@@ -10,21 +10,43 @@ import ResultForm from "../../components/forms/resultForm/index";
 
 const AddResultPage = () => {
 
-  const [ title, setTitle ] = useState("")
-  const [ date, setDate ] = useState("")
-  const [ time, setTime ] = useState("")
-  const [ difficulty, setDifficulty ] = useState("")
-  const [ warmUp, setWarmUp ] = useState("")
-  const [ exercises, setExercises ] = useState("")
-  const [ warmDown, setWarmDown ] = useState("")
-  
+  const [ homeScore, setHomeScore ] = useState("")
+  const [ awayScore, setAwayScore ] = useState("")
+  const [ homeBlocks, setHomeBlocks ] = useState("")
+  const [ awayBlocks, setAwayBlocks ] = useState("")
+  const [ homeHooks, setHomeHooks ] = useState("")
+  const [ awayHooks, setAwayHooks ] = useState("")
+  const [ homeShots, setHomeShots ] = useState("")
+  const [ awayShots, setAwayShots ] = useState("")
+  const [ homeWides, setHomeWides ] = useState("")
+  const [ awayWides, setAwayWides ] = useState("")
+  const [ homeFouls, setHomeFouls ] = useState("")
+  const [ awayFouls, setAwayFouls ] = useState("")
+  const [ home65s, setHome65s ] = useState("")
+  const [ away65s, setAway65s ] = useState("")
+  const [ homeFrees, setHomeFrees ] = useState("")
+  const [ awayFrees, setAwayFrees ] = useState("")
+  const [ homePenalties, setHomePenalties ] = useState("")
+  const [ awayPenalties, setAwayPenalties ] = useState("")
+  const [ homePuckouts, setHomePuckouts ] = useState("")
+  const [ awayPuckouts, setAwayPuckouts ] = useState("")
+  const [ homeYCard, setHomeYCard ] = useState("")
+  const [ awayYCard, setAwayYCard ] = useState("")
+  const [ homeRCard, setHomeRCard ] = useState("")
+  const [ awayRCard, setAwayRCard ] = useState("")
+  const [ notes, setNotes ] = useState("")
+
   const { currentUser } = useAuth()
   const history = useHistory();
   const [ status, setStatus ] = useState({loading: false, emailError: false, pwordError: false})
 
   const handleAdd = async () => {
     const resultRef = firestore.collection('users').doc(currentUser?.uid).collection('results')
-    const resultData = {title, date, time, difficulty, warmUp, exercises, warmDown}
+    const resultData = {
+      homeScore, awayScore, homeHooks, awayHooks, homeBlocks, awayBlocks, homeWides, awayWides, 
+      homeShots, awayShots, homePuckouts, awayPuckouts, homeFrees, awayFrees, home65s, away65s,
+      homePenalties, awayPenalties, homeFouls, awayFouls, homeYCard, awayYCard, homeRCard, awayRCard
+    }
     await resultRef.add(resultData)
     history.goBack();
   }
@@ -34,15 +56,35 @@ const AddResultPage = () => {
     <PageHeader title="Add Match Result"></PageHeader>
 
       <ResultForm
-        title={title} date={date} time={time} difficulty={difficulty}
-        warmUp={warmUp} exercises={exercises} warmDown={warmDown}
-        setTitle = {(e) => setTitle(e.detail.value)}
-        setTime = {(e) => setTime(e.detail.value)}
-        setDate = {(e) => setDate(e.detail.value)}
-        setDifficulty = {(e) => setDifficulty(e.detail.value)}
-        setWarmUp = {(e) => setWarmUp(e.detail.value)}
-        setExercises = {(e) => setExercises(e.detail.value)}
-        setWarmDown = {(e) => setWarmDown(e.detail.value)}
+
+        homeScore={homeScore} awayScore={awayScore} 
+        homeHooks={homeHooks} awayHooks={awayHooks}
+        homeBlocks={homeBlocks} awayBlocks={awayBlocks} 
+        homeWides={homeWides} awayWides={awayWides}
+        homeShots={homeShots} awayShots={awayShots} 
+        homePuckouts={homePuckouts} awayPuckouts={awayPuckouts}
+        homeFrees={homeFrees} awayFrees={awayFrees} 
+        home65s={home65s} away65s={away65s}
+        homePenalties={homePenalties} awayPenalties={awayPenalties} 
+        homeFouls={homeFouls} awayFouls={awayFouls}
+        homeYCard={homeYCard} awayYCard={awayYCard}
+        homeRCard={homeRCard} awayRCard={awayRCard}
+        notes={notes}
+
+        setHomeScore = {(e) => setHomeScore(e.detail.value)} setAwayScore = {(e) => setAwayScore(e.detail.value)}
+        setHomeBlocks = {(e) => setHomeBlocks(e.detail.value)} setAwayBlocks = {(e) => setAwayBlocks(e.detail.value)}
+        setHomeFouls = {(e) => setHomeFouls(e.detail.value)} setAwayFouls = {(e) => setAwayFouls(e.detail.value)}
+        setAwayFrees = {(e) => setAwayFrees(e.detail.value)} setHomeFrees = {(e) => setHomeFrees(e.detail.value)}
+        setHomeHooks = {(e) => setHomeHooks(e.detail.value)} setAwayHooks = {(e) => setAwayHooks(e.detail.value)}
+        setHomePenalties = {(e) => setHomePenalties(e.detail.value)} setAwayPenalties = {(e) => setAwayPenalties(e.detail.value)}
+        setHomePuckouts = {(e) => setHomePuckouts(e.detail.value)} setAwayPuckouts = {(e) => setAwayPuckouts(e.detail.value)}
+        setHomeRCard = {(e) => setHomeRCard(e.detail.value)} setAwayRCard = {(e) => setAwayRCard(e.detail.value)}
+        setHomeShots = {(e) => setHomeShots(e.detail.value)} setAwayShots = {(e) => setAwayShots(e.detail.value)}
+        setHomeWides = {(e) => setHomeWides(e.detail.value)} setAwayWides = {(e) => setAwayWides(e.detail.value)}
+        setHomeYCard = {(e) => setHomeYCard(e.detail.value)} setAwayYCard = {(e) => setAwayYCard(e.detail.value)}
+        setHome65s = {(e) => setHome65s(e.detail.value)} setAway65s = {(e) => setAway65s(e.detail.value)}
+        setNotes = {(e) => setNotes(e.detail.value)}
+
         handleAdd = {handleAdd}
         loading={status.loading}>
       </ResultForm>

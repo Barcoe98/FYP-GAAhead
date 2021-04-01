@@ -92,7 +92,7 @@ const ResultForm = ({
           <ItemDivider dividerLabel="Match Notes"></ItemDivider>
           <ContentArea value={notes} onIonChange={setNotes} txtAreaLbl="Match Notes" placeholderText="Enter Match Notes"></ContentArea>         
 
-          0
+          
           {/* Add Button*/ }
           <IonRow>
             <IonCol>

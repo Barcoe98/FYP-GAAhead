@@ -6,7 +6,7 @@ import "../matchCard.css"
 
 const MatchCard = ({result}) => {
   return (
-    <IonCard key={result.id} routerLink={'/manager/match/', result.id}>
+    <IonCard key={result.id} routerLink={'/manager/result/', result.id}>
       <IonGrid>
         <IonRow size="12" id="mDate">
             {result.date}

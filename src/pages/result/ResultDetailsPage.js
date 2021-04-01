@@ -1,7 +1,7 @@
 import React, {useEffect, useState } from "react";
 import { IonPage } from '@ionic/react';
 import PageHeaderDelete from '../../components/headers/deleteHeader/index'
-import ResultDeatils from '../../components/topicDetails/match/index'
+import ResultDetails from '../../components/topicDetails/match/index'
 import AlertDelete from "../../components/alerts/deleteAlert";
 
 import { useParams, useHistory } from "react-router-dom";
@@ -35,7 +35,7 @@ const ResultDetailsPage = () => {
   return (
     <IonPage>
       <PageHeaderDelete title = "" action={()=>setDelAlert(true)}></PageHeaderDelete>
-      <ResultDeatils result={result}></ResultDeatils>
+      <ResultDetails result={result}></ResultDetails>
       <AlertDelete delAlert={delAlert} setDelAlert={() => setDelAlert(false)} handleDelete={handleDelete}></AlertDelete>
     </IonPage>
   );

@@ -1,39 +1,34 @@
 import React from "react";
-import { IonContent, IonList, IonText, IonCol, IonRow, IonGrid, IonImg} from '@ionic/react';
+import { IonContent, IonList, IonText } from '@ionic/react';
 import StatCol from "../../textComponents/matchStats/index";
 
 import './matchDetails.css'
 import VersusBar from "../../textComponents/matchStats/matchVersusBar";
 
-const MatchDetailsPage = ({match}) => {
+const ResultDetailsPage = ({result}) => {
   return (
   <IonContent>
     <IonList id="m-bg-color"> 
     
-      <VersusBar homeTeam={match?.homeTeam} homeTeamScore={match?.homeScore} 
-      awayTeamScore={match?.awayScore} awayTeam={match?.awayTeam}></VersusBar>
+      <VersusBar homeTeam={result?.homeTeam} homeScore={result?.homeScore} awayScore={result?.awayScore} awayTeam={result?.awayTeam}></VersusBar>
       
       <div id="sectionContent">
-        <StatCol homeStat={match?.homeTeam} statTitle="Team Stats" awayStat={match?.awayTeam}></StatCol>
-        <StatCol homeStat={match?.homeBlocks} statTitle=" Blocks" awayStat={match?.awayBlocks}></StatCol>
-        <StatCol homeStat={match?.homeHooks} statTitle="Hooks" awayStat={match?.awayHooks}></StatCol>
-        <StatCol homeStat={match?.homeWides} statTitle="Wides" awayStat={match?.awayWides}></StatCol>
-        <StatCol homeStat={match?.homeShots} statTitle="Shots" awayStat={match?.awayShots}></StatCol>
-        <StatCol homeStat={match?.homePuckouts} statTitle="PuckOuts" awayStat={match?.awayPuckouts}></StatCol>
-        <StatCol homeStat={match?.homeFrees} statTitle="Free's" awayStat={match?.awayFrees}></StatCol>
-        <StatCol homeStat={match?.home65s} statTitle="65'S" awayStat={match?.away65s}></StatCol>
-        <StatCol homeStat={match?.homePenalties} statTitle="Penalties" awayStat={match?.awayPenalties}></StatCol>
-        <StatCol homeStat={match?.homeFouls} statTitle="Fouls" awayStat={match?.awayFouls}></StatCol>
-        <StatCol homeStat={match?.homeYCard} statTitle="Yellow Cards" awayStat={match?.awayYCard}></StatCol>
-        <StatCol homeStat={match?.homeRCard} statTitle="Red Cards" awayStat={match?.awayRCard}></StatCol>
+        <StatCol homeStat={result?.homeTeam} statTitle="Team Stats" awayStat={result?.awayTeam}></StatCol>
+        <StatCol homeStat={result?.homeBlocks} statTitle=" Blocks" awayStat={result?.awayBlocks}></StatCol>
+        <StatCol homeStat={result?.homeHooks} statTitle="Hooks" awayStat={result?.awayHooks}></StatCol>
+        <StatCol homeStat={result?.homeWides} statTitle="Wides" awayStat={result?.awayWides}></StatCol>
+        <StatCol homeStat={result?.homeShots} statTitle="Shots" awayStat={result?.awayShots}></StatCol>
+        <StatCol homeStat={result?.homePuckouts} statTitle="PuckOuts" awayStat={result?.awayPuckouts}></StatCol>
+        <StatCol homeStat={result?.homeFrees} statTitle="Free's" awayStat={result?.awayFrees}></StatCol>
+        <StatCol homeStat={result?.home65s} statTitle="65'S" awayStat={result?.away65s}></StatCol>
+        <StatCol homeStat={result?.homePenalties} statTitle="Penalties" awayStat={result?.awayPenalties}></StatCol>
+        <StatCol homeStat={result?.homeFouls} statTitle="Fouls" awayStat={result?.awayFouls}></StatCol>
+        <StatCol homeStat={result?.homeYCard} statTitle="Yellow Cards" awayStat={result?.awayYCard}></StatCol>
+        <StatCol homeStat={result?.homeRCard} statTitle="Red Cards" awayStat={result?.awayRCard}></StatCol>
 
         <hr id="contentDivider"></hr>
-        <h5 color="dark" id="sectionTitle">Match Summary</h5>
-        <IonText>{match?.exercises}</IonText>
-
-        <hr id="contentDivider"></hr>
-        <h5 color="dark" id="sectionTitle">Notes</h5>
-        <IonText>{match?.warm_down}</IonText>
+        <h5 color="dark" id="sectionTitle">Match Notes</h5>
+        <IonText>{result?.notes}</IonText>
       </div>
 
       </IonList>
@@ -41,4 +36,4 @@ const MatchDetailsPage = ({match}) => {
     );
   };
   
-  export default MatchDetailsPage;
+  export default ResultDetailsPage;

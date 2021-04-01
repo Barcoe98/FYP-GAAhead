@@ -3,7 +3,7 @@ import { IonRow, IonCol, IonGrid, IonImg } from '@ionic/react';
 
 import './matchStats.css'
 
-const VersusBar = ({homeTeam, homeTeamScore, awayTeam, awayTeamScore, homeTeamLogo, awayTeamLogo}) => {
+const VersusBar = ({homeTeam, homeScore, awayTeam, awayScore}) => {
   return (
   <IonGrid>
 
@@ -19,7 +19,7 @@ const VersusBar = ({homeTeam, homeTeamScore, awayTeam, awayTeamScore, homeTeamLo
         <IonRow id="logo">
           <IonImg src="https://res.cloudinary.com/dmikx06rt/image/upload/v1617222477/FYP-GAAhead/b_wCrest_d2vjke.jpg"></IonImg>
         </IonRow>
-        <IonRow id="teamScore">{homeTeamScore}</IonRow>
+        <IonRow id="teamScore">{homeScore}</IonRow>
       </IonCol>
 
       <IonCol id="vsText" size="4">
@@ -32,7 +32,7 @@ const VersusBar = ({homeTeam, homeTeamScore, awayTeam, awayTeamScore, homeTeamLo
           <IonImg src="https://res.cloudinary.com/dmikx06rt/image/upload/v1617222477/FYP-GAAhead/b_wCrest_d2vjke.jpg"></IonImg>
         </IonRow>
         
-        <IonRow id="teamScore">{awayTeamScore}</IonRow>
+        <IonRow id="teamScore">{awayScore}</IonRow>
       </IonCol>
     </IonRow>
         
