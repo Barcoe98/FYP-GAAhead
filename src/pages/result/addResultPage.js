@@ -1,13 +1,11 @@
 import React, {useState} from "react";
-import { IonSelect, IonCol, IonRow, IonContent, IonGrid, IonLoading ,IonButton, IonInput, IonLabel, IonItem, IonPage, IonItemDivider} from '@ionic/react';
+import {IonPage} from '@ionic/react';
 import PageHeader from '../../components/headers'
-import ItemDivider from '../../components/textInputs/itemDivider'
-import ContentArea from '../../components/textInputs/contentArea'
-import { useAuth} from '../../contexts/authContext'
 
+import { useAuth} from '../../contexts/authContext'
 import {firestore} from '../../firebase'
 import { useHistory } from "react-router-dom";
-import Form from "../../components/forms";
+import ResultForm from "../../components/forms/resultForm/index";
 
 
 const AddResultPage = () => {
@@ -35,7 +33,7 @@ const AddResultPage = () => {
     <IonPage>
     <PageHeader title="Add Match Result"></PageHeader>
 
-      <Form
+      <ResultForm
         title={title} date={date} time={time} difficulty={difficulty}
         warmUp={warmUp} exercises={exercises} warmDown={warmDown}
         setTitle = {(e) => setTitle(e.detail.value)}
@@ -47,7 +45,7 @@ const AddResultPage = () => {
         setWarmDown = {(e) => setWarmDown(e.detail.value)}
         handleAdd = {handleAdd}
         loading={status.loading}>
-      </Form>
+      </ResultForm>
 
     </IonPage>
   );
