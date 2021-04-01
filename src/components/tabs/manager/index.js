@@ -25,6 +25,10 @@ import MatchDetailsPage from '../../../pages/match/MatchDetailsPage';
 import MatchListPage from '../../../pages/match/MatchListPage';
 import AddMatchPage from '../../../pages/match/addMatchPage';
 
+import FixtureListPage from '../../../pages/fixture/FixtureListPage';
+import FixtureDetailsPage from '../../../pages/fixture/FixtureDetailsPage';
+import AddFixturePage from '../../../pages/fixture/addFixturePage';
+
 import PlayerListPage from '../../../pages/team/PlayerListPage';
 import PlayerDetailsPage from '../../../pages/team/PlayerDetailsPage';
 
@@ -59,6 +63,10 @@ const ManagerTabs = () => {
         <Route exact path="/manager/match/add"><AddMatchPage></AddMatchPage></Route>
         <Route exact path="/manager/match/list"><MatchListPage></MatchListPage></Route>
 
+        <Route path="/manager/fixture/:id"><AddFixturePage></AddFixturePage></Route>
+        <Route exact path="/manager/fixture/add"><FixtureDetailsPage></FixtureDetailsPage></Route>
+        <Route exact path="/manager/fixture/list"><FixtureListPage></FixtureListPage></Route>
+
         <Route path="/manager/trainingschedule/:id"><TrainingScheduleDetailsPage></TrainingScheduleDetailsPage></Route>
         <Route exact path="/manager/trainingschedule/list"><TrainingScheduleListPage></TrainingScheduleListPage></Route>
 
@@ -90,6 +98,7 @@ const ManagerTabs = () => {
           <IonLabel>More</IonLabel>
         </IonTabButton>
     </IonTabBar>
+    
     </IonTabs>
   );
 }
