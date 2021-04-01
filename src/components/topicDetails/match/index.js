@@ -9,7 +9,9 @@ const MatchDetailsPage = ({match}) => {
   return (
   <IonContent>
     <IonList id="m-bg-color"> 
-      <VersusBar homeTeam={match?.homeTeam} awayTeam={match?.awayTeam}></VersusBar>
+    
+      <VersusBar homeTeam={match?.homeTeam} homeTeamScore={match?.homeTeamScore} 
+      awayTeamScore={match?.awayTeamScore} awayTeam={match?.awayTeam}></VersusBar>
       
       <div id="sectionContent">
         <StatCol homeStat={match?.homeTeam} statTitle="Team Stats" awayStat={match?.awayTeam}></StatCol>

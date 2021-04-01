@@ -3,7 +3,7 @@ import { IonRow, IonCol, IonGrid, IonImg } from '@ionic/react';
 
 import './matchStats.css'
 
-const VersusBar = ({homeTeam, awayTeam, homeLogo, awayLogo}) => {
+const VersusBar = ({homeTeam, homeTeamScore, awayTeam, awayTeamScore, homeTeamLogo, awayTeamLogo}) => {
   return (
   <IonGrid>
 
@@ -15,11 +15,11 @@ const VersusBar = ({homeTeam, awayTeam, homeLogo, awayLogo}) => {
 
     <IonRow size="12">
       <IonCol id="centerStat" size="4">
-      <IonRow id="teamName">B&W</IonRow>
+      <IonRow id="teamName">{homeTeam}</IonRow>
         <IonRow id="logo">
           <IonImg src="https://res.cloudinary.com/dmikx06rt/image/upload/v1617222477/FYP-GAAhead/b_wCrest_d2vjke.jpg"></IonImg>
         </IonRow>
-        <IonRow id="teamScore">02-21</IonRow>
+        <IonRow id="teamScore">{homeTeamScore}</IonRow>
       </IonCol>
 
       <IonCol id="vsText" size="4">
@@ -27,12 +27,12 @@ const VersusBar = ({homeTeam, awayTeam, homeLogo, awayLogo}) => {
       </IonCol>
 
       <IonCol id="centerStat" size="4">
-      <IonRow id="teamName">B&W</IonRow>
+      <IonRow id="teamName">{awayTeam}</IonRow>
         <IonRow id="logo">
           <IonImg src="https://res.cloudinary.com/dmikx06rt/image/upload/v1617222477/FYP-GAAhead/b_wCrest_d2vjke.jpg"></IonImg>
         </IonRow>
         
-        <IonRow id="teamScore">02-21</IonRow>
+        <IonRow id="teamScore">{awayTeamScore}</IonRow>
       </IonCol>
     </IonRow>
         
