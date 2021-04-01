@@ -1,7 +1,7 @@
 import React, {useEffect, useState } from "react";
 import { IonPage } from '@ionic/react';
 import PageHeaderDelete from '../../components/headers/deleteHeader/index'
-import MatchDetails from '../../components/topicDetails/match/index'
+import FixtureDetails from '../../components/topicDetails/match/index'
 import AlertDelete from "../../components/alerts/deleteAlert";
 
 import { useParams, useHistory } from "react-router-dom";
@@ -14,20 +14,20 @@ const FixtureDetailsPage = () => {
   const { currentUser } = useAuth()
   const {id} = useParams()
   const history = useHistory();
-  const  [match, setMatch] =  useState(null)
+  const  [fixture, setMatch] =  useState(null)
   const  [delAlert, setDelAlert] = useState(false);
 
   useEffect(() => {
-    const fTestRef = firestore.collection('users').doc(currentUser?.uid).collection('fixtures').doc(id)
-    fTestRef.get(id).then(doc => {
-      const fitnessTest = { id: doc.id, ...doc.data()}
-      setMatch(fitnessTest);
+    const fixtureRef = firestore.collection('users').doc(currentUser?.uid).collection('fixtures').doc(id)
+    fixtureRef.get(id).then(doc => {
+      const fixture = { id: doc.id, ...doc.data()}
+      setMatch(fixture);
     });
   }, [id]);
 
   const handleDelete = async () => {
-    const matchRef = firestore.collection('users').doc(currentUser?.uid).collection('fixtures').doc(id)
-    await matchRef.delete()
+    const fixture = firestore.collection('users').doc(currentUser?.uid).collection('fixtures').doc(id)
+    await fixture.delete()
     console.log('Confirm Okay');
     history.goBack();
   }
@@ -35,7 +35,7 @@ const FixtureDetailsPage = () => {
   return (
     <IonPage>
       <PageHeaderDelete title = "" action={()=>setDelAlert(true)}></PageHeaderDelete>
-      <MatchDetails match={match}></MatchDetails>
+      <FixtureDetails fixture={fixture}></FixtureDetails>
       <AlertDelete delAlert={delAlert} setDelAlert={() => setDelAlert(false)} handleDelete={handleDelete}></AlertDelete>
     </IonPage>
   );

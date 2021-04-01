@@ -12,19 +12,19 @@ const MatchesPage = () => {
 
       <IonRow>
         <IonCol id="navBtnRed" size="12">
-          <ion-router-link id="navLnk" href="/manager/match/fixtures/list">Fixtures</ion-router-link>
+          <ion-router-link id="navLnk" href="/manager/fixtures/list">Fixtures</ion-router-link>
         </IonCol>
       </IonRow>
 
       <IonRow>
         <IonCol id="navBtnYlw" size="12">
-          <ion-router-link id="navLnk" href="/manager/match/results/list">Results</ion-router-link>
+          <ion-router-link id="navLnk" href="/manager/results/list">Results</ion-router-link>
         </IonCol>
       </IonRow>
 
       <IonRow>
         <IonCol id="navBtnGrn" size="12">
-          <ion-router-link id="navLnk" href="/manager/match/tables/list">Tables</ion-router-link>
+          <ion-router-link id="navLnk" href="/manager/tables/list">Tables</ion-router-link>
         </IonCol>
       </IonRow>
 

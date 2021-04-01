@@ -4,12 +4,12 @@ import { flame, calendar, time } from "ionicons/icons";
 import "../matchCard.css"
 
 
-const MatchCard = ({match}) => {
+const MatchCard = ({result}) => {
   return (
-    <IonCard key={match.id} routerLink={'/manager/match/', match.id}>
+    <IonCard key={result.id} routerLink={'/manager/match/', result.id}>
       <IonGrid>
         <IonRow size="12" id="mDate">
-            {match.date}
+            {result.date}
         </IonRow>
         <IonRow size="12">
           <IonCol size="3">
@@ -17,21 +17,21 @@ const MatchCard = ({match}) => {
               <IonImg src="https://res.cloudinary.com/dmikx06rt/image/upload/v1617222477/FYP-GAAhead/b_wCrest_d2vjke.jpg"></IonImg>
             </IonRow>
             <IonRow id="mTeamName">
-              {match.homeTeam}
+              {result.homeTeam}
             </IonRow>
           </IonCol>
 
           <IonCol size="6">
             <IonRow size="4" id="mCompetition">
-              {match.competition}
+              {result.competition}
             </IonRow>
             <IonRow size="4" id="mScore">
-              <IonCol size="5">{match.homeScore}</IonCol>
+              <IonCol size="5">{result.homeScore}</IonCol>
               <IonCol size="2">-</IonCol>
-              <IonCol size="5">{match.awayScore}</IonCol>
+              <IonCol size="5">{result.awayScore}</IonCol>
             </IonRow>
             <IonRow size="4" id="mVenue">
-              {match.venue}
+              {result.venue}
             </IonRow>
           </IonCol>
 
@@ -40,7 +40,7 @@ const MatchCard = ({match}) => {
               <IonImg src="https://res.cloudinary.com/dmikx06rt/image/upload/v1617222477/FYP-GAAhead/b_wCrest_d2vjke.jpg"></IonImg>
             </IonRow>
             <IonRow id="mTeamName">
-              {match.awayTeam}
+              {result.awayTeam}
             </IonRow>
           </IonCol>
         </IonRow>

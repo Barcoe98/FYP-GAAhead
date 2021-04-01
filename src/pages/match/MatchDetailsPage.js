@@ -35,7 +35,7 @@ const MatchDetailsPage = () => {
   return (
     <IonPage>
       <PageHeaderDelete title = "" action={()=>setDelAlert(true)}></PageHeaderDelete>
-      <MatchDetails match={match}></MatchDetails>
+      <MatchDetails fixture={match}></MatchDetails>
       <AlertDelete delAlert={delAlert} setDelAlert={() => setDelAlert(false)} handleDelete={handleDelete}></AlertDelete>
     </IonPage>
   );
