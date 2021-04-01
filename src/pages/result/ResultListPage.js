@@ -1,38 +1,38 @@
 import React, {useEffect, useState} from "react";
 import { IonContent,  IonPage, IonList } from '@ionic/react';
 import PageHeaderAdd from '../../components/headers/addHeader/index'
-import MatchCard from '../../components/cards/matchCard/result/index'
+import ResultCard from '../../components/cards/matchCard/result/index'
 
 import {firestore} from'../../firebase'
 import { useAuth} from '../../contexts/authContext'
 
 
-const MatchPage = () => {
-  const [matches, setMatches] = useState([])
+const ResultListPage = () => {
+  const [results, setResults] = useState([])
   const { currentUser } = useAuth()
 
   useEffect(() => {
-    const matchRef = firestore.collection('users').doc(currentUser?.uid).collection('matches')
+    const resultRef = firestore.collection('users').doc(currentUser?.uid).collection('results')
     console.log(currentUser?.uid)
-    matchRef.get().then((snapshot) => {
-      const matches = snapshot.docs.map((doc) => ({ 
+    resultRef.get().then((snapshot) => {
+      const results = snapshot.docs.map((doc) => ({ 
         id:doc.id,
         ...doc.data(),
       }))
-      setMatches(matches)
+      setResults(results)
     })
    },[currentUser]);
 
   return (
     <IonPage>
-    <PageHeaderAdd title="Matches" href="/manager/matches/add"></PageHeaderAdd>
+    <PageHeaderAdd title="Results" href="/manager/result/add"></PageHeaderAdd>
       <IonContent>
           <IonList>
-            {matches.map((match) => <MatchCard match={match}></MatchCard>)}
+            {results.map((result) => <ResultCard result={result}></ResultCard>)}
           </IonList>
       </IonContent>
     </IonPage>
   );
 };
 
-export default MatchPage;
+export default ResultListPage;

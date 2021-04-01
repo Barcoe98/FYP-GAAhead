@@ -1,7 +1,7 @@
 import React, {useEffect, useState } from "react";
 import { IonPage } from '@ionic/react';
 import PageHeaderDelete from '../../components/headers/deleteHeader/index'
-import MatchDetails from '../../components/topicDetails/match/index'
+import ResultDeatils from '../../components/topicDetails/match/index'
 import AlertDelete from "../../components/alerts/deleteAlert";
 
 import { useParams, useHistory } from "react-router-dom";
@@ -9,25 +9,25 @@ import { firestore } from '../../firebase'
 import { useAuth } from '../../contexts/authContext'
 
 
-const MatchDetailsPage = () => {
+const ResultDetailsPage = () => {
 
   const { currentUser } = useAuth()
   const {id} = useParams()
   const history = useHistory();
-  const  [match, setMatch] =  useState(null)
+  const  [result, setResult] =  useState(null)
   const  [delAlert, setDelAlert] = useState(false);
 
   useEffect(() => {
-    const fTestRef = firestore.collection('users').doc(currentUser?.uid).collection('matches').doc(id)
-    fTestRef.get(id).then(doc => {
-      const fitnessTest = { id: doc.id, ...doc.data()}
-      setMatch(fitnessTest);
+    const resultRef = firestore.collection('users').doc(currentUser?.uid).collection('results').doc(id)
+    resultRef.get(id).then(doc => {
+      const result = { id: doc.id, ...doc.data()}
+      setResult(result);
     });
   }, [id]);
 
   const handleDelete = async () => {
-    const matchRef = firestore.collection('users').doc(currentUser?.uid).collection('matches').doc(id)
-    await matchRef.delete()
+    const resultRef = firestore.collection('users').doc(currentUser?.uid).collection('results').doc(id)
+    await resultRef.delete()
     console.log('Confirm Okay');
     history.goBack();
   }
@@ -35,10 +35,10 @@ const MatchDetailsPage = () => {
   return (
     <IonPage>
       <PageHeaderDelete title = "" action={()=>setDelAlert(true)}></PageHeaderDelete>
-      <MatchDetails fixture={match}></MatchDetails>
+      <ResultDeatils result={result}></ResultDeatils>
       <AlertDelete delAlert={delAlert} setDelAlert={() => setDelAlert(false)} handleDelete={handleDelete}></AlertDelete>
     </IonPage>
   );
 };
 
-export default MatchDetailsPage;
+export default ResultDetailsPage;

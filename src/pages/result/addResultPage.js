@@ -10,7 +10,7 @@ import { useHistory } from "react-router-dom";
 import Form from "../../components/forms";
 
 
-const AddWorkoutPage = () => {
+const AddResultPage = () => {
 
   const [ title, setTitle ] = useState("")
   const [ date, setDate ] = useState("")
@@ -25,15 +25,15 @@ const AddWorkoutPage = () => {
   const [ status, setStatus ] = useState({loading: false, emailError: false, pwordError: false})
 
   const handleAdd = async () => {
-    const workoutRef = firestore.collection('users').doc(currentUser?.uid).collection('workouts')
-    const workoutData = {title, date, time, difficulty, warmUp, exercises, warmDown}
-    await workoutRef.add(workoutData)
+    const resultRef = firestore.collection('users').doc(currentUser?.uid).collection('results')
+    const resultData = {title, date, time, difficulty, warmUp, exercises, warmDown}
+    await resultRef.add(resultData)
     history.goBack();
   }
 
   return (
     <IonPage>
-    <PageHeader title="Add Workout Routine"></PageHeader>
+    <PageHeader title="Add Match Result"></PageHeader>
 
       <Form
         title={title} date={date} time={time} difficulty={difficulty}
@@ -53,4 +53,4 @@ const AddWorkoutPage = () => {
   );
 };
 
-export default AddWorkoutPage;
+export default AddResultPage;
