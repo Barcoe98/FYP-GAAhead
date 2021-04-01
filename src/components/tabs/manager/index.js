@@ -22,8 +22,8 @@ import WorkoutRoutineListPage from '../../../pages/workoutRoutine/WorkoutListPag
 import AddWorkoutRoutinePage from '../../../pages/workoutRoutine/AddWorkoutPage';
 
 import ResultDetailsPage from '../../../pages/result/ResultDetailsPage';
-import MatchListPage from '../../../pages/result/ResultListPage';
-import AddMatchPage from '../../../pages/result/addResultPage';
+import ResultListPage from '../../../pages/result/ResultListPage';
+import AddResultPage from '../../../pages/result/addResultPage';
 
 import FixtureListPage from '../../../pages/fixture/FixtureListPage';
 import FixtureDetailsPage from '../../../pages/fixture/FixtureDetailsPage';
@@ -59,9 +59,9 @@ const ManagerTabs = () => {
         <Route exact path="/manager/workout/add"><AddWorkoutRoutinePage></AddWorkoutRoutinePage></Route>
         <Route exact path="/manager/workout/list"><WorkoutRoutineListPage></WorkoutRoutineListPage></Route>
 
-        <Route path="/manager/match/:id"><ResultDetailsPage></ResultDetailsPage></Route>
-        <Route exact path="/manager/match/add"><AddMatchPage></AddMatchPage></Route>
-        <Route exact path="/manager/match/list"><MatchListPage></MatchListPage></Route>
+        <Route path="/manager/result/:id"><ResultDetailsPage></ResultDetailsPage></Route>
+        <Route exact path="/manager/result/add"><AddResultPage></AddResultPage></Route>
+        <Route exact path="/manager/result/list"><ResultListPage></ResultListPage></Route>
 
         <Route path="/manager/fixture/:id"><AddFixturePage></AddFixturePage></Route>
         <Route exact path="/manager/fixture/add"><FixtureDetailsPage></FixtureDetailsPage></Route>
