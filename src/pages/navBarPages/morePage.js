@@ -1,7 +1,7 @@
 import React  from "react";
 import { IonContent, IonPage, IonList, IonLabel, IonItem, IonIcon} from '@ionic/react';
 import PageHeader from '../../components/headers/index'
-import { informationCircle, helpCircle, logOut, apps } from 'ionicons/icons';
+import { informationCircle, helpCircle, logOut, apps, person } from 'ionicons/icons';
 
 
 import "../pages.css"
@@ -14,6 +14,11 @@ const MorePage = () => {
       <IonList>
 
       <IonItem>
+        <IonIcon size="/manager/my-profile" icon={person}></IonIcon>
+        <IonLabel>My Profile</IonLabel>
+      </IonItem>
+
+      <IonItem>
         <IonIcon size="" icon={informationCircle}></IonIcon>
         <IonLabel>About</IonLabel>
       </IonItem>
@@ -21,11 +26,6 @@ const MorePage = () => {
       <IonItem>
         <IonIcon size="" icon={helpCircle}></IonIcon>
         <IonLabel >App Tutorial</IonLabel>
-      </IonItem>
-
-      <IonItem>
-        <IonIcon size="" icon={apps}></IonIcon>
-        <IonLabel>Another Item</IonLabel>
       </IonItem>
 
       <IonItem>
