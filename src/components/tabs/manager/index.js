@@ -1,12 +1,13 @@
 import { Route , Redirect} from 'react-router-dom'
 import { IonRouterOutlet, IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/react';
-import { homeOutline, clipboardOutline, menuOutline, peopleOutline, personOutline} from 'ionicons/icons';
+import { clipboardOutline, menuOutline, peopleOutline, baseball} from 'ionicons/icons';
 
 import HomePage from '../../../pages/navBarPages/homePage';
 import MorePage from '../../../pages/navBarPages/morePage';
 import MyProfilePage from '../../../pages/navBarPages/myProfilePage';
 import TeamPage from '../../../pages/navBarPages/teamPage';
 import PlannerPage from '../../../pages/navBarPages/plannerPage';
+import MatchPage from '../../../pages/navBarPages/matchesPage';
 
 import TrainingScheduleDetailsPage from '../../../pages/trainingSchedule/TrainingScheduleDetailsPage';
 import TrainingScheduleListPage from '../../../pages/trainingSchedule/TrainingScheduleListPage';
@@ -41,6 +42,7 @@ const ManagerTabs = () => {
         <Route exact path="/manager/home"><HomePage></HomePage></Route>
         <Route exact path="/manager/more"><MorePage></MorePage></Route>
         <Route path="/manager/my-profile"><MyProfilePage></MyProfilePage></Route>
+        <Route path="/manager/match"><MatchPage></MatchPage></Route>
         <Route exact path="/manager/team"><TeamPage></TeamPage></Route>
         <Route exact path="/manager/planner"><PlannerPage></PlannerPage></Route>
 
@@ -71,9 +73,9 @@ const ManagerTabs = () => {
     </IonRouterOutlet>
 
     <IonTabBar id="ManagerNavbar" slot="bottom">
-        <IonTabButton id="ManagerNavbar" tab="my-profile" href="/manager/my-profile">
-          <IonIcon icon={personOutline} />
-          <IonLabel>My Profile</IonLabel>
+        <IonTabButton id="ManagerNavbar" tab="matches" href="/manager/match">
+          <IonIcon icon={baseball} />
+          <IonLabel>Fixtures & Results</IonLabel>
         </IonTabButton>
         <IonTabButton id="ManagerNavbar" tab="planner" href="/manager/planner">
           <IonIcon icon={clipboardOutline} />
