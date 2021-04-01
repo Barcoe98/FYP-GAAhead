@@ -1,7 +1,7 @@
 /* Match Cards*/
 
 /* Common CSS */
-#mCompetition, #mVenue, #mTime, #mDate {
+#mCompetition, #mVenue, #mTime, #mDate, #mScore {
   color: black;
   padding: 12px;
   font-weight: 600;
@@ -13,14 +13,19 @@
 
 /*Match Date CSS */
 #mDate{
-  background-color: #005E82 !important;
+  background-color: #5856d6 !important;
   color: white !important;
   padding: 5px !important;
 }
 
+#mScore{
+  padding: 5px !important;
+  font-size: medium;
+}
+
 /*Match Time CSS */
-#mTime {
-  background-color: #005E82;
+#mTime, #mScore {
+  background-color:#5856d6;
   color: white !important;
 }
 

@@ -10,8 +10,8 @@ const MatchDetailsPage = ({match}) => {
   <IonContent>
     <IonList id="m-bg-color"> 
     
-      <VersusBar homeTeam={match?.homeTeam} homeTeamScore={match?.homeTeamScore} 
-      awayTeamScore={match?.awayTeamScore} awayTeam={match?.awayTeam}></VersusBar>
+      <VersusBar homeTeam={match?.homeTeam} homeTeamScore={match?.homeScore} 
+      awayTeamScore={match?.awayScore} awayTeam={match?.awayTeam}></VersusBar>
       
       <div id="sectionContent">
         <StatCol homeStat={match?.homeTeam} statTitle="Team Stats" awayStat={match?.awayTeam}></StatCol>
@@ -22,10 +22,10 @@ const MatchDetailsPage = ({match}) => {
         <StatCol homeStat={match?.homePuckouts} statTitle="PuckOuts" awayStat={match?.awayPuckouts}></StatCol>
         <StatCol homeStat={match?.homeFrees} statTitle="Free's" awayStat={match?.awayFrees}></StatCol>
         <StatCol homeStat={match?.home65s} statTitle="65'S" awayStat={match?.away65s}></StatCol>
-        <StatCol homeStat={match?.homePenalties} statTitle="Penalties" awayStat={match?.awayPenanlties}></StatCol>
+        <StatCol homeStat={match?.homePenalties} statTitle="Penalties" awayStat={match?.awayPenalties}></StatCol>
         <StatCol homeStat={match?.homeFouls} statTitle="Fouls" awayStat={match?.awayFouls}></StatCol>
         <StatCol homeStat={match?.homeYCard} statTitle="Yellow Cards" awayStat={match?.awayYCard}></StatCol>
-        <StatCol homeStat={match?.homeRCard} statTitle="Red Cards" awayStat={match?.awayRcard}></StatCol>
+        <StatCol homeStat={match?.homeRCard} statTitle="Red Cards" awayStat={match?.awayRCard}></StatCol>
 
         <hr id="contentDivider"></hr>
         <h5 color="dark" id="sectionTitle">Match Summary</h5>

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { IonContent,  IonPage, IonList } from '@ionic/react';
 import PageHeaderAdd from '../../components/headers/addHeader/index'
-import MatchCard from '../../components/cards/matchCard/index'
+import MatchCard from '../../components/cards/matchCard/result/index'
 
 import {firestore} from'../../firebase'
 import { useAuth} from '../../contexts/authContext'
