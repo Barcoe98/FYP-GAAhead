@@ -1,7 +1,7 @@
 import React, {useEffect, useState } from "react";
 import { IonPage } from '@ionic/react';
 import PageHeaderDelete from '../../components/headers/deleteHeader/index'
-import ResultDetails from '../../components/topicDetails/match/index'
+import ResultDetails from '../../components/topicDetails/match/result/index'
 import AlertDelete from "../../components/alerts/deleteAlert";
 
 import { useParams, useHistory } from "react-router-dom";

@@ -56,7 +56,6 @@ const AddResultPage = () => {
     <PageHeader title="Add Match Result"></PageHeader>
 
       <ResultForm
-
         homeScore={homeScore} awayScore={awayScore} 
         homeHooks={homeHooks} awayHooks={awayHooks}
         homeBlocks={homeBlocks} awayBlocks={awayBlocks} 

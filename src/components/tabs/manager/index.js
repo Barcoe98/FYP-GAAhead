@@ -63,8 +63,8 @@ const ManagerTabs = () => {
         <Route exact path="/manager/result/add"><AddResultPage></AddResultPage></Route>
         <Route exact path="/manager/result/list"><ResultListPage></ResultListPage></Route>
 
-        <Route path="/manager/fixture/:id"><AddFixturePage></AddFixturePage></Route>
-        <Route exact path="/manager/fixture/add"><FixtureDetailsPage></FixtureDetailsPage></Route>
+        <Route path="/manager/fixture/:id"><FixtureDetailsPage></FixtureDetailsPage></Route>
+        <Route exact path="/manager/fixture/add"><AddFixturePage></AddFixturePage></Route>
         <Route exact path="/manager/fixture/list"><FixtureListPage></FixtureListPage></Route>
 
         <Route path="/manager/trainingschedule/:id"><TrainingScheduleDetailsPage></TrainingScheduleDetailsPage></Route>

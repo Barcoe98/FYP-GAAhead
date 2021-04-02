@@ -1,24 +1,24 @@
 import React, {useState} from "react";
-import { IonSelect, IonCol, IonRow, IonContent, IonGrid, IonLoading ,IonButton, IonInput, IonLabel, IonItem, IonPage, IonItemDivider} from '@ionic/react';
+import { IonPage } from '@ionic/react';
 import PageHeader from '../../components/headers'
-import ItemDivider from '../../components/textInputs/itemDivider'
-import ContentArea from '../../components/textInputs/contentArea'
 import { useAuth} from '../../contexts/authContext'
 
 import {firestore} from '../../firebase'
 import { useHistory } from "react-router-dom";
-import Form from "../../components/forms";
+import FixtureForm from "../../components/forms/fixtureForm/index";
 
 
 const AddFixturePage = () => {
 
-  const [ title, setTitle ] = useState("")
+  const [ homeTeam, setHomeTeam ] = useState("")
+  const [ awayTeam, setAwayTeam ] = useState("")
+  const [ homeScore, setHomeScore ] = useState("")
+  const [ awayScore, setAwayScore ] = useState("")
+
   const [ date, setDate ] = useState("")
   const [ time, setTime ] = useState("")
-  const [ difficulty, setDifficulty ] = useState("")
-  const [ warmUp, setWarmUp ] = useState("")
-  const [ exercises, setExercises ] = useState("")
-  const [ warmDown, setWarmDown ] = useState("")
+  const [ venue, setVenue ] = useState("")
+  const [ competition, setCompetition ] = useState("")
   
   const { currentUser } = useAuth()
   const history = useHistory();
@@ -26,7 +26,7 @@ const AddFixturePage = () => {
 
   const handleAdd = async () => {
     const workoutRef = firestore.collection('users').doc(currentUser?.uid).collection('fixtures')
-    const workoutData = {title, date, time, difficulty, warmUp, exercises, warmDown}
+    const workoutData = {homeTeam, awayTeam, homeScore, awayScore, venue, time, date, competition}
     await workoutRef.add(workoutData)
     history.goBack();
   }
@@ -35,19 +35,24 @@ const AddFixturePage = () => {
     <IonPage>
     <PageHeader title="Add Fixture"></PageHeader>
 
-      <Form
-        title={title} date={date} time={time} difficulty={difficulty}
-        warmUp={warmUp} exercises={exercises} warmDown={warmDown}
-        setTitle = {(e) => setTitle(e.detail.value)}
+      <FixtureForm
+        homeTeam={homeTeam} awayTeam={awayTeam} 
+        homeScore={homeScore} awayScore={awayScore}
+        time={time} date={date} venue={venue} competition={competition}
+
+        setHomeTeam = {(e) => setHomeTeam(e.detail.value)}
+        setHomeScore = {(e) => setHomeScore(e.detail.value)}
+        setAwayTeam = {(e) => setAwayTeam(e.detail.value)}
+        setAwayScore = {(e) => setAwayScore(e.detail.value)}
+
         setTime = {(e) => setTime(e.detail.value)}
         setDate = {(e) => setDate(e.detail.value)}
-        setDifficulty = {(e) => setDifficulty(e.detail.value)}
-        setWarmUp = {(e) => setWarmUp(e.detail.value)}
-        setExercises = {(e) => setExercises(e.detail.value)}
-        setWarmDown = {(e) => setWarmDown(e.detail.value)}
+        setVenue = {(e) => setVenue(e.detail.value)}
+        setCompetition = {(e) => setCompetition(e.detail.value)}
+
         handleAdd = {handleAdd}
         loading={status.loading}>
-      </Form>
+      </FixtureForm>
 
     </IonPage>
   );

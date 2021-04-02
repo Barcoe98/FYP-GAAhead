@@ -1,8 +1,6 @@
 import React from "react";
-import { IonIcon, IonCol, IonRow, IonGrid, IonCard, IonImg } from '@ionic/react';
-import { flame, calendar, time } from "ionicons/icons";
+import { IonCol, IonRow, IonGrid, IonCard, IonImg } from '@ionic/react';
 import "../matchCard.css"
-
 
 const MatchCard = ({result}) => {
   return (
