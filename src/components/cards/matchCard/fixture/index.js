@@ -1,42 +1,42 @@
 import React from "react";
 import { IonCol, IonRow, IonGrid, IonCard, IonImg } from '@ionic/react';
-import "../matchCard.css"
+import "./fixtureCard.css"
 
 
 const MatchCard = ({fixture}) => {
   return (
     <IonCard key={fixture.id} routerLink={'/manager/fixture/', fixture.id}>
       <IonGrid>
-        <IonRow size="12" id="mDate">
+        <IonRow size="12" id="fDate">
             {fixture.date}
         </IonRow>
         <IonRow size="12">
           <IonCol size="4">
-            <IonRow id="mLogo">
+            <IonRow id="fLogo">
               <IonImg src="https://res.cloudinary.com/dmikx06rt/image/upload/v1617222477/FYP-GAAhead/b_wCrest_d2vjke.jpg"></IonImg>
             </IonRow>
-            <IonRow id="mTeamName">
+            <IonRow id="fTeamName">
               {fixture.homeTeam}
             </IonRow>
           </IonCol>
 
           <IonCol size="4">
-            <IonRow size="4" id="mCompetition">
+            <IonRow size="4" id="fCompetition">
               {fixture.competition}
             </IonRow>
-            <IonRow size="4" id="mTime">
+            <IonRow size="4" id="fTime">
               {fixture.time}
             </IonRow>
-            <IonRow size="4" id="mVenue">
+            <IonRow size="4" id="fVenue">
               {fixture.venue}
             </IonRow>
           </IonCol>
 
           <IonCol size="4">
-            <IonRow id="mLogo">
+            <IonRow id="fLogo">
               <IonImg src="https://res.cloudinary.com/dmikx06rt/image/upload/v1617222477/FYP-GAAhead/b_wCrest_d2vjke.jpg"></IonImg>
             </IonRow>
-            <IonRow id="mTeamName">
+            <IonRow id="fTeamName">
               {fixture.awayTeam}
             </IonRow>
           </IonCol>

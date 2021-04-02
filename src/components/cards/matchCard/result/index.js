@@ -1,51 +1,47 @@
 import React from "react";
-import { IonCol, IonRow, IonGrid, IonCard, IonImg } from '@ionic/react';
-import "../matchCard.css"
+import { IonCol, IonRow, IonGrid, IonCard, IonImg } from "@ionic/react";
+import "./resultCard.css";
 
-const MatchCard = ({result}) => {
+const ResultCard = ({ result }) => {
   return (
-    <IonCard key={result.id} routerLink={'/manager/result/', result.id}>
+    <IonCard key={result.id} routerLink={("/manager/result/", result.id)}>
       <IonGrid>
-        <IonRow size="12" id="mDate">
-            {result.date}
+        <IonRow size="12" id="rDate">
+          {result.date}
         </IonRow>
+
         <IonRow size="12">
           <IonCol size="3">
-            <IonRow id="mLogo">
+            <IonRow id="rLogo">
               <IonImg src="https://res.cloudinary.com/dmikx06rt/image/upload/v1617222477/FYP-GAAhead/b_wCrest_d2vjke.jpg"></IonImg>
             </IonRow>
-            <IonRow id="mTeamName">
-              {result.homeTeam}
-            </IonRow>
+            <IonRow id="rTeamName">{result.homeTeam}</IonRow>
           </IonCol>
 
           <IonCol size="6">
-            <IonRow size="4" id="mCompetition">
+            <IonRow size="4" id="rCompetition">
               {result.competition}
             </IonRow>
-            <IonRow size="4" id="mScore">
+            <IonRow size="4" id="rScore">
               <IonCol size="5">{result.homeScore}</IonCol>
               <IonCol size="2">-</IonCol>
               <IonCol size="5">{result.awayScore}</IonCol>
             </IonRow>
-            <IonRow size="4" id="mVenue">
+            <IonRow size="4" id="rVenue">
               {result.venue}
             </IonRow>
           </IonCol>
 
           <IonCol size="3">
-            <IonRow id="mLogo">
+            <IonRow id="rLogo">
               <IonImg src="https://res.cloudinary.com/dmikx06rt/image/upload/v1617222477/FYP-GAAhead/b_wCrest_d2vjke.jpg"></IonImg>
             </IonRow>
-            <IonRow id="mTeamName">
-              {result.awayTeam}
-            </IonRow>
+            <IonRow id="rTeamName">{result.awayTeam}</IonRow>
           </IonCol>
         </IonRow>
-        
       </IonGrid>
     </IonCard>
   );
 };
 
-export default MatchCard;
+export default ResultCard;

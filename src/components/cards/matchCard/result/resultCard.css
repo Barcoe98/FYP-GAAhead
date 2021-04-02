@@ -1,7 +1,11 @@
-/* Match Cards*/
+/* Match Result Cards*/
 
 /* Common CSS */
-#mCompetition, #mVenue, #mTime, #mDate, #mScore {
+#rCompetition,
+#rVenue,
+#rTime,
+#rDate,
+#rScore {
   color: black;
   padding: 12px;
   font-weight: 600;
@@ -11,30 +15,30 @@
   font-size: 14px;
 }
 
-/*Match Date CSS */
-#mDate{
+/*Match Result Date CSS */
+#rDate {
   background-color: #5856d6 !important;
   color: white !important;
   padding: 5px !important;
 }
 
-#mScore{
+#rScore {
   padding: 5px !important;
   font-size: medium;
 }
 
-/*Match Time CSS */
-#mTime, #mScore {
-  background-color:#5856d6;
+/*Match Result Time CSS */
+#rScore {
+  background-color: #5856d6;
   color: white !important;
 }
 
 /* Logo for both teams*/
-#mLogo{
+#rLogo {
   background-image: url("https://res.cloudinary.com/dmikx06rt/image/upload/v1617222477/FYP-GAAhead/b_wCrest_d2vjke.jpg");
 }
 
-#mTeamName{
+#rTeamName {
   color: black;
   padding-top: 10px;
   display: block;
@@ -43,4 +47,3 @@
   text-align: center;
   font-size: medium;
 }
-

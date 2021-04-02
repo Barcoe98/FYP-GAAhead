@@ -1,0 +1,43 @@
+/* Match Cards*/
+
+/* Common CSS */
+#fCompetition,
+#fVenue,
+#fTime,
+#fDate {
+  color: black;
+  padding: 12px;
+  font-weight: 600;
+  display: block;
+  margin: auto;
+  text-align: center;
+  font-size: 14px;
+}
+
+/*Match Date CSS */
+#fDate {
+  background-color: #005E82 !important;
+  color: white !important;
+  padding: 5px !important;
+}
+
+/*Match Time CSS */
+#fTime {
+  background-color: #005E82;
+  color: white !important;
+}
+
+/* Logo for both teams*/
+#fLogo {
+  background-image: url("https://res.cloudinary.com/dmikx06rt/image/upload/v1617222477/FYP-GAAhead/b_wCrest_d2vjke.jpg");
+}
+
+#fTeamName {
+  color: black;
+  padding-top: 10px;
+  display: block;
+  margin: auto;
+  font-weight: 600;
+  text-align: center;
+  font-size: medium;
+}
