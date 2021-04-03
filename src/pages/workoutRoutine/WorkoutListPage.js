@@ -5,6 +5,7 @@ import WorkoutCard from '../../components/cards/workoutCard/index'
 
 import {firestore} from'../../firebase'
 import { useAuth} from '../../contexts/authContext'
+import '../pages.css'
 
 
 const WorkoutPage = () => {
@@ -27,7 +28,7 @@ const WorkoutPage = () => {
     <IonPage>
     <PageHeaderAdd title="Workouts" href="/manager/workout/add"></PageHeaderAdd>
       <IonContent>
-          <IonList>
+          <IonList id="bg-col">
             {workouts.map((workout) => <WorkoutCard workout={workout}></WorkoutCard>)}
           </IonList>
       </IonContent>

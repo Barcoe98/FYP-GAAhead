@@ -1,5 +1,9 @@
 /* Match Result Cards*/
 
+ion-list, ion-page{
+  background-color: #121212;
+ }
+
 /* Common CSS */
 #rCompetition,
 #rVenue,

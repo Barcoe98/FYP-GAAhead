@@ -3,6 +3,7 @@ import { IonCol, IonRow, IonContent, IonGrid, IonLoading ,IonButton, IonInput, I
 import { barbell, calendar, flame, time } from "ionicons/icons";
 import PageHeader from '../../components/headers'
 import './fitnessTest.css';
+import '../pages.css'
 
 
 const AddDiaryEntryPage = () => {

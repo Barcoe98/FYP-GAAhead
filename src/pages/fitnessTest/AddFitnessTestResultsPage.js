@@ -1,15 +1,18 @@
 import React, {useState} from "react";
 import { IonCol, IonRow, IonContent, IonGrid, IonLoading ,IonButton, IonInput, IonLabel, IonItem, IonPage, IonItemDivider, IonDatetime} from '@ionic/react';
 import PageHeader from '../../components/headers'
+import '../pages.css'
+import TextInputField from "../../components/textInputs/textInputField";
 
 
 const AddFitnessTestResultsPage = () => {
 
+  //TODO add validation
   const [ status, setStatus ] = useState({loading: false, emailError: false, pwordError: false})
   const [ time, setTime ] = useState("")
 
   const handleSaveResults = async () => {
-    
+    //TODO add save results method
   }
 
   return (
@@ -27,12 +30,7 @@ const AddFitnessTestResultsPage = () => {
 
           {/*Time Input Fields & Labels*/ }
           <IonRow>
-            <IonCol>
-              <IonItem id="rnd-input">
-                <IonLabel position="stacked">Time</IonLabel>
-                <IonInput position="stacked" placeholder="Enter Title" value={time} type="text" required onIonChange={(e) => setTime(e.detail.value)}></IonInput>
-              </IonItem>
-            </IonCol>
+            <TextInputField label="Test Time" text={time} size="12" setText={(e) => setTime(e.detail.value)} placeholder="Enter Time" type="text"></TextInputField>
           </IonRow>
                   
           {/* Add Button*/ }

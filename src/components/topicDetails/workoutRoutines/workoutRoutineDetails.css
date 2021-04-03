@@ -9,14 +9,11 @@
 
 /* Content for Training Session Details*/
 #sectionContent{
-  font-size: small;
   padding: 10px;
   border: 1px solid white;
   border-radius: 25px;
-  margin: 4px 10px 10px 4px;
-  color: white;
+  margin: 4px 10px 4px 10px;
   text-align: justify;
-  opacity: 0.9;
 }
 
 /* Line to Divide sections*/
@@ -27,12 +24,6 @@
   margin-top: 16px;
 }
 
-
-/* CSS for background color*/
-#wr-bg-color{
-  background-color: black;
-  opacity: 0.95;
-}
 
 /* CSS for background Image*/
 #wr-bg-img{

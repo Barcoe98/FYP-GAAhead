@@ -8,7 +8,7 @@
 /* CSS for Regular buttons*/
 #btnTheme{
     /*top - right - bottom - left*/
-    margin: 50px 20px 20px 20px;
+    margin: 20px 20px 20px 20px;
     text-align: center;
     border-radius: 20px;
 }
@@ -123,6 +123,11 @@
 *{
   font-family: 'Franklin Gothic Medium';
 }  
+
+ion-content,ion-item, ion-list{
+  --color: #ffffff;
+  --background: #121212;
+}
 
 @font-face {
   font-family: 'gotham';

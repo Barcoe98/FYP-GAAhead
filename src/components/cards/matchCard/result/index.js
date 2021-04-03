@@ -4,8 +4,8 @@ import "./resultCard.css";
 
 const ResultCard = ({ result }) => {
   return (
-    <IonCard key={result.id} routerLink={("/manager/result/", result.id)}>
-      <IonGrid>
+    <IonCard  key={result.id} routerLink={("/manager/result/", result.id)}>
+      <IonGrid color="secondary">
         <IonRow size="12" id="rDate">
           {result.date}
         </IonRow>

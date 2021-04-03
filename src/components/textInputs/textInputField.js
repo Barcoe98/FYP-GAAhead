@@ -6,7 +6,7 @@ const textInputField = ({label, text, setText, type, placeholderText, size}) => 
   
   return (
       <IonCol size={size}>
-        <IonItem id="rnd-input">
+        <IonItem color="light" id="rnd-input">
           <IonLabel position="stacked">{label}</IonLabel>
           <IonInput required position="stacked" pattern="" placeholder={placeholderText} value={text} type={type}  onIonChange={setText}></IonInput>
         </IonItem>

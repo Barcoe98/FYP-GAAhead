@@ -7,7 +7,7 @@ import './workoutRoutineDetails.css'
 const WorkoutRoutineDetails = ({workoutRoutine}) => {
   return (
     <IonContent>
-      <IonList id="wr-bg-color"> 
+      <IonList id="bg-col"> 
       <div id="wr-bg-img"></div>
         <h1 id="sectionTitle">{workoutRoutine?.title}</h1>
 
@@ -20,7 +20,7 @@ const WorkoutRoutineDetails = ({workoutRoutine}) => {
 
             <hr id="contentDivider"></hr>
             <h5 color="dark" id="sectionTitle">Stretches/Warm Up</h5>
-            <IonText>{workoutRoutine?.warm_up}</IonText>
+            <IonText>{workoutRoutine?.warmUp}</IonText>
 
             <hr id="contentDivider"></hr>
             <h5 color="dark" id="sectionTitle">Exercises</h5>
@@ -28,7 +28,7 @@ const WorkoutRoutineDetails = ({workoutRoutine}) => {
 
             <hr id="contentDivider"></hr>
             <h5 color="dark" id="sectionTitle">Warm Down</h5>
-            <IonText>{workoutRoutine?.warm_down}</IonText>
+            <IonText>{workoutRoutine?.warmDown}</IonText>
           </div>
 
         </IonList>

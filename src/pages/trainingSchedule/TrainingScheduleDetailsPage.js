@@ -15,12 +15,12 @@ const TrainingScheduleDetailsPage = () => {
   const  [trainingSchedule, setTrainingSchedule] =  useState(null)
 
   useEffect(() => {
-    const tScheduleRef = firestore.collection('users').doc(currentUser?.uid).collection('training_schedules')
+    const tScheduleRef = firestore.collection('users').doc(currentUser?.uid).collection('training_schedules').doc(id)
     tScheduleRef.get(id).then(doc => {
       const trainingSchedules = { id: doc.id, ...doc.data()}
       setTrainingSchedule(trainingSchedules);
     });
-  }, [id]);
+  }, [currentUser?.uid, id]);
 
   return (
     <IonPage>

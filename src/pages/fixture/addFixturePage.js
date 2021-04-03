@@ -33,7 +33,7 @@ const AddFixturePage = () => {
 
   return (
     <IonPage>
-    <PageHeader title="Add Fixture"></PageHeader>
+    <PageHeader title="Add Match Fixture"></PageHeader>
 
       <FixtureForm
         homeTeam={homeTeam} awayTeam={awayTeam} 

@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import { firestore } from '../../firebase'
 
 import './diaryEntry.css';
+import '../pages.css'
 
 const DiaryDetailsPage = () => {
 

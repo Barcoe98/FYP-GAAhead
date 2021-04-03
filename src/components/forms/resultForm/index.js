@@ -1,6 +1,7 @@
 import React from "react";
 import { IonContent, IonGrid, IonRow, IonCol,IonLabel, IonItemDivider, IonButton, IonLoading } from '@ionic/react';
 import TextInputField from '../../textInputs/textInputField'
+
 import ContentArea from "../../textInputs/contentArea";
 import ItemDivider from "../../textInputs/itemDivider";
 import '../form.css'
@@ -28,8 +29,8 @@ const ResultForm = ({
 
           {/*Input Fields & Labels*/ }
           <IonRow>
-            <TextInputField  size="6" label="Home Score"   text={homeScore}  setText={setHomeScore} placeholderText="Home Score" type="number" ></TextInputField>
-            <TextInputField  size="6" label="Away Score"  text={awayScore} setText={setAwayScore} placeholderText="Away Score" type="number" ></TextInputField>
+            <TextInputField  size="6" label="Home Score"   text={homeScore}  setText={setHomeScore} placeholderText="Home Score" type="text" ></TextInputField>
+            <TextInputField  size="6" label="Away Score"  text={awayScore} setText={setAwayScore} placeholderText="Away Score" type="text" ></TextInputField>
           </IonRow>
 
           {/*Shots Input Fields & Labels*/ }

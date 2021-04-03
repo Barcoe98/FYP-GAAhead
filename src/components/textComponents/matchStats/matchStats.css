@@ -24,7 +24,6 @@
   text-align: center;  
 }
 
-
 /*VSBar File*/
 #vsText{
   color: white;
@@ -33,13 +32,17 @@
   margin: auto;
   text-align: center; 
 }
+
 #vsBarHeader{
   color: white;
   font-size: larger;
   display: block;
   margin: auto;
   text-align: center; 
-  background-color: gray;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #5856d6;
 }
 
 #teamName{
@@ -72,4 +75,3 @@
   margin: auto;
   text-align: center; 
 }
-

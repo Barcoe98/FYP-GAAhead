@@ -16,7 +16,7 @@
   padding: 10px;
 }
 
-ion-content,ion-item{
+ion-content,ion-item, ion-list{
   --color: #ffffff;
   --background: #121212;
 }

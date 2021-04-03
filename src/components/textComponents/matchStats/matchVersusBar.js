@@ -7,10 +7,9 @@ const VersusBar = ({homeTeam, homeScore, awayTeam, awayScore}) => {
   return (
   <IonGrid>
 
-    <IonRow size="12" id="vsBarHeader">
-      <IonCol size="5">Championship</IonCol>
-      <IonCol size="2"></IonCol>
-      <IonCol size="5">12th March</IonCol>
+    <IonRow size="3" id="vsBarHeader">
+      <IonCol size="6">Championship</IonCol>
+      <IonCol size="6">12th March</IonCol>
     </IonRow>
 
     <IonRow size="12">

@@ -4,6 +4,7 @@ import PageHeader from '../../components/headers'
 import DiaryEntryCard from '../../components/cards/diaryCard/index'
 
 import {firestore} from'../../firebase'
+import '../pages.css'
 
 
 const DiaryEntriesListPage = () => {

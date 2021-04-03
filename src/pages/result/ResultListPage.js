@@ -24,10 +24,10 @@ const ResultListPage = () => {
    },[currentUser]);
 
   return (
-    <IonPage>
+    <IonPage color="secondary">
     <PageHeaderAdd title="Results" href="/manager/result/add"></PageHeaderAdd>
       <IonContent>
-          <IonList>
+          <IonList id="bg-col">
             {results.map((result) => <ResultCard result={result}></ResultCard>)}
           </IonList>
       </IonContent>

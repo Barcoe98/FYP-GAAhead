@@ -8,6 +8,7 @@ import { useAuth} from '../../contexts/authContext'
 import {firestore} from '../../firebase'
 import { useHistory } from "react-router-dom";
 import Form from "../../components/forms";
+import '../pages.css'
 
 
 const AddFitnessTestPage = () => {

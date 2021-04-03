@@ -27,7 +27,7 @@ const FixtureListPage = () => {
     <IonPage>
     <PageHeaderAdd title="Fixtures" href="/manager/fixture/add"></PageHeaderAdd>
       <IonContent>
-          <IonList>
+          <IonList id="bg-col">
             {fixtures.map((fixture) => <FixtureCard fixture={fixture}></FixtureCard>)}
           </IonList>
       </IonContent>

@@ -6,7 +6,7 @@ const ItemDivider = ({dividerLabel}) => {
   return (
     <IonRow>
       <IonCol>
-        <IonItemDivider id="itm-divider-ylw">
+        <IonItemDivider color="light" id="itm-divider-ylw">
           <IonLabel >{dividerLabel}</IonLabel>
         </IonItemDivider>
       </IonCol>

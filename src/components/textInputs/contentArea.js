@@ -6,7 +6,7 @@ const ContentArea = ({txtAreaLbl, placeholderText}) => {
   return (
       <IonRow>
         <IonCol>
-          <IonItem id="rnd-input">
+          <IonItem color="light" id="rnd-input">
             <IonLabel position="stacked">{txtAreaLbl}</IonLabel>
             <IonTextarea placeholder={placeholderText} rows="5" type="text" required></IonTextarea>
           </IonItem>

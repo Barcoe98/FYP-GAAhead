@@ -5,7 +5,7 @@ import FitnessTestCard from '../../components/cards/fitnessTestCard/index'
 
 import {firestore} from'../../firebase'
 import { useAuth} from '../../contexts/authContext'
-
+ import '../pages.css'
 
 const FitnessTestPage = () => {
   const [fitnessTests, setFitnessTests ] = useState([])
@@ -27,7 +27,7 @@ const FitnessTestPage = () => {
     <IonPage>
     <PageHeaderAdd title=" Add Fitness Test" href="/manager/fitness/test/add"></PageHeaderAdd>
       <IonContent>
-          <IonList>
+          <IonList id="bg-col">
             {fitnessTests.map((fTest) => <FitnessTestCard fTest={fTest}></FitnessTestCard>)}
           </IonList>
       </IonContent>

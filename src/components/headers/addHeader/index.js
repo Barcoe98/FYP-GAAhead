@@ -15,7 +15,7 @@ const PageHeaderAdd = ({title, href}) => {
         </IonButtons>
 
         <IonButtons slot="end">
-          <IonButton color="dark" href={href}>
+          <IonButton color="light" href={href}>
             <IonIcon size="large" icon={addCircle}></IonIcon>
           </IonButton>
         </IonButtons>

@@ -8,7 +8,7 @@ import VersusBar from "../../../textComponents/matchStats/matchVersusBar";
 const ResultDetailsPage = ({result}) => {
   return (
   <IonContent>
-    <IonList id="m-bg-color"> 
+    <IonList id="bg-col"> 
     
       <VersusBar homeTeam={result?.homeTeam} homeScore={result?.homeScore} awayScore={result?.awayScore} awayTeam={result?.awayTeam}></VersusBar>
       
