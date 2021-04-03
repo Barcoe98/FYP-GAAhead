@@ -1,9 +1,9 @@
 import React from "react";
-import { IonRow, IonCol, IonGrid } from '@ionic/react';
+import { IonRow, IonCol, IonGrid } from "@ionic/react";
 
-import './matchStats.css'
+import "./matchStats.css";
 
-const StatCol = ({homeStat, awayStat, statTitle}) => {
+const StatCol = ({ homeStat, awayStat, statTitle }) => {
   return (
     <IonGrid>
       <IonRow>
@@ -19,8 +19,8 @@ const StatCol = ({homeStat, awayStat, statTitle}) => {
           <IonRow id="centerStat">{awayStat}</IonRow>
         </IonCol>
       </IonRow>
-  </IonGrid>
+    </IonGrid>
   );
 };
 
-export default StatCol
+export default StatCol;

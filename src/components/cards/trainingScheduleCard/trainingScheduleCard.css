@@ -1,6 +1,6 @@
 /* Training Schedule Cards*/
 /* Training Schedule in Grid View CSS*/
-#tsGridCards{
+#tsGridCards {
    width: 40%;
    display: inline-block;
    background-color: black;
@@ -10,12 +10,14 @@
 }
 
 /* Text for Training Schedule Cards*/
-#tsDate, #tsDifficulty, #tsTime{
+#tsDate,
+#tsDifficulty,
+#tsTime {
    padding: 3px;
 }
 
 /* Title for Training Schedule Cards*/
-#tsTitle{
+#tsTitle {
    padding: 4px;
    font-weight: bold;
    font-size: large;

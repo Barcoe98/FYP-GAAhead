@@ -1,8 +1,9 @@
 /* Match Result Cards*/
 
-ion-list, ion-page{
+ion-list,
+ion-page {
   background-color: #121212;
- }
+}
 
 /* Common CSS */
 #rCompetition,
@@ -19,22 +20,13 @@ ion-list, ion-page{
   font-size: 14px;
 }
 
-/*Match Result Date CSS */
+/*Match Result Time & Time CSS */
+#rScore,
 #rDate {
-  background-color: #5856d6 !important;
-  color: white !important;
-  padding: 5px !important;
-}
-
-#rScore {
-  padding: 5px !important;
-  font-size: medium;
-}
-
-/*Match Result Time CSS */
-#rScore {
   background-color: #5856d6;
   color: white !important;
+  padding: 5px !important;
+  font-size: medium;
 }
 
 /* Logo for both teams*/
@@ -42,6 +34,7 @@ ion-list, ion-page{
   background-image: url("https://res.cloudinary.com/dmikx06rt/image/upload/v1617222477/FYP-GAAhead/b_wCrest_d2vjke.jpg");
 }
 
+/* Team Names of result*/
 #rTeamName {
   color: black;
   padding-top: 10px;

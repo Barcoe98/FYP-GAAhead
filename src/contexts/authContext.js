@@ -1,7 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { auth } from "../firebase";
 
-
 const AuthContext = React.createContext({ loggedIn: false });
 
 export const useAuth = () => {
@@ -14,13 +13,13 @@ const AuthContextProvider = (props) => {
   const [isLoggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
-    //takes in user and sets said user to current 
-    const unsubscribe = auth.onAuthStateChanged(user => {
-        setLoading(false)
-        setCurrentUser(user)
-     })
-     return unsubscribe
-    }, []);
+    //takes in user and sets said user to current
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setLoading(false);
+      setCurrentUser(user);
+    });
+    return unsubscribe;
+  }, []);
 
   //takes in email and password//creates user with email and password specified
   function signUp(email, password) {
@@ -50,16 +49,15 @@ const AuthContextProvider = (props) => {
     return currentUser.updatePassword(password);
   }
 
-    // only runs once
-    useEffect(() => {
-        //takes in user and sets said user to current 
-        const unsubscribe = auth.onAuthStateChanged(user => {
-            setLoading(false)
-            setCurrentUser(user)
-         })
-         return unsubscribe
-        }, []);
-  
+  // only runs once
+  useEffect(() => {
+    //takes in user and sets said user to current
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setLoading(false);
+      setCurrentUser(user);
+    });
+    return unsubscribe;
+  }, []);
 
   const value = {
     currentUser,

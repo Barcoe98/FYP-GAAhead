@@ -1,6 +1,6 @@
 /* Diary Entry Cards*/
 /* Fitness Test Cards in Grid View CSS*/
-#dGridCards{
+#dGridCards {
     background-color: black;
     color: whitesmoke;
     margin-bottom: -1%;
@@ -8,22 +8,22 @@
 }
 
 /* Text for Diary Entry  Cards*/
-#dDate, #dDifficulty, #dTime{
+#dDate,
+#dDifficulty,
+#dTime {
     padding: 3px;
 }
 
 /* Title for Diary Entry  Cards*/
-#dTitle{
+#dTitle {
     padding: 4px;
     font-weight: bold;
     font-size: large;
 }
 
-
-
 /* Diary Entry Details */
 /* Title for Diary Entry  Details*/
-#sectionTitle{
+#sectionTitle {
     text-align: center;
     font-weight: 600;
     padding: 2px;
@@ -31,7 +31,7 @@
 }
 
 /* Content for Diary Entry  Details*/
-#sectionContent{
+#sectionContent {
     font-size: small;
     padding: 10px;
     border: 1px solid white;
@@ -42,19 +42,19 @@
     opacity: 0.9;
 }
 
-#dIcon{
+#dIcon {
     position: relative;
     padding: 0px;
 }
 
 /* CSS for background color*/
-#d-bg-color{
+#d-bg-color {
     background-color: black;
     opacity: 0.95;
 }
 
 /* CSS for background Image*/
-#d-bg-img{
+#d-bg-img {
     background-image: url("https://res.cloudinary.com/dmikx06rt/image/upload/v1614708839/FYP-GAAhead/chicken-1199243__340_xlz1io.webp");
     opacity: 0.9;
     min-height: 280px;
@@ -64,8 +64,8 @@
 }
 
 /* Line to Divide sections*/
-#contentDivider{
-    width:auto;
+#contentDivider {
+    width: auto;
     height: 1px;
     background-color: whitesmoke;
     margin-top: 16px;

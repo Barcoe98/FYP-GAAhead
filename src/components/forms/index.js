@@ -2,7 +2,6 @@ import React from "react";
 import { IonContent, IonInput, IonGrid, IonRow, IonCol,IonLabel, IonItemDivider, IonItem, IonSelect, IonButton, IonLoading} from '@ionic/react';
 import ItemDivider from '../../components/textInputs/itemDivider'
 import ContentArea from '../../components/textInputs/contentArea'
-import './form.css'
 
 const Form = ({title, setTitle, time, setTime, date, setDate, difficulty, setDifficulty, 
   warmUp, setWarmUp, exercises, setExercises, warmDown, setWarmDown, handleAdd, loading}) => {

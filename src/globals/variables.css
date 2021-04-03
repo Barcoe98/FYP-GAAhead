@@ -3,6 +3,11 @@ ion-toolbar {
   --background: #222327;
 }
 
+ion-tab-bar, ion-tab-button{
+  background-color: #222327;
+ }
+ 
+
 :root {
   --ion-color-primary: #fefefe;
   --ion-color-primary-rgb: 255,255,255;

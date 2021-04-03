@@ -3,7 +3,7 @@
 
 
 /* Content section for My Profile Details*/
-#myStat{
+#myStat {
   font-size: small;
   padding: 6px;
   border: 1px solid black;
@@ -13,45 +13,35 @@
   text-align: justify;
 }
 
-#myStatVar{
+#myStatVar {
   font-size: large;
   display: flex;
   justify-content: center;
 }
 
-#myStatTitle{
+#myStatTitle {
   font-size: small;
   display: flex;
   justify-content: center;
 }
 
-#myStatIcon{
+#myStatIcon {
   font-size: small;
   display: flex;
   justify-content: center;
 }
 
 /* Stat Bar for Training Schedule*/
-#StatVar{
+#StatVar {
   font-size: medium;
   display: flex;
   padding-top: 6px;
   justify-content: center;
 }
 
-#StatIcon{
+#StatIcon {
   position: relative;
   padding: 0px;
   display: flex;
   justify-content: center;
 }
-
-
-
-
-
-
-
-
-
-

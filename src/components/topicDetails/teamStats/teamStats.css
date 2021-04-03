@@ -1,13 +1,13 @@
 /* Team Stats Details */
 /* Title for Team Stats*/
-#statTitle{
+#statTitle {
   text-align: center;
   font-weight: 600;
   color: white;
 }
 
 /* Content for Team Stats*/
-#statContent{
+#statContent {
   font-size: small;
   padding: 10px;
   border: 1px solid white;
@@ -19,31 +19,18 @@
 }
 
 /* Line to Divide sections*/
-#teamStatContent{
-  color: whitesmoke;
-}
-
-/* Line to Divide sections*/
-#contentDivider{
-  width:auto;
+#contentDivider {
+  width: auto;
   height: 1px;
   background-color: whitesmoke;
 }
 
 
-/* CSS for background color*/
-#ft-bg-color{
-  background-color: black;
-}
-
 /* CSS for background Image*/
-#ft-bg-img{
+#ft-bg-img {
   background-image: url("https://res.cloudinary.com/dmikx06rt/image/upload/v1614342908/FYP-GAAhead/dumbbell-1966702_640_nnljil.jpg");
   opacity: 0.8;
-  min-height:300px;
+  min-height: 300px;
   display: block;
   margin: auto;
 }
-
-
-

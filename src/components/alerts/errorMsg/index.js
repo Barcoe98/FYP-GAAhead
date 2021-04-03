@@ -1,16 +1,12 @@
 import React from "react";
-import { IonText } from '@ionic/react';
+import { IonText } from "@ionic/react";
 
-const ErrorMessage = ({errorsMsg}) => {
-
+const ErrorMessage = ({ errorsMsg }) => {
   return (
-    <IonText color="danger"><small>{errorsMsg}</small></IonText> 
+    <IonText color="danger">
+      <small>{errorsMsg}</small>
+    </IonText>
   );
 };
 
 export default ErrorMessage;
-
-
-
-
-

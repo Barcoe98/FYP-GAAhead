@@ -1,6 +1,6 @@
 /* Training Session Details */
 /* Title for Training Session */
-#sectionTitle{
+#sectionTitle {
   text-align: center;
   font-weight: 600;
   padding: 2px;
@@ -8,7 +8,7 @@
 }
 
 /* Content for Training Session Details*/
-#sectionContent{
+#sectionContent {
   font-size: small;
   padding: 10px;
   border: 1px solid white;
@@ -20,13 +20,13 @@
 }
 
 /* Line to Divide sections*/
-#contentDivider{
-  width:auto;
+#contentDivider {
+  width: auto;
   height: 1px;
   background-color: whitesmoke;
   margin-top: 16px;
 }
 
-#mLogo{
-border-radius: 50%;
+#mLogo {
+  border-radius: 50%;
 }

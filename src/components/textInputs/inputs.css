@@ -1,6 +1,6 @@
 /* Add Fitness Test */
 /* CSS ID or input fields*/
-#rnd-input{
+#rnd-input {
   border: 2px solid black;
   color: black;
   border-radius: 8px;
@@ -23,7 +23,7 @@
   font-size: larger;
   text-align: center;
   padding: 4px;
-  background-color:#5ac7fa;
+  background-color: #5ac7fa;
   opacity: 0.95;
   border-radius: 4px;
 }
@@ -34,7 +34,7 @@
   font-size: larger;
   text-align: center;
   padding: 4px;
-  background-color:#ff3b30;
+  background-color: #ff3b30;
   opacity: 0.95;
   border-radius: 4px;
 }
@@ -45,7 +45,7 @@
   font-size: larger;
   text-align: center;
   padding: 4px;
-  background-color:#ff9500;
+  background-color: #ff9500;
   opacity: 0.95;
   border-radius: 4px;
 }
@@ -56,7 +56,7 @@
   font-size: larger;
   text-align: center;
   padding: 4px;
-  background-color:#ffcc00;
+  background-color: #ffcc00;
   opacity: 0.95;
   border-radius: 4px;
 }
@@ -67,7 +67,7 @@
   font-size: larger;
   text-align: center;
   padding: 4px;
-  background-color:#4cd963;
+  background-color: #4cd963;
   opacity: 0.95;
   border-radius: 4px;
 }
@@ -78,7 +78,7 @@
   font-size: larger;
   text-align: center;
   padding: 4px;
-  background-color:#007bff;
+  background-color: #007bff;
   opacity: 0.95;
   border-radius: 4px;
 }
@@ -89,9 +89,7 @@
   font-size: larger;
   text-align: center;
   padding: 4px;
-  background-color:#5856d6;
+  background-color: #5856d6;
   opacity: 0.95;
   border-radius: 4px;
 }
-
-

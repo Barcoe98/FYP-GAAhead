@@ -1,6 +1,6 @@
 /* Fitnesst Test Cards*/
 /* Fitness Test Cards in Grid View CSS*/
-#dGridCards{
+#dGridCards {
    width: 40%;
    display: inline-block;
    background-color: black;
@@ -10,12 +10,14 @@
 }
 
 /* Text for Diary Cards*/
-#dDate, #dDifficulty, #dTime{
+#dDate,
+#dDifficulty,
+#dTime {
    padding: 3px;
 }
 
 /* Title for Diary Cards*/
-#dTitle{
+#dTitle {
    padding: 4px;
    font-weight: bold;
    font-size: large;

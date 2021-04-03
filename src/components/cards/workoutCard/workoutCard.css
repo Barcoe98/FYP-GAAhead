@@ -1,6 +1,6 @@
 /* Workout Cards*/
 /* Workout Cards in Grid View CSS*/
-#wGridCards{
+#wGridCards {
    width: 40%;
    display: inline-block;
    background-color: #007bff;
@@ -10,12 +10,14 @@
 }
 
 /* Text for Workout Cards*/
-#wDate, #wDifficulty, #wTime{
+#wDate,
+#wDifficulty,
+#wTime {
    padding: 3px;
 }
 
 /* Title for Workout Cards*/
-#wTitle{
+#wTitle {
    padding: 4px;
    font-weight: bold;
    font-size: large;

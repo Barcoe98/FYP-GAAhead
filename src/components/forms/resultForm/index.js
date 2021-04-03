@@ -4,7 +4,6 @@ import TextInputField from '../../textInputs/textInputField'
 
 import ContentArea from "../../textInputs/contentArea";
 import ItemDivider from "../../textInputs/itemDivider";
-import '../form.css'
 
 
 const ResultForm = ({

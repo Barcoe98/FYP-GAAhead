@@ -1,13 +1,13 @@
 import React from "react";
-import { IonRow, IonCol,IonLabel, IonItemDivider } from '@ionic/react';
-import './inputs.css'
+import { IonRow, IonCol, IonLabel, IonItemDivider } from "@ionic/react";
+import "./inputs.css";
 
-const ItemDivider = ({dividerLabel}) => {
+const ItemDivider = ({ dividerLabel }) => {
   return (
     <IonRow>
       <IonCol>
         <IonItemDivider color="light" id="itm-divider-ylw">
-          <IonLabel >{dividerLabel}</IonLabel>
+          <IonLabel>{dividerLabel}</IonLabel>
         </IonItemDivider>
       </IonCol>
     </IonRow>

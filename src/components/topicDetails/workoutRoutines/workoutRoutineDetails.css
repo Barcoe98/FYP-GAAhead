@@ -1,6 +1,6 @@
 /* Training Session Details */
 /* Title for Training Session */
-#sectionTitle{
+#sectionTitle {
   text-align: center;
   font-weight: 600;
   padding: 2px;
@@ -8,7 +8,7 @@
 }
 
 /* Content for Training Session Details*/
-#sectionContent{
+#sectionContent {
   padding: 10px;
   border: 1px solid white;
   border-radius: 25px;
@@ -17,8 +17,8 @@
 }
 
 /* Line to Divide sections*/
-#contentDivider{
-  width:auto;
+#contentDivider {
+  width: auto;
   height: 1px;
   background-color: whitesmoke;
   margin-top: 16px;
@@ -26,10 +26,10 @@
 
 
 /* CSS for background Image*/
-#wr-bg-img{
+#wr-bg-img {
   background-image: url("https://res.cloudinary.com/dmikx06rt/image/upload/v1614342908/FYP-GAAhead/dumbbell-1966702_640_nnljil.jpg");
   opacity: 0.8;
-  min-height:300px;
+  min-height: 300px;
   display: block;
   margin: auto;
 }

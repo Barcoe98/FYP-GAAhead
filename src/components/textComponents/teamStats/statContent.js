@@ -1,16 +1,22 @@
 import React from "react";
-import { IonRow, IonCol, IonText, IonGrid} from '@ionic/react';
-import './stat.css'
+import { IonRow, IonCol, IonText, IonGrid } from "@ionic/react";
+import "./stat.css";
 
 const TeamStatContent = ({
-  statTitle, teamStatValue, 
-  playerName1, playerName2, playerName3, 
-  playerVar1, playerVar2, playerVar3 }) => {
+  statTitle,
+  teamStatValue,
+  playerName1,
+  playerName2,
+  playerName3,
+  playerVar1,
+  playerVar2,
+  playerVar3,
+}) => {
   return (
     <IonGrid>
       <IonRow>
-        <IonCol id="header" size="6">Team</IonCol>
-        <IonCol id="header" size="6">Top Players</IonCol>
+        <IonCol size="6">Team</IonCol>
+        <IonCol size="6">Top Players</IonCol>
       </IonRow>
       <IonRow>
         <IonCol size="4">
@@ -32,7 +38,7 @@ const TeamStatContent = ({
               <IonText>{playerVar1}</IonText>
             </IonCol>
           </IonRow>
-        
+
           <IonRow>
             <IonCol size="2">
               <IonText>2:</IonText>
@@ -56,10 +62,9 @@ const TeamStatContent = ({
               <IonText>{playerVar3}</IonText>
             </IonCol>
           </IonRow>
-
         </IonCol>
       </IonRow>
-      </IonGrid>
+    </IonGrid>
   );
 };
 
