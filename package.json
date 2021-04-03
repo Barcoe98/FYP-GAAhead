@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "@ionic/react": "^5.5.4",
     "@ionic/react-router": "^5.5.4",
     "@testing-library/jest-dom": "^5.11.9",
@@ -10,6 +13,7 @@
     "@testing-library/user-event": "^12.6.3",
     "chart.js": "^2.9.4",
     "firebase": "^8.2.7",
+    "gotham-fonts": "^1.0.3",
     "history": "^4.10.1",
     "ionicons": "^5.5.0",
     "react": "^17.0.1",

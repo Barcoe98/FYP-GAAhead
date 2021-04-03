@@ -15,6 +15,7 @@ import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 import './app.css';
 import './globals/variables.css';
+import './globals/fonts/GothamRounded-Medium.ttf'
 
 import { IonApp, IonRouterOutlet} from '@ionic/react';
 import ManagerTabs from './components/tabs/manager/index'

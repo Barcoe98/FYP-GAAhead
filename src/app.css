@@ -120,8 +120,14 @@
     font-weight: bold;
   }
 
+*{
+  font-family: 'Franklin Gothic Medium';
+}  
 
-  
+@font-face {
+  font-family: 'gotham';
+  src: local('Gotham'), ur("./globals/fonts/GothamRounded-Medium.ttf") format('truetype');
+}
   
 
 
