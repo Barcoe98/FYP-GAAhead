@@ -27,7 +27,7 @@ const TeamPage = () => {
 
       <IonRow>
         <IonCol id="navBtnGrn" size="12">
-          <ion-router-link id="navLnk" href="">Team Statistics</ion-router-link>
+          <ion-router-link id="navLnk" href="/manager/teamstats">Team Statistics</ion-router-link>
         </IonCol>
       </IonRow>
 
