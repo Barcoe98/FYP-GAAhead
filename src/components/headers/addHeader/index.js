@@ -1,12 +1,14 @@
 import React from "react";
 import { IonButtons, IonButton, IonHeader, IonToolbar, IonTitle, IonBackButton, IonIcon } from '@ionic/react';
 import { addCircle } from "ionicons/icons";
+import '../headers.css'
+
 
 const PageHeaderAdd = ({title, href}) => {
 
   return (
     <IonHeader>
-      <IonToolbar>
+      <IonToolbar class="ion-no-border" id="addToolbar" mode="md">
       <IonTitle>{title}</IonTitle>
         <IonButtons slot="start">
           <IonBackButton></IonBackButton>

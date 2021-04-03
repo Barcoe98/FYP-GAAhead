@@ -1,0 +1,12 @@
+#normToolbar, #delToolbar, #addToolbar{
+  background-color: #222327 !important;
+}
+ 
+ ion-header {
+  background-color: #397ffc !important;
+}
+
+ion-toolbar {
+  --color: #ffffff;
+  --background: #222327;
+}

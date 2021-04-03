@@ -13,28 +13,28 @@ const MorePage = () => {
       <IonContent id="pg-Sze">
       <IonList>
 
-      <IonItem>
+      <IonItem id="pg-Sze">
         <IonIcon size="/manager/my-profile" icon={person}></IonIcon>
         <IonLabel>My Profile</IonLabel>
       </IonItem>
 
-      <IonItem>
+      <IonItem id="pg-Sze">
         <IonIcon size="" icon={informationCircle}></IonIcon>
         <IonLabel>About</IonLabel>
       </IonItem>
 
-      <IonItem>
+      <IonItem id="pg-Sze">
         <IonIcon size="" icon={helpCircle}></IonIcon>
         <IonLabel >App Tutorial</IonLabel>
       </IonItem>
 
-      <IonItem>
+      <IonItem id="bg-col">
         <IonIcon size="" icon={apps}></IonIcon>
         <IonLabel>Another Item 2</IonLabel>
       </IonItem>
     </IonList>
 
-    <IonItem>
+    <IonItem id="pg-Sze">
       <IonIcon color="danger" size="" icon={logOut}></IonIcon>
       <IonLabel color="danger">Logout</IonLabel>
     </IonItem>

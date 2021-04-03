@@ -84,7 +84,7 @@ const ManagerTabs = () => {
         <Redirect exact path="/" to ="/home"></Redirect>
     </IonRouterOutlet>
 
-    <IonTabBar id="ManagerNavbar" slot="bottom">
+    <IonTabBar slot="bottom">
         <IonTabButton id="ManagerNavbar" tab="matches" href="/manager/match">
           <IonIcon icon={baseball} />
           <IonLabel>Fixtures & Results</IonLabel>
