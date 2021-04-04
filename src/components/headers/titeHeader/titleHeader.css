@@ -1,0 +1,19 @@
+#titleHeader {
+  font-size: xx-large;
+  text-align: center;
+  background-color: #121212;
+  color: white;
+}
+
+ion-header {
+  background-color: #121212;
+}
+
+#btnHeader {
+  background-color: blueviolet;
+  border-radius: 25px;
+  color: whitesmoke;
+  justify-content: center;
+  width: 50%;
+  max-width: 50%;
+}

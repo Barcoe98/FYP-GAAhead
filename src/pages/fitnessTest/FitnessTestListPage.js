@@ -29,7 +29,7 @@ const FitnessTestPage = () => {
   return (
     <IonPage>
       <PageHeaderAdd
-        title=" Add Fitness Test"
+        title="Fitness Tests"
         href="/manager/fitness/test/add"
       ></PageHeaderAdd>
       <IonContent>
