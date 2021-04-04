@@ -14,6 +14,9 @@ import {
   baseball,
 } from "ionicons/icons";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { fa, faClipboardCheck, faClipboardList, faList, faUsers } from "@fortawesome/free-solid-svg-icons";
+
 import HomePage from "../../../pages/navBarPages/homePage";
 import MorePage from "../../../pages/navBarPages/morePage";
 import MyProfilePage from "../../../pages/navBarPages/myProfilePage";
@@ -148,19 +151,19 @@ const ManagerTabs = () => {
 
       <IonTabBar slot="bottom">
         <IonTabButton id="ManagerNavbar" tab="matches" href="/manager/match">
-          <IonIcon icon={baseball} />
+        <FontAwesomeIcon icon={faClipboardList} size="3x" color="#ffffff"/>
           <IonLabel>Fixtures & Results</IonLabel>
         </IonTabButton>
         <IonTabButton id="ManagerNavbar" tab="planner" href="/manager/planner">
-          <IonIcon icon={clipboardOutline} />
+        <FontAwesomeIcon icon={faClipboardList} size="3x" color="#ffffff"/>
           <IonLabel>Planner</IonLabel>
         </IonTabButton>
         <IonTabButton id="ManagerNavbar" tab="team" href="/manager/team">
-          <IonIcon icon={peopleOutline} />
+        <FontAwesomeIcon icon={faUsers} size="3x" color="#ffffff"/>
           <IonLabel>Team</IonLabel>
         </IonTabButton>
         <IonTabButton id="ManagerNavbar" tab="more" href="/manager/more">
-          <IonIcon icon={menuOutline} />
+        <FontAwesomeIcon icon={faList} size="3x" color="#fffff7"/>
           <IonLabel>More</IonLabel>
         </IonTabButton>
       </IonTabBar>
