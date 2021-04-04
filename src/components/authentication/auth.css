@@ -20,5 +20,13 @@
     margin-top: 25px;
     border-radius: 8px;
     border: 2px solid grey;
-    color: black;
+    color: whitesmoke;
+}
+
+#pg-col{
+    background-color: #121212;
+}
+
+ion-input{
+
 }

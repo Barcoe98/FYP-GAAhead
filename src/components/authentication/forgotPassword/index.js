@@ -19,7 +19,7 @@ const ForgotPassword = () => {
   const [status, setStatus] = useState({
     loading: false,
     error: false,
-    msg: true,
+    msg: false,
   });
   const { setLoggedIn } = useAuth();
 
@@ -40,10 +40,10 @@ const ForgotPassword = () => {
     <>
       <IonContent>
         <div id="authContainer">
-          <IonList>
+          <IonList id="pg-col">
             <IonLabel id="pgTitle">Reset Password</IonLabel>
 
-            <IonItem id="rndInput">
+            <IonItem color="light" id="rndInput">
               <IonLabel position="stacked">Email</IonLabel>
               <IonInput
                 value={email}
@@ -64,7 +64,7 @@ const ForgotPassword = () => {
             <IonButton
               id="btnTheme"
               expand="block"
-              color="dark"
+              color="light"
               fill="solid"
               type="submit"
               onClick={handleForgotPword}

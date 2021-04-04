@@ -49,9 +49,9 @@ const Login = () => {
     <>
       <IonContent>
         <div id="authContainer">
-          <IonList>
+          <IonList id="pg-col">
             <IonLabel id="pgTitle">Login</IonLabel>
-            <IonItem id="rndInput">
+            <IonItem color="light" id="rndInput">
               <IonLabel position="stacked">Email</IonLabel>
               <IonInput
                 value={email}
@@ -63,7 +63,7 @@ const Login = () => {
             {status.emailError && (
               <IonText color="danger"> Email Error</IonText>
             )}
-            <IonItem id="rndInput">
+            <IonItem color="light" id="rndInput">
               <IonLabel position="stacked">Password</IonLabel>
               <IonInput
                 value={pword}
@@ -80,7 +80,7 @@ const Login = () => {
             <IonButton
               id="btnTheme"
               expand="block"
-              color="dark"
+              color="light"
               fill="solid"
               type="submit"
               onClick={handleLogin}
@@ -94,7 +94,7 @@ const Login = () => {
                   <IonButton
                     id="logoBtnTheme"
                     expand="block"
-                    color="dark"
+                    color="light"
                     fill="outline"
                   >
                     <IonIcon
@@ -108,7 +108,7 @@ const Login = () => {
                   <IonButton
                     id="logoBtnTheme"
                     expand="block"
-                    color="dark"
+                    color="light"
                     fill="outline"
                   >
                     <IonIcon slot="icon-only" icon={logoFacebook}></IonIcon>

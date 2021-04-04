@@ -72,10 +72,10 @@ const Register = () => {
     <>
       <IonContent>
         <div id="authContainer">
-          <IonList>
+          <IonList id="pg-col">
             <IonLabel id="pgTitle">Create an Account</IonLabel>
 
-            <IonItem id="rndInput">
+            <IonItem color="light" id="rndInput">
               <IonLabel>Type of User</IonLabel>
               <IonSelect
                 value={userType}
@@ -87,7 +87,7 @@ const Register = () => {
               </IonSelect>
             </IonItem>
 
-            <IonItem id="rndInput">
+            <IonItem color="light" id="rndInput">
               <IonLabel position="stacked">Email</IonLabel>
               <IonInput
                 type="email"
@@ -100,7 +100,7 @@ const Register = () => {
               <IonText color="danger"> Email Error</IonText>
             )}
 
-            <IonItem id="rndInput">
+            <IonItem color="light" id="rndInput">
               <IonLabel position="stacked">Password</IonLabel>
               <IonInput
                 type="password"
@@ -110,7 +110,7 @@ const Register = () => {
               ></IonInput>
             </IonItem>
 
-            <IonItem id="rndInput">
+            <IonItem color="light" id="rndInput">
               <IonLabel position="stacked">Confirm Password</IonLabel>
               <IonInput type="password" id="confrmPword" required></IonInput>
             </IonItem>
@@ -122,7 +122,7 @@ const Register = () => {
               onClick={handleSignUp}
               id="btnTheme"
               expand="block"
-              color="dark"
+              color="light"
               shape=""
               fill="solid"
               type="submit"
@@ -135,7 +135,7 @@ const Register = () => {
                   <IonButton
                     id="logoBtnTheme"
                     expand="block"
-                    color="dark"
+                    color="light"
                     fill="outline"
                   >
                     <IonIcon
@@ -149,7 +149,7 @@ const Register = () => {
                   <IonButton
                     id="logoBtnTheme"
                     expand="block"
-                    color="dark"
+                    color="light"
                     fill="outline"
                   >
                     <IonIcon slot="icon-only" icon={logoFacebook}></IonIcon>
@@ -158,7 +158,7 @@ const Register = () => {
               </ion-row>
             </ion-grid>
 
-            <IonButton expand="block" fill="clear" routerLink="/login">
+            <IonButton color="light" expand="block" fill="clear" routerLink="/login">
               Have an Account? Login
             </IonButton>
 
