@@ -22,33 +22,33 @@ const MorePage = () => {
   return (
     <IonPage>
       <PageHeader title="More Page"></PageHeader>
-      <IonContent id="pg-Sze">
+      <IonContent id="bg-col">
         <IonList>
-          <IonItem id="pg-Sze">
-            <IonIcon size="/manager/my-profile" icon={person}></IonIcon>
+          <IonItem routerLink="/manager/my-profile" id="bg-col">
+            <IonIcon icon={person}></IonIcon>
             <IonLabel>My Profile</IonLabel>
           </IonItem>
 
-          <IonItem id="pg-Sze">
-            <IonIcon size="" icon={informationCircle}></IonIcon>
+          <IonItem routerLink="#" id="bg-col">
+            <IonIcon icon={informationCircle}></IonIcon>
             <IonLabel>About</IonLabel>
           </IonItem>
 
-          <IonItem id="pg-Sze">
-            <IonIcon size="" icon={helpCircle}></IonIcon>
+          <IonItem routerLink="#" id="bg-col">
+            <IonIcon icon={helpCircle}></IonIcon>
             <IonLabel>App Tutorial</IonLabel>
           </IonItem>
 
-          <IonItem id="bg-col">
-            <IonIcon size="" icon={apps}></IonIcon>
+          <IonItem routerLink="#" id="bg-col">
+            <IonIcon icon={apps}></IonIcon>
             <IonLabel>Another Item 2</IonLabel>
           </IonItem>
-        </IonList>
 
-        <IonItem id="pg-Sze">
-          <IonIcon color="danger" size="" icon={logOut}></IonIcon>
-          <IonLabel color="danger">Logout</IonLabel>
-        </IonItem>
+          <IonItem routerLink="#" id="bg-col">
+            <IonIcon color="danger" icon={logOut}></IonIcon>
+            <IonLabel color="danger">Logout</IonLabel>
+          </IonItem>
+        </IonList>
       </IonContent>
     </IonPage>
   );
