@@ -29,7 +29,6 @@ const AuthContextProvider = (props) => {
         userType: userType
       })
     })
-    //console.log(currentUser.uid)
   }
 
   //takes in email and password and logins in user

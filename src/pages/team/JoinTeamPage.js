@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   IonCol,
   IonRow,
@@ -12,21 +12,36 @@ import {
 } from "@ionic/react";
 import PageHeader from "../../components/headers";
 import TextInputField from "../../components/textInputs/textInputField";
+import { firestore } from "../../firebase";
+import { useAuth } from "../../contexts/authContext";
+import { useHistory } from "react-router-dom";
+
 import "../pages.css";
 
 const JoinTeamPage = () => {
+
+  const { currentUser } = useAuth();
+  const currentUserId = currentUser?.uid
+  const history = useHistory();
+
+  const [teamName, setTeamName] = useState("");
+  const [teamId, setTeamId] = useState("");
+
   //TODO add validation
   const [status, setStatus] = useState({
     loading: false,
     emailError: false,
     pwordError: false,
   });
-  const [teamName, setTeamName] = useState("");
-  const [teamId, setTeamId] = useState("");
-
 
   const handleJoinTeam = async () => {
-    //TODO add update teamId field in DB
+    const profileRef = firestore
+      .collection("users")
+      .doc(currentUserId)
+      .collection("my_profile").doc('2KvIi2b8DI22lfwEihJa');
+    const profileData = { teamId: teamId };
+    await profileRef.update(profileData)
+    history.goBack();
   };
 
   return (

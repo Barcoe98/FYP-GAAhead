@@ -3,6 +3,7 @@ import { IonContent, IonPage, IonGrid, IonCol, IonRow } from "@ionic/react";
 import PageHeader from "../../components/headers/index";
 
 const PlannerPage = () => {
+  
   return (
     <IonPage>
       <PageHeader title="Planners"></PageHeader>
@@ -36,12 +37,13 @@ const PlannerPage = () => {
           </IonRow>
 
           <IonRow id="bg-col">
-            <IonCol id="navBtnTeal" size="12">
-              <ion-router-link id="navLnk" href="/">
-                Extra Feature
-              </ion-router-link>
-            </IonCol>
-          </IonRow>
+          <IonCol id="navBtnGrn" size="12">
+            <ion-router-link id="navLnk" href="/player/team/join">
+              Join Team
+            </ion-router-link>
+          </IonCol>
+        </IonRow>
+
         </IonGrid>
       </IonContent>
     </IonPage>
