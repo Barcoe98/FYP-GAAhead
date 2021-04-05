@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import { auth } from "../firebase";
+import { auth, firestore } from "../firebase";
 
 const AuthContext = React.createContext({ loggedIn: false });
 
@@ -22,8 +22,14 @@ const AuthContextProvider = (props) => {
   }, []);
 
   //takes in email and password//creates user with email and password specified
-  function signUp(email, password) {
-    return auth.createUserWithEmailAndPassword(email, password);
+  function signUp(email, password, userType) {
+    auth.createUserWithEmailAndPassword(email, password).then( currentUser => {
+      return firestore.collection('users').doc(currentUser.uid).collection('my_profile').add({
+        email: email,
+        userType: userType
+      })
+    })
+    console.log(currentUser.uid)
   }
 
   //takes in email and password and logins in user

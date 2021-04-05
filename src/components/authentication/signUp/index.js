@@ -39,33 +39,26 @@ const Register = () => {
       //set loading to true, which displays loading icon
       //Set errors to false before attempting sign up
       setStatus({ loading: true, emailError: false, pwordError: false });
-      console.log("Btn pressed");
+      //console.log("Btn pressed");
       await signUp(email, pword);
-      console.log("user created ");
-      console.log("user signed in");
-
-      //console.log(currentUser.uid)
-      // const userRef = firestore.collection('users').doc(currentUser.uid).collection('my_profile')
-      // const userData = {email, userType}
-      // await userRef.add(userData)
-      //console.log("user Added")
-      //Create user document in DB
+      //console.log("user created ");
+      //console.log("user signed in");
 
       //Set loading and errors to false after successful login
       setStatus({ loading: false, emailError: false, pwordError: false });
       history.push("/manager/home");
-      console.log(currentUser.uid);
+      //console.log(currentUser.uid);
     } catch {
       //Set loading to false after attempted login
       //set errors to true and display error message
       //setStatus({loading: false, emailError: true, pwordError: true})
     }
-    const userRef = firestore
-      .collection("users")
-      .doc(currentUser.uid)
-      .collection("my_profile");
-    const userData = { email, userType, teamId };
-    await userRef.add(userData);
+    // const userRef = firestore
+    //   .collection("users")
+    //   .doc(currentUser.uid)
+    //   .collection("my_profile");
+    // const userData = { email, userType, teamId };
+    // await userRef.add(userData);
     //console.log(currentUser.uid);
   }
 
