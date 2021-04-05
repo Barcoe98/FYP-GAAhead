@@ -66,7 +66,7 @@ const Register = () => {
       .collection("my_profile");
     const userData = { email, userType, teamId };
     await userRef.add(userData);
-    console.log(currentUser.uid);
+    //console.log(currentUser.uid);
   }
 
   return (

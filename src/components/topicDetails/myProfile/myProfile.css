@@ -1,5 +1,7 @@
 /* My Profile */
-
+#bg-col {
+  background-color: #121212;
+}
 /* CSS for background Image*/
 #my-bg-img {
   background-image: url("https://res.cloudinary.com/dmikx06rt/image/upload/v1614895089/FYP-GAAhead/croke-park-football-generic_fn4osr.jpg");
@@ -14,37 +16,33 @@
   max-height: 100%;
 }
 
-#myName {
-  text-align: center;
-  font-weight: 600;
-  padding: 2px;
-  color: black;
-  opacity: 1;
+
+#myEmail, #teamId, #title, #myName {
+  margin-top: 2px;
+  color: white;
+  font-size: medium;
 }
 
-#myEmail {
-  text-align: center;
-  padding: 0px;
-  margin-top: 0%;
-  opacity: 1;
-  color: black;
-}
+
 
 /* Content title for My Profile Details*/
 #myContentTitle {
   text-align: center;
   font-weight: 600;
   padding: 2px;
-  color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-size:large;
 }
 
 /* Content section for My Profile Details*/
 #myContent {
   font-size: small;
   padding: 10px;
-  border: 1px solid black;
+  border: 1px solid white;
   border-radius: 25px;
-  margin: 4px 4px 10px 4px;
+  margin: 25px 4px 10px 4px;
   color: black;
   text-align: justify;
   opacity: 0.9;

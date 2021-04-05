@@ -53,6 +53,7 @@ import TeamStatsPage from "../../../pages/teamStats/teamStatsPage";
 
 import DiaryEntriesListPage from "../../../pages/diary/DiaryEntryListPage";
 import DiaryEntryDetailsPage from "../../../pages/diary/DiaryEntryDetailsPage";
+import ManagerProfileDetails from "../../topicDetails/myProfile/manager";
 
 
 const ManagerTabs = () => {
@@ -66,7 +67,7 @@ const ManagerTabs = () => {
           <MorePage></MorePage>
         </Route>
         <Route path="/manager/my-profile">
-          <MyProfilePage></MyProfilePage>
+          <ManagerProfileDetails></ManagerProfileDetails>
         </Route>
         <Route path="/manager/match">
           <MatchPage></MatchPage>
