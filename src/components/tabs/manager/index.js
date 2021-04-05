@@ -44,8 +44,8 @@ import FixtureListPage from "../../../pages/fixture/FixtureListPage";
 import FixtureDetailsPage from "../../../pages/fixture/FixtureDetailsPage";
 import AddFixturePage from "../../../pages/fixture/addFixturePage";
 
-import PlayerListPage from "../../../pages/player/PlayerListPage";
-import PlayerDetailsPage from "../../../pages/player/PlayerDetailsPage";
+import PlayerListPage from "../../../pages/team/PlayerListPage";
+import PlayerDetailsPage from "../../../pages/team/PlayerDetailsPage";
 
 import TeamStatsPage from "../../../pages/teamStats/teamStatsPage";
 

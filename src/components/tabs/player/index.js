@@ -24,8 +24,8 @@ import AddFitnessTestResultsPage from "../../../pages/fitnessTest/AddFitnessTest
 
 import FitnessTestListPage from "../../../pages/fitnessTest/FitnessTestListPage";
 
-import PlayerListPage from "../../../pages/player/PlayerListPage";
-import PlayerDetailsPage from "../../../pages/player/PlayerDetailsPage";
+import PlayerListPage from "../../../pages/team/PlayerListPage";
+import PlayerDetailsPage from "../../../pages/team/PlayerDetailsPage";
 
 import DiaryEntriesListPage from "../../../pages/diary/DiaryEntryListPage";
 import DiaryEntryDetailsPage from "../../../pages/diary/DiaryEntryDetailsPage";
