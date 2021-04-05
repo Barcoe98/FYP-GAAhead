@@ -10,41 +10,61 @@ import {
 } from "@ionic/react";
 import PageHeader from "../../components/headers";
 import { firestore } from "../../firebase";
+import { useAuth } from "../../contexts/authContext";
+
 import "./player.css";
+
+//https://www.youtube.com/watch?v=fQ4u1J717ys
 
 const PlayerListPage = () => {
   const [players, setPlayers] = useState([]);
+  const { currentUser } = useAuth();
 
-  useEffect(() => {
-    const playerRef = firestore.collection("players");
-    playerRef.get().then((snapshot) => {
+  useEffect (() => {
+    // const scheduleRef = firestore
+    //   .collection("users")
+    //   .doc(currentUser?.uid)
+    //   .collection("training_schedules");
+    // const snapshot = scheduleRef.where('position', '==', true).get();
+
+    // snapshot.then(doc => {
+    //   console.log(doc.id, '=>', doc.data());
+    // });
+
+    const ref =  firestore.collectionGroup('my_profile')
+    .where('club', '==', 'abc123')
+    .where('userType', '==', 'player')
+    
+    ref.get().then((snapshot) => {
       const players = snapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
       }));
       setPlayers(players);
     });
-  }, []);
+
+    
+  },);
 
   return (
     <IonPage>
       <PageHeader title="Players"></PageHeader>
       <IonContent>
-        <IonList>
-          {players.map((player) => (
+        <IonList id="bg-col">
+          {players.map((myProfile) => (
             <IonCard
               id="playerGridCards"
-              key={player.id}
-              routerLink={("/manager/team/panel/", player.id)}
+              key={myProfile.id}
+              routerLink={("/manager/team/panel/", myProfile.id)}
             >
               <IonImg
                 id="pImage"
                 src="https://res.cloudinary.com/dmikx06rt/image/upload/v1614630566/FYP-GAAhead/profilePic_boakip.jpg"
               ></IonImg>
               <IonGrid>
-                <IonRow id="pName">{player.name}</IonRow>
-                <IonRow id="pAge">{player.age}</IonRow>
-                <IonRow id="pPosition">{player.position}</IonRow>
+                <IonRow id="pName">{myProfile.club}</IonRow>
+                <IonRow id="pAge">{myProfile.email}</IonRow>
+                <IonRow id="pPosition">{myProfile.userType}</IonRow>
               </IonGrid>
             </IonCard>
           ))}

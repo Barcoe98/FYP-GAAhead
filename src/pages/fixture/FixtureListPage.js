@@ -11,19 +11,15 @@ const FixtureListPage = () => {
   const { currentUser } = useAuth();
 
   useEffect(() => {
-    const fixtureRef = firestore
-      .collection("users")
-      .doc(currentUser?.uid)
-      .collection("fixtures");
-    console.log(currentUser?.uid);
-    fixtureRef.get().then((snapshot) => {
+    const ref = firestore.collectionGroup('fixtures').where('competition', '==', 'League')
+    ref.get().then((snapshot) => {
       const fixtures = snapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
       }));
       setFixtures(fixtures);
     });
-  }, [currentUser]);
+  }, []);
 
   return (
     <IonPage>

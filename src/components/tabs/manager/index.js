@@ -151,19 +151,19 @@ const ManagerTabs = () => {
 
       <IonTabBar slot="bottom">
         <IonTabButton id="ManagerNavbar" tab="matches" href="/manager/match">
-        <FontAwesomeIcon icon={faClipboardList} size="3x" color="#ffffff"/>
+        <FontAwesomeIcon icon={faClipboardList} size="3x" color="#e0e0e0"/>
           <IonLabel>Fixtures & Results</IonLabel>
         </IonTabButton>
         <IonTabButton id="ManagerNavbar" tab="planner" href="/manager/planner">
-        <FontAwesomeIcon icon={faClipboardList} size="3x" color="#ffffff"/>
+        <FontAwesomeIcon icon={faClipboardList} size="3x" color="#e0e0e0"/>
           <IonLabel>Planner</IonLabel>
         </IonTabButton>
         <IonTabButton id="ManagerNavbar" tab="team" href="/manager/team">
-        <FontAwesomeIcon icon={faUsers} size="3x" color="#ffffff"/>
+        <FontAwesomeIcon icon={faUsers} size="3x" color="#e0e0e0"/>
           <IonLabel>Team</IonLabel>
         </IonTabButton>
         <IonTabButton id="ManagerNavbar" tab="more" href="/manager/more">
-        <FontAwesomeIcon icon={faList} size="3x" color="#fffff7"/>
+        <FontAwesomeIcon icon={faList} size="3x" color="#e0e0e0"/>
           <IonLabel>More</IonLabel>
         </IonTabButton>
       </IonTabBar>
