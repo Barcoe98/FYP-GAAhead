@@ -47,6 +47,8 @@ import AddFixturePage from "../../../pages/fixture/addFixturePage";
 import PlayerListPage from "../../../pages/team/PlayerListPage";
 import PlayerDetailsPage from "../../../pages/team/PlayerDetailsPage";
 
+import JoinTeamPage from "../../../pages/team/JoinTeamPage";
+
 import TeamStatsPage from "../../../pages/teamStats/teamStatsPage";
 
 import DiaryEntriesListPage from "../../../pages/diary/DiaryEntryListPage";
@@ -71,6 +73,9 @@ const ManagerTabs = () => {
         </Route>
         <Route exact path="/manager/team">
           <TeamPage></TeamPage>
+        </Route>
+        <Route exact path="/player/team/join">
+          <JoinTeamPage></JoinTeamPage>
         </Route>
         <Route exact path="/manager/planner">
           <PlannerPage></PlannerPage>

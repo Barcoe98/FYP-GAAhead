@@ -23,6 +23,7 @@ const Register = () => {
 
   const [email, setEmail] = useState("");
   const [pword, setPword] = useState("");
+  const [teamId, setTeamId] = useState("");
   const [userType, setUserType] = useState("");
   //const [ confrmPword, setConfrmPword ] = useState("")
   const [status, setStatus] = useState({
@@ -63,7 +64,7 @@ const Register = () => {
       .collection("users")
       .doc(currentUser.uid)
       .collection("my_profile");
-    const userData = { email, userType };
+    const userData = { email, userType, teamId };
     await userRef.add(userData);
     console.log(currentUser.uid);
   }

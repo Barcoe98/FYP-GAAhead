@@ -14,7 +14,7 @@ import PageHeader from "../../components/headers";
 import TextInputField from "../../components/textInputs/textInputField";
 import "../pages.css";
 
-const TeamInvitePage = () => {
+const JoinTeamPage = () => {
   //TODO add validation
   const [status, setStatus] = useState({
     loading: false,
@@ -26,47 +26,47 @@ const TeamInvitePage = () => {
 
 
   const handleJoinTeam = async () => {
-    //TODO add save results method
+    //TODO add update teamId field in DB
   };
 
   return (
     <IonPage>
-      <PageHeader title="Send Invite"></PageHeader>
+      <PageHeader title="Join Team"></PageHeader>
       <IonContent id="ft-pg-bg">
         <IonGrid id="ft-pg-bg">
           <IonRow>
             <IonCol>
               <IonItemDivider id="itm-divider-red">
-                <IonLabel>Add Player To Team</IonLabel>
+                <IonLabel>Join Team</IonLabel>
               </IonItemDivider>
             </IonCol>
           </IonRow>
 
-           {/*Time Input Fields & Labels*/}
+           {/*Name Input Fields & Labels*/}
            <IonRow>
            <TextInputField
-             label="Team Id"
+             label="Team Name"
              text={teamName}
              size="12"
              setText={(e) => setTeamName(e.detail.value)}
-             placeholder="Enter Time"
+             placeholder="Enter Team Name"
              type="text"
            ></TextInputField>
          </IonRow>
 
-          {/*Time Input Fields & Labels*/}
+          {/*Team Id Input Fields & Labels*/}
           <IonRow>
             <TextInputField
               label="Team Id"
               text={teamId}
               size="12"
               setText={(e) => setTeamId(e.detail.value)}
-              placeholder="Enter Time"
+              placeholder="Enter Team Id"
               type="text"
             ></TextInputField>
           </IonRow>
 
-          {/* Add Button*/}
+          {/* Join Button*/}
           <IonRow>
             <IonCol>
               <IonLoading isOpen={status.loading}></IonLoading>
@@ -88,4 +88,4 @@ const TeamInvitePage = () => {
   );
 };
 
-export default TeamInvitePage;
+export default JoinTeamPage;

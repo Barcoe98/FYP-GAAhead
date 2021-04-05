@@ -18,19 +18,8 @@ import "./player.css";
 
 const PlayerListPage = () => {
   const [players, setPlayers] = useState([]);
-  const { currentUser } = useAuth();
 
   useEffect (() => {
-    // const scheduleRef = firestore
-    //   .collection("users")
-    //   .doc(currentUser?.uid)
-    //   .collection("training_schedules");
-    // const snapshot = scheduleRef.where('position', '==', true).get();
-
-    // snapshot.then(doc => {
-    //   console.log(doc.id, '=>', doc.data());
-    // });
-
     const ref =  firestore.collectionGroup('my_profile')
     .where('club', '==', 'abc123')
     .where('userType', '==', 'player')
@@ -42,8 +31,6 @@ const PlayerListPage = () => {
       }));
       setPlayers(players);
     });
-
-    
   },);
 
   return (
