@@ -23,13 +23,13 @@ const AuthContextProvider = (props) => {
 
   //takes in email and password//creates user with email and password specified
   function signUp(email, password, userType) {
-    auth.createUserWithEmailAndPassword(email, password).then( currentUser => {
-      return firestore.collection('users').doc(currentUser.uid).collection('my_profile').add({
+    auth.createUserWithEmailAndPassword(email, password).then( cred => {
+      return firestore.collection('users').doc(cred.user.uid).collection('my_profile').add({
         email: email,
         userType: userType
       })
     })
-    console.log(currentUser.uid)
+    //console.log(currentUser.uid)
   }
 
   //takes in email and password and logins in user
