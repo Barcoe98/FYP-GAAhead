@@ -21,7 +21,7 @@ const PlayerListPage = () => {
 
   useEffect (() => {
     const ref =  firestore.collectionGroup('my_profile')
-    .where('club', '==', 'abc123')
+    .where('teamId', '==', '1234')
     .where('userType', '==', 'player')
     
     ref.get().then((snapshot) => {

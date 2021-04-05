@@ -11,7 +11,9 @@ const FixtureListPage = () => {
   const { currentUser } = useAuth();
 
   useEffect(() => {
-    const ref = firestore.collectionGroup('fixtures').where('competition', '==', 'League')
+    const ref =  firestore.collectionGroup('my_profile')
+    .where('teamId', '==', '1234')
+
     ref.get().then((snapshot) => {
       const fixtures = snapshot.docs.map((doc) => ({
         id: doc.id,
@@ -30,7 +32,7 @@ const FixtureListPage = () => {
       <IonContent>
         <IonList id="bg-col">
           {fixtures.map((fixture) => (
-            <FixtureCard fixture={fixture}></FixtureCard>
+            <FixtureCard key={fixture.id} fixture={fixture}></FixtureCard>
           ))}
         </IonList>
       </IonContent>
