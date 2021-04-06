@@ -43,35 +43,24 @@ const AddResultPage = () => {
   });
 
   const handleAdd = async () => {
+
     const resultRef = firestore
       .collection("users")
       .doc(currentUser?.uid)
       .collection("results");
     const resultData = {
-      homeScore,
-      awayScore,
-      homeHooks,
-      awayHooks,
-      homeBlocks,
-      awayBlocks,
-      homeWides,
-      awayWides,
-      homeShots,
-      awayShots,
-      homePuckouts,
-      awayPuckouts,
-      homeFrees,
-      awayFrees,
-      home65s,
-      away65s,
-      homePenalties,
-      awayPenalties,
-      homeFouls,
-      awayFouls,
-      homeYCard,
-      awayYCard,
-      homeRCard,
-      awayRCard,
+      homeScore,awayScore,
+      homeHooks,awayHooks,
+      homeBlocks,awayBlocks,
+      homeWides,awayWides,
+      homeShots,awayShots,
+      homePuckouts,awayPuckouts,
+      homeFrees,awayFrees,
+      home65s,away65s,
+      homePenalties,awayPenalties,
+      homeFouls,awayFouls,
+      homeYCard,awayYCard,
+      homeRCard,awayRCard,
     };
     await resultRef.add(resultData);
     history.goBack();

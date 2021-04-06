@@ -11,6 +11,7 @@ const ResultListPage = () => {
   const [results, setResults] = useState([]);
   const { currentUser } = useAuth();
   const [managerId, setManagerId] = useState();
+
   const [errorMessage, setErrorMessage] = useState();
   const [showAlert, setShowAlert] = useState(false);
 
@@ -18,23 +19,24 @@ const ResultListPage = () => {
   const myManagerId = null
 
   useEffect(() => {
+    
     if (myManagerId !== null ) {
       //set Manager ID to user manager ID
       setManagerId(myManagerId)
 
       //ref for user managers results collection
-      const resultRef = firestore
+      const ref = firestore
       .collection("users")
       .doc(managerId)
       .collection("results");
 
       //snapshot of doc 
-      resultRef.get().then((snapshot) => {
-      const results = snapshot.docs.map((doc) => ({
+      ref.get().then((snapshot) => {
+      const docs = snapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
       }));
-      setResults(results);
+      setResults(docs);
     });
     }
     else {
@@ -52,7 +54,7 @@ const ResultListPage = () => {
       <IonContent>
         <IonList id="bg-col">
           {results.map((result) => (
-            <ResultCard result={result}></ResultCard>
+            <ResultCard key={result.id} result={result}></ResultCard>
           ))}
         </IonList>
         
