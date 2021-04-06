@@ -11,28 +11,28 @@ const FitnessTestCard = ({ tSchedule }) => {
       routerLink={("/manager/planner/trainingschedule/", tSchedule.id)}
     >
       <IonGrid>
-        <IonRow>{tSchedule.title}</IonRow>
+        <IonRow id="tsTitle">{tSchedule.title}</IonRow>
         <IonRow>
-          <IonCol size="1">
+          <IonCol size="2">
             <IonIcon icon={calendar}></IonIcon>
           </IonCol>
-          <IonCol id="tsDate" size="11">
+          <IonCol id="tsDate" size="10">
             {tSchedule.date}
           </IonCol>
         </IonRow>
         <IonRow>
-          <IonCol size="1">
+          <IonCol size="2">
             <IonIcon icon={time}></IonIcon>
           </IonCol>
-          <IonCol id="tsTime" size="11">
+          <IonCol id="tsTime" size="10">
             {tSchedule.time}
           </IonCol>
         </IonRow>
         <IonRow>
-          <IonCol size="1">
+          <IonCol size="2">
             <IonIcon icon={flame}></IonIcon>
           </IonCol>
-          <IonCol id="tsDifficulty" size="11">
+          <IonCol id="tsDifficulty" size="10">
             {tSchedule.difficulty}
           </IonCol>
         </IonRow>

@@ -2,24 +2,21 @@ import React, { useEffect, useState } from "react";
 import { IonContent, IonPage, IonList} from "@ionic/react";
 import PageHeaderAdd from "../../components/headers/addHeader/index";
 import ResultCard from "../../components/cards/matchCard/result/index";
+import AlertError from "../../components/alerts/errorAlert";
 
 import { firestore } from "../../firebase";
-import { useAuth } from "../../contexts/authContext";
-import AlertError from "../../components/alerts/errorAlert";
 
 const ResultListPage = () => {
   const [results, setResults] = useState([]);
-  const { currentUser } = useAuth();
   const [managerId, setManagerId] = useState();
 
   const [errorMessage, setErrorMessage] = useState();
   const [showAlert, setShowAlert] = useState(false);
 
-  //const userId = currentUser?.uid
   const myManagerId = null
 
   useEffect(() => {
-    
+
     if (myManagerId !== null ) {
       //set Manager ID to user manager ID
       setManagerId(myManagerId)
@@ -46,7 +43,7 @@ const ResultListPage = () => {
       console.log('error') 
     }
     
-  }, [currentUser, managerId]);
+  }, [managerId]);
 
   return (
     <IonPage color="secondary">
