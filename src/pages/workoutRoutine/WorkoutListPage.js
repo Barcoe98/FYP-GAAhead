@@ -2,29 +2,51 @@ import React, { useEffect, useState } from "react";
 import { IonContent, IonPage, IonList } from "@ionic/react";
 import PageHeaderAdd from "../../components/headers/addHeader/index";
 import WorkoutCard from "../../components/cards/workoutCard/index";
+import AlertError from "../../components/alerts/errorAlert";
+
 
 import { firestore } from "../../firebase";
-import { useAuth } from "../../contexts/authContext";
 import "../pages.css";
 
 const WorkoutPage = () => {
   const [workouts, setWorkouts] = useState([]);
-  const { currentUser } = useAuth();
+  const [managerId, setManagerId] = useState();
+
+  const [errorMessage, setErrorMessage] = useState();
+  const [showAlert, setShowAlert] = useState(false);
+  const myManagerId = null
 
   useEffect(() => {
-    const workoutRef = firestore
+
+    if (myManagerId !== null ) {
+
+      //set Manager ID to user manager ID
+      setManagerId(myManagerId)
+
+      //ref for user managers fixtures collection
+      const ref = firestore
       .collection("users")
-      .doc(currentUser?.uid)
+      .doc(managerId)
       .collection("workouts");
-    console.log(currentUser?.uid);
-    workoutRef.get().then((snapshot) => {
-      const routines = snapshot.docs.map((doc) => ({
+
+      //snapshot of doc 
+      ref.get().then((snapshot) => {
+      const docs = snapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
       }));
-      setWorkouts(routines);
+      setWorkouts(docs);
     });
-  }, [currentUser]);
+    }
+
+    else {
+      setManagerId(null)
+      setErrorMessage('No Team Data Available, Join a Team')
+      setShowAlert(true)
+      console.log('error') 
+    }
+    
+  }, [managerId]);
 
   return (
     <IonPage>
@@ -35,9 +57,18 @@ const WorkoutPage = () => {
       <IonContent>
         <IonList id="bg-col">
           {workouts.map((workout) => (
-            <WorkoutCard workout={workout}></WorkoutCard>
+            <WorkoutCard key={workout.id} workout={workout}></WorkoutCard>
           ))}
         </IonList>
+
+        <AlertError 
+        setShowAlert={() => setShowAlert(false)} 
+        alertHeader='No Workouts Found'
+        showAlert={showAlert} 
+        msg={errorMessage}>
+        </AlertError>
+
+
       </IonContent>
     </IonPage>
   );

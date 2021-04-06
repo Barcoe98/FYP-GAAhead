@@ -5,11 +5,9 @@ import FixtureCard from "../../components/cards/matchCard/fixture/index";
 import AlertError from "../../components/alerts/errorAlert";
 
 import { firestore } from "../../firebase";
-import { useAuth } from "../../contexts/authContext";
 
 const FixtureListPage = () => {
   const [fixtures, setFixtures] = useState([]);
-  const { currentUser } = useAuth();
   const [managerId, setManagerId] = useState();
 
   const [errorMessage, setErrorMessage] = useState();
@@ -46,7 +44,7 @@ const FixtureListPage = () => {
       console.log('error') 
     }
     
-  }, [currentUser, managerId]);
+  }, [managerId]);
 
   return (
     <IonPage>
