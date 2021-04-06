@@ -1,29 +1,50 @@
 import React, { useEffect, useState } from "react";
-import { IonContent, IonPage, IonList } from "@ionic/react";
+import { IonContent, IonPage, IonList} from "@ionic/react";
 import PageHeaderAdd from "../../components/headers/addHeader/index";
 import ResultCard from "../../components/cards/matchCard/result/index";
 
 import { firestore } from "../../firebase";
 import { useAuth } from "../../contexts/authContext";
+import AlertError from "../../components/alerts/errorAlert";
 
 const ResultListPage = () => {
   const [results, setResults] = useState([]);
   const { currentUser } = useAuth();
+  const [managerId, setManagerId] = useState();
+  const [errorMessage, setErrorMessage] = useState();
+  const [showAlert, setShowAlert] = useState(false);
+
+  //const userId = currentUser?.uid
+  const myManagerId = null
 
   useEffect(() => {
-    const resultRef = firestore
+    if (myManagerId !== null ) {
+      //set Manager ID to user manager ID
+      setManagerId(myManagerId)
+
+      //ref for user managers results collection
+      const resultRef = firestore
       .collection("users")
-      .doc(currentUser?.uid)
+      .doc(managerId)
       .collection("results");
-    console.log(currentUser?.uid);
-    resultRef.get().then((snapshot) => {
+
+      //snapshot of doc 
+      resultRef.get().then((snapshot) => {
       const results = snapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
       }));
       setResults(results);
     });
-  }, [currentUser]);
+    }
+    else {
+      setManagerId(null)
+      setErrorMessage('No Team Data Available, Join a Team')
+      setShowAlert(true)
+      console.log('error') 
+    }
+    
+  }, [currentUser, managerId]);
 
   return (
     <IonPage color="secondary">
@@ -34,6 +55,14 @@ const ResultListPage = () => {
             <ResultCard result={result}></ResultCard>
           ))}
         </IonList>
+        
+        <AlertError 
+        setShowAlert={() => setShowAlert(false)} 
+        alertHeader='No Match Results Found'
+        showAlert={showAlert} 
+        msg={errorMessage}>
+        </AlertError>
+
       </IonContent>
     </IonPage>
   );

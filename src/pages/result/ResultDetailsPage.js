@@ -14,11 +14,12 @@ const ResultDetailsPage = () => {
   const history = useHistory();
   const [result, setResult] = useState(null);
   const [delAlert, setDelAlert] = useState(false);
+  const managerId = '1kK33jibmLZ2RAEb7lF4u9g9STf2'
 
   useEffect(() => {
     const resultRef = firestore
       .collection("users")
-      .doc(currentUser?.uid)
+      .doc(managerId)
       .collection("results")
       .doc(id);
     resultRef.get(id).then((doc) => {

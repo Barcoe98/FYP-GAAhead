@@ -1,0 +1,9 @@
+#errorAlert {
+  --color: blue;
+}
+
+ion-alert {
+ --background: lightGrey !important;
+ --font-size: x-large;
+ --color: peru;
+}

@@ -71,7 +71,7 @@ function UserNavBar() {
   const { currentUser } = useAuth()
   const userTypeRef = firestore.collection('users').doc(currentUser?.uid)
   .collection('my_profile').get('userType')
-  console.log(userTypeRef)
+  //console.log(userTypeRef)
 
   if (userTypeRef === "manager") {
     return <PlayerNavBar />;
