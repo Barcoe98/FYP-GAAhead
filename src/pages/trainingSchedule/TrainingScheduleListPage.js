@@ -9,7 +9,7 @@ import AlertError from "../../components/alerts/errorAlert";
 const TrainingSchedulePage = () => {
   const [trainingSchedules, setTrainingSchedules] = useState([]);
   const [managerId, setManagerId] = useState();
-  const myManagerId = null
+  const myManagerId = '1kK33jibmLZ2RAEb7lF4u9g9STf2'
 
   const [errorMessage, setErrorMessage] = useState();
   const [showAlert, setShowAlert] = useState(false);
