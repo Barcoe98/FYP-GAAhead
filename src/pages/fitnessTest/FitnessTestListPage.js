@@ -16,11 +16,8 @@ const FitnessTestPage = () => {
   const [showAlert, setShowAlert] = useState(false);
 
   const { currentUser } = useAuth();
-  const id = 'team_stats'
-
 
   useEffect(() => {
-
     const ref = firestore
     .collection("users")
     .doc(currentUser?.uid)
@@ -52,7 +49,7 @@ const FitnessTestPage = () => {
       }
     });
 
-  }, [currentUser?.uid, managerId]);
+  }, [currentUser?.uid]);
 
   return (
     <IonPage>

@@ -13,25 +13,53 @@ const FitnessTestDetailsPage = () => {
   const { currentUser } = useAuth();
   const { id } = useParams();
   const history = useHistory();
+
   const [fitnessTest, setFitnessTest] = useState(null);
   const [delAlert, setDelAlert] = useState(false);
+  //const managerId = '1kK33jibmLZ2RAEb7lF4u9g9STf2'
+  var [managerId, setManagerId] = useState();
+
 
   useEffect(() => {
-    const fTestRef = firestore
-      .collection("users")
-      .doc(currentUser?.uid)
-      .collection("fitness_tests")
-      .doc(id);
-    fTestRef.get(id).then((doc) => {
-      const fitnessTest = { id: doc.id, ...doc.data() };
-      setFitnessTest(fitnessTest);
+
+    const ref = firestore
+    .collection("users")
+    .doc(currentUser?.uid)
+
+    ref.get(currentUser?.uid).then(doc => {
+      
+      if (!doc.exists) {
+        console.log('No such document');
+        //history.goBack();
+      } else {
+        const userDoc = { id: doc.id, ...doc.data() };
+
+        //set ManagerId Attributes to matching in DB
+        setManagerId(userDoc?.managerId)
+
+        const ref = firestore
+        .collection("users")
+        .doc(userDoc?.managerId)
+        .collection("fitness_tests");
+
+        const fTestRef = firestore
+        .collection("users")
+        .doc(userDoc?.managerId)
+        .collection("fitness_tests")
+        .doc(id);
+  
+        fTestRef.get(id).then((doc) => {
+          const fitnessTest = { id: doc.id, ...doc.data() };
+          setFitnessTest(fitnessTest);
+        });
+      }
     });
-  }, [id]);
+  }, [currentUser?.uid, id]);
 
   const handleDelete = async () => {
     const fTestRef = firestore
     .collection("users")
-    .doc(currentUser?.uid)
+    .doc(managerId)
     .collection("fitness_tests")
     .doc(id);
     
