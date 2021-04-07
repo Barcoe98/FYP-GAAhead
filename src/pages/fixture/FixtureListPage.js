@@ -41,7 +41,6 @@ const FixtureListPage = () => {
       setManagerId(null)
       setErrorMessage('No Team Data Available, Join a Team')
       setShowAlert(true)
-      console.log('error') 
     }
     
   }, [managerId]);

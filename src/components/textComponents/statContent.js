@@ -6,12 +6,12 @@ const StatContent = ({ statTitle, statValue }) => {
   return (
     <IonRow id="myStatTitle">
       <IonCol size="9">
-        <IonText color="dark" id="">
+        <IonText color="light" id="statTitle">
           {statTitle}
         </IonText>
       </IonCol>
       <IonCol size="3">
-        <IonText color="dark" id="">
+        <IonText color="light" id="statValue">
           {statValue}
         </IonText>
       </IonCol>

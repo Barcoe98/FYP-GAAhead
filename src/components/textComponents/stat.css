@@ -39,6 +39,13 @@
   justify-content: center;
 }
 
+/* Stats for Fixture Details*/
+#statValue,
+#statTitle {
+  font-size: medium;
+  padding-top: 6px;
+}
+
 #StatIcon {
   position: relative;
   padding: 0px;

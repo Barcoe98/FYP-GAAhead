@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { IonPage } from "@ionic/react";
 import PageHeader from "../../components/headers";
-import { useAuth } from "../../contexts/authContext";
+import FixtureForm from "../../components/forms/fixtureForm/index";
+import AlertError from "../../components/alerts/errorAlert";
 
 import { firestore } from "../../firebase";
 import { useHistory } from "react-router-dom";
-import FixtureForm from "../../components/forms/fixtureForm/index";
-import AlertError from "../../components/alerts/errorAlert";
+import { useAuth } from "../../contexts/authContext";
 
 
 const AddFixturePage = () => {
@@ -14,8 +14,8 @@ const AddFixturePage = () => {
   const [errorMessage, setErrorMessage] = useState();
   const [showAlert, setShowAlert] = useState(false);
 
-  const [homeTeam, setHomeTeam] = useState("");
-  const [awayTeam, setAwayTeam] = useState("");
+  const [hTeam, setHomeTeam] = useState("");
+  const [aTeam, setAwayTeam] = useState("");
   const [homeScore, setHomeScore] = useState("");
   const [awayScore, setAwayScore] = useState("");
 
@@ -26,64 +26,50 @@ const AddFixturePage = () => {
 
   const { currentUser } = useAuth();
   const history = useHistory();
-  const [status, setStatus] = useState({
-    loading: false,
-    emailError: false,
-    pwordError: false,
-  });
 
   const handleAdd = async () => {
-
-    const ref = firestore
-      .collection("users")
-      .doc(currentUser?.uid)
-      .collection("fixtures");
-
     const fixtureData = {
-      homeTeam,
-      awayTeam,
+      hTeam,
+      aTeam,
       venue,
       time,
       date,
       competition,
     };
 
-    if (homeTeam === "") {
+    if (hTeam === "") {
       setErrorMessage('No Home Team Entered')
       setShowAlert(true)
-      console.log('Home error Message')   
     }
-    else if (awayTeam === "") {
+    else if (aTeam === "") {
       setErrorMessage('No Away Team Entered')
       setShowAlert(true)
-      console.log('Away error Message')   
     }
     else if (date === "") {
       setErrorMessage('No Date Entered')
       setShowAlert(true)
-      console.log('Away error Message')   
     }    
     else if (time === "") {
       setErrorMessage('No Time Entered')
       setShowAlert(true)
-      console.log('Time error Message')   
     }
     else if (venue === '') {
       setErrorMessage('No Venue Entered')
       setShowAlert(true)
-      console.log('Away error Message')   
     }
     else if (competition === "") {
       setErrorMessage('No Competition Entered')
       setShowAlert(true)
-      console.log('Away error Message')   
     }
     else {
+      const ref = firestore
+      .collection("users")
+      .doc(currentUser?.uid)
+      .collection("fixtures");
+
       await ref.add(fixtureData);
       history.goBack();
-      console.log('success') 
     }
-    
   };
 
   return (
@@ -91,8 +77,8 @@ const AddFixturePage = () => {
       <PageHeader title="Add Match Fixture"></PageHeader>
 
       <FixtureForm
-        homeTeam={homeTeam}
-        awayTeam={awayTeam}
+        homeTeam={hTeam}
+        awayTeam={aTeam}
         homeScore={homeScore}
         awayScore={awayScore}
         time={time}
@@ -108,7 +94,6 @@ const AddFixturePage = () => {
         setVenue={(e) => setVenue(e.detail.value)}
         setCompetition={(e) => setCompetition(e.detail.value)}
         handleAdd={handleAdd}
-        loading={status.loading}
       ></FixtureForm>
 
       <AlertError 

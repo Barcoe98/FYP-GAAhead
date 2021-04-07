@@ -10,7 +10,7 @@ const ResultDetailsPage = ({ result }) => {
     <IonContent>
       <IonList id="bg-col">
         <VersusBar
-          hTeam={result?.homeTeam}
+          hTeam={result?.hTeam}
           hGoals={result?.hGoals}
           hPoints={result?.hPoints}
           aGoals={result?.aGoals}

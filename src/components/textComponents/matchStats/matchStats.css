@@ -26,6 +26,18 @@
   background-color: #5856d6;
 }
 
+#fixtureVsBarHeader {
+  color: white;
+  font-size: larger;
+  display: block;
+  margin: auto;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #005E82;
+
+}
 #teamName {
   color: white;
   font-size: larger;

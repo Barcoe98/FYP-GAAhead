@@ -7,6 +7,7 @@ import AlertDelete from "../../components/alerts/deleteAlert";
 import { useParams, useHistory } from "react-router-dom";
 import { firestore } from "../../firebase";
 import { useAuth } from "../../contexts/authContext";
+import '../pages.css'
 
 const FixtureDetailsPage = () => {
   const { currentUser } = useAuth();

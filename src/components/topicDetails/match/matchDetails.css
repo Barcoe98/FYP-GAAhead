@@ -16,7 +16,7 @@
   margin: 4px 10px 10px 4px;
   color: white;
   text-align: justify;
-  opacity: 0.9;
+  padding-top: 20px;
 }
 
 /* Line to Divide sections*/
@@ -29,4 +29,8 @@
 
 #mLogo {
   border-radius: 50%;
+}
+
+#bg-col{
+  background-color: #121212;
 }
