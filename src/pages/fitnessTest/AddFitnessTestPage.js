@@ -79,6 +79,7 @@ const AddFitnessTestPage = () => {
 
       <Form
         formTitle="Add Fitness Test"
+        btnTitle="Add Fitness Test"
         title={title}
         date={date}
         time={time}

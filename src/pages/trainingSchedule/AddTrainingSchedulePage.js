@@ -26,7 +26,7 @@ const AddTrainingPage = () => {
 
 
   const handleAdd = async () => {
-    const trainingData = {
+    const data = {
       title,
       date,
       time,
@@ -61,12 +61,12 @@ const AddTrainingPage = () => {
       setShowAlert(true)
     }
     else {
-      const trainingRef = firestore
+      const ref = firestore
       .collection("users")
       .doc(currentUser?.uid)
       .collection("training_schedules");
 
-      await trainingRef.add(trainingData);
+      await ref.add(data);
       history.goBack();
     }
   };
@@ -77,6 +77,7 @@ const AddTrainingPage = () => {
 
       <Form
         formTitle="Training Schedule"
+        btnTitle="Add Training Schedule"
         title={title}
         date={date}
         time={time}

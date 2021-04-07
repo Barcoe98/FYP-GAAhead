@@ -20,7 +20,7 @@ const WorkoutRoutineDetails = ({ workoutRoutine }) => {
 
           <hr id="contentDivider"></hr>
           <h5 color="dark" id="sectionTitle">
-            Stretches/Warm Up
+            warm Up
           </h5>
           <IonText>{workoutRoutine?.warmUp}</IonText>
 

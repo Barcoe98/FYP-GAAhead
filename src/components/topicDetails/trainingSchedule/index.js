@@ -7,7 +7,7 @@ import "./trainingScheduleDetails.css";
 const TrainingScheduleDetails = ({ trainingSchedule }) => {
   return (
     <IonContent>
-      <IonList id="bg-color">
+      <IonList id="bg-col">
         <div id="ts-bg-img"></div>
         <h1 id="sectionTitle">{trainingSchedule?.title}</h1>
 
@@ -20,9 +20,9 @@ const TrainingScheduleDetails = ({ trainingSchedule }) => {
 
           <hr id="contentDivider"></hr>
           <h5 color="dark" id="sectionTitle">
-            Stretches/Warm Up
+            Warm Up
           </h5>
-          <IonText>{trainingSchedule?.warm_up}</IonText>
+          <IonText>{trainingSchedule?.warmUp}</IonText>
 
           <hr id="contentDivider"></hr>
           <h5 color="dark" id="sectionTitle">
@@ -34,7 +34,7 @@ const TrainingScheduleDetails = ({ trainingSchedule }) => {
           <h5 color="dark" id="sectionTitle">
             Warm Down
           </h5>
-          <IonText>{trainingSchedule?.warm_down}</IonText>
+          <IonText>{trainingSchedule?.warmDown}</IonText>
         </div>
       </IonList>
     </IonContent>

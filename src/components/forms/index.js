@@ -3,7 +3,7 @@ import { IonContent, IonInput, IonGrid, IonRow, IonCol,IonLabel, IonItemDivider,
 import ItemDivider from '../../components/textInputs/itemDivider'
 import ContentArea from '../../components/textInputs/contentArea'
 
-const Form = ({formTitle, title, setTitle, time, setTime, date, setDate, difficulty, setDifficulty, 
+const Form = ({formTitle, btnTitle, title, setTitle, time, setTime, date, setDate, difficulty, setDifficulty, 
   warmUp, setWarmUp, exercises, setExercises, warmDown, setWarmDown, handleAdd, loading}) => {
   return (
     <IonContent id="wr-pg-bg">
@@ -76,7 +76,7 @@ const Form = ({formTitle, title, setTitle, time, setTime, date, setDate, difficu
           <IonRow>
             <IonCol>
               <IonLoading isOpen={loading}></IonLoading>
-              <IonButton onClick={handleAdd} id="btnTheme" expand="block" color="dark" fill="solid" type="submit" >add Workout </IonButton>
+              <IonButton onClick={handleAdd} id="btnTheme" expand="block" color="dark" fill="solid" type="submit" >{btnTitle}</IonButton>
             </IonCol>
           </IonRow>
           

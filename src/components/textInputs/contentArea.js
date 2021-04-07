@@ -7,7 +7,6 @@ const ContentArea = ({ text, setText, txtAreaLbl, placeholderText }) => {
     <IonRow>
       <IonCol>
         <IonItem color="light" id="rnd-input">
-          <IonLabel position="stacked">{txtAreaLbl}</IonLabel>
           <IonTextarea
             value={text} 
             onIonChange={setText}

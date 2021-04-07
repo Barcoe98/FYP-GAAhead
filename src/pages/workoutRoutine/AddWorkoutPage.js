@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import { IonPage } from "@ionic/react";
 import PageHeader from "../../components/headers";
-import { useAuth } from "../../contexts/authContext";
+import AlertError from "../../components/alerts/errorAlert";
+import Form from "../../components/forms";
 
+import { useAuth } from "../../contexts/authContext";
 import { firestore } from "../../firebase";
 import { useHistory } from "react-router-dom";
-import Form from "../../components/forms";
-import "../pages.css";
 
 const AddWorkoutPage = () => {
+
+  const [errorMessage, setErrorMessage] = useState();
+  const [showAlert, setShowAlert] = useState(false);
+
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
@@ -19,18 +23,9 @@ const AddWorkoutPage = () => {
 
   const { currentUser } = useAuth();
   const history = useHistory();
-  const [status, setStatus] = useState({
-    loading: false,
-    emailError: false,
-    pwordError: false,
-  });
 
   const handleAdd = async () => {
-    const workoutRef = firestore
-      .collection("users")
-      .doc(currentUser?.uid)
-      .collection("workouts");
-    const workoutData = {
+    const data = {
       title,
       date,
       time,
@@ -39,8 +34,40 @@ const AddWorkoutPage = () => {
       exercises,
       warmDown,
     };
-    await workoutRef.add(workoutData);
-    history.goBack();
+
+    if (title === "") {
+      setErrorMessage('No Title Entered')
+      setShowAlert(true)
+    }
+    else if (date === "") {
+      setErrorMessage('No Date Entered')
+      setShowAlert(true)
+    }
+    else if (difficulty === "") {
+      setErrorMessage('No Difficulty Entered')
+      setShowAlert(true)
+    }    
+    else if (warmUp === "") {
+      setErrorMessage('No Warm Up Entered')
+      setShowAlert(true)
+    }
+    else if (exercises === '') {
+      setErrorMessage('No Exercises Entered')
+      setShowAlert(true)
+    }
+    else if (warmDown === "") {
+      setErrorMessage('No Warm Down Entered')
+      setShowAlert(true)
+    }
+    else {
+      const ref = firestore
+      .collection("users")
+      .doc(currentUser?.uid)
+      .collection("workouts");
+   
+      await ref.add(data);
+      history.goBack();
+    }
   };
 
   return (
@@ -48,6 +75,8 @@ const AddWorkoutPage = () => {
       <PageHeader title="Add Workout Routine"></PageHeader>
 
       <Form
+        formTitle=" Workout Routine"
+        btnTitle="Add Workout"
         title={title}
         date={date}
         time={time}
@@ -63,8 +92,15 @@ const AddWorkoutPage = () => {
         setExercises={(e) => setExercises(e.detail.value)}
         setWarmDown={(e) => setWarmDown(e.detail.value)}
         handleAdd={handleAdd}
-        loading={status.loading}
       ></Form>
+
+      <AlertError 
+        setShowAlert={() => setShowAlert(false)} 
+        alertHeader='Please Fill All Required Fields'
+        showAlert={showAlert} 
+        msg={errorMessage}>
+      </AlertError>
+      
     </IonPage>
   );
 };
