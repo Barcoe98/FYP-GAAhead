@@ -29,7 +29,12 @@ const FitnessTestDetailsPage = () => {
   }, [id]);
 
   const handleDelete = async () => {
-    const fTestRef = firestore.collection("fitness_tests").doc(id);
+    const fTestRef = firestore
+    .collection("users")
+    .doc(currentUser?.uid)
+    .collection("fitness_tests")
+    .doc(id);
+    
     await fTestRef.delete();
     console.log("Confirm Okay");
     history.goBack();

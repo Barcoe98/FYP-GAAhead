@@ -21,9 +21,9 @@ const FitnessTestDetails = ({ fitnessTest }) => {
 
           <hr id="contentDivider"></hr>
           <h5 color="dark" id="sectionTitle">
-            Stretches/Warm Up
+            Warm Up
           </h5>
-          <IonText>{fitnessTest?.warm_up}</IonText>
+          <IonText>{fitnessTest?.warmUp}</IonText>
 
           <hr id="contentDivider"></hr>
           <h5 color="dark" id="sectionTitle">
@@ -35,7 +35,7 @@ const FitnessTestDetails = ({ fitnessTest }) => {
           <h5 color="dark" id="sectionTitle">
             Warm Down
           </h5>
-          <IonText>{fitnessTest?.warm_down}</IonText>
+          <IonText>{fitnessTest?.warmDown}</IonText>
         </div>
 
         <LinkButton

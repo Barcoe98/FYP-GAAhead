@@ -62,15 +62,15 @@ const Form = ({title, setTitle, time, setTime, date, setDate, difficulty, setDif
 
           {/*Warm Up Stretches Input Fields & Labels*/ }
           <ItemDivider dividerLabel="Warm Up"></ItemDivider>
-          <ContentArea value={warmUp} onIonChange={setWarmUp} txtAreaLbl="Details" placeholderText="Enter Warm Up Details"></ContentArea>
+          <ContentArea text={warmUp} setText={setWarmUp} txtAreaLbl="Details" placeholderText="Enter Warm Up Details"></ContentArea>
 
           {/*Exercises Input Fields & Labels*/ }
           <ItemDivider dividerLabel="Exercises"></ItemDivider>
-          <ContentArea required value={exercises} onIonChange={setExercises} txtAreaLbl="Details" placeholderText="Enter Exercise Details"></ContentArea>
+          <ContentArea text={exercises} setText={setExercises} txtAreaLbl="Details" placeholderText="Enter Exercise Details"></ContentArea>
 
           {/*Warm Down Input Fields & Labels*/ }
           <ItemDivider dividerLabel="Warm Down"></ItemDivider>
-          <ContentArea value={warmDown} onIonChange={setWarmDown} txtAreaLbl="Details" placeholderText="Enter Warm Down Details"></ContentArea>
+          <ContentArea text={warmDown} setText={setWarmDown} txtAreaLbl="Details" placeholderText="Enter Warm Down Details"></ContentArea>
 
           {/* Add Button*/ }
           <IonRow>

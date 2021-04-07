@@ -11,11 +11,7 @@ const ContentArea = ({ text, setText, txtAreaLbl, placeholderText }) => {
           <IonTextarea
             value={text} 
             onIonChange={setText}
-            placeholder={placeholderText}
-            rows="4"
-            type="text"
-            required
-          ></IonTextarea>
+            placeholder={placeholderText}          ></IonTextarea>
         </IonItem>
       </IonCol>
     </IonRow>

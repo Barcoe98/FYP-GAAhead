@@ -101,7 +101,7 @@ const AddFixturePage = () => {
         alertHeader='Please Fill All Required Fields'
         showAlert={showAlert} 
         msg={errorMessage}>
-        </AlertError>
+      </AlertError>
 
     </IonPage>
   );
