@@ -6,8 +6,14 @@ import { useAuth } from "../../contexts/authContext";
 import { firestore } from "../../firebase";
 import { useHistory } from "react-router-dom";
 import FixtureForm from "../../components/forms/fixtureForm/index";
+import AlertError from "../../components/alerts/errorAlert";
+
 
 const AddFixturePage = () => {
+
+  const [errorMessage, setErrorMessage] = useState();
+  const [showAlert, setShowAlert] = useState(false);
+
   const [homeTeam, setHomeTeam] = useState("");
   const [awayTeam, setAwayTeam] = useState("");
   const [homeScore, setHomeScore] = useState("");
@@ -27,22 +33,57 @@ const AddFixturePage = () => {
   });
 
   const handleAdd = async () => {
-    const workoutRef = firestore
+
+    const ref = firestore
       .collection("users")
       .doc(currentUser?.uid)
       .collection("fixtures");
-    const workoutData = {
+
+    const fixtureData = {
       homeTeam,
       awayTeam,
-      homeScore,
-      awayScore,
       venue,
       time,
       date,
       competition,
     };
-    await workoutRef.add(workoutData);
-    history.goBack();
+
+    if (homeTeam === "") {
+      setErrorMessage('No Home Team Entered')
+      setShowAlert(true)
+      console.log('Home error Message')   
+    }
+    else if (awayTeam === "") {
+      setErrorMessage('No Away Team Entered')
+      setShowAlert(true)
+      console.log('Away error Message')   
+    }
+    else if (date === "") {
+      setErrorMessage('No Date Entered')
+      setShowAlert(true)
+      console.log('Away error Message')   
+    }    
+    else if (time === "") {
+      setErrorMessage('No Time Entered')
+      setShowAlert(true)
+      console.log('Time error Message')   
+    }
+    else if (venue === '') {
+      setErrorMessage('No Venue Entered')
+      setShowAlert(true)
+      console.log('Away error Message')   
+    }
+    else if (competition === "") {
+      setErrorMessage('No Competition Entered')
+      setShowAlert(true)
+      console.log('Away error Message')   
+    }
+    else {
+      await ref.add(fixtureData);
+      history.goBack();
+      console.log('success') 
+    }
+    
   };
 
   return (
@@ -69,6 +110,14 @@ const AddFixturePage = () => {
         handleAdd={handleAdd}
         loading={status.loading}
       ></FixtureForm>
+
+      <AlertError 
+        setShowAlert={() => setShowAlert(false)} 
+        alertHeader='Please Fill All Required Fields'
+        showAlert={showAlert} 
+        msg={errorMessage}>
+        </AlertError>
+
     </IonPage>
   );
 };
