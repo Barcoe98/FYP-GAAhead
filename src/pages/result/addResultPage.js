@@ -14,12 +14,6 @@ const AddResultPage = () => {
   const id = 'team_stats'
   var result;
   const history = useHistory();
-  const [status, setStatus] = useState({
-    loading: false,
-    emailError: false,
-    pwordError: false,
-  });
-
 
   var [hGoals, setHGoals] = useState();
   var [aGoals, setAGoals] = useState();
@@ -214,7 +208,6 @@ const AddResultPage = () => {
         setNotes={(e) => setNotes(e.target.value)}
 
         handleAdd={handleAdd}
-        loading={status.loading}
       ></ResultForm>
 
     </IonPage>

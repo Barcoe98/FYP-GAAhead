@@ -5,47 +5,54 @@ import FitnessTestCard from "../../components/cards/fitnessTestCard/index";
 import AlertError from "../../components/alerts/errorAlert";
 
 import { firestore } from "../../firebase";
+import { useAuth } from "../../contexts/authContext";
 import "../pages.css";
 
 const FitnessTestPage = () => {
   const [fitnessTests, setFitnessTests] = useState([]);
-  const [managerId, setManagerId] = useState();
+  var [managerId, setManagerId] = useState();
 
   const [errorMessage, setErrorMessage] = useState();
   const [showAlert, setShowAlert] = useState(false);
-  const myManagerId = '1kK33jibmLZ2RAEb7lF4u9g9STf2'
+
+  const { currentUser } = useAuth();
+  const id = 'team_stats'
+
 
   useEffect(() => {
 
-    if (myManagerId !== null ) {
+    const ref = firestore
+    .collection("users")
+    .doc(currentUser?.uid)
 
-      //set Manager ID to user manager ID
-      setManagerId(myManagerId)
+    ref.get(currentUser?.uid).then(doc => {
+      
+      if (!doc.exists) {
+        console.log('No such document');
+        //history.goBack();
+      } else {
+        const userDoc = { id: doc.id, ...doc.data() };
 
-      //ref for user managers fixtures collection
-      const ref = firestore
-      .collection("users")
-      .doc(managerId)
-      .collection("fitness_tests");
+        //set ManagerId Attributes to matching in DB
+        setManagerId(userDoc?.managerId)
 
-      //snapshot of doc 
-      ref.get().then((snapshot) => {
-      const docs = snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      setFitnessTests(docs);
+        const ref = firestore
+        .collection("users")
+        .doc(userDoc?.managerId)
+        .collection("fitness_tests");
+  
+        //snapshot of doc 
+        ref.get().then((snapshot) => {
+        const docs = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setFitnessTests(docs);
+      });
+      }
     });
-    }
 
-    else {
-      setManagerId(null)
-      setErrorMessage('No Team Data Available, Join a Team')
-      setShowAlert(true)
-      console.log('error') 
-    }
-    
-  }, [managerId]);
+  }, [currentUser?.uid, managerId]);
 
   return (
     <IonPage>
