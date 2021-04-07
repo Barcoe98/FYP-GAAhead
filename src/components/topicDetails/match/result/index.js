@@ -10,72 +10,75 @@ const ResultDetailsPage = ({ result }) => {
     <IonContent>
       <IonList id="bg-col">
         <VersusBar
-          homeTeam={result?.homeTeam}
-          homeScore={result?.homeScore}
-          awayScore={result?.awayScore}
-          awayTeam={result?.awayTeam}
+          hTeam={result?.homeTeam}
+          hGoals={result?.hGoals}
+          hPoints={result?.hPoints}
+          aGoals={result?.aGoals}
+          aPoints={result?.aPoints}
+          aTeam={result?.aTeam}
         ></VersusBar>
 
         <div id="sectionContent">
+          <h5 color="dark" id="sectionTitle">Match Stats</h5>
           <StatCol
-            homeStat={result?.homeTeam}
-            statTitle="Team Stats"
-            awayStat={result?.awayTeam}
+            homeStat={result?.hTeam}
+            statTitle=""
+            awayStat={result?.aTeam}
           ></StatCol>
           <StatCol
-            homeStat={result?.homeBlocks}
+            homeStat={result?.hBlocks}
             statTitle=" Blocks"
-            awayStat={result?.awayBlocks}
+            awayStat={result?.aBlocks}
           ></StatCol>
           <StatCol
-            homeStat={result?.homeHooks}
+            homeStat={result?.hHooks}
             statTitle="Hooks"
-            awayStat={result?.awayHooks}
+            awayStat={result?.aHooks}
           ></StatCol>
           <StatCol
-            homeStat={result?.homeWides}
+            homeStat={result?.hWides}
             statTitle="Wides"
-            awayStat={result?.awayWides}
+            awayStat={result?.aWides}
           ></StatCol>
           <StatCol
-            homeStat={result?.homeShots}
+            homeStat={result?.hShots}
             statTitle="Shots"
-            awayStat={result?.awayShots}
+            awayStat={result?.aShots}
           ></StatCol>
           <StatCol
-            homeStat={result?.homePuckouts}
+            homeStat={result?.hPuckouts}
             statTitle="PuckOuts"
-            awayStat={result?.awayPuckouts}
+            awayStat={result?.aPuckouts}
           ></StatCol>
           <StatCol
-            homeStat={result?.homeFrees}
+            homeStat={result?.hFrees}
             statTitle="Free's"
-            awayStat={result?.awayFrees}
+            awayStat={result?.aFrees}
           ></StatCol>
           <StatCol
-            homeStat={result?.home65s}
+            homeStat={result?.h65s}
             statTitle="65'S"
-            awayStat={result?.away65s}
+            awayStat={result?.a65s}
           ></StatCol>
           <StatCol
-            homeStat={result?.homePenalties}
+            homeStat={result?.hPenalties}
             statTitle="Penalties"
-            awayStat={result?.awayPenalties}
+            awayStat={result?.aPenalties}
           ></StatCol>
           <StatCol
-            homeStat={result?.homeFouls}
+            homeStat={result?.hFouls}
             statTitle="Fouls"
-            awayStat={result?.awayFouls}
+            awayStat={result?.aFouls}
           ></StatCol>
           <StatCol
-            homeStat={result?.homeYCard}
+            homeStat={result?.hYCard}
             statTitle="Yellow Cards"
-            awayStat={result?.awayYCard}
+            awayStat={result?.aYCard}
           ></StatCol>
           <StatCol
-            homeStat={result?.homeRCard}
+            homeStat={result?.hRCard}
             statTitle="Red Cards"
-            awayStat={result?.awayRCard}
+            awayStat={result?.aRCard}
           ></StatCol>
 
           <hr id="contentDivider"></hr>

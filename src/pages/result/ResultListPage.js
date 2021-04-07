@@ -13,7 +13,7 @@ const ResultListPage = () => {
   const [errorMessage, setErrorMessage] = useState();
   const [showAlert, setShowAlert] = useState(false);
 
-  const myManagerId = null
+  const myManagerId = '1kK33jibmLZ2RAEb7lF4u9g9STf2'
 
   useEffect(() => {
 

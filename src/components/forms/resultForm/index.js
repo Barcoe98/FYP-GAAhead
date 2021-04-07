@@ -7,10 +7,10 @@ import ItemDivider from "../../textInputs/itemDivider";
 
 
 const ResultForm = ({
-  homeScore, awayScore,  homeBlocks, awayBlocks, homeHooks, awayHooks, homeShots, awayShots, 
+  homeGoals, awayGoals, homePoints, awayPoints, homeBlocks, awayBlocks, homeHooks, awayHooks, homeShots, awayShots, 
   homeFouls, awayFouls, home65s, away65s, homeFrees, awayFrees,homeWides, awayWides, 
   homeYCard, awayYCard, homeRCard, awayRCard, homePenalties, awayPenalties, homePuckouts, awayPuckouts,
-  setHomeScore, setAwayScore, setHomeBlocks, setAwayBlocks, setHomeHooks, setAwayHooks, 
+  setHomeGoals, setAwayGoals, setHomePoints, setAwayPoints, setHomeBlocks, setAwayBlocks, setHomeHooks, setAwayHooks, 
   setHomeShots, setAwayShots, setHomeFouls, setAwayFouls, setHome65s, setAway65s, setHomeFrees, setAwayFrees,
   setHomeWides, setAwayWides, setHomeYCard, setAwayYCard, setHomeRCard, setAwayRCard, setAwayPenalties, setHomePenalties, setHomePuckouts, setAwayPuckouts, 
   notes, setNotes, handleAdd, loading,}) => {
@@ -28,8 +28,12 @@ const ResultForm = ({
 
           {/*Input Fields & Labels*/ }
           <IonRow>
-            <TextInputField  size="6" label="Home Score"   text={homeScore}  setText={setHomeScore} placeholderText="Home Score" type="text" ></TextInputField>
-            <TextInputField  size="6" label="Away Score"  text={awayScore} setText={setAwayScore} placeholderText="Away Score" type="text" ></TextInputField>
+            <TextInputField  size="6" label="Home Goals"   text={homeGoals}  setText={setHomeGoals} placeholderText="Home Goals" type="number" ></TextInputField>
+            <TextInputField  size="6" label="Away Goals"  text={awayGoals} setText={setAwayGoals} placeholderText="Away Goals" type="number" ></TextInputField>
+          </IonRow>
+          <IonRow>
+            <TextInputField  size="6" label="Home Points"   text={homePoints}  setText={setHomePoints} placeholderText="Home Points" type="number" ></TextInputField>
+            <TextInputField  size="6" label="Away Points"  text={awayPoints} setText={setAwayPoints} placeholderText="Away Points" type="number" ></TextInputField>
           </IonRow>
 
           {/*Shots Input Fields & Labels*/ }
@@ -90,7 +94,7 @@ const ResultForm = ({
 
           {/*Match Notes Input Fields & Labels*/ }
           <ItemDivider dividerLabel="Match Notes"></ItemDivider>
-          <ContentArea value={notes} onIonChange={setNotes} txtAreaLbl="Match Notes" placeholderText="Enter Match Notes"></ContentArea>         
+          <ContentArea text={notes} setNotes={setNotes} txtAreaLbl="Match Notes" placeholderText="Enter Match Notes"></ContentArea>         
 
           
           {/* Add Button*/ }

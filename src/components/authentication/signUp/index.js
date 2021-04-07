@@ -41,6 +41,8 @@ const Register = () => {
       setStatus({ loading: true, emailError: false, pwordError: false });
       //console.log("Btn pressed");
       await signUp(email, pword, userType);
+
+      
       //console.log("user created ");
       //console.log("user signed in");
 

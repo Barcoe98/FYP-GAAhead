@@ -38,6 +38,41 @@ const TeamStats = ({ teamStats }) => {
           <hr id="contentDivider"></hr>
 
           <h5 color="dark" id="statTitle">
+          Goals
+          </h5>
+          <hr id="contentDivider"></hr>
+
+          <TeamStatContent
+            id="teamStatContent"
+            statTitle="Goals"
+            teamStatValue="38"
+            playerVar1="12"
+            playerVar2="8"
+            playerVar3="7"
+            playerName1="Michael Barcoe"
+            playerName2="John Doe"
+            playerName3="Aaron Foley"
+          ></TeamStatContent>
+
+          <h5 color="dark" id="statTitle">
+          Points
+          </h5>
+          <hr id="contentDivider"></hr>
+
+          <TeamStatContent
+            id="teamStatContent"
+            statTitle="Points"
+            teamStatValue="38"
+            playerVar1="12"
+            playerVar2="8"
+            playerVar3="7"
+            playerName1="Michael Barcoe"
+            playerName2="John Doe"
+            playerName3="Aaron Foley"
+          ></TeamStatContent>
+
+
+          <h5 color="dark" id="statTitle">
             Hooks
           </h5>
           <hr id="contentDivider"></hr>

@@ -15,7 +15,7 @@ const ResultCard = ({ result }) => {
             <IonRow id="rLogo">
               <IonImg src="https://res.cloudinary.com/dmikx06rt/image/upload/v1617222477/FYP-GAAhead/b_wCrest_d2vjke.jpg"></IonImg>
             </IonRow>
-            <IonRow id="rTeamName">{result.homeTeam}</IonRow>
+            <IonRow id="rTeamName">{result.hTeam}</IonRow>
           </IonCol>
 
           <IonCol size="6">
@@ -23,9 +23,9 @@ const ResultCard = ({ result }) => {
               {result.competition}
             </IonRow>
             <IonRow size="4" id="rScore">
-              <IonCol size="5">{result.homeScore}</IonCol>
+              <IonCol size="5">{result.hGoals}:{result.hPoints}</IonCol>
               <IonCol size="2">-</IonCol>
-              <IonCol size="5">{result.awayScore}</IonCol>
+              <IonCol size="5">{result.aGoals}:{result.aPoints}</IonCol>
             </IonRow>
             <IonRow size="4" id="rVenue">
               {result.venue}
@@ -36,7 +36,7 @@ const ResultCard = ({ result }) => {
             <IonRow id="rLogo">
               <IonImg src="https://res.cloudinary.com/dmikx06rt/image/upload/v1617222477/FYP-GAAhead/b_wCrest_d2vjke.jpg"></IonImg>
             </IonRow>
-            <IonRow id="rTeamName">{result.awayTeam}</IonRow>
+            <IonRow id="rTeamName">{result.aTeam}</IonRow>
           </IonCol>
         </IonRow>
       </IonGrid>
