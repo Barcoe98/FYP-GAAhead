@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from "react";
 import ReactDOM from 'react-dom';
 import App from './App';
 
@@ -66,20 +66,72 @@ function PlayerNavBar() {
   )
 }
 
-function UserNavBar() {
+function NavBar() {
+  return (
+    <IonApp>
+    <AuthContextProvider>
+      <IonReactRouter>       
+        <IonRouterOutlet>
+          <Route exact path="/signup"><SignUpPage></SignUpPage></Route>
+          <Route exact path="/login"><LoginPage></LoginPage></Route>
+          <LoginPage></LoginPage>
+          <Redirect exact path="/" to ="/login"></Redirect>
+        </IonRouterOutlet>
+      </IonReactRouter>
+    </AuthContextProvider>
+  </IonApp>
+  )
+}
 
+function IsLoggedInFunc(props) {
   const { currentUser } = useAuth()
-  const userTypeRef = firestore.collection('users').doc(currentUser?.uid)
-  .collection('my_profile').get('userType')
-  //console.log(userTypeRef)
 
-  if (userTypeRef === "manager") {
-    return <PlayerNavBar />;
+  if (currentUser?.uid === null) {
+    console.log('loggedIn')
+    return <UserNavBar/>;
   }
   else {
-  return <ManagerNavBar />;
+    console.log('norm nav')
+    return <NavBar/>;
   }
 }
 
-ReactDOM.render(<UserNavBar/>, document.getElementById("root"));
+
+function UserNavBar() {
+  const { currentUser } = useAuth()
+  var [userType, setUserType] = useState();
+
+  const ref = firestore
+    .collection("users")
+    .doc('YEBa5ttffIbKzRY9VLwj8NebIPI2')
+
+  ref.get('YEBa5ttffIbKzRY9VLwj8NebIPI2').then(doc => {
+    if (!doc.exists) {
+      console.log('No such document');
+      //history.goBack();
+    } else {
+      const userDoc = { id: doc.id, ...doc.data() };
+
+      //set ManagerId Attributes to matching in DB
+      setUserType(userDoc?.userType)
+
+      console.log(userDoc?.userType)
+    }
+  });
+
+  if (userType === "manager") {
+    console.log(userType)
+    return <ManagerNavBar/>;
+  }
+  else if (userType === "player") {
+    console.log(userType)
+    return <PlayerNavBar/>;
+  }
+  else {
+    return <NavBar/>;
+  }
+  
+}
+
+ReactDOM.render(<IsLoggedInFunc />, document.getElementById("root"));
 

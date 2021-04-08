@@ -12,14 +12,14 @@ const AuthContextProvider = (props) => {
   const [loading, setLoading] = useState(true);
   const [isLoggedIn, setLoggedIn] = useState(false);
 
-  useEffect(() => {
-    //takes in user and sets said user to current
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      setLoading(false);
-      setCurrentUser(user);
-    });
-    return unsubscribe;
-  }, []);
+  // useEffect(() => {
+  //   //takes in user and sets said user to current
+  //   const unsubscribe = auth.onAuthStateChanged((user) => {
+  //     setLoading(false);
+  //     setCurrentUser(user);
+  //   });
+  //   return unsubscribe;
+  // }, []);
 
   //takes in email and password//creates user with email and password specified
   function signUp(email, password, userType) {
