@@ -48,6 +48,7 @@ const MorePage = () => {
             <IonIcon color="danger" icon={logOut}></IonIcon>
             <IonLabel color="danger">Logout</IonLabel>
           </IonItem>
+          
         </IonList>
       </IonContent>
     </IonPage>

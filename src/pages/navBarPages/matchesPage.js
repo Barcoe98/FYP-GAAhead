@@ -25,13 +25,6 @@ const MatchesPage = () => {
             </IonCol>
           </IonRow>
 
-          <IonRow>
-            <IonCol id="navBtnGrn" size="12">
-              <ion-router-link id="navLnk" href="/manager/table/list">
-                Tables
-              </ion-router-link>
-            </IonCol>
-          </IonRow>
         </IonGrid>
       </IonContent>
     </IonPage>

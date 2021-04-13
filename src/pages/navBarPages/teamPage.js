@@ -18,19 +18,6 @@ const TeamPage = () => {
           </IonRow>
 
           <IonRow>
-            <IonCol id="navBtnBlue" size="6">
-              <ion-router-link id="navLnk" href="/manager/match/list">
-                Matches
-              </ion-router-link>
-            </IonCol>
-            <IonCol id="navBtnBlue" size="6">
-              <ion-router-link id="navLnk" href="#">
-                Extra Feature
-              </ion-router-link>
-            </IonCol>
-          </IonRow>
-
-          <IonRow>
             <IonCol id="navBtnGrn" size="12">
               <ion-router-link id="navLnk" href="/manager/teamstats">
                 Team Statistics

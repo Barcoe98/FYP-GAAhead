@@ -15,7 +15,7 @@ import {
 } from "ionicons/icons";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { fa, faClipboardCheck, faClipboardList, faList, faUsers } from "@fortawesome/free-solid-svg-icons";
+import { fa, faClipboardCheck, faClipboardList, faList, faUsers , faUser} from "@fortawesome/free-solid-svg-icons";
 
 import HomePage from "../../../pages/navBarPages/homePage";
 import MorePage from "../../../pages/navBarPages/morePage";
@@ -167,6 +167,10 @@ const ManagerTabs = () => {
         <IonTabButton id="ManagerNavbar" tab="planner" href="/manager/planner">
         <FontAwesomeIcon icon={faClipboardList} size="3x" color="#e0e0e0"/>
           <IonLabel>Planner</IonLabel>
+        </IonTabButton>
+        <IonTabButton id="ManagerNavbar" tab="more" href="/manager/more">
+        <FontAwesomeIcon icon={faUser} size="3x" color="#e0e0e0"/>
+          <IonLabel>My Profile</IonLabel>
         </IonTabButton>
         <IonTabButton id="ManagerNavbar" tab="team" href="/manager/team">
         <FontAwesomeIcon icon={faUsers} size="3x" color="#e0e0e0"/>
