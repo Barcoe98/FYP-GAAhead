@@ -5,19 +5,20 @@ import {
   IonText,
   IonCol,
   IonGrid,
-  IonRow
+  IonRow,
+  IonButton
 } from "@ionic/react";
-import StatContent from "../../../textComponents/statContent";
 
 import { firestore } from "../../../../firebase";
 import { useAuth } from "../../../../contexts/authContext";
+import PageHeader from "../../../headers/index";
+
 
 import "../myProfile.css";
 
-
 const ManagerProfileDetails = ({}) => {
 
-  const [profile, setProfileDetails] = useState(null);
+  const [profile, setProfileDetails] = useState();
   const { currentUser } = useAuth();
   const id = 'Jw2htGYNV2A0naMySRjX'
 
@@ -25,9 +26,8 @@ const ManagerProfileDetails = ({}) => {
   const testId = '1kK33jibmLZ2RAEb7lF4u9g9STf2'
 
   useEffect(() => {
-    const playerRef = firestore.collection("users").doc(testId)
-    .collection('my_profile').doc(id);
-    playerRef.get(id).then((doc) => {
+    const playerRef = firestore.collection("users").doc(testId);
+    playerRef.get(testId).then((doc) => {
       const profileDetails = { id: doc.id, ...doc.data() };
       setProfileDetails(profileDetails);
     });
@@ -36,9 +36,10 @@ const ManagerProfileDetails = ({}) => {
 
   return (
     <IonContent>
+    <PageHeader title="My Details"></PageHeader>
+
       <IonList id="bg-col">
-        <div id="my-bg-img"></div>
-  
+        <div id="my-bg-img"></div>  
           <div id="myContent">
             <IonGrid>
             <IonText color="dark" id="myContentTitle">My Details</IonText>
@@ -57,11 +58,21 @@ const ManagerProfileDetails = ({}) => {
             <IonText color="dark" id="myContentTitle">Team Details</IonText>
             <IonGrid>
               <IonRow>
-                <IonCol size="6"><IonText id="title">Email:</IonText></IonCol>
-                <IonCol size="6"><IonText id="myEmail">{profile?.teamId}</IonText></IonCol>
+                <IonCol size="6"><IonText id="title">Team Name:</IonText></IonCol>
+                <IonCol size="6"><IonText id="myEmail">Blacks & Whites</IonText></IonCol>
+              </IonRow>
+              <IonRow>
+                <IonCol size="6"><IonText id="title">Team Id:</IonText></IonCol>
+                <IonCol size="6"><IonText id="myEmail">{profile?.managerId}</IonText></IonCol>
               </IonRow>
             </IonGrid>
           </div>
+
+          <IonRow>
+            <IonCol size="12">
+              <IonButton id="lgBtn" href="">Log Out</IonButton>
+            </IonCol>
+          </IonRow>
 
       </IonList>
     </IonContent>

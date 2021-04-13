@@ -1,201 +1,111 @@
 import React, { useState } from "react";
-import { IonContent, IonList } from "@ionic/react";
-import TeamStatContent from "../../textComponents/teamStats/statContent";
+import { IonContent, IonGrid, IonCol, IonList, IonRow } from "@ionic/react";
+import TeamStatContent from "../../textComponents/teamStats/teamStatContent";
 
 import "./teamStats.css";
-// import { useParams, useHistory } from "react-router-dom";
-// import { firestore } from '../../firebase'
-// import { useAuth } from '../../contexts/authContext'
-
-// const [ goals, setGoals ] = useState("")
-// const [ points, setPoints ] = useState("")
-// const [ blocks, setBlocks ] = useState("")
-// const [ hooks, setHooks ] = useState("")
-// const [ shots, setShots ] = useState("")
-// const [ wides, setWides ] = useState("")
-// const [ fouls, setFouls ] = useState("")
-// const [ h65s, setH65s ] = useState("")
-// const [ frees, setFress ] = useState("")
-// const [ penalties, setPenalties ] = useState("")
-// const [ puckouts, setPuckouts ] = useState("")
-// const [ yCard, setYCard ] = useState("")
-// const [ rCard, setRCard ] = useState("")
-
-// const handleAdd = async () => {
-//   const resultRef = firestore.collection('users').doc(currentUser?.uid).collection('results')
-//   const resultData = { goals, points}
-//   await resultRef.add(resultData)
-//   await resultRef.update(resultData)
-// }
 
 const TeamStats = ({ teamStats }) => {
+
   return (
     <IonContent>
       <IonList id="bg-col">
         <h1 id="statTitle">Team Statistics</h1>
 
         <div id="statContent">
-          <hr id="contentDivider"></hr>
 
-          <h5 color="dark" id="statTitle">
-          Goals
-          </h5>
-          <hr id="contentDivider"></hr>
-
-          <TeamStatContent
-            id="teamStatContent"
-            statTitle="Goals"
-            teamStatValue="38"
-            playerVar1="12"
-            playerVar2="8"
-            playerVar3="7"
-            playerName1="Michael Barcoe"
-            playerName2="John Doe"
-            playerName3="Aaron Foley"
-          ></TeamStatContent>
-
-          <h5 color="dark" id="statTitle">
-          Points
-          </h5>
-          <hr id="contentDivider"></hr>
-
-          <TeamStatContent
-            id="teamStatContent"
-            statTitle="Points"
-            teamStatValue="38"
-            playerVar1="12"
-            playerVar2="8"
-            playerVar3="7"
-            playerName1="Michael Barcoe"
-            playerName2="John Doe"
-            playerName3="Aaron Foley"
-          ></TeamStatContent>
-
-
-          <h5 color="dark" id="statTitle">
-            Hooks
-          </h5>
-          <hr id="contentDivider"></hr>
-
-          <TeamStatContent
-            id="teamStatContent"
-            statTitle="Hooks"
-            teamStatValue="38"
-            playerVar1="12"
-            playerVar2="8"
-            playerVar3="7"
-            playerName1="Michael Barcoe"
-            playerName2="John Doe"
-            playerName3="Aaron Foley"
-          ></TeamStatContent>
+          <IonGrid>
+            <IonRow>
+              <IonCol size="6"><h5 color="dark" id="statTitle">Points</h5></IonCol>
+              <IonCol size="6"><h5 color="dark" id="statTitle">{teamStats?.points}</h5></IonCol>
+            </IonRow>
 
           <hr id="contentDivider"></hr>
-          <h5 color="dark" id="statTitle">
-            Blocks
-          </h5>
+
+            <IonRow>
+              <IonCol size="6"><h5 color="dark" id="statTitle">Goals</h5></IonCol>
+              <IonCol size="6"><h5 color="dark" id="statTitle">{teamStats?.goals}</h5></IonCol>
+            </IonRow>
+          
           <hr id="contentDivider"></hr>
-          <TeamStatContent
-            id="teamStatContent"
-            statTitle="Blocks"
-            teamStatValue="38"
-            playerVar1="12"
-            playerVar2="8"
-            playerVar3="7"
-            playerName1="Michael Barcoe"
-            playerName2="John Doe"
-            playerName3="Aaron Foley"
-          ></TeamStatContent>
+
+            <IonRow>
+              <IonCol size="6"><h5 color="dark" id="statTitle">Shots</h5></IonCol>
+              <IonCol size="6"><h5 color="dark" id="statTitle">{teamStats?.shots}</h5></IonCol>
+            </IonRow>
 
           <hr id="contentDivider"></hr>
-          <h5 color="dark" id="statTitle">
-            Wides
-          </h5>
-          <hr id="contentDivider"></hr>
-          <TeamStatContent
-            statTitle="Wides"
-            teamStatValue="38"
-            playerVar1="12"
-            playerVar2="8"
-            playerVar3="7"
-            playerName1="Michael Barcoe"
-            playerName2="John Doe"
-            playerName3="Aaron Foley"
-          ></TeamStatContent>
+
+            <IonRow>
+              <IonCol size="6"><h5 color="dark" id="statTitle">Puckouts</h5></IonCol>
+              <IonCol size="6"><h5 color="dark" id="statTitle">{teamStats?.puckouts}</h5></IonCol>
+            </IonRow>
 
           <hr id="contentDivider"></hr>
-          <h5 color="dark" id="statTitle">
-            Yellow Cards
-          </h5>
-          <TeamStatContent
-            statTitle="Yellow Cards"
-            teamStatValue="38"
-            playerVar1="12"
-            playerVar2="8"
-            playerVar3="7"
-            playerName1="Michael Barcoe"
-            playerName2="John Doe"
-            playerName3="Aaron Foley"
-          ></TeamStatContent>
+
+            <IonRow>
+              <IonCol size="6"><h5 color="dark" id="statTitle">Wides</h5></IonCol>
+              <IonCol size="6"><h5 color="dark" id="statTitle">{teamStats?.wides}</h5></IonCol>
+            </IonRow>
 
           <hr id="contentDivider"></hr>
-          <h5 color="dark" id="statTitle">
-            Red Cards
-          </h5>
-          <TeamStatContent
-            statTitle="Red Cards"
-            teamStatValue="38"
-            playerVar1="12"
-            playerVar2="8"
-            playerVar3="7"
-            playerName1="Michael Barcoe"
-            playerName2="John Doe"
-            playerName3="Aaron Foley"
-          ></TeamStatContent>
+
+            <IonRow>
+              <IonCol size="6"><h5 color="dark" id="statTitle">Hooks</h5></IonCol>
+              <IonCol size="6"><h5 color="dark" id="statTitle">{teamStats?.hooks}</h5></IonCol>
+            </IonRow>
 
           <hr id="contentDivider"></hr>
-          <h5 color="dark" id="statTitle">
-            Goals
-          </h5>
-          <TeamStatContent
-            statTitle="Goals"
-            teamStatValue="38"
-            playerVar1="12"
-            playerVar2="8"
-            playerVar3="7"
-            playerName1="Michael Barcoe"
-            playerName2="John Doe"
-            playerName3="Aaron Foley"
-          ></TeamStatContent>
+
+            <IonRow>
+              <IonCol size="6"><h5 color="dark" id="statTitle">Blocks</h5></IonCol>
+              <IonCol size="6"><h5 color="dark" id="statTitle">{teamStats?.blocks}</h5></IonCol>
+            </IonRow>
 
           <hr id="contentDivider"></hr>
-          <h5 color="dark" id="statTitle">
-            Points
-          </h5>
-          <TeamStatContent
-            statTitle="Points"
-            teamStatValue="38"
-            playerVar1="12"
-            playerVar2="8"
-            playerVar3="7"
-            playerName1="Michael Barcoe"
-            playerName2="John Doe"
-            playerName3="Aaron Foley"
-          ></TeamStatContent>
+
+            <IonRow>
+              <IonCol size="6"><h5 color="dark" id="statTitle">Free's</h5></IonCol>
+              <IonCol size="6"><h5 color="dark" id="statTitle">{teamStats?.frees}</h5></IonCol>
+            </IonRow>
 
           <hr id="contentDivider"></hr>
-          <h5 color="dark" id="statTitle">
-            Free's
-          </h5>
-          <TeamStatContent
-            statTitle="Free's"
-            teamStatValue="38"
-            playerVar1="12"
-            playerVar2="8"
-            playerVar3="7"
-            playerName1="Michael Barcoe"
-            playerName2="John Doe"
-            playerName3="Aaron Foley"
-          ></TeamStatContent>
+
+            <IonRow>
+              <IonCol size="6"><h5 color="dark" id="statTitle">65's</h5></IonCol>
+              <IonCol size="6"><h5 color="dark" id="statTitle">{teamStats?.free65s}</h5></IonCol>
+            </IonRow>
+
+          <hr id="contentDivider"></hr>
+
+            <IonRow>
+              <IonCol size="6"><h5 color="dark" id="statTitle">Penalties</h5></IonCol>
+              <IonCol size="6"><h5 color="dark" id="statTitle">{teamStats?.penalties}</h5></IonCol>
+            </IonRow>
+
+          <hr id="contentDivider"></hr>
+
+            <IonRow>
+              <IonCol size="6"><h5 color="dark" id="statTitle">Fouls</h5></IonCol>
+              <IonCol size="6"><h5 color="dark" id="statTitle">{teamStats?.fouls}</h5></IonCol>
+            </IonRow>
+
+          <hr id="contentDivider"></hr>
+
+            <IonRow>
+              <IonCol size="6"><h5 color="dark" id="statTitle">Yellow Cards</h5></IonCol>
+              <IonCol size="6"><h5 color="dark" id="statTitle">{teamStats?.yCards}</h5></IonCol>
+            </IonRow>
+
+          <hr id="contentDivider"></hr>
+
+            <IonRow>
+              <IonCol size="6"><h5 color="dark" id="statTitle">Red Cards</h5></IonCol>
+              <IonCol size="6"><h5 color="dark" id="statTitle">{teamStats?.rCards}</h5></IonCol>
+            </IonRow>
+
+          </IonGrid>
+        
+
         </div>
       </IonList>
     </IonContent>

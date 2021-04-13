@@ -1,4 +1,6 @@
 /* My Profile */
+
+
 #bg-col {
   background-color: #121212;
 }
@@ -24,6 +26,11 @@
 }
 
 
+#lgBtn {
+  font-size: large;
+  display: flex;
+  justify-content: center;
+}
 
 /* Content title for My Profile Details*/
 #myContentTitle {
