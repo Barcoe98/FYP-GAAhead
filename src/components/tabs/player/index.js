@@ -48,6 +48,8 @@ import DiaryEntryDetailsPage from "../../../pages/diary/DiaryEntryDetailsPage";
 import ManagerProfileDetails from "../../topicDetails/myProfile/manager";
 import AddTrainingPage from "../../../pages/trainingSchedule/AddTrainingSchedulePage";
 
+import MyTeamPage from "../../../pages/navBarPages/player/myTeamPage";
+
 
 
 const PlayerTabs = () => {
@@ -59,7 +61,10 @@ const PlayerTabs = () => {
     <Route exact path="/diary-entries/add"><DiaryEntriesListPage></DiaryEntriesListPage></Route>
     <Route exact path="/diary-entries/list"><DiaryEntriesListPage></DiaryEntriesListPage></Route>
     <Route exact path="/more"><MorePage></MorePage></Route>
+ 
     <Route path="/player/my-profile"><PlayerProfilePage></PlayerProfilePage></Route>
+    <Route path="/player/my-team"><MyTeamPage></MyTeamPage></Route>
+
 
     <Route path="/manager/match"><MatchPage></MatchPage></Route>
     <Route exact path="/manager/team"><TeamPage></TeamPage></Route>
@@ -87,7 +92,7 @@ const PlayerTabs = () => {
 
       <IonTabBar id="ManagerNavbar" slot="bottom">
 
-        <IonTabButton id="ManagerNavbar" tab="team" href="/manager/team">
+        <IonTabButton id="ManagerNavbar" tab="team" href="/player/my-team">
           <IonIcon icon={peopleOutline} />
           <IonLabel>My Team</IonLabel>
         </IonTabButton>
