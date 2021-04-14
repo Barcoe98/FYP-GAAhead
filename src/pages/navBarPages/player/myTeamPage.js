@@ -6,48 +6,53 @@ const MyTeamPage = () => {
   
   return (
     <IonPage>
-      <PageHeader title="My Team"></PageHeader>
-      <IonContent color="secondary" id="pg-Sze">
+      <IonContent id="bg-col">
 
-        <IonGrid id="bg-col">
-
-          <IonRow>
-            <IonCol id="navBtnRed" size="12">
-              <ion-router-link id="navLnk" href="/manager/fitness/test/list">
-                Fitness Tests
-              </ion-router-link>
-            </IonCol>
-          </IonRow>
-
+        <IonGrid>
           <IonRow>
             <IonCol id="navBtnYlw" size="6">
               <ion-router-link
                 id="navLnk"
-                href="/manager/trainingschedule/list"
+                href="/trainingschedule/list"
               >
                 Training Schedules
               </ion-router-link>
             </IonCol>
           
             <IonCol id="navBtnGrn" size="6">
-              <ion-router-link id="navLnk" href="/manager/workout/list">
+              <ion-router-link id="navLnk" href="/workout/list">
                 Workout Routines
               </ion-router-link>
             </IonCol>
           </IonRow>
 
           <IonRow>
-            <IonCol id="navBtnBlue" size="12">
-              <ion-router-link id="navLnk" href="/manager/fixture/list">
+            <IonCol id="navBtnRed" size="12">
+              <ion-router-link id="navLnk" href="/fitness/test/list">
+                Fitness Tests
+              </ion-router-link>
+            </IonCol>
+          </IonRow>
+
+
+          <IonRow>
+            <IonCol id="navBtnBlue" size="6">
+              <ion-router-link id="navLnk" href="/fixture/list">
                 Fixtures
+              </ion-router-link>
+            </IonCol>
+
+            <IonCol id="navBtnPrpl" size="6">
+              <ion-router-link id="navLnk" href="/result/list">
+                Results
               </ion-router-link>
             </IonCol>
           </IonRow>
 
           <IonRow>
-            <IonCol id="navBtnPrpl" size="12">
-              <ion-router-link id="navLnk" href="/manager/result/list">
-                Results
+            <IonCol id="navBtnTeal" size="12">
+              <ion-router-link id="navLnk" href="/team/panel/list">
+                Team Players
               </ion-router-link>
             </IonCol>
           </IonRow>

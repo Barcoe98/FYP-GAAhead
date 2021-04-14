@@ -142,7 +142,7 @@ const ManagerTabs = () => {
         <Route path="/manager/team/panel/:id">
           <PlayerDetailsPage></PlayerDetailsPage>
         </Route>
-        <Route exact path="/manager/team/panel/list">
+        <Route exact path="/team/panel/list">
           <PlayerListPage></PlayerListPage>
         </Route>
 

@@ -30,11 +30,9 @@ import AddWorkoutRoutinePage from "../../../pages/workoutRoutine/AddWorkoutPage"
 
 import ResultDetailsPage from "../../../pages/result/ResultDetailsPage";
 import ResultListPage from "../../../pages/result/ResultListPage";
-import AddResultPage from "../../../pages/result/addResultPage";
 
 import FixtureListPage from "../../../pages/fixture/FixtureListPage";
 import FixtureDetailsPage from "../../../pages/fixture/FixtureDetailsPage";
-import AddFixturePage from "../../../pages/fixture/addFixturePage";
 
 import PlayerListPage from "../../../pages/team/PlayerListPage";
 import PlayerDetailsPage from "../../../pages/team/PlayerDetailsPage";
@@ -45,8 +43,6 @@ import TeamStatsPage from "../../../pages/teamStats/teamStatsPage";
 
 import DiaryEntriesListPage from "../../../pages/diary/DiaryEntryListPage";
 import DiaryEntryDetailsPage from "../../../pages/diary/DiaryEntryDetailsPage";
-import ManagerProfileDetails from "../../topicDetails/myProfile/manager";
-import AddTrainingPage from "../../../pages/trainingSchedule/AddTrainingSchedulePage";
 
 import MyTeamPage from "../../../pages/navBarPages/player/myTeamPage";
 
@@ -85,6 +81,7 @@ const PlayerTabs = () => {
     <Route path="/trainingschedule/:id"><TrainingScheduleDetailsPage></TrainingScheduleDetailsPage></Route>
     <Route exact path="/trainingschedule/list"><TrainingScheduleListPage></TrainingScheduleListPage></Route>
 
+    <Route exact path="/team/panel/list"><PlayerListPage></PlayerListPage></Route>
 
 
     <Redirect exact path="/" to="/home"></Redirect>
