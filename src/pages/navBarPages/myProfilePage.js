@@ -1,6 +1,6 @@
 import React from "react";
 import { IonPage, IonContent } from "@ionic/react";
-import MyProfileDetails from "../../components/topicDetails/myProfile/index";
+import MyProfileDetails from "../../components/topicDetails/myProfile/player/index";
 import "../pages.css";
 
 const MyProfilePage = () => {

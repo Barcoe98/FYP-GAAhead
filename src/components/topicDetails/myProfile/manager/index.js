@@ -16,22 +16,21 @@ import PageHeader from "../../../headers/index";
 
 import "../myProfile.css";
 
-const ManagerProfileDetails = ({}) => {
+const ManagerProfileDetails = () => {
 
-  const [profile, setProfileDetails] = useState();
+  const [profileDetails, setProfileDetails] = useState();
   const { currentUser } = useAuth();
   const id = 'Jw2htGYNV2A0naMySRjX'
 
   const uId = currentUser?.uid
-  const testId = '1kK33jibmLZ2RAEb7lF4u9g9STf2'
 
   useEffect(() => {
-    const playerRef = firestore.collection("users").doc(testId);
-    playerRef.get(testId).then((doc) => {
+    const playerRef = firestore.collection("users").doc(currentUser?.uid);
+    playerRef.get(currentUser?.uid).then((doc) => {
       const profileDetails = { id: doc.id, ...doc.data() };
       setProfileDetails(profileDetails);
     });
-  }, [id]);
+  }, [currentUser?.uid, id]);
 
 
   return (
@@ -45,11 +44,11 @@ const ManagerProfileDetails = ({}) => {
             <IonText color="dark" id="myContentTitle">My Details</IonText>
               <IonRow>
                 <IonCol size="6"><IonText id="title">Name:</IonText></IonCol>
-                <IonCol size="6"><IonText id="myEmail">{profile?.name}</IonText></IonCol>
+                <IonCol size="6"><IonText id="myEmail">{profileDetails?.name}</IonText></IonCol>
               </IonRow>
               <IonRow>
                 <IonCol size="6"><IonText id="title">Email:</IonText></IonCol>
-                <IonCol size="6"><IonText id="myEmail">{profile?.email}</IonText></IonCol>
+                <IonCol size="6"><IonText id="myEmail">{profileDetails?.email}</IonText></IonCol>
               </IonRow>
             </IonGrid>
           </div>
@@ -63,7 +62,7 @@ const ManagerProfileDetails = ({}) => {
               </IonRow>
               <IonRow>
                 <IonCol size="6"><IonText id="title">Team Id:</IonText></IonCol>
-                <IonCol size="6"><IonText id="myEmail">{profile?.managerId}</IonText></IonCol>
+                <IonCol size="6"><IonText id="myEmail">{profileDetails?.managerId}</IonText></IonCol>
               </IonRow>
             </IonGrid>
           </div>
