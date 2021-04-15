@@ -14,18 +14,38 @@ const ResultDetailsPage = () => {
   const history = useHistory();
   const [result, setResult] = useState(null);
   const [delAlert, setDelAlert] = useState(false);
-  const managerId = '1kK33jibmLZ2RAEb7lF4u9g9STf2'
+  const [errorMessage, setErrorMessage] = useState();
+  const [showAlert, setShowAlert] = useState(false);
+  var [managerId, setManagerId] = useState();
 
   useEffect(() => {
-    const resultRef = firestore
-      .collection("users")
-      .doc(managerId)
-      .collection("results")
-      .doc(id);
-    resultRef.get(id).then((doc) => {
-      const result = { id: doc.id, ...doc.data() };
-      setResult(result);
-    });
+    const ref = firestore
+    .collection("users")
+    .doc(currentUser?.uid)
+
+    ref.get(currentUser?.uid).then(doc => {
+      
+      if (!doc.exists) {
+        console.log('No such document');
+        setErrorMessage('No Team Data Available, Join a Team')
+        setShowAlert(true)
+      } else {
+        const userDoc = { id: doc.id, ...doc.data() };
+
+        //set ManagerId Attributes to matching in DB
+        setManagerId(userDoc?.managerId)
+
+        const resultRef = firestore
+          .collection("users")
+          .doc(userDoc?.managerId)
+          .collection("results")
+          .doc(id);
+        resultRef.get(id).then((doc) => {
+          const result = { id: doc.id, ...doc.data() };
+          setResult(result);
+        });
+      }
+    })
   }, [id]);
 
   const handleDelete = async () => {

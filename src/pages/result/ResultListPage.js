@@ -5,6 +5,9 @@ import ResultCard from "../../components/cards/matchCard/result/index";
 import AlertError from "../../components/alerts/errorAlert";
 
 import { firestore } from "../../firebase";
+import { useAuth } from "../../contexts/authContext";
+import "../pages.css";
+
 
 const ResultListPage = () => {
   const [results, setResults] = useState([]);
@@ -13,18 +16,30 @@ const ResultListPage = () => {
   const [errorMessage, setErrorMessage] = useState();
   const [showAlert, setShowAlert] = useState(false);
 
-  const myManagerId = '1kK33jibmLZ2RAEb7lF4u9g9STf2'
+  const { currentUser } = useAuth();
 
   useEffect(() => {
+    const ref = firestore
+    .collection("users")
+    .doc(currentUser?.uid)
 
-    if (myManagerId !== null ) {
-      //set Manager ID to user manager ID
-      setManagerId(myManagerId)
+    ref.get(currentUser?.uid).then(doc => {
+      
+      if (!doc.exists) {
+        console.log('No such document');
+        setErrorMessage('No Team Data Available, Join a Team')
+        setShowAlert(true)
+        //history.goBack();
+      } else {
+        const userDoc = { id: doc.id, ...doc.data() };
+
+        //set ManagerId Attributes to matching in DB
+        setManagerId(userDoc?.managerId)
 
       //ref for user managers results collection
       const ref = firestore
       .collection("users")
-      .doc(managerId)
+      .doc(userDoc?.managerId)
       .collection("results");
 
       //snapshot of doc 
@@ -36,14 +51,9 @@ const ResultListPage = () => {
       setResults(docs);
     });
     }
-    else {
-      setManagerId(null)
-      setErrorMessage('No Team Data Available, Join a Team')
-      setShowAlert(true)
-      console.log('error') 
-    }
-    
-  }, [managerId]);
+  })
+
+}, [currentUser?.uid]);
 
   return (
     <IonPage color="secondary">

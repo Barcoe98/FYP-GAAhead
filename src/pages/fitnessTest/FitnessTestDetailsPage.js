@@ -3,6 +3,7 @@ import { IonPage } from "@ionic/react";
 import PageHeaderDelete from "../../components/headers/deleteHeader/index";
 import FitnessTestDetails from "../../components/topicDetails/fitnessTests/index";
 import AlertDelete from "../../components/alerts/deleteAlert";
+import AlertError from "../../components/alerts/errorAlert";
 
 import { useParams, useHistory } from "react-router-dom";
 import { firestore } from "../../firebase";
@@ -13,6 +14,10 @@ const FitnessTestDetailsPage = () => {
   const { currentUser } = useAuth();
   const { id } = useParams();
   const history = useHistory();
+
+  const [errorMessage, setErrorMessage] = useState();
+  const [showAlert, setShowAlert] = useState(false);
+
 
   const [fitnessTest, setFitnessTest] = useState(null);
   const [delAlert, setDelAlert] = useState(false);
@@ -30,6 +35,8 @@ const FitnessTestDetailsPage = () => {
       
       if (!doc.exists) {
         console.log('No such document');
+        setErrorMessage('No Team Data Available, Join a Team')
+        setShowAlert(true)
         //history.goBack();
       } else {
         const userDoc = { id: doc.id, ...doc.data() };
@@ -80,6 +87,14 @@ const FitnessTestDetailsPage = () => {
         setDelAlert={() => setDelAlert(false)}
         handleDelete={handleDelete}
       ></AlertDelete>
+
+      <AlertError 
+        setShowAlert={() => setShowAlert(false)} 
+        alertHeader='No Fitness Tests Found'
+        showAlert={showAlert} 
+        msg={errorMessage}>
+        </AlertError>
+
     </IonPage>
   );
 };

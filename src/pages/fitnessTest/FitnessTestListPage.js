@@ -8,6 +8,7 @@ import { firestore } from "../../firebase";
 import { useAuth } from "../../contexts/authContext";
 import "../pages.css";
 
+
 const FitnessTestPage = () => {
   const [fitnessTests, setFitnessTests] = useState([]);
   var [managerId, setManagerId] = useState();
@@ -26,6 +27,9 @@ const FitnessTestPage = () => {
       
       if (!doc.exists) {
         console.log('No such document');
+        setErrorMessage('No Team Data Available, Join a Team')
+        setShowAlert(true)
+
         //history.goBack();
       } else {
         const userDoc = { id: doc.id, ...doc.data() };
@@ -47,7 +51,7 @@ const FitnessTestPage = () => {
         setFitnessTests(docs);
       });
       }
-    });
+    })
 
   }, [currentUser?.uid]);
 
