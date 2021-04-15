@@ -51,8 +51,6 @@ import JoinTeamPage from "../../../pages/team/JoinTeamPage";
 
 import TeamStatsPage from "../../../pages/teamStats/teamStatsPage";
 
-import DiaryEntriesListPage from "../../../pages/diary/DiaryEntryListPage";
-import DiaryEntryDetailsPage from "../../../pages/diary/DiaryEntryDetailsPage";
 import ManagerProfileDetails from "../../topicDetails/myProfile/manager";
 import AddTrainingPage from "../../../pages/trainingSchedule/AddTrainingSchedulePage";
 
@@ -144,16 +142,6 @@ const ManagerTabs = () => {
         </Route>
         <Route exact path="/team/panel/list">
           <PlayerListPage></PlayerListPage>
-        </Route>
-
-        <Route path="/player/diary-entries/:id">
-          <DiaryEntryDetailsPage></DiaryEntryDetailsPage>
-        </Route>
-        <Route exact path="/player/diary-entries/add">
-          <DiaryEntriesListPage></DiaryEntriesListPage>
-        </Route>
-        <Route exact path="/player/diary-entries/list">
-          <DiaryEntriesListPage></DiaryEntriesListPage>
         </Route>
 
         <Redirect exact path="/" to="/home"></Redirect>

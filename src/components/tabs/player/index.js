@@ -43,6 +43,8 @@ import TeamStatsPage from "../../../pages/teamStats/teamStatsPage";
 
 import DiaryEntriesListPage from "../../../pages/diary/DiaryEntryListPage";
 import DiaryEntryDetailsPage from "../../../pages/diary/DiaryEntryDetailsPage";
+import AddDiaryEntryPage from "../../../pages/diary/addDiaryEntry";
+
 
 import MyTeamPage from "../../../pages/navBarPages/player/myTeamPage";
 
@@ -54,16 +56,13 @@ const PlayerTabs = () => {
     <IonRouterOutlet>
 
     <Route path="/diary-entries/:id"><DiaryEntryDetailsPage></DiaryEntryDetailsPage></Route>
-    <Route exact path="/diary-entries/add"><DiaryEntriesListPage></DiaryEntriesListPage></Route>
     <Route exact path="/diary-entries/list"><DiaryEntriesListPage></DiaryEntriesListPage></Route>
+    <Route exact path="/diary-entries/add"><AddDiaryEntryPage></AddDiaryEntryPage></Route>
+
     <Route exact path="/more"><MorePage></MorePage></Route>
- 
     <Route path="/player/my-profile"><PlayerProfilePage></PlayerProfilePage></Route>
     <Route path="/player/my-team"><MyTeamPage></MyTeamPage></Route>
 
-
-    <Route path="/manager/match"><MatchPage></MatchPage></Route>
-    <Route exact path="/manager/team"><TeamPage></TeamPage></Route>
     <Route exact path="/player/team/join"><JoinTeamPage></JoinTeamPage></Route>
     
     <Route exact path="/manager/planner"><PlannerPage></PlannerPage></Route>
@@ -72,12 +71,16 @@ const PlayerTabs = () => {
     <Route path="/fitness/test/:id"><FitnessTestDetailsPage></FitnessTestDetailsPage></Route>
     <Route exact path="/fitness/test/add-results"><AddFitnessTestResultsPage></AddFitnessTestResultsPage></Route>
     <Route exact path="/fitness/test/list"><FitnessTestListPage></FitnessTestListPage></Route>
+
     <Route path="/workout/:id"><WorkoutRoutineDetailsPage></WorkoutRoutineDetailsPage></Route>
     <Route exact path="/workout/list"><WorkoutRoutineListPage></WorkoutRoutineListPage></Route>
+
     <Route path="/result/:id"><ResultDetailsPage></ResultDetailsPage></Route>
     <Route exact path="/result/list"><ResultListPage></ResultListPage></Route>
+
     <Route path="/fixture/:id"><FixtureDetailsPage></FixtureDetailsPage></Route>
     <Route exact path="/fixture/list"><FixtureListPage></FixtureListPage></Route>
+
     <Route path="/trainingschedule/:id"><TrainingScheduleDetailsPage></TrainingScheduleDetailsPage></Route>
     <Route exact path="/trainingschedule/list"><TrainingScheduleListPage></TrainingScheduleListPage></Route>
 

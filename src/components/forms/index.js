@@ -75,7 +75,6 @@ const Form = ({formTitle, btnTitle, title, setTitle, time, setTime, date, setDat
           {/* Add Button*/ }
           <IonRow>
             <IonCol>
-              <IonLoading isOpen={loading}></IonLoading>
               <IonButton onClick={handleAdd} id="btnTheme" expand="block" color="dark" fill="solid" type="submit" >{btnTitle}</IonButton>
             </IonCol>
           </IonRow>
