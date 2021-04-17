@@ -14,7 +14,7 @@ return (
           <IonIcon id="link" icon={person}></IonIcon>
         </IonCol>
         <IonCol size="10">
-          <IonRouterLink id="link" href="/join/team"> Join Team</IonRouterLink>
+          <IonRouterLink id="link" href="/player/join/team"> Join Team</IonRouterLink>
         </IonCol>
         <IonCol size="1">
           <IonIcon id="link" icon={chevronForwardOutline}></IonIcon>

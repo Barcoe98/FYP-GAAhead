@@ -44,11 +44,11 @@ const PlayerTabs = () => {
     <Route exact path="/diary-entries/list"><DiaryEntriesListPage></DiaryEntriesListPage></Route>
     <Route exact path="/diary-entries/add"><AddDiaryEntryPage></AddDiaryEntryPage></Route>
 
-    <Route exact path="/more"><MorePage></MorePage></Route>
+    <Route exact path="/player/more"><MorePage></MorePage></Route>
     <Route path="/player/my-profile"><PlayerProfilePage></PlayerProfilePage></Route>
     <Route path="/player/my-team"><MyTeamPage></MyTeamPage></Route>
 
-    <Route exact path="/player/team/join"><JoinTeamPage></JoinTeamPage></Route>
+    <Route exact path="/player/join/team"><JoinTeamPage></JoinTeamPage></Route>
     <Route exact path="/team/panel/list"><PlayerListPage></PlayerListPage></Route>
 
     <Route exact path="/manager/teamstats"><TeamStatsPage></TeamStatsPage></Route>
@@ -73,24 +73,24 @@ const PlayerTabs = () => {
     <Redirect exact path="/" to="/home"></Redirect>
   </IonRouterOutlet>
 
-      <IonTabBar id="ManagerNavbar" slot="bottom">
+      <IonTabBar id="PlayerNavbar" slot="bottom">
 
-        <IonTabButton id="ManagerNavbar" tab="team" href="/player/my-team">
+        <IonTabButton id="PlayerNavbar" tab="team" href="/player/my-team">
           <IonIcon icon={peopleOutline} />
           <IonLabel>My Team</IonLabel>
         </IonTabButton>
         
-        <IonTabButton id="ManagerNavbar" tab="matches" href="/diary-entries/list">
+        <IonTabButton id="PlayerNavbar" tab="matches" href="/diary-entries/list">
         <IonIcon icon={documentOutline} />
           <IonLabel>Journal</IonLabel>
         </IonTabButton>
 
-        <IonTabButton id="ManagerNavbar" tab="myProfile" href="/player/my-profile">
+        <IonTabButton id="PlayerNavbar" tab="myProfile" href="/player/my-profile">
         <IonIcon icon={personOutline} />
           <IonLabel>My Profile</IonLabel>
         </IonTabButton>
 
-        <IonTabButton id="ManagerNavbar" tab="more" href="/manager/more">
+        <IonTabButton id="PlayerNavbar" tab="more" href="/player/more">
           <IonIcon icon={ellipsisHorizontalOutline} />
           <IonLabel>More</IonLabel>
         </IonTabButton>
