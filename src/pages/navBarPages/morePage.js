@@ -7,7 +7,6 @@ import {
   IonItem,
   IonIcon,
 } from "@ionic/react";
-import PageHeader from "../../components/headers/index";
 import {
   informationCircle,
   helpCircle,
@@ -17,11 +16,12 @@ import {
 } from "ionicons/icons";
 
 import "../pages.css";
+import TitleHeader from "../../components/headers/titeHeader";
 
 const MorePage = () => {
   return (
     <IonPage>
-      <PageHeader title="More Page"></PageHeader>
+      <TitleHeader title="More Page"></TitleHeader>
       <IonContent id="bg-col">
         <IonList>
           <IonItem routerLink="/manager/my-profile" id="bg-col">

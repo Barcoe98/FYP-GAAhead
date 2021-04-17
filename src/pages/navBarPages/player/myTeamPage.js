@@ -1,13 +1,13 @@
 import React from "react";
 import { IonContent, IonPage, IonGrid, IonCol, IonRow } from "@ionic/react";
-import PageHeader from "../../../components/headers/index";
+import TitleHeader from "../../../components/headers/titeHeader";
 
 const MyTeamPage = () => {
   
   return (
     <IonPage>
       <IonContent id="bg-col">
-
+        <TitleHeader title="My Team"></TitleHeader>
         <IonGrid>
           <IonRow>
             <IonCol id="navBtnYlw" size="6">

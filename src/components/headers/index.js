@@ -6,7 +6,7 @@ const PageHeader = ({title}) => {
     <IonHeader>
       <IonToolbar mode="md">
         <IonTitle>{`${title}`}</IonTitle>
-        <IonButtons color="dark" slot="start">
+        <IonButtons color="dark" slot="end">
           <IonBackButton></IonBackButton>
         </IonButtons>
       </IonToolbar>

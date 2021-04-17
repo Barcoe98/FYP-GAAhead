@@ -1,12 +1,12 @@
 import React from "react";
 import { IonContent, IonPage, IonGrid, IonCol, IonRow } from "@ionic/react";
-import PageHeader from "../../components/headers/index";
+import TitleHeader from "../../components/headers/titeHeader";
 
 const PlannerPage = () => {
   
   return (
     <IonPage>
-      <PageHeader title="Planners"></PageHeader>
+      <TitleHeader title="Planners"></TitleHeader>
       <IonContent color="secondary" id="pg-Sze">
         <IonGrid id="bg-col">
           <IonRow id="bg-col">

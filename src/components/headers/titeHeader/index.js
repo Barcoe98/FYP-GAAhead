@@ -1,14 +1,12 @@
 import React from "react";
-import { IonButton, IonHeader } from "@ionic/react";
+import { IonHeader, IonToolbar, IonTitle } from '@ionic/react';
 
-import "./titleHeader.css";
-
-const TitleHeader = ({ action }) => {
+const TitleHeader = ({title}) => {
   return (
     <IonHeader>
-      <h1 id="titleHeader">Your Fitness Tests</h1>
-      <IonButton id="btnHeader"  fill="" size="default" 
-      onclick={action}> Create</IonButton>
+      <IonToolbar mode="md">
+        <IonTitle>{`${title}`}</IonTitle>
+      </IonToolbar>
     </IonHeader>
   );
 };

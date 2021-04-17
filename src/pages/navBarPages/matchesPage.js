@@ -2,11 +2,12 @@ import React from "react";
 import { IonContent, IonPage, IonGrid, IonCol, IonRow } from "@ionic/react";
 import PageHeader from "../../components/headers/index";
 import "../pages.css";
+import TitleHeader from "../../components/headers/titeHeader";
 
 const MatchesPage = () => {
   return (
     <IonPage>
-      <PageHeader title="Matches"></PageHeader>
+      <TitleHeader title="Matches"></TitleHeader>
       <IonContent id="pg-Sze">
         <IonGrid>
           <IonRow>
