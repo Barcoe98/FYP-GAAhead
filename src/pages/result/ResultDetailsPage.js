@@ -57,6 +57,7 @@ const ResultDetailsPage = () => {
     await resultRef.delete();
     console.log("Confirm Okay");
     history.goBack();
+    
   };
 
   return (

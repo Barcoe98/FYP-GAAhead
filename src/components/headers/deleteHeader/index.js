@@ -8,8 +8,8 @@ import {
   IonBackButton,
   IonIcon,
 } from "@ionic/react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMinusCircle, faTrash } from "@fortawesome/free-solid-svg-icons";
+
+import { trashBinOutline } from "ionicons/icons";
 
 const PageHeaderDelete = ({ title, action }) => {
   return (
@@ -21,7 +21,7 @@ const PageHeaderDelete = ({ title, action }) => {
         </IonButtons>
         <IonButtons slot="end">
           <IonButton color="light" onclick={action}>
-          <FontAwesomeIcon icon={faTrash} size="2x" color="#ff3b30"/>
+          <IonIcon icon={trashBinOutline} />
           </IonButton>
         </IonButtons>
       </IonToolbar>

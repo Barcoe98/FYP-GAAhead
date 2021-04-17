@@ -7,26 +7,21 @@ import {
   IonIcon,
   IonLabel,
 } from "@ionic/react";
-import { menuOutline, peopleOutline, personOutline, documentOutline } from "ionicons/icons";
+import { ellipsisHorizontalOutline, peopleOutline, personOutline, documentOutline } from "ionicons/icons";
 
-import HomePage from "../../../pages/navBarPages/homePage";
 import MorePage from "../../../pages/navBarPages/morePage";
 import PlayerProfilePage from "../../../pages/navBarPages/myProfilePage";
-import TeamPage from "../../../pages/navBarPages/teamPage";
 import PlannerPage from "../../../pages/navBarPages/plannerPage";
-import MatchPage from "../../../pages/navBarPages/matchesPage";
 
 import TrainingScheduleDetailsPage from "../../../pages/trainingSchedule/TrainingScheduleDetailsPage";
 import TrainingScheduleListPage from "../../../pages/trainingSchedule/TrainingScheduleListPage";
 
 import FitnessTestDetailsPage from "../../../pages/fitnessTest/FitnessTestDetailsPage";
 import FitnessTestListPage from "../../../pages/fitnessTest/FitnessTestListPage";
-import AddFitnessTestPage from "../../../pages/fitnessTest/AddFitnessTestPage";
 import AddFitnessTestResultsPage from "../../../pages/fitnessTest/AddFitnessTestResultsPage";
 
 import WorkoutRoutineDetailsPage from "../../../pages/workoutRoutine/WorkoutDetailsPage";
 import WorkoutRoutineListPage from "../../../pages/workoutRoutine/WorkoutListPage";
-import AddWorkoutRoutinePage from "../../../pages/workoutRoutine/AddWorkoutPage";
 
 import ResultDetailsPage from "../../../pages/result/ResultDetailsPage";
 import ResultListPage from "../../../pages/result/ResultListPage";
@@ -35,7 +30,6 @@ import FixtureListPage from "../../../pages/fixture/FixtureListPage";
 import FixtureDetailsPage from "../../../pages/fixture/FixtureDetailsPage";
 
 import PlayerListPage from "../../../pages/team/PlayerListPage";
-import PlayerDetailsPage from "../../../pages/team/PlayerDetailsPage";
 
 import JoinTeamPage from "../../../pages/team/JoinTeamPage";
 
@@ -45,9 +39,7 @@ import DiaryEntriesListPage from "../../../pages/diary/DiaryEntryListPage";
 import DiaryEntryDetailsPage from "../../../pages/diary/DiaryEntryDetailsPage";
 import AddDiaryEntryPage from "../../../pages/diary/addDiaryEntry";
 
-
 import MyTeamPage from "../../../pages/navBarPages/player/myTeamPage";
-
 
 
 const PlayerTabs = () => {
@@ -64,7 +56,8 @@ const PlayerTabs = () => {
     <Route path="/player/my-team"><MyTeamPage></MyTeamPage></Route>
 
     <Route exact path="/player/team/join"><JoinTeamPage></JoinTeamPage></Route>
-    
+    <Route exact path="/team/panel/list"><PlayerListPage></PlayerListPage></Route>
+
     <Route exact path="/manager/planner"><PlannerPage></PlannerPage></Route>
     <Route exact path="/manager/teamstats"><TeamStatsPage></TeamStatsPage></Route>
 
@@ -83,8 +76,6 @@ const PlayerTabs = () => {
 
     <Route path="/trainingschedule/:id"><TrainingScheduleDetailsPage></TrainingScheduleDetailsPage></Route>
     <Route exact path="/trainingschedule/list"><TrainingScheduleListPage></TrainingScheduleListPage></Route>
-
-    <Route exact path="/team/panel/list"><PlayerListPage></PlayerListPage></Route>
 
 
     <Redirect exact path="/" to="/home"></Redirect>
@@ -108,7 +99,7 @@ const PlayerTabs = () => {
         </IonTabButton>
 
         <IonTabButton id="ManagerNavbar" tab="more" href="/manager/more">
-          <IonIcon icon={menuOutline} />
+          <IonIcon icon={ellipsisHorizontalOutline} />
           <IonLabel>More</IonLabel>
         </IonTabButton>
 

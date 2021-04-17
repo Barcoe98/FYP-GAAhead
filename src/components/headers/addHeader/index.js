@@ -8,10 +8,7 @@ import {
   IonBackButton,
   IonIcon,
 } from "@ionic/react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
-
-
+import { addOutline } from "ionicons/icons";
 
 
 const PageHeaderAdd = ({ title, href }) => {
@@ -25,7 +22,7 @@ const PageHeaderAdd = ({ title, href }) => {
 
         <IonButtons slot="end">
           <IonButton color="light" href={href}>
-          <FontAwesomeIcon icon={faPlus} size="2x" color="#ffffff"/>
+          <IonIcon icon={addOutline} />
           </IonButton>
         </IonButtons>
       </IonToolbar>
