@@ -41,37 +41,31 @@ const ManagerProfileDetails = () => {
         <div id="my-bg-img"></div>  
           <div id="myContent">
             <IonGrid>
-            <IonText color="dark" id="myContentTitle">My Details</IonText>
+            <IonText id="myContentTitle">My Details</IonText>
               <IonRow>
                 <IonCol size="6"><IonText id="title">Name:</IonText></IonCol>
-                <IonCol size="6"><IonText id="myEmail">{profileDetails?.name}</IonText></IonCol>
+                <IonCol size="6"><IonText id="var">{profileDetails?.name}</IonText></IonCol>
               </IonRow>
               <IonRow>
                 <IonCol size="6"><IonText id="title">Email:</IonText></IonCol>
-                <IonCol size="6"><IonText id="myEmail">{profileDetails?.email}</IonText></IonCol>
+                <IonCol size="6"><IonText id="var">{profileDetails?.email}</IonText></IonCol>
               </IonRow>
             </IonGrid>
           </div>
 
           <div id="myContent">
-            <IonText color="dark" id="myContentTitle">Team Details</IonText>
+            <IonText id="myContentTitle">Team Details</IonText>
             <IonGrid>
               <IonRow>
                 <IonCol size="6"><IonText id="title">Team Name:</IonText></IonCol>
-                <IonCol size="6"><IonText id="myEmail">Blacks & Whites</IonText></IonCol>
+                <IonCol size="6"><IonText id="var">{profileDetails?.teamName}</IonText></IonCol>
               </IonRow>
               <IonRow>
-                <IonCol size="6"><IonText id="title">Team Id:</IonText></IonCol>
-                <IonCol size="6"><IonText id="myEmail">{profileDetails?.managerId}</IonText></IonCol>
+                <IonCol size="3"><IonText id="title">Team Id:</IonText></IonCol>
+                <IonCol size="9"><IonText id="var">{profileDetails?.teamId}</IonText></IonCol>
               </IonRow>
             </IonGrid>
           </div>
-
-          <IonRow>
-            <IonCol size="12">
-              <IonButton id="lgBtn" href="">Log Out</IonButton>
-            </IonCol>
-          </IonRow>
 
       </IonList>
     </IonContent>
