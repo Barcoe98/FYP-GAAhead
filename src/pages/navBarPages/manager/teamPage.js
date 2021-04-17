@@ -1,8 +1,8 @@
 import React from "react";
 import { IonContent, IonPage, IonRow, IonGrid, IonCol } from "@ionic/react";
-import TitleHeader from "../../components/headers/titeHeader";
+import TitleHeader from "../../../components/headers/titeHeader";
 
-import "../pages.css";
+import "../../pages.css";
 
 const TeamPage = () => {
   return (

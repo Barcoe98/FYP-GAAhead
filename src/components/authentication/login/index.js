@@ -36,7 +36,7 @@ const Login = () => {
       setStatus({ loading: true, emailError: false, pwordError: false });
       await login(email, pword);
       setLoggedIn(true);
-      history.push("/manager/home");
+      history.push("/manager/planner");
     } catch {
       //Set loading to false after attempted login
       //set errors to true and display error message

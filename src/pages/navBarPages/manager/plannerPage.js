@@ -1,6 +1,8 @@
 import React from "react";
 import { IonContent, IonPage, IonGrid, IonCol, IonRow } from "@ionic/react";
-import TitleHeader from "../../components/headers/titeHeader";
+import TitleHeader from "../../../components/headers/titeHeader";
+
+import "../../pages.css";
 
 const PlannerPage = () => {
   

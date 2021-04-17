@@ -1,8 +1,9 @@
 import React from "react";
 import { IonContent, IonPage, IonGrid, IonCol, IonRow } from "@ionic/react";
-import PageHeader from "../../components/headers/index";
-import "../pages.css";
-import TitleHeader from "../../components/headers/titeHeader";
+import TitleHeader from "../../../components/headers/titeHeader";
+
+import "../../pages.css";
+
 
 const MatchesPage = () => {
   return (

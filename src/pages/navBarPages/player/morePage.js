@@ -6,6 +6,10 @@ import {
   IonLabel,
   IonItem,
   IonIcon,
+  IonGrid,
+  IonRow,
+  IonCol,
+  IonRouterLink,
 } from "@ionic/react";
 import {
   informationCircle,
@@ -14,16 +18,31 @@ import {
   apps,
   person,
 } from "ionicons/icons";
+import TitleHeader from "../../../components/headers/titeHeader/index";
 
-import "../pages.css";
-import TitleHeader from "../../components/headers/titeHeader";
+import "../../pages.css";
+
 
 const MorePage = () => {
   return (
     <IonPage>
       <TitleHeader title="More Page"></TitleHeader>
       <IonContent id="bg-col">
+      
         <IonList>
+        <IonGrid>
+        <IonRow>
+          <IonCol size="2">
+            <IonIcon icon={person}></IonIcon>
+          </IonCol>
+          <IonCol size="10">
+            <IonRouterLink href="/manager/my-profile"></IonRouterLink>
+          </IonCol>
+        </IonRow>
+
+
+
+
           <IonItem routerLink="/manager/my-profile" id="bg-col">
             <IonIcon icon={person}></IonIcon>
             <IonLabel>My Profile</IonLabel>
@@ -49,6 +68,7 @@ const MorePage = () => {
             <IonLabel color="danger">Logout</IonLabel>
           </IonItem>
           
+          </IonGrid>
         </IonList>
       </IonContent>
     </IonPage>
