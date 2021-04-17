@@ -19,7 +19,7 @@ const MatchesPage = () => {
           </IonRow>
 
           <IonRow>
-            <IonCol id="navBtnYlw" size="12">
+            <IonCol id="navBtnTeal" size="12">
               <ion-router-link id="navLnk" href="/manager/result/list">
                 Results
               </ion-router-link>

@@ -35,6 +35,32 @@
     font-size:x-large;
     font-weight: bold;
   }
+
+#navStatsBtn{
+  background-color:#4cd963;
+  background-image: url("https://res.cloudinary.com/dmikx06rt/image/upload/v1618671742/FYP-GAAhead/analytics-1799648_640_rqbc71.png");
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display:inline-block;
+  border: 2px solid #121212;
+  font-size:x-large;
+  font-weight: bold;
+}
+
+#navPanelBtn{
+  background-color:#5ac7fa;
+  background-image: url("https://res.cloudinary.com/dmikx06rt/image/upload/v1614895409/FYP-GAAhead/Seating_rgtomv.jpg");
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display:inline-block;
+  border: 2px solid #121212;
+  font-size:x-large;
+  font-weight: bold;
+}
+
+  
   
   /* yellow - #ffcc00*/
   #navBtnYlw{

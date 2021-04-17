@@ -19,7 +19,7 @@ const TeamPage = () => {
           </IonRow>
 
           <IonRow>
-            <IonCol id="navBtnGrn" size="12">
+            <IonCol id="navStatsBtn" size="12">
               <ion-router-link id="navLnk" href="/manager/teamstats">
                 Team Statistics
               </ion-router-link>
@@ -27,7 +27,7 @@ const TeamPage = () => {
           </IonRow>
 
           <IonRow>
-            <IonCol id="navBtnYlw" size="12">
+            <IonCol id="navPanelBtn" size="12">
               <ion-router-link id="navLnk" href="#">
                 Panel Selector
               </ion-router-link>

@@ -7,9 +7,9 @@ const PlannerPage = () => {
   return (
     <IonPage>
       <TitleHeader title="Planners"></TitleHeader>
-      <IonContent color="secondary" id="pg-Sze">
+      <IonContent id="bg-col">
         <IonGrid id="bg-col">
-          <IonRow id="bg-col">
+          <IonRow>
             <IonCol id="navBtnRed" size="12">
               <ion-router-link id="navLnk" href="/manager/fitness/test/list">
                 Fitness Tests
@@ -18,7 +18,7 @@ const PlannerPage = () => {
           </IonRow>
 
           <IonRow id="bg-col">
-            <IonCol id="navBtnYlw" size="12">
+            <IonCol id="navBtnTeal" size="12">
               <ion-router-link
                 id="navLnk"
                 href="/manager/trainingschedule/list"
@@ -35,14 +35,6 @@ const PlannerPage = () => {
               </ion-router-link>
             </IonCol>
           </IonRow>
-
-          <IonRow id="bg-col">
-          <IonCol id="navBtnGrn" size="12">
-            <ion-router-link id="navLnk" href="/player/team/join">
-              Join Team
-            </ion-router-link>
-          </IonCol>
-        </IonRow>
 
         </IonGrid>
       </IonContent>
