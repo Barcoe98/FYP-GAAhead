@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   IonCol,
   IonRow,
@@ -10,45 +10,57 @@ import {
   IonPage,
   IonItemDivider,
 } from "@ionic/react";
-import PageHeader from "../../components/headers";
-import TextInputField from "../../components/textInputs/textInputField";
-import { firestore } from "../../firebase";
-import { useAuth } from "../../contexts/authContext";
+import PageHeader from "../../../components/headers";
+import TextInputField from "../../../components/textInputs/textInputField";
+import AlertError from "../../../components/alerts/errorAlert/index";
+
+import { firestore } from "../../../firebase";
+import { useAuth } from "../../../contexts/authContext";
 import { useHistory } from "react-router-dom";
 
-import "../pages.css";
+import "../../pages.css";
+
 
 const JoinTeamPage = () => {
 
+  const [errorMessage, setErrorMessage] = useState();
+  const [showAlert, setShowAlert] = useState(false);
+
   const { currentUser } = useAuth();
-  const currentUserId = currentUser?.uid
   const history = useHistory();
 
   const [teamName, setTeamName] = useState("");
   const [teamId, setTeamId] = useState("");
 
   //TODO add validation
-  const [status, setStatus] = useState({
-    loading: false,
-    emailError: false,
-    pwordError: false,
-  });
+  
 
   const handleJoinTeam = async () => {
-    const profileRef = firestore
+
+    if (teamName === "") {
+      setErrorMessage('No Team Name Entered')
+      setShowAlert(true)
+    }
+    else if (teamId === "") {
+      setErrorMessage('No Team Id Entered')
+      setShowAlert(true)
+    }
+    else {
+    const ref = firestore
       .collection("users")
-      .doc(currentUserId)
-      .collection("my_profile").doc('2KvIi2b8DI22lfwEihJa');
-    const profileData = { teamId: teamId };
-    await profileRef.update(profileData)
+      .doc(currentUser?.uid)
+
+    const data = { teamName, teamId };
+    await ref.update(data)
     history.goBack();
+    }
   };
 
   return (
     <IonPage>
       <PageHeader title="Join Team"></PageHeader>
-      <IonContent id="ft-pg-bg">
-        <IonGrid id="ft-pg-bg">
+      <IonContent id="bg-col">
+        <IonGrid id="bg-col">
           <IonRow>
             <IonCol>
               <IonItemDivider id="itm-divider-red">
@@ -84,7 +96,6 @@ const JoinTeamPage = () => {
           {/* Join Button*/}
           <IonRow>
             <IonCol>
-              <IonLoading isOpen={status.loading}></IonLoading>
               <IonButton
                 onClick={handleJoinTeam}
                 id="btnTheme"
@@ -99,6 +110,16 @@ const JoinTeamPage = () => {
           </IonRow>
         </IonGrid>
       </IonContent>
+
+
+      <AlertError 
+        setShowAlert={() => setShowAlert(false)} 
+        alertHeader='Please Fill All Required Fields'
+        showAlert={showAlert} 
+        msg={errorMessage}>
+      </AlertError>
+
+
     </IonPage>
   );
 };

@@ -12,7 +12,7 @@ import { ellipsisHorizontalOutline, peopleOutline, personOutline, documentOutlin
 import MorePage from "../../../pages/navBarPages/player/morePage";
 import PlayerProfilePage from "../../../pages/navBarPages/player/playerProfilePage";
 import MyTeamPage from "../../../pages/navBarPages/player/myTeamPage";
-import JoinTeamPage from "../../../pages/team/JoinTeamPage";
+import JoinTeamPage from "../../../pages/navBarPages/player/JoinTeamPage";
 
 import PlayerListPage from "../../../pages/team/PlayerListPage";
 import TeamStatsPage from "../../../pages/teamStats/teamStatsPage";

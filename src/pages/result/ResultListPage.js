@@ -11,7 +11,7 @@ import "../pages.css";
 
 const ResultListPage = () => {
   const [results, setResults] = useState([]);
-  const [managerId, setManagerId] = useState();
+  const [teamId, setTeamId] = useState();
 
   const [errorMessage, setErrorMessage] = useState();
   const [showAlert, setShowAlert] = useState(false);
@@ -33,24 +33,24 @@ const ResultListPage = () => {
       } else {
         const userDoc = { id: doc.id, ...doc.data() };
 
-        //set ManagerId Attributes to matching in DB
-        setManagerId(userDoc?.managerId)
+        //set TeamId Attributes to matching in DB
+        setTeamId(userDoc?.teamId)
 
-      //ref for user managers results collection
-      const ref = firestore
-      .collection("users")
-      .doc(userDoc?.managerId)
-      .collection("results");
+        //ref for user managers results collection
+        const ref = firestore
+        .collection("users")
+        .doc(userDoc?.teamId)
+        .collection("results");
 
-      //snapshot of doc 
-      ref.get().then((snapshot) => {
-      const docs = snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      setResults(docs);
-    });
-    }
+        //snapshot of doc 
+        ref.get().then((snapshot) => {
+        const docs = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setResults(docs);
+      });
+      }
   })
 
 }, [currentUser?.uid]);
