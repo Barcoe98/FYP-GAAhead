@@ -14,21 +14,36 @@ const TrainingScheduleDetailsPage = () => {
   const { id } = useParams();
   const { currentUser } = useAuth();
   const history = useHistory();
+
   const [trainingSchedule, setTrainingSchedule] = useState(null);
   const [delAlert, setDelAlert] = useState(false);
+  var [teamId, setTeamId] = useState();
 
 
-  useEffect(() => {
-    const tScheduleRef = firestore
+useEffect(() => {
+  const ref = firestore
+  .collection("users")
+  .doc(currentUser?.uid)
+
+  ref.get(currentUser?.uid).then(doc => {
+    
+    const userDoc = { id: doc.id, ...doc.data() };
+
+    //set ManagerId Attributes to matching in DB
+    setTeamId(userDoc?.teamId)
+
+    const ref = firestore
       .collection("users")
-      .doc(currentUser?.uid)
+      .doc(userDoc?.teamId)
       .collection("training_schedules")
       .doc(id);
-    tScheduleRef.get(id).then((doc) => {
-      const trainingSchedules = { id: doc.id, ...doc.data() };
-      setTrainingSchedule(trainingSchedules);
-    });
-  }, [id]);
+
+    ref.get(id).then((doc) => {
+      const data = { id: doc.id, ...doc.data() };
+      setTrainingSchedule(data);
+    })
+  })
+}, [currentUser?.uid, id]);
 
   const handleDelete = async () => {
     const fTestRef = firestore

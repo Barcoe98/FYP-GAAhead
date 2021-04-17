@@ -14,9 +14,7 @@ const ResultDetailsPage = () => {
   const history = useHistory();
   const [result, setResult] = useState(null);
   const [delAlert, setDelAlert] = useState(false);
-  const [errorMessage, setErrorMessage] = useState();
-  const [showAlert, setShowAlert] = useState(false);
-  var [managerId, setManagerId] = useState();
+  var [teamId, setTeamId] = useState();
 
   useEffect(() => {
     const ref = firestore
@@ -24,29 +22,24 @@ const ResultDetailsPage = () => {
     .doc(currentUser?.uid)
 
     ref.get(currentUser?.uid).then(doc => {
-      
-      if (!doc.exists) {
-        console.log('No such document');
-        setErrorMessage('No Team Data Available, Join a Team')
-        setShowAlert(true)
-      } else {
-        const userDoc = { id: doc.id, ...doc.data() };
 
-        //set ManagerId Attributes to matching in DB
-        setManagerId(userDoc?.managerId)
+      const userDoc = { id: doc.id, ...doc.data() };
 
-        const resultRef = firestore
-          .collection("users")
-          .doc(userDoc?.managerId)
-          .collection("results")
-          .doc(id);
-        resultRef.get(id).then((doc) => {
-          const result = { id: doc.id, ...doc.data() };
-          setResult(result);
-        });
-      }
+      //set ManagerId Attributes to matching in DB
+      setTeamId(userDoc?.teamId)
+
+      const ref = firestore
+        .collection("users")
+        .doc(userDoc?.teamId)
+        .collection("results")
+        .doc(id);
+        
+      ref.get(id).then((doc) => {
+        const data = { id: doc.id, ...doc.data() };
+        setResult(data);
+      });
     })
-  }, [id]);
+  }, [currentUser?.uid, id]);
 
   const handleDelete = async () => {
     const resultRef = firestore
@@ -54,6 +47,7 @@ const ResultDetailsPage = () => {
       .doc(currentUser?.uid)
       .collection("results")
       .doc(id);
+
     await resultRef.delete();
     console.log("Confirm Okay");
     history.goBack();

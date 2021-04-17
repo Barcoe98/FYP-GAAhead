@@ -6,7 +6,6 @@ import AlertError from "../../components/alerts/errorAlert";
 
 import { firestore } from "../../firebase";
 import { useAuth } from "../../contexts/authContext";
-import "../pages.css";
 
 
 const ResultListPage = () => {

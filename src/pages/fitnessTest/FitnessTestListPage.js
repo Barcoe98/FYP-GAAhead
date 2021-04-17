@@ -11,7 +11,7 @@ import "../pages.css";
 
 const FitnessTestPage = () => {
   const [fitnessTests, setFitnessTests] = useState([]);
-  var [managerId, setManagerId] = useState();
+  var [teamId, setTeamId] = useState();
 
   const [errorMessage, setErrorMessage] = useState();
   const [showAlert, setShowAlert] = useState(false);
@@ -35,11 +35,11 @@ const FitnessTestPage = () => {
         const userDoc = { id: doc.id, ...doc.data() };
 
         //set ManagerId Attributes to matching in DB
-        setManagerId(userDoc?.managerId)
+        setTeamId(userDoc?.teamId)
 
         const ref = firestore
         .collection("users")
-        .doc(userDoc?.managerId)
+        .doc(userDoc?.teamId)
         .collection("fitness_tests");
   
         //snapshot of doc 

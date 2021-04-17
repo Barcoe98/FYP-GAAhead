@@ -2,47 +2,57 @@ import React, { useEffect, useState } from "react";
 import { IonContent, IonPage, IonList } from "@ionic/react";
 import PageHeaderAdd from "../../components/headers/addHeader/index";
 import TrainingScheduleCard from "../../components/cards/trainingScheduleCard/index";
-import { firestore } from "../../firebase";
 import AlertError from "../../components/alerts/errorAlert";
+
+import { firestore } from "../../firebase";
+import { useAuth } from "../../contexts/authContext";
 
 
 const TrainingSchedulePage = () => {
   const [trainingSchedules, setTrainingSchedules] = useState([]);
-  const [managerId, setManagerId] = useState();
-  const myManagerId = '1kK33jibmLZ2RAEb7lF4u9g9STf2'
+  const [teamId, setTeamId] = useState();
 
   const [errorMessage, setErrorMessage] = useState();
   const [showAlert, setShowAlert] = useState(false);
 
+  const { currentUser } = useAuth();
+
   useEffect(() => {
+    const ref = firestore
+    .collection("users")
+    .doc(currentUser?.uid)
 
-    if (myManagerId !== null ) {
-      //set Manager ID to user manager ID
-      setManagerId(myManagerId)
+    ref.get(currentUser?.uid).then(doc => {
+      
+      if (!doc.exists) {
+        console.log('No such document');
+        setErrorMessage('No Team Data Available, Join a Team')
+        setShowAlert(true)
+        //history.goBack();
+      } else {
+        const userDoc = { id: doc.id, ...doc.data() };
 
-      //ref for user managers results collection
-      const ref = firestore
-      .collection("users")
-      .doc(managerId)
-      .collection("training_schedules");
+        //set TeamId Attributes to matching in DB
+        setTeamId(userDoc?.teamId)
 
-      //snapshot of doc 
-      ref.get().then((snapshot) => {
-      const docs = snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      setTrainingSchedules(docs);
-    });
-    }
-    else {
-      setManagerId(null)
-      setErrorMessage('No Team Data Available, Join a Team')
-      setShowAlert(true)
-      console.log('error') 
-    }
-    
-  }, [managerId]);
+        //ref for user managers results collection
+        const ref = firestore
+        .collection("users")
+        .doc(userDoc?.teamId)
+        .collection("training_schedules");
+
+        //snapshot of doc 
+        ref.get().then((snapshot) => {
+        const docs = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setTrainingSchedules(docs);
+      });
+      }
+  })
+
+}, [currentUser?.uid]);
 
 
   return (

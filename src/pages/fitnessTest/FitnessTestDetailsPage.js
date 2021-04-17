@@ -18,11 +18,9 @@ const FitnessTestDetailsPage = () => {
   const [errorMessage, setErrorMessage] = useState();
   const [showAlert, setShowAlert] = useState(false);
 
-
   const [fitnessTest, setFitnessTest] = useState(null);
   const [delAlert, setDelAlert] = useState(false);
-  //const managerId = '1kK33jibmLZ2RAEb7lF4u9g9STf2'
-  var [managerId, setManagerId] = useState();
+  var [teamId, setTeamId] = useState();
 
 
   useEffect(() => {
@@ -42,31 +40,27 @@ const FitnessTestDetailsPage = () => {
         const userDoc = { id: doc.id, ...doc.data() };
 
         //set ManagerId Attributes to matching in DB
-        setManagerId(userDoc?.managerId)
+        setTeamId(userDoc?.teamId)
 
         const ref = firestore
         .collection("users")
-        .doc(userDoc?.managerId)
-        .collection("fitness_tests");
-
-        const fTestRef = firestore
-        .collection("users")
-        .doc(userDoc?.managerId)
+        .doc(userDoc?.teamId)
         .collection("fitness_tests")
         .doc(id);
   
-        fTestRef.get(id).then((doc) => {
-          const fitnessTest = { id: doc.id, ...doc.data() };
-          setFitnessTest(fitnessTest);
+        ref.get(id).then((doc) => {
+          const data = { id: doc.id, ...doc.data() };
+          setFitnessTest(data);
         });
       }
     });
   }, [currentUser?.uid, id]);
 
+
   const handleDelete = async () => {
     const fTestRef = firestore
     .collection("users")
-    .doc(managerId)
+    .doc(teamId)
     .collection("fitness_tests")
     .doc(id);
     
@@ -82,6 +76,7 @@ const FitnessTestDetailsPage = () => {
         action={() => setDelAlert(true)}
       ></PageHeaderDelete>
       <FitnessTestDetails fitnessTest={fitnessTest}></FitnessTestDetails>
+      
       <AlertDelete
         delAlert={delAlert}
         setDelAlert={() => setDelAlert(false)}

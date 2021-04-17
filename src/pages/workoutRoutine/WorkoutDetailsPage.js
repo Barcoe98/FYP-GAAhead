@@ -13,20 +13,36 @@ const WorkoutDetailsPage = () => {
   const { id } = useParams();
   const { currentUser } = useAuth();
   const history = useHistory();
+
   const [workout, setWorkout] = useState(null);
   const [delAlert, setDelAlert] = useState(false);
+  var [teamId, setTeamId] = useState();
+
 
   useEffect(() => {
-    const workoutRef = firestore
-      .collection("users")
-      .doc(currentUser?.uid)
-      .collection("workouts")
-      .doc(id);
-    workoutRef.get(id).then((doc) => {
-      const workout = { id: doc.id, ...doc.data() };
-      setWorkout(workout);
-    });
-  }, [id]);
+    const ref = firestore
+    .collection("users")
+    .doc(currentUser?.uid)
+
+    ref.get(currentUser?.uid).then(doc => {
+      
+      const userDoc = { id: doc.id, ...doc.data() };
+
+      //set ManagerId Attributes to matching in DB
+      setTeamId(userDoc?.teamId)
+
+      const ref = firestore
+        .collection("users")
+        .doc(userDoc?.teamId)
+        .collection("workouts")
+        .doc(id);
+
+      ref.get(id).then((doc) => {
+        const data = { id: doc.id, ...doc.data() };
+        setWorkout(data);
+      })
+    })
+  }, [currentUser?.uid, id]);
 
   const handleDelete = async () => {
     const workoutRef = firestore
