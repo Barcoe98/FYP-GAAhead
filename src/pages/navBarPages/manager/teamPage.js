@@ -33,6 +33,7 @@ const TeamPage = () => {
               </ion-router-link>
             </IonCol>
           </IonRow>
+          
         </IonGrid>
       </IonContent>
     </IonPage>

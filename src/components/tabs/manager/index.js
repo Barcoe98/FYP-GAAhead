@@ -76,7 +76,7 @@ const ManagerTabs = () => {
         <Route exact path="/manager/trainingschedule/add"><AddTrainingPage></AddTrainingPage></Route>
 
         <Route path="/manager/team/panel/:id"><PlayerDetailsPage></PlayerDetailsPage></Route>
-        <Route exact path="/team/panel/list"><PlayerListPage></PlayerListPage></Route>
+        <Route exact path="/manager/team/panel/list"><PlayerListPage></PlayerListPage></Route>
 
         <Redirect exact path="/" to="/home"></Redirect>
       </IonRouterOutlet>

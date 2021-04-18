@@ -20,7 +20,7 @@ const ManagerProfileDetails = () => {
 
   const [profileDetails, setProfileDetails] = useState();
   const { currentUser } = useAuth();
-  const id = 'Jw2htGYNV2A0naMySRjX'
+  //const id = 'Jw2htGYNV2A0naMySRjX'
 
   const uId = currentUser?.uid
 
@@ -30,7 +30,7 @@ const ManagerProfileDetails = () => {
       const profileDetails = { id: doc.id, ...doc.data() };
       setProfileDetails(profileDetails);
     });
-  }, [currentUser?.uid, id]);
+  }, [currentUser?.uid]);
 
 
   return (
