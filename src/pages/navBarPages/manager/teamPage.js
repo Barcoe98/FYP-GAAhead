@@ -33,6 +33,14 @@ const TeamPage = () => {
               </ion-router-link>
             </IonCol>
           </IonRow>
+
+          <IonRow>
+          <IonCol id="navPanelBtn" size="12">
+            <ion-router-link id="navLnk" href="/manager/team/sheets">
+              Team Sheets
+            </ion-router-link>
+          </IonCol>
+        </IonRow>
           
         </IonGrid>
       </IonContent>

@@ -1,0 +1,19 @@
+/* Fitness Test Details */
+/* Title for Fitness Test Details*/
+#posName {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  font-size: large;
+  text-align: center;
+  border: 1px;
+  background-color: white;
+  color: black;
+  margin: 2px;
+  border: solid 2px black;
+}
+
+
+#bg-pitch {
+  background-color: #121212;
+}

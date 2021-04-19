@@ -23,8 +23,7 @@ const PlannerPage = () => {
             <IonCol id="navBtnTeal" size="12">
               <ion-router-link
                 id="navLnk"
-                href="/manager/trainingschedule/list"
-              >
+                href="/manager/trainingschedule/list">
                 Training Schedules
               </ion-router-link>
             </IonCol>

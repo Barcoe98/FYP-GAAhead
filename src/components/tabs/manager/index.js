@@ -42,6 +42,9 @@ import TeamStatsPage from "../../../pages/teamStats/teamStatsPage";
 import ManagerProfileDetails from "../../topicDetails/myProfile/manager/index";
 import AddTrainingPage from "../../../pages/trainingSchedule/AddTrainingSchedulePage";
 import PanelSelectorPage from "../../../pages/team/panelSelctorPage";
+import TeamSheetPage from "../../../pages/team/teamsheet";
+
+
 
 
 const ManagerTabs = () => {
@@ -79,6 +82,7 @@ const ManagerTabs = () => {
         <Route path="/manager/team/panel/:id"><PlayerDetailsPage></PlayerDetailsPage></Route>
         <Route exact path="/manager/team/panel/list"><PlayerListPage></PlayerListPage></Route>
         <Route exact path="/manager/team/panel/selector"><PanelSelectorPage></PanelSelectorPage></Route>
+        <Route exact path="/manager/teamsheets"><TeamSheetPage></TeamSheetPage></Route>
 
         <Redirect exact path="/" to="/home"></Redirect>
       </IonRouterOutlet>
