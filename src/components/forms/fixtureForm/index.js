@@ -10,6 +10,7 @@ import {
   IonLoading,
 } from "@ionic/react";
 import TextInputField from "../../textInputs/textInputField";
+import ItemDivider from "../../textInputs/itemDivider";
 
 const FixtureForm = ({
   homeTeam,
@@ -112,8 +113,7 @@ const FixtureForm = ({
               expand="block"
               color="dark"
               fill="solid"
-              type="submit"
-            >
+              type="submit">
               Add Match Fixture
             </IonButton>
           </IonCol>

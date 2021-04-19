@@ -125,34 +125,6 @@ const Register = () => {
             >
               Register
             </IonButton>
-            <ion-grid>
-              <ion-row>
-                <ion-col col-6>
-                  <IonButton
-                    id="logoBtnTheme"
-                    expand="block"
-                    color="light"
-                    fill="outline"
-                  >
-                    <IonIcon
-                      slot="icon-only"
-                      icon={logoGoogle}
-                      item-left
-                    ></IonIcon>
-                  </IonButton>
-                </ion-col>
-                <ion-col col-6>
-                  <IonButton
-                    id="logoBtnTheme"
-                    expand="block"
-                    color="light"
-                    fill="outline"
-                  >
-                    <IonIcon slot="icon-only" icon={logoFacebook}></IonIcon>
-                  </IonButton>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
 
             <IonButton color="light" expand="block" fill="clear" routerLink="/login">
               Have an Account? Login
