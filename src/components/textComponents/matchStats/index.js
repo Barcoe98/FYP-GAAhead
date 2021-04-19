@@ -1,26 +1,19 @@
 import React from "react";
-import { IonRow, IonCol, IonGrid } from "@ionic/react";
+import { IonItem, IonLabel, IonSelect, IonSelectOption } from "@ionic/react";
 
 import "./matchStats.css";
 
-const StatCol = ({ homeStat, awayStat, statTitle }) => {
+const PlayerDropDown = ({ players, positionNumber, positionValue, setValue }) => {
   return (
-    <IonGrid>
-      <IonRow>
-        <IonCol size="2">
-          <IonRow id="centerStat">{homeStat}</IonRow>
-        </IonCol>
-
-        <IonCol size="8">
-          <IonRow id="centerStat">{statTitle}</IonRow>
-        </IonCol>
-
-        <IonCol size="2">
-          <IonRow id="centerStat">{awayStat}</IonRow>
-        </IonCol>
-      </IonRow>
-    </IonGrid>
+    <IonItem>
+    <IonLabel>{positionNumber}</IonLabel>
+      <IonSelect value={positionValue} onIonChange={setValue} interface="popover">
+        {players.map((player) => (
+          <IonSelectOption key={player.name} value={player.name} >{player.name}</IonSelectOption>
+        ))}
+      </IonSelect>
+  </IonItem>
   );
 };
 
-export default StatCol;
+export default PlayerDropDown;

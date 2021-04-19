@@ -28,7 +28,7 @@ const TeamPage = () => {
 
           <IonRow>
             <IonCol id="navPanelBtn" size="12">
-              <ion-router-link id="navLnk" href="#">
+              <ion-router-link id="navLnk" href="/manager/team/panel/selector">
                 Panel Selector
               </ion-router-link>
             </IonCol>

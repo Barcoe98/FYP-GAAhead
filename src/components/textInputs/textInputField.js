@@ -12,7 +12,7 @@ const textInputField = ({
 }) => {
   return (
     <IonCol size={size}>
-      <IonItem color="light" id="rnd-input">
+      <IonItem color="dark" id="rnd-input">
         <IonLabel position="stacked">{label}</IonLabel>
         <IonInput
           required
