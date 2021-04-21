@@ -5,11 +5,11 @@ import {
   IonText,
   IonCol,
   IonGrid,
-  IonRow,
-  IonButton
+  IonRow
 } from "@ionic/react";
 import PageHeader from "../../../headers/index";
-import AlertDelete from "../../../alerts/deleteAlert/index";
+import LogoutButton from '../../../buttons/logoutButton/index'
+import AlertLogout from "../../../alerts/logoutAlert";
 
 import { firestore } from "../../../../firebase";
 import { useHistory } from "react-router-dom";
@@ -22,7 +22,7 @@ const ManagerProfileDetails = () => {
   const { currentUser, logOut } = useAuth();
 
   const history = useHistory();
-  const [delAlert, setAlert] = useState(false);
+  const [logoutAlert, setAlert] = useState(false);
 
   useEffect(() => {
     const playerRef = firestore.collection("users").doc(currentUser?.uid);
@@ -39,56 +39,51 @@ const ManagerProfileDetails = () => {
   };
 
 
-  return (
-    <IonContent>
-    <PageHeader title="My Details"></PageHeader>
+return (
+  <IonContent>
+  <PageHeader title="My Details"></PageHeader>
 
-      <IonList id="bg-col">
-        <div id="my-bg-img"></div>  
-          <div id="myContent">
-            <IonGrid>
-            <IonText id="myContentTitle">My Details</IonText>
-              <IonRow>
-                <IonCol size="6"><IonText id="title">Name:</IonText></IonCol>
-                <IonCol size="6"><IonText id="var">{profileDetails?.name}</IonText></IonCol>
-              </IonRow>
-              <IonRow>
-                <IonCol size="6"><IonText id="title">Email:</IonText></IonCol>
-                <IonCol size="6"><IonText id="var">{profileDetails?.email}</IonText></IonCol>
-              </IonRow>
-            </IonGrid>
-          </div>
+    <IonList id="bg-col">
+      <div id="my-bg-img"></div>  
+        <div id="myContent">
+          <IonGrid>
+          <IonText id="myContentTitle">My Details</IonText>
+            <IonRow>
+              <IonCol size="6"><IonText id="title">Name:</IonText></IonCol>
+              <IonCol size="6"><IonText id="var">{profileDetails?.name}</IonText></IonCol>
+            </IonRow>
+            <IonRow>
+              <IonCol size="6"><IonText id="title">Email:</IonText></IonCol>
+              <IonCol size="6"><IonText id="var">{profileDetails?.email}</IonText></IonCol>
+            </IonRow>
+          </IonGrid>
+        </div>
 
-          <div id="myContent">
-            <IonText id="myContentTitle">Team Details</IonText>
-            <IonGrid>
-              <IonRow>
-                <IonCol size="6"><IonText id="title">Team Name:</IonText></IonCol>
-                <IonCol size="6"><IonText id="var">{profileDetails?.teamName}</IonText></IonCol>
-              </IonRow>
-              <IonRow>
-                <IonCol size="3"><IonText id="title">Team Id:</IonText></IonCol>
-                <IonCol size="9"><IonText id="var">{profileDetails?.teamId}</IonText></IonCol>
-              </IonRow>
-            </IonGrid>
-          </div>
+        <div id="myContent">
+          <IonText id="myContentTitle">Team Details</IonText>
+          <IonGrid>
+            <IonRow>
+              <IonCol size="6"><IonText id="title">Team Name:</IonText></IonCol>
+              <IonCol size="6"><IonText id="var">{profileDetails?.teamName}</IonText></IonCol>
+            </IonRow>
+            <IonRow>
+              <IonCol size="3"><IonText id="title">Team Id:</IonText></IonCol>
+              <IonCol size="9"><IonText id="var">{profileDetails?.teamId}</IonText></IonCol>
+            </IonRow>
+          </IonGrid>
+        </div>
 
-           {/* Add Button*/ }
-           <IonRow>
-           <IonCol>
-             <IonButton onClick={() => setAlert(true)} id="btnTheme" expand="block" color="danger" fill="solid" type="submit" > Logout</IonButton>
-           </IonCol>
-         </IonRow>
+        <LogoutButton onClick={() => setAlert(true)} btnName="Logout"></LogoutButton>
 
-        <AlertDelete
-          delAlert={delAlert}
-          setDelAlert={() => setAlert(false)}
-          handleDelete={handleLogout}>
-        </AlertDelete>
+        <AlertLogout
+          logoutAlert={logoutAlert}
+          setLogoutAlert={() => setAlert(false)}
+          handleLogout={handleLogout}>
+        </AlertLogout>
 
-      </IonList>
-    </IonContent>
-  );
+    </IonList>
+  </IonContent>
+)
 }
 
 export default ManagerProfileDetails;

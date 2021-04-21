@@ -3,9 +3,12 @@ import { IonContent, IonRow, IonGrid, IonList, IonText } from "@ionic/react";
 import Stat from "../../../textComponents/index";
 import StatContent from "../../../textComponents/statContent";
 import PageHeader from "../../../headers/index";
+import AlertLogout from "../../../alerts/logoutAlert";
+import LogoutButton from '../../../buttons/logoutButton/index'
 
 import { firestore } from "../../../../firebase";
 import { useAuth } from "../../../../contexts/authContext";
+import { useHistory } from "react-router-dom";
 
 import "../myProfile.css";
 
@@ -13,7 +16,10 @@ import "../myProfile.css";
 const PlayerProfileDetails = () => {
 
   const [profileDetails, setProfileDetails] = useState();
-  const { currentUser } = useAuth();
+  const { currentUser, logOut } = useAuth();
+
+  const history = useHistory();
+  const [logoutAlert, setAlert] = useState(false);
 
   useEffect(() => {
     const playerRef = firestore.collection("users").doc(currentUser?.uid);
@@ -22,6 +28,12 @@ const PlayerProfileDetails = () => {
       setProfileDetails(profileDetails);
     });
   }, [currentUser?.uid]);
+
+  async function handleLogout() {
+    await logOut();
+    history.push('/login')
+    console.log("Confirm Logout");
+};
 
 
   return (
@@ -74,6 +86,14 @@ const PlayerProfileDetails = () => {
           <StatContent statTitle="Recovery Period" statValue="14"></StatContent>
         </div>
       </IonList>
+
+      <LogoutButton onClick={() => setAlert(true)} btnName="Logout"></LogoutButton>
+
+      <AlertLogout
+        logoutAlert={logoutAlert}
+        setLogoutAlert={() => setAlert(false)}
+        handleLogout={handleLogout}>
+      </AlertLogout>
     </IonContent>
   );
 };

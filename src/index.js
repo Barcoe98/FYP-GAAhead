@@ -133,5 +133,5 @@ function UserNavBar() {
   
 }
 
-ReactDOM.render(<ManagerNavBar />, document.getElementById("root"));
+ReactDOM.render(<PlayerNavBar />, document.getElementById("root"));
 
