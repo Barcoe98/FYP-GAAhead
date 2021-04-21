@@ -3,12 +3,12 @@ import { IonIcon, IonCol, IonRow, IonGrid, IonCard } from "@ionic/react";
 import { flame, calendar, time } from "ionicons/icons";
 import "./trainingScheduleCard.css";
 
-const FitnessTestCard = ({ tSchedule }) => {
+const TrainingScheduleCard = ({ tSchedule }) => {
   return (
     <IonCard
       id="tsGridCards"
       key={tSchedule.id}
-      routerLink={("/manager/planner/trainingschedule/", tSchedule.id)}
+      routerLink={("/manager/trainingschedule/", tSchedule.id)}
     >
       <IonGrid>
         <IonRow id="tsTitle">{tSchedule.title}</IonRow>
@@ -41,4 +41,4 @@ const FitnessTestCard = ({ tSchedule }) => {
   );
 };
 
-export default FitnessTestCard;
+export default TrainingScheduleCard;

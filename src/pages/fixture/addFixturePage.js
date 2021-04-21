@@ -94,6 +94,7 @@ const AddFixturePage = () => {
         setVenue={(e) => setVenue(e.detail.value)}
         setCompetition={(e) => setCompetition(e.detail.value)}
         handleAdd={handleAdd}
+        btnName="Add Fixture"
       ></FixtureForm>
 
       <AlertError 

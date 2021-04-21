@@ -1,12 +1,5 @@
 import { Route, Redirect } from "react-router-dom";
-import {
-  IonRouterOutlet,
-  IonTabs,
-  IonTabBar,
-  IonTabButton,
-  IonIcon,
-  IonLabel,
-} from "@ionic/react";
+import { IonRouterOutlet, IonTabs,  IonTabBar, IonTabButton,  IonIcon,IonLabel,} from "@ionic/react";
 import { clipboardOutline, ellipsisHorizontalOutline, menuOutline, peopleOutline} from "ionicons/icons";
 
 import MorePage from "../../../pages/navBarPages/manager/morePage";
@@ -16,6 +9,7 @@ import MatchPage from "../../../pages/navBarPages/manager/matchesPage";
 
 import TrainingScheduleDetailsPage from "../../../pages/trainingSchedule/TrainingScheduleDetailsPage";
 import TrainingScheduleListPage from "../../../pages/trainingSchedule/TrainingScheduleListPage";
+import AddTrainingPage from "../../../pages/trainingSchedule/AddTrainingSchedulePage";
 
 import FitnessTestDetailsPage from "../../../pages/fitnessTest/FitnessTestDetailsPage";
 import FitnessTestListPage from "../../../pages/fitnessTest/FitnessTestListPage";
@@ -38,13 +32,14 @@ import PlayerListPage from "../../../pages/team/PlayerListPage";
 import PlayerDetailsPage from "../../../pages/team/PlayerDetailsPage";
 
 import TeamStatsPage from "../../../pages/teamStats/teamStatsPage";
+import UpdateFixturePage from "../../../pages/fixture/updateFixturePage";
 
 import ManagerProfileDetails from "../../topicDetails/myProfile/manager/index";
-import AddTrainingPage from "../../../pages/trainingSchedule/AddTrainingSchedulePage";
-import PanelSelectorPage from "../../../pages/team/panelSelctorPage";
-import TeamSheetPage from "../../../pages/team/teamsheet";
 
+import TeamSheetListPage from "../../../pages/teamSheets/TeamSheetListPage";
+import TeamSheetDetailsPage from "../../../pages/teamSheets/TeamSheetDetailsPage";
 
+import AddTeamSheetPage from "../../../pages/teamSheets/AddTeamSheetPage";
 
 
 const ManagerTabs = () => {
@@ -64,6 +59,7 @@ const ManagerTabs = () => {
         <Route exact path="/player/fitness/test/add-results"><AddFitnessTestResultsPage></AddFitnessTestResultsPage></Route>
         <Route exact path="/manager/fitness/test/list"><FitnessTestListPage></FitnessTestListPage></Route>
 
+
         <Route path="/manager/workout/:id"><WorkoutRoutineDetailsPage></WorkoutRoutineDetailsPage></Route>
         <Route exact path="/manager/workout/add"><AddWorkoutRoutinePage></AddWorkoutRoutinePage></Route>
         <Route exact path="/manager/workout/list"><WorkoutRoutineListPage></WorkoutRoutineListPage></Route>
@@ -74,6 +70,7 @@ const ManagerTabs = () => {
         <Route path="/manager/fixture/:id"><FixtureDetailsPage></FixtureDetailsPage></Route>
         <Route exact path="/manager/fixture/add"><AddFixturePage></AddFixturePage></Route>
         <Route exact path="/manager/fixture/list"><FixtureListPage></FixtureListPage></Route>
+        <Route path="/manager/fixture/edit/:id"><UpdateFixturePage></UpdateFixturePage></Route>
 
         <Route path="/manager/trainingschedule/:id"><TrainingScheduleDetailsPage></TrainingScheduleDetailsPage></Route>
         <Route exact path="/manager/trainingschedule/list"><TrainingScheduleListPage></TrainingScheduleListPage></Route>
@@ -81,8 +78,10 @@ const ManagerTabs = () => {
 
         <Route path="/manager/team/panel/:id"><PlayerDetailsPage></PlayerDetailsPage></Route>
         <Route exact path="/manager/team/panel/list"><PlayerListPage></PlayerListPage></Route>
-        <Route exact path="/manager/team/panel/selector"><PanelSelectorPage></PanelSelectorPage></Route>
-        <Route exact path="/manager/teamsheets"><TeamSheetPage></TeamSheetPage></Route>
+
+        <Route exact path="/manager/team-sheet/:id"><TeamSheetDetailsPage></TeamSheetDetailsPage></Route>
+        <Route exact path="/manager/team-sheet/list"><TeamSheetListPage></TeamSheetListPage></Route>
+        <Route exact path="/manager/team-sheet/add"><AddTeamSheetPage></AddTeamSheetPage></Route>
 
         <Redirect exact path="/" to="/home"></Redirect>
       </IonRouterOutlet>

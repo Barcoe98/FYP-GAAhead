@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { IonContent, IonPage, IonList } from "@ionic/react";
 import PageHeaderAdd from "../../components/headers/addHeader/index";
-import FixtureCard from "../../components/cards/matchCard/fixture/index";
+import TeamSheetCard from "../../components/cards/teamSheetCard/index";
 import AlertError from "../../components/alerts/errorAlert";
 
 import { firestore } from "../../firebase";
 import { useAuth } from "../../contexts/authContext";
 
 
-const FixtureListPage = () => {
-  const [fixtures, setFixtures] = useState([]);
+const TeamSheetPage = () => {
+  const [teamSheets, setTeamSheets] = useState([]);
   const [teamId, setTeamId] = useState();
 
   const [errorMessage, setErrorMessage] = useState();
@@ -24,17 +24,22 @@ const FixtureListPage = () => {
 
     ref.get(currentUser?.uid).then(doc => {
       
-      if (doc.exists) {
+      if (!doc.exists) {
+        console.log('No such document');
+        setErrorMessage('No Team Data Available, Join a Team')
+        setShowAlert(true)
+        //history.goBack();
+      } else {
         const userDoc = { id: doc.id, ...doc.data() };
 
         //set TeamId Attributes to matching in DB
         setTeamId(userDoc?.teamId)
 
-        //ref for user managers results collection
+        //ref for user managers team sheets collection
         const ref = firestore
         .collection("users")
         .doc(userDoc?.teamId)
-        .collection("fixtures");
+        .collection("team_sheets");
 
         //snapshot of doc 
         ref.get().then((snapshot) => {
@@ -42,34 +47,30 @@ const FixtureListPage = () => {
           id: doc.id,
           ...doc.data(),
         }));
-        setFixtures(docs);
+        setTeamSheets(docs);
       });
-
-      } else {
-        console.log('No such document');
-        setErrorMessage('No Team Data Available, Join a Team')
-        setShowAlert(true)
       }
   })
 
 }, [currentUser?.uid]);
 
+
   return (
     <IonPage>
       <PageHeaderAdd
-        title="Fixtures"
-        href="/manager/fixture/add"
+        title="Team Sheets"
+        href="/manager/team-sheet/add"
       ></PageHeaderAdd>
       <IonContent>
         <IonList id="bg-col">
-          {fixtures.map((fixture) => (
-            <FixtureCard key={fixture.id} fixture={fixture}></FixtureCard>
+          {teamSheets.map((teamSheet) => (
+            <TeamSheetCard key={teamSheet.id} teamSheet={teamSheet}></TeamSheetCard>
           ))}
         </IonList>
 
         <AlertError 
           setShowAlert={() => setShowAlert(false)} 
-          alertHeader='No Match Fixtures Found'
+          alertHeader='No Team Sheets Found'
           showAlert={showAlert} 
           msg={errorMessage}>
         </AlertError>
@@ -79,4 +80,4 @@ const FixtureListPage = () => {
   );
 };
 
-export default FixtureListPage;
+export default TeamSheetPage;

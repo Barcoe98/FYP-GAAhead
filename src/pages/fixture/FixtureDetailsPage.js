@@ -69,11 +69,13 @@ const FixtureDetailsPage = () => {
     history.goBack();
   };
 
+
   return (
     <IonPage>
       <PageHeaderDelete
         title=""
         action={() => setDelAlert(true)}
+        href="/manager/fixture/edit/:id"
       ></PageHeaderDelete>
       <FixtureDetails fixture={fixture}></FixtureDetails>
 
@@ -88,7 +90,8 @@ const FixtureDetailsPage = () => {
         alertHeader='No Fixtures Found'
         showAlert={showAlert} 
         msg={errorMessage}>
-        </AlertError>
+      </AlertError>
+      
     </IonPage>
   );
 };

@@ -11,7 +11,7 @@ import {
 
 import { trashBinOutline, createOutline } from "ionicons/icons";
 
-const PageHeaderDelete = ({ title, action, editAction }) => {
+const PageHeaderDelete = ({ title, action, href }) => {
   return (
     <IonHeader>
       <IonToolbar mode="md">
@@ -20,7 +20,7 @@ const PageHeaderDelete = ({ title, action, editAction }) => {
           <IonBackButton></IonBackButton>
         </IonButtons>
         <IonButtons slot="end">
-          <IonButton color="light" onclick={editAction}>
+          <IonButton color="light" href={href}>
           <IonIcon icon={createOutline} />
           </IonButton>
           <IonButton color="light" onclick={action}>

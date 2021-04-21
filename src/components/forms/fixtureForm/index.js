@@ -1,16 +1,13 @@
 import React from "react";
 import {
-  IonContent,
   IonGrid,
   IonRow,
   IonCol,
   IonLabel,
   IonItemDivider,
   IonButton,
-  IonLoading,
 } from "@ionic/react";
 import TextInputField from "../../textInputs/textInputField";
-import ItemDivider from "../../textInputs/itemDivider";
 
 const FixtureForm = ({
   homeTeam,
@@ -27,9 +24,9 @@ const FixtureForm = ({
   setCompetition,
   handleAdd,
   loading,
+  btnName
 }) => {
   return (
-    <IonContent id="wr-pg-bg">
       <IonGrid id="wr-pg-bg">
         <IonRow>
           <IonCol>
@@ -106,7 +103,6 @@ const FixtureForm = ({
         {/* Add Button*/}
         <IonRow>
           <IonCol>
-            <IonLoading isOpen={loading}></IonLoading>
             <IonButton
               onClick={handleAdd}
               id="btnTheme"
@@ -114,12 +110,13 @@ const FixtureForm = ({
               color="dark"
               fill="solid"
               type="submit">
-              Add Match Fixture
+              {btnName}
             </IonButton>
           </IonCol>
         </IonRow>
+
       </IonGrid>
-    </IonContent>
+
   );
 };
 
