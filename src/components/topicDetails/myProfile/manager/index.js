@@ -8,21 +8,21 @@ import {
   IonRow,
   IonButton
 } from "@ionic/react";
+import PageHeader from "../../../headers/index";
+import AlertDelete from "../../../alerts/deleteAlert/index";
 
 import { firestore } from "../../../../firebase";
+import { useHistory } from "react-router-dom";
 import { useAuth } from "../../../../contexts/authContext";
-import PageHeader from "../../../headers/index";
 
-
-import "../myProfile.css";
 
 const ManagerProfileDetails = () => {
 
   const [profileDetails, setProfileDetails] = useState();
-  const { currentUser } = useAuth();
-  //const id = 'Jw2htGYNV2A0naMySRjX'
+  const { currentUser, logOut } = useAuth();
 
-  const uId = currentUser?.uid
+  const history = useHistory();
+  const [delAlert, setAlert] = useState(false);
 
   useEffect(() => {
     const playerRef = firestore.collection("users").doc(currentUser?.uid);
@@ -31,6 +31,12 @@ const ManagerProfileDetails = () => {
       setProfileDetails(profileDetails);
     });
   }, [currentUser?.uid]);
+
+  async function handleLogout() {
+      await logOut();
+      history.push('/login')
+      console.log("Confirm Logout");
+  };
 
 
   return (
@@ -66,6 +72,19 @@ const ManagerProfileDetails = () => {
               </IonRow>
             </IonGrid>
           </div>
+
+           {/* Add Button*/ }
+           <IonRow>
+           <IonCol>
+             <IonButton onClick={() => setAlert(true)} id="btnTheme" expand="block" color="danger" fill="solid" type="submit" > Logout</IonButton>
+           </IonCol>
+         </IonRow>
+
+        <AlertDelete
+          delAlert={delAlert}
+          setDelAlert={() => setAlert(false)}
+          handleDelete={handleLogout}>
+        </AlertDelete>
 
       </IonList>
     </IonContent>
