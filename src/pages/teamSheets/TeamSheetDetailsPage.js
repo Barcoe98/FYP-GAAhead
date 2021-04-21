@@ -52,7 +52,7 @@ const TeamSheetDetailsPage = () => {
       
       await fTestRef.delete();
       console.log("Confirm Okay");
-      history.goBack();
+      history.goBack("/manager/team-sheet/list");
     };
   
 

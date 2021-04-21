@@ -42,6 +42,23 @@ const TeamSheet = ({teamSheet}) => {
         <IonCol size="4"><IonText id="posName">{teamSheet?.position15}</IonText></IonCol>
       </IonRow>
 
+      <hr id="contentDivider"></hr>
+
+      <IonRow>
+        <IonCol size="6"><IonText id="">16: {teamSheet?.position16}</IonText></IonCol>
+        <IonCol size="6"><IonText id="">19: {teamSheet?.position19}</IonText></IonCol>
+      </IonRow>
+
+      <IonRow>
+        <IonCol size="6"><IonText id="">17: {teamSheet?.position17}</IonText></IonCol>
+        <IonCol size="6"><IonText id="">20: {teamSheet?.position20}</IonText></IonCol>
+      </IonRow>
+
+      <IonRow>
+        <IonCol size="6"><IonText id="">18: {teamSheet?.position18}</IonText></IonCol>
+      </IonRow>
+
+
     </IonGrid>
   </IonContent>
   );
