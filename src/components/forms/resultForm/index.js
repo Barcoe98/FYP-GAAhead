@@ -1,7 +1,6 @@
 import React from "react";
 import { IonContent, IonGrid, IonRow, IonCol,IonLabel, IonItemDivider, IonButton, IonLoading } from '@ionic/react';
 import TextInputField from '../../textInputs/textInputField'
-
 import ContentArea from "../../textInputs/contentArea";
 import ItemDivider from "../../textInputs/itemDivider";
 

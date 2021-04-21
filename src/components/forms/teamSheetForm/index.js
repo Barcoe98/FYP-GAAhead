@@ -2,8 +2,10 @@ import React from "react";
 import { IonGrid } from "@ionic/react";
 import ItemDivider from "../../textInputs/itemDivider";
 import PlayerDropDown from "../../textComponents/matchStats/index";
+import TextInputField from '../../textInputs/textInputField'
 
-const TeamSheetForm = ({ players,
+
+const TeamSheetForm = ({ players, date, setDate, opponent, setOpponent,
   position1, setPosition1, position2, setPosition2, position3, setPosition3,
   position4, setPosition4, position5, setPosition5, position6, setPosition6, 
   position7, setPosition7, position8, setPosition8, position9, setPosition9, 
@@ -17,6 +19,9 @@ const TeamSheetForm = ({ players,
       <IonGrid id="bg-col">
 
         <ItemDivider dividerLabel="Team Sheet"></ItemDivider>
+          <TextInputField  size="6" label="Opponent Name"  text={opponent}  setText={setOpponent} placeholderText="Enter Opponents Name" type="text" ></TextInputField>
+          <TextInputField  size="6" label="Date"  text={date}  setText={setDate} placeholderText="Enter Date" type="text" ></TextInputField>
+
 
         <ItemDivider dividerLabel="Goal Keeper"></ItemDivider>
           <PlayerDropDown players={players} setValue={setPosition1} positionValue={position1} positionNumber="1"></PlayerDropDown>
@@ -51,6 +56,8 @@ const TeamSheetForm = ({ players,
           <PlayerDropDown players={players} setValue={setPosition18} positionValue={position18} positionNumber="18"></PlayerDropDown>
           <PlayerDropDown players={players} setValue={setPosition19} positionValue={position19} positionNumber="19"></PlayerDropDown>
           <PlayerDropDown players={players} setValue={setPosition20} positionValue={position20} positionNumber="20"></PlayerDropDown>
+
+
 
       </IonGrid>
   );

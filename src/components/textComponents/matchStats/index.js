@@ -5,7 +5,7 @@ import "./matchStats.css";
 
 const PlayerDropDown = ({ players, positionNumber, positionValue, setValue }) => {
   return (
-    <IonItem>
+    <IonItem color="dark">
     <IonLabel>{positionNumber}</IonLabel>
       <IonSelect value={positionValue} onIonChange={setValue} interface="popover">
         {players.map((player) => (
