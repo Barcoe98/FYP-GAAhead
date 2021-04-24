@@ -28,10 +28,7 @@ const ResetTeamStatsPage = () => {
   const { currentUser } = useAuth();
   const history = useHistory();
 
-
   const [year, setYear] = useState("");
-  const [teamId, setTeamId] = useState("");
-    
   var [games, setTeamGames] = useState()
   var [goals, setTeamGoals] = useState()
   var [points, setTeamPoints] = useState()
@@ -97,11 +94,11 @@ const ResetTeamStatsPage = () => {
       const ref = firestore
       .collection("users")
       .doc(currentUser?.uid)
-      .collection("team_stats")
+      .collection("more_team_stats")
 
-      //greab current values of team stats 
+      //grab current values of team stats 
       const data = {
-        year,    games,
+        year, games,
         goals, points, wides,  shots,
         blocks, hooks, free65s, frees,
         puckouts, fouls, penalties, yCards, rCards

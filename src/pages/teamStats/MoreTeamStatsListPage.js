@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { IonContent, IonPage, IonList} from "@ionic/react";
-import PageHeaderAdd from "../../components/headers/addHeader/index";
-import ResultCard from "../../components/cards/matchCard/result/index";
 import AlertError from "../../components/alerts/errorAlert";
+import TeamStatsCard from "../../components/cards/teamStatsCard";
 
 import { firestore } from "../../firebase";
 import { useAuth } from "../../contexts/authContext";
 import PageHeader from "../../components/headers";
-import TeamStatsCard from "../../components/cards/teamStatsCard";
 
 
-const TeamStatsListPage = () => {
+const MoreTeamStatsListPage = () => {
   const [teamStats, setTeamStats] = useState([]);
   const [teamId, setTeamId] = useState();
 
@@ -41,7 +39,7 @@ const TeamStatsListPage = () => {
         const ref = firestore
         .collection("users")
         .doc(userDoc?.teamId)
-        .collection("team_stats");
+        .collection("more_team_stats");
 
         //snapshot of doc 
         ref.get().then((snapshot) => {
@@ -57,25 +55,25 @@ const TeamStatsListPage = () => {
 }, [currentUser?.uid]);
 
   return (
-    <IonPage>
-    <PageHeader title="Team Statistics"></PageHeader>      
+  <IonPage>
+    <PageHeader title="More Team Statistics"></PageHeader>     
     <IonContent>
-        <IonList id="bg-col">
-          {teamStats.map((teamStats) => (
-            <TeamStatsCard key={teamStats.id} teamStats={teamStats}></TeamStatsCard>
-          ))}
-        </IonList>
-        
-        <AlertError 
-          setShowAlert={() => setShowAlert(false)} 
-          alertHeader='No Team Statistics Found'
-          showAlert={showAlert} 
-          msg={errorMessage}>
-        </AlertError>
+      <IonList id="bg-col">
+        {teamStats.map((teamStats) => (
+          <TeamStatsCard key={teamStats.id} teamStats={teamStats}></TeamStatsCard>
+        ))}
+      </IonList>
+      
+      <AlertError 
+        setShowAlert={() => setShowAlert(false)} 
+        alertHeader='No Team Statistics Found'
+        showAlert={showAlert} 
+        msg={errorMessage}>
+      </AlertError>
 
-      </IonContent>
-    </IonPage>
+    </IonContent>
+  </IonPage>
   );
 };
 
-export default TeamStatsListPage;
+export default MoreTeamStatsListPage;

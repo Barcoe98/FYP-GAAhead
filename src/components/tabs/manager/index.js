@@ -27,22 +27,21 @@ import AddResultPage from "../../../pages/result/addResultPage";
 import FixtureListPage from "../../../pages/fixture/FixtureListPage";
 import FixtureDetailsPage from "../../../pages/fixture/FixtureDetailsPage";
 import AddFixturePage from "../../../pages/fixture/addFixturePage";
+import UpdateFixturePage from "../../../pages/fixture/updateFixturePage";
 
 import PlayerListPage from "../../../pages/team/PlayerListPage";
 import PlayerDetailsPage from "../../../pages/team/PlayerDetailsPage";
-
-import TeamStatsDetailsPage from "../../../pages/teamStats/TeamStatsDetailsPage";
-import TeamStatsListPage from "../../../pages/teamStats/TeamStatsListPage";
-
-import UpdateFixturePage from "../../../pages/fixture/updateFixturePage";
 
 import ManagerProfileDetails from "../../topicDetails/myProfile/manager/index";
 
 import TeamSheetListPage from "../../../pages/teamSheets/TeamSheetListPage";
 import TeamSheetDetailsPage from "../../../pages/teamSheets/TeamSheetDetailsPage";
-
 import AddTeamSheetPage from "../../../pages/teamSheets/AddTeamSheetPage";
+
 import ResetTeamStatsPage from "../../../pages/teamStats/ResetTeamStatsPage";
+import MoreTeamStatsDetailsPage from "../../../pages/teamStats/MoreTeamStatsDetailsPage";
+import MoreTeamStatsListPage from "../../../pages/teamStats/MoreTeamStatsListPage";
+import TeamStatsPage from "../../../pages/teamStats/TeamStatsPage";
 
 
 const ManagerTabs = () => {
@@ -55,16 +54,23 @@ const ManagerTabs = () => {
         <Route path="/manager/match"><MatchPage></MatchPage></Route>
         <Route exact path="/manager/team"><TeamPage></TeamPage> </Route>
         <Route exact path="/manager/planner"><PlannerPage></PlannerPage></Route>
-        <Route exact path="/manager/team-stats/:id"> <TeamStatsDetailsPage></TeamStatsDetailsPage></Route>
-        <Route exact path="/manager/team-stats/list"> <TeamStatsListPage></TeamStatsListPage></Route>
-        <Route exact path="/manager/team-stats/reset"> <ResetTeamStatsPage></ResetTeamStatsPage></Route>
 
+        <Route exact path="/manager/team-stats/reset"> <ResetTeamStatsPage></ResetTeamStatsPage></Route>
+        <Route path="/manager/team-stats/:id"> <MoreTeamStatsDetailsPage></MoreTeamStatsDetailsPage></Route>
+        <Route exact path="/manager/team-stats/more"> <MoreTeamStatsListPage></MoreTeamStatsListPage></Route>
+        <Route exact path="/manager/team-stats"> <TeamStatsPage></TeamStatsPage></Route>
+
+        <Route exact path="/manager/team-sheet/:id"><TeamSheetDetailsPage></TeamSheetDetailsPage></Route>
+        <Route exact path="/manager/team-sheet/list"><TeamSheetListPage></TeamSheetListPage></Route>
+        <Route exact path="/manager/team-sheet/add"><AddTeamSheetPage></AddTeamSheetPage></Route>
+
+        <Route path="/manager/team/panel/:id"><PlayerDetailsPage></PlayerDetailsPage></Route>
+        <Route exact path="/manager/team/panel/list"><PlayerListPage></PlayerListPage></Route>
 
         <Route path="/manager/fitness/test/:id"><FitnessTestDetailsPage></FitnessTestDetailsPage></Route>
         <Route exact path="/manager/fitness/test/add"><AddFitnessTestPage></AddFitnessTestPage></Route>
         <Route exact path="/player/fitness/test/add-results"><AddFitnessTestResultsPage></AddFitnessTestResultsPage></Route>
         <Route exact path="/manager/fitness/test/list"><FitnessTestListPage></FitnessTestListPage></Route>
-
 
         <Route path="/manager/workout/:id"><WorkoutRoutineDetailsPage></WorkoutRoutineDetailsPage></Route>
         <Route exact path="/manager/workout/add"><AddWorkoutRoutinePage></AddWorkoutRoutinePage></Route>
@@ -81,16 +87,9 @@ const ManagerTabs = () => {
         <Route path="/manager/trainingschedule/:id"><TrainingScheduleDetailsPage></TrainingScheduleDetailsPage></Route>
         <Route exact path="/manager/trainingschedule/list"><TrainingScheduleListPage></TrainingScheduleListPage></Route>
         <Route exact path="/manager/trainingschedule/add"><AddTrainingPage></AddTrainingPage></Route>
-
-        <Route path="/manager/team/panel/:id"><PlayerDetailsPage></PlayerDetailsPage></Route>
-        <Route exact path="/manager/team/panel/list"><PlayerListPage></PlayerListPage></Route>
-
-        <Route exact path="/manager/team-sheet/:id"><TeamSheetDetailsPage></TeamSheetDetailsPage></Route>
-        <Route exact path="/manager/team-sheet/list"><TeamSheetListPage></TeamSheetListPage></Route>
-        <Route exact path="/manager/team-sheet/add"><AddTeamSheetPage></AddTeamSheetPage></Route>
-
         <Redirect exact path="/" to="/home"></Redirect>
       </IonRouterOutlet>
+
 
       <IonTabBar slot="bottom">
         <IonTabButton id="ManagerNavbar" tab="matches" href="/manager/match">
@@ -111,6 +110,7 @@ const ManagerTabs = () => {
         </IonTabButton>
       </IonTabBar>
     </IonTabs>
+
   );
 };
 

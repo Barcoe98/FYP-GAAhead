@@ -1,7 +1,5 @@
-import React, { useState } from "react";
-import { IonContent, IonGrid, IonCol, IonList, IonRow } from "@ionic/react";
-import TeamStatContent from "../../textComponents/teamStats/teamStatContent";
-
+import React from "react";
+import { IonContent, IonGrid, IonCol, IonList, IonRow, IonText } from "@ionic/react";
 import "./teamStats.css";
 
 const TeamStats = ({ teamStats }) => {
@@ -9,103 +7,79 @@ const TeamStats = ({ teamStats }) => {
   return (
     <IonContent>
       <IonList id="bg-col">
-        <h1 id="statTitle">Team Statistics</h1>
-
         <div id="statContent">
-
           <IonGrid>
             <IonRow>
-              <IonCol size="6"><h5 color="dark" id="statTitle">Points</h5></IonCol>
-              <IonCol size="6"><h5 color="dark" id="statTitle">{teamStats?.points}</h5></IonCol>
+              <IonCol size="10"><IonText color="dark" id="statTitle">Games Played</IonText></IonCol>
+              <IonCol size="2"><IonText color="dark" id="statTitle">{teamStats?.games}</IonText></IonCol>
             </IonRow>
 
-          <hr id="contentDivider"></hr>
+            <IonRow>
+                <IonCol size="10"><IonText color="dark" id="statTitle">Points</IonText></IonCol>
+                <IonCol size="2"><IonText color="dark" id="statTitle">{teamStats?.points}</IonText></IonCol>
+            </IonRow>
 
             <IonRow>
-              <IonCol size="6"><h5 color="dark" id="statTitle">Goals</h5></IonCol>
-              <IonCol size="6"><h5 color="dark" id="statTitle">{teamStats?.goals}</h5></IonCol>
+              <IonCol size="10"><IonText color="dark" id="statTitle">Goals</IonText></IonCol>
+              <IonCol size="2"><IonText color="dark" id="statTitle">{teamStats?.goals}</IonText></IonCol>
             </IonRow>
           
-          <hr id="contentDivider"></hr>
-
             <IonRow>
-              <IonCol size="6"><h5 color="dark" id="statTitle">Shots</h5></IonCol>
-              <IonCol size="6"><h5 color="dark" id="statTitle">{teamStats?.shots}</h5></IonCol>
+              <IonCol size="10"><IonText color="dark" id="statTitle">Shots</IonText></IonCol>
+              <IonCol size="2"><IonText color="dark" id="statTitle">{teamStats?.shots}</IonText></IonCol>
             </IonRow>
 
-          <hr id="contentDivider"></hr>
-
             <IonRow>
-              <IonCol size="6"><h5 color="dark" id="statTitle">Puckouts</h5></IonCol>
-              <IonCol size="6"><h5 color="dark" id="statTitle">{teamStats?.puckouts}</h5></IonCol>
+              <IonCol size="10"><IonText color="dark" id="statTitle">Puckouts</IonText></IonCol>
+              <IonCol size="2"><IonText color="dark" id="statTitle">{teamStats?.puckouts}</IonText></IonCol>
             </IonRow>
 
-          <hr id="contentDivider"></hr>
-
             <IonRow>
-              <IonCol size="6"><h5 color="dark" id="statTitle">Wides</h5></IonCol>
-              <IonCol size="6"><h5 color="dark" id="statTitle">{teamStats?.wides}</h5></IonCol>
+              <IonCol size="10"><IonText color="dark" id="statTitle">Wides</IonText></IonCol>
+              <IonCol size="2"><IonText color="dark" id="statTitle">{teamStats?.wides}</IonText></IonCol>
             </IonRow>
 
-          <hr id="contentDivider"></hr>
-
             <IonRow>
-              <IonCol size="6"><h5 color="dark" id="statTitle">Hooks</h5></IonCol>
-              <IonCol size="6"><h5 color="dark" id="statTitle">{teamStats?.hooks}</h5></IonCol>
+              <IonCol size="10"><IonText color="dark" id="statTitle">Hooks</IonText></IonCol>
+              <IonCol size="2"><IonText color="dark" id="statTitle">{teamStats?.hooks}</IonText></IonCol>
             </IonRow>
 
-          <hr id="contentDivider"></hr>
-
             <IonRow>
-              <IonCol size="6"><h5 color="dark" id="statTitle">Blocks</h5></IonCol>
-              <IonCol size="6"><h5 color="dark" id="statTitle">{teamStats?.blocks}</h5></IonCol>
+              <IonCol size="10"><IonText color="dark" id="statTitle">Blocks</IonText></IonCol>
+              <IonCol size="2"><IonText color="dark" id="statTitle">{teamStats?.blocks}</IonText></IonCol>
             </IonRow>
 
-          <hr id="contentDivider"></hr>
-
             <IonRow>
-              <IonCol size="6"><h5 color="dark" id="statTitle">Free's</h5></IonCol>
-              <IonCol size="6"><h5 color="dark" id="statTitle">{teamStats?.frees}</h5></IonCol>
+              <IonCol size="10"><IonText color="dark" id="statTitle">Free's</IonText></IonCol>
+              <IonCol size="2"><IonText color="dark" id="statTitle">{teamStats?.frees}</IonText></IonCol>
             </IonRow>
 
-          <hr id="contentDivider"></hr>
-
             <IonRow>
-              <IonCol size="6"><h5 color="dark" id="statTitle">65's</h5></IonCol>
-              <IonCol size="6"><h5 color="dark" id="statTitle">{teamStats?.free65s}</h5></IonCol>
+              <IonCol size="10"><IonText color="dark" id="statTitle">65's</IonText></IonCol>
+              <IonCol size="2"><IonText color="dark" id="statTitle">{teamStats?.free65s}</IonText></IonCol>
             </IonRow>
 
-          <hr id="contentDivider"></hr>
-
             <IonRow>
-              <IonCol size="6"><h5 color="dark" id="statTitle">Penalties</h5></IonCol>
-              <IonCol size="6"><h5 color="dark" id="statTitle">{teamStats?.penalties}</h5></IonCol>
+              <IonCol size="10"><IonText color="dark" id="statTitle">Penalties</IonText></IonCol>
+              <IonCol size="2"><IonText color="dark" id="statTitle">{teamStats?.penalties}</IonText></IonCol>
             </IonRow>
 
-          <hr id="contentDivider"></hr>
-
             <IonRow>
-              <IonCol size="6"><h5 color="dark" id="statTitle">Fouls</h5></IonCol>
-              <IonCol size="6"><h5 color="dark" id="statTitle">{teamStats?.fouls}</h5></IonCol>
+              <IonCol size="10"><IonText color="dark" id="statTitle">Fouls</IonText></IonCol>
+              <IonCol size="2"><IonText color="dark" id="statTitle">{teamStats?.fouls}</IonText></IonCol>
             </IonRow>
 
-          <hr id="contentDivider"></hr>
-
             <IonRow>
-              <IonCol size="6"><h5 color="dark" id="statTitle">Yellow Cards</h5></IonCol>
-              <IonCol size="6"><h5 color="dark" id="statTitle">{teamStats?.yCards}</h5></IonCol>
+              <IonCol size="10"><IonText color="dark" id="statTitle">Yellow Cards</IonText></IonCol>
+              <IonCol size="2"><IonText color="dark" id="statTitle">{teamStats?.yCards}</IonText></IonCol>
             </IonRow>
 
-          <hr id="contentDivider"></hr>
-
             <IonRow>
-              <IonCol size="6"><h5 color="dark" id="statTitle">Red Cards</h5></IonCol>
-              <IonCol size="6"><h5 color="dark" id="statTitle">{teamStats?.rCards}</h5></IonCol>
+              <IonCol size="10"><IonText color="dark" id="statTitle">Red Cards</IonText></IonCol>
+              <IonCol size="2"><IonText color="dark" id="statTitle">{teamStats?.rCards}</IonText></IonCol>
             </IonRow>
-
           </IonGrid>
-        
-
+      
         </div>
       </IonList>
     </IonContent>

@@ -98,8 +98,11 @@ const AddResultPage = () => {
 
   const handleAdd = async () => {
 
-    const ref = firestore.collection("users").doc(currentUser?.uid)
-    .collection('team_stats').doc('team_stats')
+    const ref = firestore
+    .collection("users")
+    .doc(currentUser?.uid)
+    .collection('team_stats')
+    .doc('team_stats')
     
     const teamStatsData = {
       games: 1 + teamGames,

@@ -1,26 +1,17 @@
 import React from "react";
-import { IonIcon, IonCol, IonRow, IonGrid, IonCard } from "@ionic/react";
-import { calendar, time } from "ionicons/icons";
+import { IonRow, IonGrid, IonCard } from "@ionic/react";
 import "./teamStatsCard.css";
 
 const TeamStatsCard = ({teamStats}) => {
   return (
-    <IonCard
+  <IonCard
       id="tStatsGridCards"
       key={teamStats.id}
-      routerLink={("/manager/team-stats/", teamStats.id)}>
-      <IonGrid>
-        <IonRow id="tStatsYear">{teamStats.year}</IonRow>
-        <IonRow>
-          <IonCol size="2">
-            <IonIcon icon={time}></IonIcon>
-          </IonCol>
-          <IonCol id="tStatsGames" size="10">
-            {teamStats.games}
-          </IonCol>
-        </IonRow>
-      </IonGrid>
-    </IonCard>
+      routerLink={("/manager/team-stats/more/", teamStats.id)}>
+    <IonGrid>
+      <IonRow id="tStatsYear">{teamStats.year}</IonRow>
+    </IonGrid>
+  </IonCard>
   );
 };
 

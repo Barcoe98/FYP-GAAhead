@@ -15,7 +15,7 @@ import MyTeamPage from "../../../pages/navBarPages/player/myTeamPage";
 import ResetTeamStatsPage from "../../../pages/navBarPages/player/JoinTeamPage";
 
 import PlayerListPage from "../../../pages/team/PlayerListPage";
-import TeamStatsPage from "../../../pages/teamStats/TeamStatsDetailsPage";
+import TeamStatsPage from "../../../pages/teamStats/TeamStatsPage";
 
 import DiaryEntriesListPage from "../../../pages/diary/DiaryEntryListPage";
 import DiaryEntryDetailsPage from "../../../pages/diary/DiaryEntryDetailsPage";
