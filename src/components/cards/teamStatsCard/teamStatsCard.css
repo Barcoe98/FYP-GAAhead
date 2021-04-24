@@ -1,0 +1,21 @@
+/* Training Schedule Cards*/
+/* Training Schedule in Grid View CSS*/
+#tStatsGridCards {
+   width: 40%;
+   display: inline-block;
+   background-color: #5856d6;
+   color: whitesmoke;
+   margin-bottom: -1%;
+}
+
+/* Text for Training Schedule Cards*/
+#tStatsGames {
+   padding: 3px;
+}
+
+/* Title for Training Schedule Cards*/
+#tStatsYear {
+   padding: 4px;
+   font-weight: bold;
+   font-size: large;
+}

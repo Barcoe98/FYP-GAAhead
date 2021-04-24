@@ -27,7 +27,7 @@ const ResetTeamStatsPage = () => {
 
   const { currentUser } = useAuth();
   const history = useHistory();
-  const id = 'team_stats'
+
 
   const [year, setYear] = useState("");
   const [teamId, setTeamId] = useState("");
@@ -56,7 +56,7 @@ const ResetTeamStatsPage = () => {
     .collection("team_stats")
     .doc("team_stats")
 
-    ref.get(id).then(doc => {
+    ref.get("team_stats").then(doc => {
       
       if (!doc.exists) {
         console.log('No such document!');
@@ -81,7 +81,7 @@ const ResetTeamStatsPage = () => {
         setTeamYCards(result?.yCards)
       }
     });
-  }, [currentUser?.uid, history, id]);
+  }, [currentUser?.uid, history]);
 
 
   const handleResetStats = async () => {

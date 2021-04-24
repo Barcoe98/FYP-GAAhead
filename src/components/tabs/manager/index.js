@@ -31,7 +31,7 @@ import AddFixturePage from "../../../pages/fixture/addFixturePage";
 import PlayerListPage from "../../../pages/team/PlayerListPage";
 import PlayerDetailsPage from "../../../pages/team/PlayerDetailsPage";
 
-import TeamStatsPage from "../../../pages/teamStats/teamStatsPage";
+import TeamStatsPage from "../../../pages/teamStats/teamStatsDetailsPage";
 import UpdateFixturePage from "../../../pages/fixture/updateFixturePage";
 
 import ManagerProfileDetails from "../../topicDetails/myProfile/manager/index";
