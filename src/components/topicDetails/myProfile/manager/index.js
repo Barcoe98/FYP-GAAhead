@@ -72,7 +72,7 @@ return (
               <IonCol size="9"><IonText id="var">{profileDetails?.teamId}</IonText></IonCol>
             </IonRow>
 
-            <LinkButton href="/manager/teamstats/reset" btnName=" Reset Team Stats" ></LinkButton>
+            <LinkButton href="/manager/team-stats/reset" btnName=" Reset Team Stats" ></LinkButton>
 
           </IonGrid>
         </div>

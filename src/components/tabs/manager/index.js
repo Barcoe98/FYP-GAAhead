@@ -31,7 +31,9 @@ import AddFixturePage from "../../../pages/fixture/addFixturePage";
 import PlayerListPage from "../../../pages/team/PlayerListPage";
 import PlayerDetailsPage from "../../../pages/team/PlayerDetailsPage";
 
-import TeamStatsPage from "../../../pages/teamStats/teamStatsDetailsPage";
+import TeamStatsDetailsPage from "../../../pages/teamStats/TeamStatsDetailsPage";
+import TeamStatsListPage from "../../../pages/teamStats/TeamStatsListPage";
+
 import UpdateFixturePage from "../../../pages/fixture/updateFixturePage";
 
 import ManagerProfileDetails from "../../topicDetails/myProfile/manager/index";
@@ -53,8 +55,9 @@ const ManagerTabs = () => {
         <Route path="/manager/match"><MatchPage></MatchPage></Route>
         <Route exact path="/manager/team"><TeamPage></TeamPage> </Route>
         <Route exact path="/manager/planner"><PlannerPage></PlannerPage></Route>
-        <Route exact path="/manager/teamstats"> <TeamStatsPage></TeamStatsPage></Route>
-        <Route exact path="/manager/teamstats/reset"> <ResetTeamStatsPage></ResetTeamStatsPage></Route>
+        <Route exact path="/manager/team-stats/:id"> <TeamStatsDetailsPage></TeamStatsDetailsPage></Route>
+        <Route exact path="/manager/team-stats/list"> <TeamStatsListPage></TeamStatsListPage></Route>
+        <Route exact path="/manager/team-stats/reset"> <ResetTeamStatsPage></ResetTeamStatsPage></Route>
 
 
         <Route path="/manager/fitness/test/:id"><FitnessTestDetailsPage></FitnessTestDetailsPage></Route>
