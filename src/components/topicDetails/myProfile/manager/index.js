@@ -14,6 +14,7 @@ import AlertLogout from "../../../alerts/logoutAlert";
 import { firestore } from "../../../../firebase";
 import { useHistory } from "react-router-dom";
 import { useAuth } from "../../../../contexts/authContext";
+import LinkButton from "../../../buttons/linkButton";
 
 
 const ManagerProfileDetails = () => {
@@ -70,6 +71,9 @@ return (
               <IonCol size="3"><IonText id="title">Team Id:</IonText></IonCol>
               <IonCol size="9"><IonText id="var">{profileDetails?.teamId}</IonText></IonCol>
             </IonRow>
+
+            <LinkButton href="/manager/teamstats/reset" btnName=" Reset Team Stats" ></LinkButton>
+
           </IonGrid>
         </div>
 

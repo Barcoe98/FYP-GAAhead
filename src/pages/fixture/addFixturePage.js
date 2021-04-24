@@ -73,7 +73,7 @@ const AddFixturePage = () => {
   };
 
   return (
-    <IonPage>
+    <IonPage id="bg-col">
       <PageHeader title="Add Match Fixture"></PageHeader>
 
       <FixtureForm

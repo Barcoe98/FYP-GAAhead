@@ -15,6 +15,7 @@ const AddResultPage = () => {
   var result;
   const history = useHistory();
 
+  var [noGames, setNoGames] = useState();
   var [hGoals, setHGoals] = useState();
   var [aGoals, setAGoals] = useState();
   var [hPoints, setHPoints] = useState();
@@ -43,6 +44,7 @@ const AddResultPage = () => {
   var [aRCard, setARCard] = useState();
   var [notes, setNotes] = useState('');
 
+  var [teamGames, setTeamGames] = useState()
   var [teamGoals, setTeamGoals] = useState()
   var [teamPoints, setTeamPoints] = useState()
   var [teamBlocks, setTeamBlocks] = useState()
@@ -75,6 +77,7 @@ const AddResultPage = () => {
         const result = { id: doc.id, ...doc.data() };
 
         //set Team Attributes to matching in DB
+        setTeamGames(result?.games)
         setTeamBlocks(result?.blocks)
         setTeamHooks(result?.hooks)
         setTeamGoals(result?.goals)
@@ -86,7 +89,7 @@ const AddResultPage = () => {
         setTeamPuckouts(result?.puckouts)
         setTeamPenalties(result?.penalties)
         setTeamFouls(result?.fouls)
-        setTeamRCards(result?.rCard)
+        setTeamRCards(result?.rCards)
         setTeamYCards(result?.yCards)
       }
     });
@@ -99,6 +102,7 @@ const AddResultPage = () => {
     .collection('team_stats').doc('team_stats')
     
     const teamStatsData = {
+      games: 1 + teamGames,
       goals: hGoals + teamGoals,
       points: hPoints + teamPoints,
       wides: hWides + teamWides,
@@ -111,7 +115,7 @@ const AddResultPage = () => {
       fouls: hFouls + teamFouls,
       penalties: hPenalties + teamPenalties,
       yCards: hYCard + teamYCards,
-      rCard: hRCard + teamRCards,
+      rCards: hRCard + teamRCards,
     }
 
     await ref.set(teamStatsData)

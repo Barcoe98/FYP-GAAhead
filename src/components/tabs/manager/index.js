@@ -40,6 +40,7 @@ import TeamSheetListPage from "../../../pages/teamSheets/TeamSheetListPage";
 import TeamSheetDetailsPage from "../../../pages/teamSheets/TeamSheetDetailsPage";
 
 import AddTeamSheetPage from "../../../pages/teamSheets/AddTeamSheetPage";
+import ResetTeamStatsPage from "../../../pages/teamStats/ResetTeamStatsPage";
 
 
 const ManagerTabs = () => {
@@ -53,6 +54,8 @@ const ManagerTabs = () => {
         <Route exact path="/manager/team"><TeamPage></TeamPage> </Route>
         <Route exact path="/manager/planner"><PlannerPage></PlannerPage></Route>
         <Route exact path="/manager/teamstats"> <TeamStatsPage></TeamStatsPage></Route>
+        <Route exact path="/manager/teamstats/reset"> <ResetTeamStatsPage></ResetTeamStatsPage></Route>
+
 
         <Route path="/manager/fitness/test/:id"><FitnessTestDetailsPage></FitnessTestDetailsPage></Route>
         <Route exact path="/manager/fitness/test/add"><AddFitnessTestPage></AddFitnessTestPage></Route>

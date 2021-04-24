@@ -12,7 +12,7 @@ import { ellipsisHorizontalOutline, peopleOutline, personOutline, documentOutlin
 import MorePage from "../../../pages/navBarPages/player/morePage";
 import PlayerProfilePage from "../../../pages/navBarPages/player/playerProfilePage";
 import MyTeamPage from "../../../pages/navBarPages/player/myTeamPage";
-import JoinTeamPage from "../../../pages/navBarPages/player/JoinTeamPage";
+import ResetTeamStatsPage from "../../../pages/navBarPages/player/JoinTeamPage";
 
 import PlayerListPage from "../../../pages/team/PlayerListPage";
 import TeamStatsPage from "../../../pages/teamStats/teamStatsPage";
@@ -48,7 +48,7 @@ const PlayerTabs = () => {
     <Route path="/player/my-profile"><PlayerProfilePage></PlayerProfilePage></Route>
     <Route path="/player/my-team"><MyTeamPage></MyTeamPage></Route>
 
-    <Route exact path="/player/join/team"><JoinTeamPage></JoinTeamPage></Route>
+    <Route exact path="/player/join/team"><ResetTeamStatsPage></ResetTeamStatsPage></Route>
     <Route exact path="/team/panel/list"><PlayerListPage></PlayerListPage></Route>
 
     <Route exact path="/manager/teamstats"><TeamStatsPage></TeamStatsPage></Route>

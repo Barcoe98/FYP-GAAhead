@@ -6,8 +6,8 @@ import ContentArea from '../../components/textInputs/contentArea'
 const Form = ({formTitle, btnTitle, title, setTitle, time, setTime, date, setDate, difficulty, setDifficulty, 
   warmUp, setWarmUp, exercises, setExercises, warmDown, setWarmDown, handleAdd, loading}) => {
   return (
-    <IonContent id="wr-pg-bg">
-        <IonGrid id="wr-pg-bg">
+    <IonContent id="bg-col">
+        <IonGrid id="bg-col">
           <IonRow>
             <IonCol>
               <IonItemDivider id="itm-divider-red">
