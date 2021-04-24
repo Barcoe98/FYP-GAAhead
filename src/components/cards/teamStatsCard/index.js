@@ -6,7 +6,7 @@ import "./teamStatsCard.css";
 const TeamStatsCard = ({teamStats}) => {
   return (
     <IonCard
-      id="tstatsGridCards"
+      id="tStatsGridCards"
       key={teamStats.id}
       routerLink={("/manager/team-stats/", teamStats.id)}>
       <IonGrid>

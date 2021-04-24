@@ -32,20 +32,20 @@ const ResetTeamStatsPage = () => {
   const [year, setYear] = useState("");
   const [teamId, setTeamId] = useState("");
     
-  var [teamGames, setTeamGames] = useState()
-  var [teamGoals, setTeamGoals] = useState()
-  var [teamPoints, setTeamPoints] = useState()
-  var [teamBlocks, setTeamBlocks] = useState()
-  var [teamHooks, setTeamHooks] = useState()
-  var [teamWides, setTeamWides] = useState()
-  var [teamShots, setTeamShots] = useState()
-  var [teamFree65s, setTeamFree65s] = useState()
-  var [teamFrees, setTeamFrees] = useState()
-  var [teamPuckouts, setTeamPuckouts] = useState()
-  var [teamFouls, setTeamFouls] = useState()
-  var [teamPenalties, setTeamPenalties] = useState()
-  var [teamYCards, setTeamYCards] = useState()
-  var [teamRCards, setTeamRCards] = useState()
+  var [games, setTeamGames] = useState()
+  var [goals, setTeamGoals] = useState()
+  var [points, setTeamPoints] = useState()
+  var [blocks, setTeamBlocks] = useState()
+  var [hooks, setTeamHooks] = useState()
+  var [wides, setTeamWides] = useState()
+  var [shots, setTeamShots] = useState()
+  var [free65s, setTeamFree65s] = useState()
+  var [frees, setTeamFrees] = useState()
+  var [puckouts, setTeamPuckouts] = useState()
+  var [fouls, setTeamFouls] = useState()
+  var [penalties, setTeamPenalties] = useState()
+  var [yCards, setTeamYCards] = useState()
+  var [rCards, setTeamRCards] = useState()
 
   useEffect(() => {
 
@@ -101,10 +101,10 @@ const ResetTeamStatsPage = () => {
 
       //greab current values of team stats 
       const data = {
-        year,   teamGames,
-        teamGoals, teamPoints, teamWides,  teamShots,
-        teamBlocks, teamHooks, teamFree65s, teamFrees,
-        teamPuckouts, teamFouls, teamPenalties,  teamYCards, teamRCards
+        year,    games,
+        goals, points, wides,  shots,
+        blocks, hooks, free65s, frees,
+        puckouts, fouls, penalties, yCards, rCards
       }
       await ref.add(data)
 
