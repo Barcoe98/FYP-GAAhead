@@ -1,9 +1,10 @@
 import React from "react";
-import { IonContent, IonInput, IonGrid, IonRow, IonCol,IonLabel, IonItemDivider, IonItem, IonSelect, IonButton, IonLoading} from '@ionic/react';
+import { IonContent, IonInput, IonGrid, IonRow, IonCol,IonLabel, IonItemDivider, IonItem, IonButton } from '@ionic/react';
 import ItemDivider from '../../textInputs/itemDivider'
 import FormInputArea from '../../textInputs/formInputArea'
+import './diary.css'
 
-const AddJournalForm = ({imgUrl, handleImgChange, formTitle, btnTitle, title, setTitle, date, setDate, 
+const AddJournalForm = ({imgUrl, imgSrc, handleImgChange, formTitle, btnTitle, title, setTitle, date, setDate, 
   breakfast, setBreakfast, lunch, setLunch, dinner, setDinner, supper, setSupper, snacks, setSnacks, 
   handleAdd, breakfastCal, setBreakfastCal, lunchCal, setLunchCal, dinnerCal, setDinnerCal, 
   supperCal, setSupperCal, snacksCal, setSnacksCal,
@@ -19,24 +20,29 @@ const AddJournalForm = ({imgUrl, handleImgChange, formTitle, btnTitle, title, se
             </IonCol>
           </IonRow>
 
-          {/*Title Input Fields & Labels*/ }
-          <IonRow>
-            <IonCol  size="12">
-              <IonItem color="light" id="rnd-input">
-                <IonLabel position="stacked">Title</IonLabel>
-                <IonInput required clearInput="true" position="stacked" pattern="" placeholder="Enter Title" value={title} type="text"
-                onIonChange={setTitle}></IonInput>
-              </IonItem>
-            </IonCol>
-          </IonRow>
-
            {/*Title Input Fields & Labels*/ }
            <IonRow>
             <IonCol  size="12">
             <IonItem color="light" id="rnd-input">
-              <input type="file" accept="image/*" onChange={handleImgChange}></input>
+              <IonLabel position="stacked">Image</IonLabel>
+              
+              <img id="placeholderImg" src={imgSrc} 
+                alt ="PlaceholderImage">
+              </img>
+              <input id="imgInput" type="file" accept="image/*" onChange={handleImgChange}></input>
             </IonItem>
           </IonCol>
+         </IonRow>
+
+           {/*Title Input Fields & Labels*/ }
+           <IonRow>
+           <IonCol  size="12">
+             <IonItem color="light" id="rnd-input">
+               <IonLabel position="stacked">Title</IonLabel>
+               <IonInput required clearInput="true" position="stacked" pattern="" placeholder="Enter Title" value={title} type="text"
+               onIonChange={setTitle}></IonInput>
+             </IonItem>
+           </IonCol>
          </IonRow>
 
           

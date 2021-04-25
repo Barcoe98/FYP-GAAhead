@@ -12,10 +12,9 @@ import { useHistory } from "react-router-dom";
 import "../pages.css";
 
 
-
 const AddDiaryEntryPage = () => {
 
-  const [imgUrl, setImgUrl] = useState("https://res.cloudinary.com/dmikx06rt/image/upload/v1614895409/FYP-GAAhead/Seating_rgtomv.jpg");
+  const [imgUrl, setImgUrl] = useState("https://res.cloudinary.com/dmikx06rt/image/upload/v1619372914/placeHolderImg_mwfyyt.jpg");
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
 
@@ -42,7 +41,6 @@ const AddDiaryEntryPage = () => {
   const history = useHistory();
 
 
-
   async function saveImg(blobUrl) {
     const ref = storage.ref('users/' + currentUser.uid + '/images/' + Date.now())
     const res = await fetch(blobUrl)
@@ -51,6 +49,7 @@ const AddDiaryEntryPage = () => {
     const url = await snapshot.ref.getDownloadURL()
     return url
   }
+
   const handleAdd = async () => {
     const data = {
       imgUrl, title, date,
@@ -136,10 +135,7 @@ const AddDiaryEntryPage = () => {
     const file = event.target.files[0]
     const imgUrl = URL.createObjectURL(file)
     setImgUrl(imgUrl)
-
-  //   setSelectedFile(event.target.files[0]);
-	// 	setIsFilePicked(true);
- }
+  }
 
   return (
     <IonPage>
@@ -148,6 +144,7 @@ const AddDiaryEntryPage = () => {
       <AddDiaryForm
         formTitle="Journal"
         imgUrl={imgUrl}
+        imgSrc={imgUrl}
         handleImgChange={handleImgChange}
         btnTitle="Add Journal Entry"
         title={title} date={date}
@@ -186,7 +183,6 @@ const AddDiaryEntryPage = () => {
       msg={errorMessage}>
     </AlertError>
 
-     
     </IonPage>
   );
 };
