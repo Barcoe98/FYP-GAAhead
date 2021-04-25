@@ -5,15 +5,17 @@ import AddDiaryForm from "../../components/forms/diary";
 import AlertError from "../../components/alerts/errorAlert";
 
 
-import { useAuth } from "../../contexts/authContext";
-import { firestore } from "../../firebase";
+import { useAuth,  } from "../../contexts/authContext";
+import { firestore, storage } from "../../firebase";
 import { useHistory } from "react-router-dom";
 
 import "../pages.css";
 
 
+
 const AddDiaryEntryPage = () => {
 
+  const [imgUrl, setImgUrl] = useState("https://res.cloudinary.com/dmikx06rt/image/upload/v1614895409/FYP-GAAhead/Seating_rgtomv.jpg");
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
 
@@ -39,10 +41,17 @@ const AddDiaryEntryPage = () => {
   const { currentUser } = useAuth();
   const history = useHistory();
 
-
+  async function saveImg(blobUrl) {
+    const ref = storage.ref('users/'+currentUser.uid+'/images/'+Date.now())
+    const res = await fetch(blobUrl)
+    const blob = await res.blob()
+    const snapshot = await ref.put(blob)
+    const url = await snapshot.ref.getDownloadURL()
+    return url
+  }
   const handleAdd = async () => {
     const data = {
-      title, date,
+      imgUrl, title, date,
       totalCalories, steps, litresWater, hrsSleep,
       breakfastCal, lunchCal, dinnerCal, supperCal, snacksCal,
       breakfast, lunch, dinner, supper, snacks,
@@ -109,6 +118,8 @@ const AddDiaryEntryPage = () => {
       setShowAlert(true)
     }
     else {
+
+      data.imgUrl = await saveImg(imgUrl)
       const ref = firestore
       .collection("users")
       .doc(currentUser?.uid)
@@ -119,6 +130,11 @@ const AddDiaryEntryPage = () => {
     }
   };
 
+  const handleImgChange = async () => {
+    //const file = target.value.item(0)
+    //const imgUrl = URL.createObjectURL(file)
+    //setImgUrl(imgUrl)
+  }
 
   return (
     <IonPage>
@@ -126,6 +142,8 @@ const AddDiaryEntryPage = () => {
 
       <AddDiaryForm
         formTitle="Journal"
+        imgUrl={imgUrl}
+        handleImgChange={handleImgChange}
         btnTitle="Add Journal Entry"
         title={title} date={date}
         ttlCal={totalCalories}

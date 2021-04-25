@@ -3,7 +3,7 @@ import { IonContent, IonInput, IonGrid, IonRow, IonCol,IonLabel, IonItemDivider,
 import ItemDivider from '../../textInputs/itemDivider'
 import FormInputArea from '../../textInputs/formInputArea'
 
-const AddDiaryForm = ({formTitle, btnTitle, title, setTitle, date, setDate, 
+const AddJournalForm = ({imgUrl, handleImgChange, formTitle, btnTitle, title, setTitle, date, setDate, 
   breakfast, setBreakfast, lunch, setLunch, dinner, setDinner, supper, setSupper, snacks, setSnacks, 
   handleAdd, breakfastCal, setBreakfastCal, lunchCal, setLunchCal, dinnerCal, setDinnerCal, 
   supperCal, setSupperCal, snacksCal, setSnacksCal,
@@ -20,7 +20,7 @@ const AddDiaryForm = ({formTitle, btnTitle, title, setTitle, date, setDate,
           </IonRow>
 
           {/*Title Input Fields & Labels*/ }
-          <IonRow id>
+          <IonRow>
             <IonCol  size="12">
               <IonItem color="light" id="rnd-input">
                 <IonLabel position="stacked">Title</IonLabel>
@@ -30,6 +30,17 @@ const AddDiaryForm = ({formTitle, btnTitle, title, setTitle, date, setDate,
             </IonCol>
           </IonRow>
 
+           {/*Title Input Fields & Labels*/ }
+           <IonRow>
+            <IonCol  size="12">
+            <IonItem color="light" id="rnd-input">
+              <input type="file" accept="image/*" onChange={handleImgChange}></input>
+              <img src={imgUrl} alt=""></img>
+            </IonItem>
+          </IonCol>
+         </IonRow>
+
+          
           {/*Total Cal & Date Input Fields & Labels*/ }
           <IonRow>
             <IonCol size="6">
@@ -119,4 +130,4 @@ const AddDiaryForm = ({formTitle, btnTitle, title, setTitle, date, setDate,
   );
 };
 
-export default AddDiaryForm;
+export default AddJournalForm;
