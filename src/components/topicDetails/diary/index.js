@@ -15,7 +15,7 @@ return (
     <IonText id="dTitle">{diaryEntry?.title}</IonText>
     <IonText id="dDate">{diaryEntry?.date}</IonText>
       <IonImg id="img" alt="me" 
-        src="https://res.cloudinary.com/dmikx06rt/image/upload/v1614708839/FYP-GAAhead/chicken-1199243__340_xlz1io.webp" />
+        src={diaryEntry?.imgUrl} />
       
       <div id="sectionContent">
 

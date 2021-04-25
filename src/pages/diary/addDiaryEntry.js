@@ -41,8 +41,10 @@ const AddDiaryEntryPage = () => {
   const { currentUser } = useAuth();
   const history = useHistory();
 
+
+
   async function saveImg(blobUrl) {
-    const ref = storage.ref('users/'+currentUser.uid+'/images/'+Date.now())
+    const ref = storage.ref('users/' + currentUser.uid + '/images/' + Date.now())
     const res = await fetch(blobUrl)
     const blob = await res.blob()
     const snapshot = await ref.put(blob)
@@ -130,11 +132,14 @@ const AddDiaryEntryPage = () => {
     }
   };
 
-  const handleImgChange = async () => {
-    //const file = target.value.item(0)
-    //const imgUrl = URL.createObjectURL(file)
-    //setImgUrl(imgUrl)
-  }
+  const handleImgChange = async (event) => {
+    const file = event.target.files[0]
+    const imgUrl = URL.createObjectURL(file)
+    setImgUrl(imgUrl)
+
+  //   setSelectedFile(event.target.files[0]);
+	// 	setIsFilePicked(true);
+ }
 
   return (
     <IonPage>

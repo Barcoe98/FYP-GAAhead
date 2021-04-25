@@ -35,7 +35,6 @@ const AddJournalForm = ({imgUrl, handleImgChange, formTitle, btnTitle, title, se
             <IonCol  size="12">
             <IonItem color="light" id="rnd-input">
               <input type="file" accept="image/*" onChange={handleImgChange}></input>
-              <img src={imgUrl} alt=""></img>
             </IonItem>
           </IonCol>
          </IonRow>
