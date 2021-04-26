@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { IonContent, IonRow, IonGrid, IonList, IonText } from "@ionic/react";
 import Stat from "../../../textComponents/index";
 import StatContent from "../../../textComponents/statContent";
-import PageHeader from "../../../headers/index";
 import AlertLogout from "../../../alerts/logoutAlert";
 import LogoutButton from '../../../buttons/logoutButton/index'
 
@@ -38,12 +37,10 @@ const PlayerProfileDetails = () => {
 
   return (
     <IonContent>
-    <PageHeader title="My Profile"></PageHeader>
       <IonList id="bg-col">
         <div id="my-bg">
-          <img id="myProfileImg" alt="me" src="https://res.cloudinary.com/dmikx06rt/image/upload/v1614630566/FYP-GAAhead/profilePic_boakip.jpg" />
-          <IonText id="myName">{profileDetails?.name}</IonText>
-          <IonText id="myEmail">{profileDetails?.email}</IonText>
+          <img id="myProfileImg" alt="me" src={profileDetails?.imgUrl} />
+          <IonText id="myName">{profileDetails?.fullName}</IonText>
         </div>
 
         <IonGrid>
@@ -55,11 +52,16 @@ const PlayerProfileDetails = () => {
           </IonRow>
         </IonGrid>
 
-       
+        <div id="myContent">
+          <IonText id="myContentTitle">Contact Details</IonText>
+          <StatContent valueColSize="7" titleColSize="5" statTitle="Phone Number:" statValue={profileDetails?.number}></StatContent>
+          <StatContent valueColSize="7" titleColSize="5" statTitle="Email:" statValue={profileDetails?.email}></StatContent>
+        </div>
+
         <div id="myContent">
           <IonText id="myContentTitle">Team Info</IonText>
           <StatContent valueColSize="7" titleColSize="5" statTitle="Team Name:" statValue={profileDetails?.teamName}></StatContent>
-          <StatContent valueColSize="7" titleColSize="5" statTitle="Address:" statValue="Skeoughvasteen, Kilkenny"></StatContent>
+          <StatContent valueColSize="7" titleColSize="5" statTitle="Team Id:" statValue={profileDetails?.teamId}></StatContent>
           <StatContent valueColSize="7" titleColSize="5" statTitle="Grounds" statValue={profileDetails?.grounds}></StatContent>
         </div>
 
@@ -72,17 +74,9 @@ const PlayerProfileDetails = () => {
         </div>
 
         <div id="myContent">
-          <h5 color="dark" id="myContentTitle">
-            InJury History
-          </h5>
-          <StatContent
-            statTitle="Total Injuries"
-            statValue="8.27"
-          ></StatContent>
-          <StatContent
-            statTitle="Most Recent Injury"
-            statValue="Right Leg"
-          ></StatContent>
+          <IonText id="myContentTitle">Injury History</IonText>
+          <StatContent statTitle="Total Injuries" statValue="8.27"></StatContent>
+          <StatContent statTitle="Most Recent Injury" statValue="Right Leg"></StatContent>
           <StatContent statTitle="Recovery Period" statValue="14"></StatContent>
         </div>
       </IonList>
@@ -94,6 +88,7 @@ const PlayerProfileDetails = () => {
         setLogoutAlert={() => setAlert(false)}
         handleLogout={handleLogout}>
       </AlertLogout>
+      
     </IonContent>
   );
 };

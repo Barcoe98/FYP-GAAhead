@@ -4,13 +4,11 @@ import PageHeader from "../../components/headers";
 import AddDiaryForm from "../../components/forms/diary";
 import AlertError from "../../components/alerts/errorAlert";
 
-
 import { useAuth,  } from "../../contexts/authContext";
 import { firestore, storage } from "../../firebase";
 import { useHistory } from "react-router-dom";
 
 import "../pages.css";
-
 
 const AddDiaryEntryPage = () => {
 
@@ -39,7 +37,6 @@ const AddDiaryEntryPage = () => {
   const [showAlert, setShowAlert] = useState(false);
   const { currentUser } = useAuth();
   const history = useHistory();
-
 
   async function saveImg(blobUrl) {
     const ref = storage.ref('users/' + currentUser.uid + '/images/' + Date.now())

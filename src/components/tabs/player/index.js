@@ -11,6 +11,8 @@ import { ellipsisHorizontalOutline, peopleOutline, personOutline, documentOutlin
 
 import MorePage from "../../../pages/navBarPages/player/morePage";
 import PlayerProfilePage from "../../../pages/navBarPages/player/playerProfilePage";
+import EditPlayerProfilePage from "../../../pages/navBarPages/player/editPlayerProfilePage";
+
 import MyTeamPage from "../../../pages/navBarPages/player/myTeamPage";
 import ResetTeamStatsPage from "../../../pages/navBarPages/player/JoinTeamPage";
 
@@ -46,6 +48,8 @@ const PlayerTabs = () => {
 
     <Route exact path="/player/more"><MorePage></MorePage></Route>
     <Route path="/player/my-profile"><PlayerProfilePage></PlayerProfilePage></Route>
+    <Route path="/player/my-profile/edit"><EditPlayerProfilePage></EditPlayerProfilePage></Route>
+
     <Route path="/player/my-team"><MyTeamPage></MyTeamPage></Route>
 
     <Route exact path="/player/join/team"><ResetTeamStatsPage></ResetTeamStatsPage></Route>

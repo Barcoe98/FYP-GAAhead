@@ -9,6 +9,7 @@ const textInputField = ({
   type,
   placeholderText,
   size,
+  disabled
 }) => {
   return (
     <IonCol size={size}>
@@ -22,6 +23,7 @@ const textInputField = ({
           value={text}
           type={type}
           onIonChange={setText}
+          disabled={disabled}
         ></IonInput>
       </IonItem>
     </IonCol>
