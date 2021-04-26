@@ -2,7 +2,7 @@ import { Route, Redirect } from "react-router-dom";
 import { IonRouterOutlet, IonTabs,  IonTabBar, IonTabButton,  IonIcon,IonLabel,} from "@ionic/react";
 import { clipboardOutline, ellipsisHorizontalOutline, menuOutline, peopleOutline} from "ionicons/icons";
 
-import MorePage from "../../../pages/navBarPages/manager/morePage";
+import MorePage from "../../../pages/more/moreMangerPage";
 import TeamPage from "../../../pages/navBarPages/manager/teamPage";
 import PlannerPage from "../../../pages/navBarPages/manager/plannerPage";
 import MatchPage from "../../../pages/navBarPages/manager/matchesPage";

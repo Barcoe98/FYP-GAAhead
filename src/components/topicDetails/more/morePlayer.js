@@ -1,6 +1,6 @@
 import React from "react";
-import { IonContent, IonIcon, IonGrid, IonRow, IonCol, IonRouterLink } from "@ionic/react";
-import { informationCircle, helpCircle, person, chevronForwardOutline, logOutOutline } from "ionicons/icons";
+import { IonContent, IonIcon, IonGrid, IonRow, IonCol } from "@ionic/react";
+import { chevronForwardOutline } from "ionicons/icons";
 
 import "./more.css";
 
@@ -9,68 +9,46 @@ const MorePlayer = () => {
 return (
   <IonContent id="bg-col">
     <IonGrid>
-      <IonRow>
-        <IonCol size="1">
-          <IonIcon id="link" icon={person}></IonIcon>
-        </IonCol>
-        <IonCol size="10">
-          <IonRouterLink id="link" href="/player/join/team"> Join Team</IonRouterLink>
-        </IonCol>
-        <IonCol size="1">
-          <IonIcon id="link" icon={chevronForwardOutline}></IonIcon>
-        </IonCol>
-      </IonRow>
 
-      <IonRow>
-        <IonCol size="1">
-          <IonIcon id="link" icon={helpCircle}></IonIcon>
-        </IonCol>
-        <IonCol size="10">
-          <IonRouterLink id="link" href="/player/app-tutorial"> App Tutorial</IonRouterLink>
-        </IonCol>
-        <IonCol size="1">
-        <IonIcon id="link" icon={chevronForwardOutline}></IonIcon>
+    <IonRow>
+      <IonCol id="morePgRed" size="10">
+        <ion-router-link id="morePgLink"  href="/manager/my-profile">Join Team</ion-router-link>
       </IonCol>
-      </IonRow>
+      <IonCol id="morePgRed" size="2">
+        <IonIcon id="morePgLink" icon={chevronForwardOutline}></IonIcon>
+      </IonCol>
+    </IonRow>
 
-      <IonRow>
-        <IonCol size="1">
-          <IonIcon id="link" icon={informationCircle}></IonIcon>
-        </IonCol>
-        <IonCol size="10">
-          <IonRouterLink id="link" href="/about"> About</IonRouterLink>
-        </IonCol>
-        <IonCol size="1">
-          <IonIcon id="link" icon={chevronForwardOutline}></IonIcon>
-        </IonCol>
-      </IonRow>
+    <IonRow>
+      <IonCol id="morePgYlw" size="10">
+        <ion-router-link id="morePgLink" href="/player/app-tutorial">App Tutorial</ion-router-link>
+      </IonCol>
+      <IonCol id="morePgYlw" size="2">
+        <IonIcon id="morePgLink" icon={chevronForwardOutline}></IonIcon>
+      </IonCol>
+    </IonRow>
 
-      <IonRow>
-        <IonCol size="1">
-          <IonIcon id="link" icon={informationCircle}></IonIcon>
-        </IonCol>
-        <IonCol size="10">
-          <IonRouterLink id="link" href="/contact-us"> Contact Us</IonRouterLink>
-        </IonCol>
-        <IonCol size="1">
-          <IonIcon id="link" icon={chevronForwardOutline}></IonIcon>
-        </IonCol>
-      </IonRow>
+    <IonRow>
+      <IonCol id="morePgGrn" size="10">
+        <ion-router-link id="morePgLink" href="/about">About App</ion-router-link>
+      </IonCol>
+      <IonCol id="morePgGrn" size="2">
+        <IonIcon id="morePgLink" icon={chevronForwardOutline}></IonIcon>
+      </IonCol>
+    </IonRow>
 
-      <IonRow>
-        <IonCol size="1">
-          <IonIcon id="link" color="danger" icon={logOutOutline}></IonIcon>
-        </IonCol>
-        <IonCol size="10">
-          <IonRouterLink id="link" color="danger" href="/manager/my-profile"> Logout</IonRouterLink>
-        </IonCol>
-        <IonCol size="1">
-          <IonIcon id="link" color="danger" icon={chevronForwardOutline}></IonIcon>
-        </IonCol>
-      </IonRow>
-    </IonGrid>
-  
-  </IonContent>
+    <IonRow>
+      <IonCol id="morePgBlue" size="10">
+        <ion-router-link id="morePgLink" href="/about">Contact Us</ion-router-link>
+      </IonCol>
+      <IonCol id="morePgBlue" size="2">
+        <IonIcon id="morePgLink" icon={chevronForwardOutline}></IonIcon>
+      </IonCol>
+    </IonRow>
+
+  </IonGrid>
+
+</IonContent>
   );
 };
 

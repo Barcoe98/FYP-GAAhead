@@ -1,9 +1,7 @@
 import React from "react";
 import {IonPage} from "@ionic/react";
-import TitleHeader from "../../../components/headers/titeHeader";
-import MoreManager from "../../../components/topicDetails/more/moreManager";
-
-import "../../pages.css";
+import TitleHeader from "../../components/headers/titeHeader";
+import MoreManager from "../../components/topicDetails/more/moreManager";
 
 const MorePage = () => {
   return (

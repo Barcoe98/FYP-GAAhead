@@ -42,11 +42,8 @@ const MyTeamPage = () => {
               <ion-router-link id="navLnk" href="/fitness/test/list">Fitness Tests</ion-router-link>
             </IonCol>
           </IonRow>
-
-          
-         
-
         </IonGrid>
+        
       </IonContent>
     </IonPage>
   );

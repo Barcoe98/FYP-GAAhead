@@ -1,3 +1,50 @@
-#link {
-  font-size: larger;
+/* red - #ff3b30*/
+/* yellow - #ffcc00*/
+/* orange - #ff9500*/
+/* green - #4cd963*/
+/* teal blue - #5ac7fa*/
+/* blue - #007bff*/
+/* purple - #5856d6*/
+/* pink - #ff2d54*/
+
+#morePgLink{
+  color: black;
+  margin-left:auto;
+  display:block;
+  padding: 10px 0;
 }
+
+#morePgRed {
+  background-color:#ff3b30;
+  display:inline-block;
+  border: 2px solid #121212;
+  font-size:x-large;
+  font-weight: bold;
+}
+
+#morePgYlw {
+  background-color:#ffcc00;
+  display:inline-block;
+  border: 2px solid #121212;
+  font-size:x-large;
+  font-weight: bold;
+}
+
+
+#morePgBlue {
+  background-color:#007bff;
+  display:inline-block;
+  border: 2px solid #121212;
+  font-size:x-large;
+  font-weight: bold;
+}
+
+
+#morePgGrn {
+  background-color:#4cd963;
+  display:inline-block;
+  border: 2px solid #121212;
+  font-size:x-large;
+  font-weight: bold;
+}
+

@@ -1,15 +1,8 @@
 import { Route, Redirect } from "react-router-dom";
-import {
-  IonRouterOutlet,
-  IonTabs,
-  IonTabBar,
-  IonTabButton,
-  IonIcon,
-  IonLabel,
-} from "@ionic/react";
+import { IonRouterOutlet, IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel,} from "@ionic/react";
 import { ellipsisHorizontalOutline, peopleOutline, personOutline, documentOutline } from "ionicons/icons";
 
-import MorePage from "../../../pages/navBarPages/player/morePage";
+import MorePage from "../../../pages/more/morePlayerPage";
 import PlayerProfilePage from "../../../pages/navBarPages/player/playerProfilePage";
 import EditPlayerProfilePage from "../../../pages/navBarPages/player/editPlayerProfilePage";
 
