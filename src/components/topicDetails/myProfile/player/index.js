@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { IonContent, IonRow, IonGrid, IonList, IonText } from "@ionic/react";
+import { IonContent, IonRow, IonGrid, IonList, IonText, IonItemDivider, IonCol, IonLabel} from "@ionic/react";
 import Stat from "../../../textComponents/index";
 import StatContent from "../../../textComponents/statContent";
 import AlertLogout from "../../../alerts/logoutAlert";
 import LogoutButton from '../../../buttons/logoutButton/index'
+import ItemDividerTeal from "../../../textInputs/itemDividerTeal"
 
 import { firestore } from "../../../../firebase";
 import { useAuth } from "../../../../contexts/authContext";
@@ -53,20 +54,20 @@ const PlayerProfileDetails = () => {
         </IonGrid>
 
         <div id="myContent">
-          <IonText id="myContentTitle">Contact Details</IonText>
+          <ItemDividerTeal dividerLabel="Contact Details"> </ItemDividerTeal>
           <StatContent valueColSize="7" titleColSize="5" statTitle="Phone Number:" statValue={profileDetails?.number}></StatContent>
           <StatContent valueColSize="7" titleColSize="5" statTitle="Email:" statValue={profileDetails?.email}></StatContent>
         </div>
 
         <div id="myContent">
-          <IonText id="myContentTitle">Team Info</IonText>
+          <ItemDividerTeal dividerLabel="Team Info"> </ItemDividerTeal>
           <StatContent valueColSize="7" titleColSize="5" statTitle="Team Name:" statValue={profileDetails?.teamName}></StatContent>
           <StatContent valueColSize="7" titleColSize="5" statTitle="Team Id:" statValue={profileDetails?.teamId}></StatContent>
           <StatContent valueColSize="7" titleColSize="5" statTitle="Grounds" statValue={profileDetails?.grounds}></StatContent>
         </div>
 
         <div id="myContent">
-          <IonText id="myContentTitle">Player Stats</IonText>
+          <ItemDividerTeal dividerLabel="Player Stats"> </ItemDividerTeal>
           <StatContent valueColSize="3" titleColSize="9" statTitle="Speed(100m)" statValue="8.27"></StatContent>
           <StatContent valueColSize="3" titleColSize="9" statTitle="Hooks" statValue="7"></StatContent>
           <StatContent valueColSize="3" titleColSize="9" statTitle="Blocks" statValue="4"></StatContent>
@@ -74,7 +75,7 @@ const PlayerProfileDetails = () => {
         </div>
 
         <div id="myContent">
-          <IonText id="myContentTitle">Injury History</IonText>
+          <ItemDividerTeal dividerLabel="Injury History"> </ItemDividerTeal>
           <StatContent statTitle="Total Injuries" statValue="8.27"></StatContent>
           <StatContent statTitle="Most Recent Injury" statValue="Right Leg"></StatContent>
           <StatContent statTitle="Recovery Period" statValue="14"></StatContent>
@@ -88,7 +89,7 @@ const PlayerProfileDetails = () => {
         setLogoutAlert={() => setAlert(false)}
         handleLogout={handleLogout}>
       </AlertLogout>
-      
+
     </IonContent>
   );
 };
