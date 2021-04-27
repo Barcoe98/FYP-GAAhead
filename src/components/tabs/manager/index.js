@@ -20,6 +20,7 @@ import FitnessTestDetailsPage from "../../../pages/fitnessTest/FitnessTestDetail
 import FitnessTestListPage from "../../../pages/fitnessTest/FitnessTestListPage";
 import AddFitnessTestPage from "../../../pages/fitnessTest/AddFitnessTestPage";
 import AddFitnessTestResultsPage from "../../../pages/fitnessTest/AddFitnessTestResultsPage";
+import FitnessTestResultsListPage from "../../../pages/fitnessTest/FitnessTestResultsListPage";
 
 import WorkoutRoutineDetailsPage from "../../../pages/workoutRoutine/WorkoutDetailsPage";
 import WorkoutRoutineListPage from "../../../pages/workoutRoutine/WorkoutListPage";
@@ -77,8 +78,9 @@ const ManagerTabs = () => {
 
         <Route path="/manager/fitness/test/:id"><FitnessTestDetailsPage></FitnessTestDetailsPage></Route>
         <Route exact path="/manager/fitness/test/add"><AddFitnessTestPage></AddFitnessTestPage></Route>
-        <Route exact path="/player/fitness/test/add-results"><AddFitnessTestResultsPage></AddFitnessTestResultsPage></Route>
+        <Route path="/player/fitness/test/add-results/:id"><AddFitnessTestResultsPage></AddFitnessTestResultsPage></Route>
         <Route exact path="/manager/fitness/test/list"><FitnessTestListPage></FitnessTestListPage></Route>
+        <Route path="/manager/fitness/test/results/list/:id"><FitnessTestResultsListPage></FitnessTestResultsListPage></Route>
 
         <Route path="/manager/workout/:id"><WorkoutRoutineDetailsPage></WorkoutRoutineDetailsPage></Route>
         <Route exact path="/manager/workout/add"><AddWorkoutRoutinePage></AddWorkoutRoutinePage></Route>

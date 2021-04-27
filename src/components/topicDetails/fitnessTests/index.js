@@ -39,7 +39,7 @@ const FitnessTestDetails = ({ fitnessTest }) => {
         </div>
 
         <LinkButton
-          href="/player/fitness/test/add-results"
+          href={'/player/fitness/test/add-results/' + fitnessTest?.id }
           btnName="Enter Results"
         ></LinkButton>
       </IonList>

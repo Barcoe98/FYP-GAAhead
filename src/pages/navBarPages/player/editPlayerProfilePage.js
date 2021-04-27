@@ -107,8 +107,7 @@ const EditPlayerProfilePage = () => {
       history.goBack();
     }
   };
-
-
+  
 
   return (
     <IonPage>

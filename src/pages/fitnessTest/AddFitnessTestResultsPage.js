@@ -1,18 +1,12 @@
-import React, { useState } from "react";
-import {
-  IonCol,
-  IonRow,
-  IonContent,
-  IonGrid,
-  IonLoading,
-  IonButton,
-  IonLabel,
-  IonPage,
-  IonItemDivider,
-} from "@ionic/react";
+import React, { useState, useEffect } from "react";
+import { IonCol, IonRow,  IonContent, IonGrid, IonButton, IonLabel, IonPage, IonItemDivider,} from "@ionic/react";
 import PageHeader from "../../components/headers";
 import TextInputField from "../../components/textInputs/textInputField";
 import AlertError from "../../components/alerts/errorAlert";
+
+import { firestore } from "../../firebase";
+import { useAuth } from "../../contexts/authContext";
+import { useHistory, useParams } from "react-router-dom";
 
 import "../pages.css";
 
@@ -20,35 +14,47 @@ const AddFitnessTestResultsPage = () => {
   
   const [errorMessage, setErrorMessage] = useState();
   const [showAlert, setShowAlert] = useState(false);
-
-  //TODO add validation
+  const { currentUser } = useAuth();
+  const { id } = useParams();
+  const history = useHistory();
   const [time, setTime] = useState("");
-  const [name, setName] = useState("");
+  const [name, setName] = useState("");  
+  const [docId, setDocId] = useState("");
+  const [teamId, setTeamId] = useState("");
+
+
+
+  useEffect(() => {
+    const ref = firestore
+    .collection("users")
+    .doc(currentUser?.uid)
+
+    ref.get(currentUser?.uid).then(doc => {
+      const userDoc = { id: doc.id, ...doc.data() };
+      setName(userDoc?.fullName)
+      setTeamId(userDoc?.teamId)
+      setDocId(id)
+    });
+  }, [currentUser?.uid, id]);
 
 
   const handleSaveResults = async () => {
-      const data = {
-        name,
-        time,
-      };
+      const data = { id, name, time };
   
-      if (name === "") {
-        setErrorMessage('No Name Entered')
-        setShowAlert(true)
-      }
-      else if (time === "") {
+     if (time === "") {
         setErrorMessage('No Time Entered')
         setShowAlert(true)
       }
       else {
-        // const ref = firestore
-        // .collection("users")
-        // .doc(currentUser?.uid)
-        // .collection("fitness_tests");
+        const ref = firestore
+        .collection("users")
+        .doc(teamId)
+        .collection("fitness_tests_results")
+        .doc(docId)
+        .collection("players_results")
   
-        // await ref.add(data);
-        // history.goBack();
-        console.log('success')
+        await ref.add(data);
+        history.goBack();
       }
     };
 
@@ -74,13 +80,14 @@ const AddFitnessTestResultsPage = () => {
               setText={(e) => setName(e.detail.value)}
               placeholder="Enter Name"
               type="text"
+              disabled="true"
             ></TextInputField>
           </IonRow>
 
           {/*Time Input Fields & Labels*/}
           <IonRow>
             <TextInputField
-              label="Test Time"
+              label="Time"
               text={time}
               size="12"
               setText={(e) => setTime(e.detail.value)}

@@ -4,6 +4,7 @@ import PageHeaderDelete from "../../components/headers/deleteHeader/index";
 import FitnessTestDetails from "../../components/topicDetails/fitnessTests/index";
 import AlertDelete from "../../components/alerts/deleteAlert";
 import AlertError from "../../components/alerts/errorAlert";
+import PageHeaderResults from "../../components/headers/resultsHeader";
 
 import { useParams, useHistory } from "react-router-dom";
 import { firestore } from "../../firebase";
@@ -71,10 +72,8 @@ const FitnessTestDetailsPage = () => {
 
   return (
     <IonPage>
-      <PageHeaderDelete
-        title=""
-        action={() => setDelAlert(true)}
-      ></PageHeaderDelete>
+      <PageHeaderResults title="" href={"http://localhost:3000/manager/fitness/test/results/list/" + id} action={() => setDelAlert(true)}></PageHeaderResults>
+
       <FitnessTestDetails fitnessTest={fitnessTest}></FitnessTestDetails>
       
       <AlertDelete
