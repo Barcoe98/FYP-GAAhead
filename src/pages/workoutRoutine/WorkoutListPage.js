@@ -25,7 +25,6 @@ const WorkoutPage = () => {
       const userDoc = { id: doc.id, ...doc.data() };
         
       if (userDoc.teamId === "") {
-        console.log('No Team Data Available');
         setErrorMessage('Join a Team')
         setShowAlert(true)
       } 

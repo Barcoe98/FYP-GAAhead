@@ -1,17 +1,8 @@
 import React, { useState } from "react";
-import {
-  IonContent,
-  IonLoading,
-  IonItem,
-  IonInput,
-  IonText,
-  IonList,
-  IonButton,
-  IonIcon,
-  IonLabel,
-  IonSelect,
+import { IonContent, IonItem, IonInput, IonText, IonList, IonButton, IonLabel, IonSelect,
 } from "@ionic/react";
-import { logoFacebook, logoGoogle } from "ionicons/icons";
+import AlertError from "../../../components/alerts/errorAlert";
+
 import { useAuth } from "../../../contexts/authContext";
 import { useHistory } from "react-router-dom";
 import { firestore } from "../../../firebase";
@@ -19,38 +10,62 @@ import { firestore } from "../../../firebase";
 import "../auth.css";
 
 const Register = () => {
-  const { signUp, currentUser } = useAuth();
+  const { signUpPlayer, signUpManager} = useAuth();
 
   const [email, setEmail] = useState("");
   const [pword, setPword] = useState("");
-  const [teamId, setTeamId] = useState("");
   const [userType, setUserType] = useState("");
-  //const [ confrmPword, setConfrmPword ] = useState("")
-  const [status, setStatus] = useState({
-    loading: false,
-    emailError: false,
-    pwordError: false,
-  });
+  const [ confrmPword, setConfrmPword ] = useState("")
+  const [errorMessage, setErrorMessage] = useState();
+  const [errorTitle, setErrorTitle] = useState();
+  const [showAlert, setShowAlert] = useState(false);
   const history = useHistory();
 
   async function handleSignUp(e) {
     e.preventDefault();
+
     try {
-      //set loading to true, which displays loading icon
-      //Set errors to false before attempting sign up
-      setStatus({ loading: true, emailError: false, pwordError: false });
-      //console.log("Btn pressed");
-      await signUp(email, pword, userType);
+      if (userType.length === 0) {
+        setErrorMessage('Please Try Again')
+        setErrorTitle('No User Type Entered')
+        setShowAlert(true)
+      }
 
-      
-      //console.log("user created ");
-      //console.log("user signed in");
+      else if (email.length === 0) {
+        setErrorMessage('Please Try Again')
+        setErrorTitle('incorrect/No Email Entered')
+        setShowAlert(true)
+      }
 
-      //Set loading and errors to false after successful login
-      setStatus({ loading: false, emailError: false, pwordError: false });
-      history.push("/manager/home");
-      //console.log(currentUser.uid);
-    } catch {
+      else if (pword.length === 0) {
+        setErrorMessage('Please Try Again')
+        setErrorTitle('Incorrect/No Password Entered')
+        setShowAlert(true)
+      }
+
+      // else if (pword !== confrmPword) {
+      //   setErrorMessage('Please Try Again')
+      //   setErrorTitle('Passwords Do Not Match')
+      //   setShowAlert(true)
+      // } '
+
+      else if (userType === "manager") {
+        await signUpManager(email, pword, userType);
+        history.replace("login")
+      }
+
+      else if (userType === "player") {
+        await signUpPlayer(email, pword, userType);
+        history.replace("login")   
+      }
+
+      else {
+        setErrorMessage('')
+        setErrorTitle('Please Try Again')
+        setShowAlert(true)
+      }
+
+  }catch {
       //Set loading to false after attempted login
       //set errors to true and display error message
       //setStatus({loading: false, emailError: true, pwordError: true})
@@ -76,8 +91,7 @@ const Register = () => {
               <IonSelect
                 value={userType}
                 onIonChange={(e) => setUserType(e.detail.value)}
-                placeholder="Select type of User you are"
-              >
+                placeholder="Select type of User you are">
                 <ion-select-option value="manager">Manager</ion-select-option>
                 <ion-select-option value="player">Player</ion-select-option>
               </IonSelect>
@@ -92,9 +106,7 @@ const Register = () => {
                 onIonChange={(event) => setEmail(event.detail.value)}
               ></IonInput>
             </IonItem>
-            {status.emailError && (
-              <IonText color="danger"> Email Error</IonText>
-            )}
+          
 
             <IonItem color="light" id="rndInput">
               <IonLabel position="stacked">Password</IonLabel>
@@ -110,10 +122,7 @@ const Register = () => {
               <IonLabel position="stacked">Confirm Password</IonLabel>
               <IonInput type="password" id="confrmPword" required></IonInput>
             </IonItem>
-            {status.pwordError && (
-              <IonText color="danger"> Password Error</IonText>
-            )}
-
+          
             <IonButton
               onClick={handleSignUp}
               id="btnTheme"
@@ -130,9 +139,16 @@ const Register = () => {
               Have an Account? Login
             </IonButton>
 
-            <IonLoading isOpen={status.loading}></IonLoading>
           </IonList>
         </div>
+
+        <AlertError 
+          setShowAlert={() => setShowAlert(false)} 
+          alertHeader={errorTitle}
+          showAlert={showAlert} 
+          msg={errorMessage}>
+        </AlertError>
+
       </IonContent>
     </>
   );

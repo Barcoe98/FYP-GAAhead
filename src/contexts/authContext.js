@@ -22,11 +22,22 @@ const AuthContextProvider = (props) => {
   // }, []);
 
   //takes in email and password//creates user with email and password specified
-  function signUp(email, password, userType) {
+  function signUpPlayer(email, password, userType) {
     auth.createUserWithEmailAndPassword(email, password).then( cred => {
-      return firestore.collection('users').doc(cred.user.uid).collection('my_profile').add({
+      return firestore.collection('users').doc(cred.user.uid).set({
         email: email,
         userType: userType
+      })
+    })
+  }
+
+   //takes in email and password//creates user with email and password specified
+   function signUpManager(email, password, userType, teamId) {
+    auth.createUserWithEmailAndPassword(email, password).then( cred => {
+      return firestore.collection('users').doc(cred.user.uid).set({
+        email: email,
+        userType: userType,
+        teamId: cred.user.uid
       })
     })
   }
@@ -68,7 +79,8 @@ const AuthContextProvider = (props) => {
     currentUser,
     isLoggedIn,
     setLoggedIn,
-    signUp,
+    signUpManager,
+    signUpPlayer,
     login,
     logOut,
     resetPassword,

@@ -11,8 +11,8 @@
 #pgTitle{
     text-align: center;
     font-weight:bold;
-    font-size: 26px;
-    padding-bottom: 200px;
+    font-size: xx-large;
+    margin-bottom: 50px;
 }
 
 /* Auth CSS ID or input fields*/
@@ -25,8 +25,4 @@
 
 #pg-col{
     background-color: #121212;
-}
-
-ion-input{
-
 }
