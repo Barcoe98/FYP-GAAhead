@@ -2,6 +2,7 @@ import React from "react";
 import { IonIcon, IonCol, IonRow, IonGrid, IonCard } from "@ionic/react";
 import { calendar, time } from "ionicons/icons";
 import "./teamSheetCard.css";
+import { formatDate, formatTime } from "../../../contexts/formatContext";
 
 const TeamSheetCard = ({teamSheet}) => {
   return (
@@ -16,7 +17,7 @@ const TeamSheetCard = ({teamSheet}) => {
             <IonIcon icon={calendar}></IonIcon>
           </IonCol>
           <IonCol id="tsDate" size="10">
-            {teamSheet.date}
+            {formatDate(teamSheet.date)}
           </IonCol>
         </IonRow>
         <IonRow>

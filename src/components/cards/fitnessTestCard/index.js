@@ -1,6 +1,8 @@
 import React from "react";
 import { IonIcon, IonCol, IonRow, IonGrid, IonCard } from "@ionic/react";
 import { flame, calendar, time } from "ionicons/icons";
+import { formatDate, formatTime } from '../../../../contexts/formatContext'
+
 import "./fitnessTestCard.css";
 
 const FitnessTestCard = ({ fTest }) => {
@@ -17,7 +19,7 @@ const FitnessTestCard = ({ fTest }) => {
             <IonIcon icon={calendar}></IonIcon>
           </IonCol>
           <IonCol id="ftDate" size="10">
-            {fTest.date}
+            {formatDate(fTest.date)}
           </IonCol>
         </IonRow>
         <IonRow>
@@ -25,7 +27,7 @@ const FitnessTestCard = ({ fTest }) => {
             <IonIcon icon={time}></IonIcon>
           </IonCol>
           <IonCol id="ftTime" size="10">
-            {fTest.time}
+            {formatTime(fTest.time)}
           </IonCol>
         </IonRow>
         <IonRow>

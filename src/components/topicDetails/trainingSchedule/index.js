@@ -1,6 +1,8 @@
 import React from "react";
 import { IonContent, IonList, IonText } from "@ionic/react";
 import StatBar from "../../textComponents/statBar";
+import { formatDate, formatTime } from '../../../../contexts/formatContext'
+
 
 import "./trainingScheduleDetails.css";
 
@@ -13,9 +15,9 @@ const TrainingScheduleDetails = ({ trainingSchedule }) => {
 
         <div id="sectionContent">
           <StatBar
-            timeVar={trainingSchedule?.time}
+            timeVar={formatTime(trainingSchedule?.time)}
             difficultyVar={trainingSchedule?.difficulty}
-            dateVar={trainingSchedule?.date}
+            dateVar={formatDate(trainingSchedule?.date)}
           ></StatBar>
 
           <hr id="contentDivider"></hr>

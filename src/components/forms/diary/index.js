@@ -2,6 +2,8 @@ import React from "react";
 import { IonContent, IonInput, IonGrid, IonRow, IonCol,IonLabel, IonItem, IonButton } from '@ionic/react';
 import ItemDivider from '../../textInputs/itemDivider'
 import FormInputArea from '../../textInputs/formInputArea'
+import DateInputField from "../../textInputs/dateInputField";
+
 import './diary.css'
 
 const AddJournalForm = ({ imgSrc, handleImgChange, btnTitle, title, setTitle, date, setDate, 
@@ -38,13 +40,13 @@ const AddJournalForm = ({ imgSrc, handleImgChange, btnTitle, title, setTitle, da
       
       {/*Total Cal & Date Input Fields & Labels*/ }
       <IonRow>
-        <IonCol size="6">
-          <IonItem color="primary" id="rnd-input">
-            <IonLabel position="stacked">Date</IonLabel>
-            <IonInput required clearInput="true" position="stacked" placeholder="Enter Date" value={date} type="text" 
-            onIonChange={setDate}></IonInput>
-          </IonItem>          
-        </IonCol>
+        <DateInputField 
+          label="Date" 
+          size="6" 
+          text={date}
+          setText={setDate}
+          placeholderText="Date"
+        />
 
         <IonCol  size="6">
         <IonItem color="primary" id="rnd-input">

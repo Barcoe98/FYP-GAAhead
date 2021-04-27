@@ -2,6 +2,8 @@ import React from "react";
 import { IonContent, IonInput, IonGrid, IonRow, IonCol,IonLabel, IonItemDivider, IonItem, IonSelect, IonButton, IonLoading} from '@ionic/react';
 import ItemDivider from '../../components/textInputs/itemDivider'
 import ContentArea from '../../components/textInputs/contentArea'
+import DateInputField from "../textInputs/dateInputField";
+import TimeInputField from "../textInputs/timeInputField";
 
 const Form = ({formTitle, btnTitle, title, setTitle, time, setTime, date, setDate, difficulty, setDifficulty, 
   warmUp, setWarmUp, exercises, setExercises, warmDown, setWarmDown, handleAdd, loading}) => {
@@ -27,23 +29,23 @@ const Form = ({formTitle, btnTitle, title, setTitle, time, setTime, date, setDat
             </IonCol>
           </IonRow>
 
-          {/*Time & Date Input Fields & Labels*/ }
+            {/* Date & Time Input Fields & Labels*/}
           <IonRow>
-            <IonCol size="6">
-              <IonItem color="light" id="rnd-input">
-                <IonLabel position="stacked">Time</IonLabel>
-                <IonInput required clearInput="true" position="stacked" placeholder="Enter Time" value={time} type="text" 
-                onIonChange={setTime}></IonInput>
-                </IonItem>         
-            </IonCol>
-            <IonCol size="6">
-              <IonItem color="light" id="rnd-input">
-                <IonLabel position="stacked">Date</IonLabel>
-                <IonInput required clearInput="true" position="stacked" placeholder="Enter Date" value={date} type="text" 
-                onIonChange={setDate}></IonInput>
-              </IonItem>          
-            </IonCol>
-          </IonRow>
+          <DateInputField 
+            label="Date" 
+            size="6" 
+            text={date}
+            setText={setDate}
+            placeholderText="Date"
+          />
+          <TimeInputField
+            label="Time" 
+            size="6" 
+            text={time}
+            setText={setTime}
+            placeholderText="Time"
+          />
+         </IonRow>
 
           {/*Total Calories Input Fields & Labels*/ }
           <IonRow>

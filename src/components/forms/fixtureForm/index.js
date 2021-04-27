@@ -1,30 +1,11 @@
 import React from "react";
-import {
-  IonGrid,
-  IonRow,
-  IonCol,
-  IonLabel,
-  IonItemDivider,
-  IonButton,
-} from "@ionic/react";
+import {IonGrid,  IonRow,  IonCol,  IonLabel, IonItemDivider, IonButton} from "@ionic/react";
 import TextInputField from "../../textInputs/textInputField";
+import DateInputField from "../../textInputs/dateInputField";
+import TimeInputField from "../../textInputs/timeInputField";
 
-const FixtureForm = ({
-  homeTeam,
-  awayTeam,
-  setHomeTeam,
-  setAwayTeam,
-  date,
-  setDate,
-  time,
-  setTime,
-  venue,
-  setVenue,
-  competition,
-  setCompetition,
-  handleAdd,
-  loading,
-  btnName
+const FixtureForm = ({ homeTeam, awayTeam, setHomeTeam, setAwayTeam, date, setDate, time, setTime, venue, 
+  setVenue, competition, setCompetition, handleAdd, btnName
 }) => {
   return (
       <IonGrid id="wr-pg-bg">
@@ -58,22 +39,20 @@ const FixtureForm = ({
 
         {/* Date & Time Input Fields & Labels*/}
         <IonRow>
-          <TextInputField
-            size="6"
-            label="Date"
+          <DateInputField 
+            label="Date" 
+            size="6" 
             text={date}
             setText={setDate}
             placeholderText="Date"
-            type="string"
-          ></TextInputField>
-          <TextInputField
-            size="6"
-            label="Time"
+          />
+          <TimeInputField
+            label="Time" 
+            size="6" 
             text={time}
             setText={setTime}
             placeholderText="Time"
-            type="string"
-          ></TextInputField>
+          />
         </IonRow>
 
         {/* Venue Input Fields & Labels*/}

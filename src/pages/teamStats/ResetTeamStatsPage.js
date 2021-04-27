@@ -18,6 +18,7 @@ import { useAuth } from "../../contexts/authContext";
 import { useHistory } from "react-router-dom";
 
 import "../pages.css";
+import YearInputField from "../../components/textInputs/yearInputField";
 
 
 const ResetTeamStatsPage = () => {
@@ -148,16 +149,15 @@ const ResetTeamStatsPage = () => {
             </IonCol>
           </IonRow>
 
-           {/*Name Input Fields & Labels*/}
+           {/*Year Input Fields & Labels*/}
            <IonRow>
-           <TextInputField
-             label="Year"
+           <YearInputField
+            label="Year"
              text={year}
              size="12"
              setText={(e) => setYear(e.detail.value)}
              placeholder="Enter Year"
-             type="text"
-           ></TextInputField>
+           ></YearInputField>
          </IonRow>
 
           {/* Join Button*/}

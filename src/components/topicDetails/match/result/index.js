@@ -1,9 +1,9 @@
 import React from "react";
 import { IonContent, IonList, IonText } from "@ionic/react";
+import VersusBar from "../../../textComponents/matchStats/matchVersusBar";
 import StatCol from "../../../textComponents/matchStats/index";
 
 import "../matchDetails.css";
-import VersusBar from "../../../textComponents/matchStats/matchVersusBar";
 
 const ResultDetailsPage = ({ result }) => {
   return (

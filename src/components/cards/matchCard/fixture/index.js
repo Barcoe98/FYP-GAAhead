@@ -1,13 +1,14 @@
 import React from "react";
 import { IonCol, IonRow, IonGrid, IonCard, IonImg } from "@ionic/react";
 import "./fixtureCard.css";
+import { formatDate, formatTime } from '../../../../contexts/formatContext'
 
 const MatchCard = ({ fixture }) => {
   return (
     <IonCard key={fixture.id} routerLink={("/manager/fixture/", fixture.id)}>
       <IonGrid>
         <IonRow size="12" id="fDate">
-          {fixture.date}
+          {formatDate(fixture.date)}
         </IonRow>
         <IonRow size="12">
           <IonCol size="4">
@@ -22,7 +23,7 @@ const MatchCard = ({ fixture }) => {
               {fixture.competition}
             </IonRow>
             <IonRow size="4" id="fTime">
-              {fixture.time}
+              {formatTime(fixture.time)}
             </IonRow>
             <IonRow size="4" id="fVenue">
               {fixture.venue}

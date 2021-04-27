@@ -1,9 +1,10 @@
 import React from "react";
 import { IonContent, IonList } from "@ionic/react";
 import FixtureVersusBar from "../../../textComponents/fixture/fixtureVersusBar";
+import { formatDate, formatTime } from '../../../../contexts/formatContext'
+import StatContent from "../../../textComponents/statContent";
 
 import "../matchDetails.css";
-import StatContent from "../../../textComponents/statContent";
 
 const FixtureDetailsPage = ({ fixture }) => {
   return (
@@ -19,11 +20,11 @@ const FixtureDetailsPage = ({ fixture }) => {
 
         <StatContent 
           statTitle="Date" 
-          statValue={fixture?.date}>
+          statValue={formatDate(fixture?.date)}>
         </StatContent>
         <StatContent 
           statTitle="Time" 
-          statValue={fixture?.time}>
+          statValue={formatTime(fixture?.time)}>
         </StatContent>
         <StatContent 
           statTitle="Competition" 

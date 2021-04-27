@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { IonPage } from "@ionic/react";
+import { IonPage, IonCol, IonDatetime } from "@ionic/react";
 import PageHeader from "../../components/headers";
 import FixtureForm from "../../components/forms/fixtureForm/index";
 import AlertError from "../../components/alerts/errorAlert";
@@ -27,6 +27,12 @@ const AddFixturePage = () => {
   const { currentUser } = useAuth();
   const history = useHistory();
 
+  function formatDate(isoString) {
+    return new Date(isoString).toLocaleDateString('en-US', {
+      day: 'numeric' , month: 'short'
+    })
+  }
+  
   const handleAdd = async () => {
     const fixtureData = {
       hTeam,
@@ -75,7 +81,6 @@ const AddFixturePage = () => {
   return (
     <IonPage id="bg-col">
       <PageHeader title="Add Match Fixture"></PageHeader>
-
       <FixtureForm
         homeTeam={hTeam}
         awayTeam={aTeam}
