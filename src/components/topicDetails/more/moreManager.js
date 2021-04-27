@@ -39,7 +39,7 @@ return (
 
     <IonRow>
       <IonCol id="morePgBlue" size="10">
-        <ion-router-link id="morePgLink" href="/about">Contact Us</ion-router-link>
+        <ion-router-link id="morePgLink" href="/contact-us">Contact Us</ion-router-link>
       </IonCol>
       <IonCol id="morePgBlue" size="2">
         <IonIcon id="morePgLink" icon={chevronForwardOutline}></IonIcon>

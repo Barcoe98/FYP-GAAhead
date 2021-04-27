@@ -6,7 +6,10 @@ import MorePage from "../../../pages/more/moreMangerPage";
 import TeamPage from "../../../pages/navBarPages/manager/teamPage";
 import PlannerPage from "../../../pages/navBarPages/manager/plannerPage";
 import MatchPage from "../../../pages/navBarPages/manager/matchesPage";
+
 import AppTutorial from "../../../pages/appTutorial/ManagerAppTutorialPage";
+import ContactUs from "../../../pages/navBarPages/contactUsPage";
+
 
 
 import TrainingScheduleDetailsPage from "../../../pages/trainingSchedule/TrainingScheduleDetailsPage";
@@ -52,6 +55,8 @@ const ManagerTabs = () => {
       <IonRouterOutlet>
         
         <Route exact path="/manager/app-tutorial"><AppTutorial></AppTutorial></Route>
+        <Route exact path="/contact-us"><ContactUs></ContactUs></Route>
+
         <Route exact path="/manager/more"><MorePage></MorePage></Route>
         <Route path="/manager/my-profile"><ManagerProfileDetails></ManagerProfileDetails></Route>
         <Route path="/manager/match"><MatchPage></MatchPage></Route>
