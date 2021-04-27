@@ -2,7 +2,7 @@ import React from "react";
 import { IonContent, IonList, IonText } from "@ionic/react";
 import LinkButton from "../../buttons/linkButton/index";
 import StatBar from "../../textComponents/statBar";
-import { formatDate, formatTime } from '../../../../contexts/formatContext'
+import { formatDate, formatTime } from '../../../contexts/formatContext'
 
 import "./fitnessTestDetails.css";
 

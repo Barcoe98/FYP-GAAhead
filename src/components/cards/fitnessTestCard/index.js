@@ -1,7 +1,7 @@
 import React from "react";
 import { IonIcon, IonCol, IonRow, IonGrid, IonCard } from "@ionic/react";
 import { flame, calendar, time } from "ionicons/icons";
-import { formatDate, formatTime } from '../../../../contexts/formatContext'
+import { formatDate, formatTime } from '../../../contexts/formatContext'
 
 import "./fitnessTestCard.css";
 

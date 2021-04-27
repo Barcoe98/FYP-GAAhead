@@ -1,6 +1,6 @@
 import React from "react";
 import { IonRow, IonGrid, IonCard } from "@ionic/react";
-import { formatYear } from '../../../../contexts/formatContext'
+import { formatYear } from '../../../contexts/formatContext'
 
 import "./teamStatsCard.css";
 

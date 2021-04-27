@@ -1,7 +1,7 @@
 import React from "react";
 import { IonContent, IonList, IonText } from "@ionic/react";
 import StatBar from "../../textComponents/statBar";
-import { formatDate, formatTime } from '../../../../contexts/formatContext'
+import { formatDate, formatTime } from '../../../contexts/formatContext'
 
 
 import "./trainingScheduleDetails.css";

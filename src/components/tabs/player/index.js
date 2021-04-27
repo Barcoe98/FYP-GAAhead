@@ -7,8 +7,8 @@ import MorePage from "../../../pages/more/morePlayerPage";
 import AppTutorial from "../../../pages/appTutorial/PlayerAppTutorialPage";
 import ContactUs from "../../../pages/navBarPages/contactUsPage";
 
-import PlayerProfilePage from "../../../pages/navBarPages/player/playerProfilePage";
-import EditPlayerProfilePage from "../../../pages/navBarPages/player/editPlayerProfilePage";
+import PlayerProfilePage from "../../../pages/profiles/player/playerProfilePage";
+import EditPlayerProfilePage from "../../../pages/profiles/player/editPlayerProfilePage";
 
 import MyTeamPage from "../../../pages/navBarPages/player/myTeamPage";
 import ResetTeamStatsPage from "../../../pages/navBarPages/player/JoinTeamPage";

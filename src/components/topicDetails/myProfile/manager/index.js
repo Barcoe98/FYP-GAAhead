@@ -1,13 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  IonContent,
-  IonList,
-  IonText,
-  IonCol,
-  IonGrid,
-  IonRow
-} from "@ionic/react";
-import PageHeader from "../../../headers/index";
+import {IonContent, IonList, IonText, IonCol,  IonGrid,  IonRow} from "@ionic/react";
 import LogoutButton from '../../../buttons/logoutButton/index'
 import AlertLogout from "../../../alerts/logoutAlert";
 
@@ -42,16 +34,14 @@ const ManagerProfileDetails = () => {
 
 return (
   <IonContent>
-  <PageHeader title="My Details"></PageHeader>
-
     <IonList id="bg-col">
-      <div id="my-bg-img"></div>  
+      <div id="my-bg-img"><img alt="" width="320" height="320" src={profileDetails?.coverImg}></img></div>  
         <div id="myContent">
           <IonGrid>
           <IonText id="myContentTitle">My Details</IonText>
             <IonRow>
               <IonCol size="6"><IonText id="title">Name:</IonText></IonCol>
-              <IonCol size="6"><IonText id="var">{profileDetails?.name}</IonText></IonCol>
+              <IonCol size="6"><IonText id="var">{profileDetails?.fullName}</IonText></IonCol>
             </IonRow>
             <IonRow>
               <IonCol size="6"><IonText id="title">Email:</IonText></IonCol>
