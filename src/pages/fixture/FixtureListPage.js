@@ -7,14 +7,10 @@ import AlertError from "../../components/alerts/errorAlert";
 import { firestore } from "../../firebase";
 import { useAuth } from "../../contexts/authContext";
 
-
 const FixtureListPage = () => {
   const [fixtures, setFixtures] = useState([]);
-  const [teamId, setTeamId] = useState();
-
   const [errorMessage, setErrorMessage] = useState();
   const [showAlert, setShowAlert] = useState(false);
-
   const { currentUser } = useAuth();
 
   useEffect(() => {
@@ -24,12 +20,14 @@ const FixtureListPage = () => {
 
     ref.get(currentUser?.uid).then(doc => {
       
-      if (doc.exists) {
-        const userDoc = { id: doc.id, ...doc.data() };
+      const userDoc = { id: doc.id, ...doc.data() };
 
-        //set TeamId Attributes to matching in DB
-        setTeamId(userDoc?.teamId)
-
+        if (userDoc.teamId === "") {
+          console.log('No Team Data Available');
+          setErrorMessage('Join a Team')
+          setShowAlert(true)
+        } 
+       else {
         //ref for user managers results collection
         const ref = firestore
         .collection("users")
@@ -44,11 +42,6 @@ const FixtureListPage = () => {
         }));
         setFixtures(docs);
       });
-
-      } else {
-        console.log('No such document');
-        setErrorMessage('No Team Data Available, Join a Team')
-        setShowAlert(true)
       }
   })
 

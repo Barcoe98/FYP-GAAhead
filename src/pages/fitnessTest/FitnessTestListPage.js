@@ -6,16 +6,13 @@ import AlertError from "../../components/alerts/errorAlert";
 
 import { firestore } from "../../firebase";
 import { useAuth } from "../../contexts/authContext";
-import "../pages.css";
 
+import "../pages.css";
 
 const FitnessTestPage = () => {
   const [fitnessTests, setFitnessTests] = useState([]);
-  var [teamId, setTeamId] = useState();
-
   const [errorMessage, setErrorMessage] = useState();
   const [showAlert, setShowAlert] = useState(false);
-
   const { currentUser } = useAuth();
 
   useEffect(() => {
@@ -24,19 +21,15 @@ const FitnessTestPage = () => {
     .doc(currentUser?.uid)
 
     ref.get(currentUser?.uid).then(doc => {
-      
-      if (!doc.exists) {
-        console.log('No such document');
-        setErrorMessage('No Team Data Available, Join a Team')
+
+      const userDoc = { id: doc.id, ...doc.data() };
+
+      if (userDoc.teamId === "") {
+        console.log('No Team Data Available');
+        setErrorMessage('Join a Team')
         setShowAlert(true)
-
-        //history.goBack();
-      } else {
-        const userDoc = { id: doc.id, ...doc.data() };
-
-        //set ManagerId Attributes to matching in DB
-        setTeamId(userDoc?.teamId)
-
+      } 
+      else {
         const ref = firestore
         .collection("users")
         .doc(userDoc?.teamId)

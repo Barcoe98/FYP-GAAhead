@@ -4,7 +4,6 @@ import PageHeaderAdd from "../../components/headers/addHeader/index";
 import WorkoutCard from "../../components/cards/workoutCard/index";
 import AlertError from "../../components/alerts/errorAlert";
 
-
 import { firestore } from "../../firebase";
 import { useAuth } from "../../contexts/authContext";
 
@@ -12,11 +11,8 @@ import "../pages.css";
 
 const WorkoutPage = () => {
   const [workouts, setWorkouts] = useState([]);
-  const [teamId, setTeamId] = useState();
-
   const [errorMessage, setErrorMessage] = useState();
   const [showAlert, setShowAlert] = useState(false);
-
   const { currentUser } = useAuth();
 
   useEffect(() => {
@@ -25,43 +21,38 @@ const WorkoutPage = () => {
     .doc(currentUser?.uid)
 
     ref.get(currentUser?.uid).then(doc => {
-      
-      if (!doc.exists) {
-        console.log('No such document');
-        setErrorMessage('No Team Data Available, Join a Team')
+
+      const userDoc = { id: doc.id, ...doc.data() };
+        
+      if (userDoc.teamId === "") {
+        console.log('No Team Data Available');
+        setErrorMessage('Join a Team')
         setShowAlert(true)
-        //history.goBack();
-      } else {
-        const userDoc = { id: doc.id, ...doc.data() };
-
-        //set TeamId Attributes to matching in DB
-        setTeamId(userDoc?.teamId)
-
+      } 
+      else {
         //ref for user managers results collection
         const ref = firestore
         .collection("users")
         .doc(userDoc?.teamId)
         .collection("workouts");
 
-        //snapshot of doc 
-        ref.get().then((snapshot) => {
+        //snapshot of docs 
+        ref.get().then((snapshot) => {           
         const docs = snapshot.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
-        }));
+        }))
         setWorkouts(docs);
-      });
-      }
+      })
+    }
   })
 
 }, [currentUser?.uid]);
 
   return (
     <IonPage>
-      <PageHeaderAdd
-        title="Workouts"
-        href="/manager/workout/add"
-      ></PageHeaderAdd>
+      <PageHeaderAdd title="Workouts" href="/manager/workout/add"></PageHeaderAdd>
+
       <IonContent>
         <IonList id="bg-col">
           {workouts.map((workout) => (
@@ -75,7 +66,6 @@ const WorkoutPage = () => {
         showAlert={showAlert} 
         msg={errorMessage}>
         </AlertError>
-
 
       </IonContent>
     </IonPage>

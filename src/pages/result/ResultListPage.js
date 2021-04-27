@@ -10,11 +10,8 @@ import { useAuth } from "../../contexts/authContext";
 
 const ResultListPage = () => {
   const [results, setResults] = useState([]);
-  const [teamId, setTeamId] = useState();
-
   const [errorMessage, setErrorMessage] = useState();
   const [showAlert, setShowAlert] = useState(false);
-
   const { currentUser } = useAuth();
 
   useEffect(() => {
@@ -22,19 +19,15 @@ const ResultListPage = () => {
     .collection("users")
     .doc(currentUser?.uid)
 
-    ref.get(currentUser?.uid).then(doc => {
-      
-      if (!doc.exists) {
-        console.log('No such document');
-        setErrorMessage('No Team Data Available, Join a Team')
+    ref.get(currentUser?.uid).then(doc => {  
+      const userDoc = { id: doc.id, ...doc.data() };
+
+      if (userDoc.teamId === "") {
+        console.log('No Team Data Available');
+        setErrorMessage('Join a Team')
         setShowAlert(true)
-        //history.goBack();
-      } else {
-        const userDoc = { id: doc.id, ...doc.data() };
-
-        //set TeamId Attributes to matching in DB
-        setTeamId(userDoc?.teamId)
-
+      } 
+      else {
         //ref for user managers results collection
         const ref = firestore
         .collection("users")

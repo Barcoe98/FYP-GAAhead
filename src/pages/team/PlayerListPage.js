@@ -1,13 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  IonContent,
-  IonRow,
-  IonGrid,
-  IonPage,
-  IonCard,
-  IonList,
-  IonImg,
-} from "@ionic/react";
+import {IonContent,  IonRow, IonGrid,  IonPage,  IonCard, IonList, IonImg,} from "@ionic/react";
 import PageHeader from "../../components/headers";
 
 import { firestore } from "../../firebase";
@@ -15,16 +7,8 @@ import { useAuth } from "../../contexts/authContext";
 
 import "./player.css";
 
-//https://www.youtube.com/watch?v=fQ4u1J717ys
-
 const PlayerListPage = () => {
   const [players, setPlayers] = useState([]);
-
-  var [teamId, setTeamId] = useState();
-
-  const [errorMessage, setErrorMessage] = useState();
-  const [showAlert, setShowAlert] = useState(false);
-
   const { currentUser } = useAuth();
 
   useEffect(() => {
@@ -33,33 +17,22 @@ const PlayerListPage = () => {
     .doc(currentUser?.uid)
 
     ref.get(currentUser?.uid).then(doc => {
-      
-      if (!doc.exists) {
+  
+      const userDoc = { id: doc.id, ...doc.data() };
 
-        console.log('No such document');
-        setErrorMessage('No Team Data Available, Join a Team')
-        setShowAlert(true)
+      //grab users profiles where teamId is equal to the current manager team ID
+      const ref = firestore
+      .collection("users").where("teamId", '==', userDoc?.teamId)
 
-        //history.goBack();
-      } else {
-        const userDoc = { id: doc.id, ...doc.data() };
-
-        //set ManagerId Attributes to matching in DB
-        setTeamId(userDoc?.teamId)
-
-        const ref = firestore
-        .collection("users").where("teamId", '==', userDoc?.teamId)
-
-        //snapshot of doc 
-        ref.get().then((snapshot) => {
-        const docs = snapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        setPlayers(docs);
-      });
-      }
-    })
+      //snapshot of doc 
+      ref.get().then((snapshot) => {
+      const docs = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setPlayers(docs);
+    });
+  })
 
   }, [currentUser?.uid]);
 
