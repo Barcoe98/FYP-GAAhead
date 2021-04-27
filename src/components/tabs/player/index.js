@@ -3,6 +3,8 @@ import { IonRouterOutlet, IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel,} 
 import { ellipsisHorizontalOutline, peopleOutline, personOutline, documentOutline } from "ionicons/icons";
 
 import MorePage from "../../../pages/more/morePlayerPage";
+import AppTutorial from "../../../pages/appTutorial/PlayerAppTutorialPage";
+
 import PlayerProfilePage from "../../../pages/navBarPages/player/playerProfilePage";
 import EditPlayerProfilePage from "../../../pages/navBarPages/player/editPlayerProfilePage";
 
@@ -40,6 +42,8 @@ const PlayerTabs = () => {
     <Route exact path="/diary-entries/add"><AddDiaryEntryPage></AddDiaryEntryPage></Route>
 
     <Route exact path="/player/more"><MorePage></MorePage></Route>
+    <Route exact path="/player/app-tutorial"><AppTutorial></AppTutorial></Route>
+
     <Route path="/player/my-profile"><PlayerProfilePage></PlayerProfilePage></Route>
     <Route path="/player/my-profile/edit"><EditPlayerProfilePage></EditPlayerProfilePage></Route>
 

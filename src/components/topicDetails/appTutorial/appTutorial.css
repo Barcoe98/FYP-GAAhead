@@ -1,0 +1,48 @@
+/* Without setting height the slides will take up the height of the slide's content */
+ion-slides {
+  height: 100%;
+  --background-color: #121212;;
+}
+
+
+#slideTitle{
+  background-color: #121212;;
+  color: white;
+  font-size: xx-large;
+  text-align: center;
+  padding: 20px;
+}
+
+#slideContent{
+  background-color: #121212;;
+  color: white;
+  margin: 8px;
+  padding: 4px;
+}
+
+#slideItem{
+  background-color: #121212;;
+  margin: 4px;
+  padding: 4px;
+}
+
+#logoImg{
+  font-size: large;
+  display: flex;
+  justify-content: center;
+}
+
+#continueIcon{
+  font-size: large;
+  color: white;
+  margin-left:auto;
+  display:block;
+  padding: 10px 0;
+}
+
+#morePgLink{
+  color: white;
+  margin-left:auto;
+  display:block;
+  padding: 10px 0;
+}
