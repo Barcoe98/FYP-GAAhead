@@ -19,8 +19,8 @@ return (
       <IonRow>
         <IonCol size="12">
           <IonList id="slideContent">
-           <ItemDividerTeal dividerLabel="Profile Page"></ItemDividerTeal>
-            <IonItem lines="none" id="slideItem"><IonText>Displays all your profile details, Click edit icon to update details</IonText></IonItem>
+           <ItemDividerTeal dividerLabel="Join Team"></ItemDividerTeal>
+            <IonItem lines="none" id="slideItem"><IonText>Get your Team Id from you manager and add to you profile to be able to view all you teams activities</IonText></IonItem>
           <ItemDividerTeal dividerLabel="App Tutorial Page"></ItemDividerTeal>
             <IonItem lines="none" id="slideItem"><IonText>Displays App tutorial slides to explain the app and all its features</IonText> </IonItem>
           <ItemDividerTeal dividerLabel="Contact Us"></ItemDividerTeal>

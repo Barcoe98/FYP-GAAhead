@@ -4,13 +4,16 @@ ion-slides {
   --background-color: #121212;;
 }
 
+#iconTut {
+  font-size: 150px;
+}
 
 #slideTitle{
   background-color: #121212;;
   color: white;
   font-size: xx-large;
   text-align: center;
-  padding: 20px;
+  padding: px;
 }
 
 #slideContent{

@@ -6,7 +6,7 @@ import { clipboardOutline } from "ionicons/icons";
 import '../../appTutorial.css'
 
 
-const PlannerSlide = () => {
+const ActivitySlide = () => {
 return (
   
   <IonSlide id="bg-s1">
@@ -20,11 +20,10 @@ return (
       <IonRow>
         <IonCol size="12">
           <IonList id="slideContent">
-          <ItemDividerTeal dividerLabel="List Page"></ItemDividerTeal>
-            <IonItem lines="none" id="slideItem"><IonText >Click on a card to display more activity details</IonText></IonItem>
-            <IonItem lines="none" id="slideItem"><IonText >Click the add button to add a new activity</IonText></IonItem> 
-            <ItemDividerTeal dividerLabel="Details Page"></ItemDividerTeal>
-            <IonItem lines="none" id="slideItem"><IonText >Made a mistake on the activity? Use the Edit icon or Delete icon to remove or edit the caactivityrd</IonText> </IonItem>
+          <ItemDividerTeal dividerLabel="Activity Pages"></ItemDividerTeal>
+            <IonItem lines="none" id="slideItem"><IonText >View Activities set out by your manager</IonText></IonItem>
+            <IonItem lines="none" id="slideItem"><IonText >Click on a card to view more details, like when the activity is and more</IonText></IonItem> 
+            <IonItem lines="none" id="slideItem"><IonText >Also add your results to a Fitness test when done, using just a button</IonText></IonItem> 
             <ItemDividerTeal dividerLabel="Includes"></ItemDividerTeal>
             <IonItem lines="none" id="slideItem"><IonText >Fitness Tests, Workouts & Training Schedules Pages</IonText> </IonItem>
           </IonList>
@@ -39,4 +38,4 @@ return (
   );
 };
 
-export default PlannerSlide;
+export default ActivitySlide;

@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import {IonContent,  IonRow, IonGrid,  IonPage,  IonCard, IonList, IonImg,} from "@ionic/react";
+import {IonContent, IonPage, IonList,} from "@ionic/react";
 import PageHeader from "../../components/headers";
+import PlayerCard from "../../components/cards/playerCard";
 
 import { firestore } from "../../firebase";
 import { useAuth } from "../../contexts/authContext";
 
-import "./player.css";
-import PlayerCard from "../../components/cards/playerCard";
 
 const PlayerListPage = () => {
   const [players, setPlayers] = useState([0]);

@@ -1,7 +1,6 @@
 import React from "react";
 import { IonRow, IonGrid, IonCard, IonImg} from "@ionic/react";
 
-
 import "./player.css";
 
 const PlayerCard = ({ myProfile }) => {

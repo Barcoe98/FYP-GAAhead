@@ -20,7 +20,7 @@ return (
       <IonCol size="12">
         <IonList id="slideContent">
           <ItemDividerTeal dividerLabel="Fixtures & Results"></ItemDividerTeal>
-          <IonItem lines="none" id="slideItem"><IonText>All pages to manager your Teams Fixtures and keep track of the results</IonText></IonItem>
+          <IonItem lines="none" id="slideItem"><IonText>All pages to manage your Teams Fixtures and keep track of the results</IonText></IonItem>
           <ItemDividerTeal dividerLabel="Planner"></ItemDividerTeal>
           <IonItem lines="none" id="slideItem"><IonText>All Pages to plan your teams activities, Features such as Fitness Test, Workouts and more</IonText></IonItem>
           <ItemDividerTeal dividerLabel="My Team"></ItemDividerTeal>

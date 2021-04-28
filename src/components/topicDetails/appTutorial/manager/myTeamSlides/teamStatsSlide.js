@@ -1,6 +1,7 @@
 import React from "react";
-import { IonGrid, IonList, IonItem, IonCol, IonRow, IonSlide, IonText } from "@ionic/react";
+import { IonGrid, IonList, IonItem, IonCol, IonRow, IonSlide, IonText, IonIcon } from "@ionic/react";
 import ItemDividerGrn from "../../../../textComponents/dividerHeaders/itemDividerGrn";
+import { barChartOutline } from "ionicons/icons";
 
 import '../../appTutorial.css'
 
@@ -24,6 +25,8 @@ return (
             <IonItem lines="none" id="slideItem"><IonText>Click on more icon to view previous Years Stats</IonText></IonItem>
             <IonItem lines="none" id="slideItem"><IonText>Team Stats are taken from all results stats added up</IonText></IonItem>
           </IonList>
+          <IonIcon id="iconTut" icon={barChartOutline} />
+
         </IonCol>
       </IonRow>
 

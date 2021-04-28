@@ -1,6 +1,7 @@
 import React from "react";
-import { IonGrid, IonList, IonItem, IonCol, IonRow, IonSlide, IonText } from "@ionic/react";
+import { IonGrid, IonList, IonItem, IonCol, IonRow, IonSlide, IonText, IonIcon } from "@ionic/react";
 import ItemDividerPurple from "../../../../textComponents/dividerHeaders/itemDividerPurple";
+import { ellipsisHorizontal } from "ionicons/icons";
 
 import '../../appTutorial.css'
 
@@ -19,12 +20,14 @@ return (
       <IonRow>
         <IonCol size="12">
           <IonList id="slideContent">
-          <ItemDividerPurple dividerLabel="Fixture List Page"></ItemDividerPurple>
+          <ItemDividerPurple dividerLabel="Result List Page"></ItemDividerPurple>
             <IonItem lines="none" id="slideItem"><IonText >Click on a card to display more Result details</IonText></IonItem>
             <IonItem lines="none" id="slideItem"><IonText >Click the add button to add a new Result</IonText></IonItem> 
-            <ItemDividerPurple dividerLabel="Fixture Details Page"></ItemDividerPurple>
+            <ItemDividerPurple dividerLabel="Result Details Page"></ItemDividerPurple>
             <IonItem lines="none" id="slideItem"><IonText >Made a mistake on the Result? Use the Edit icon or Delete icon to remove or edit the Result</IonText> </IonItem>
           </IonList>
+          <IonIcon id="iconTut" icon={ellipsisHorizontal} />
+
         </IonCol>
       </IonRow>
 

@@ -1,6 +1,7 @@
 import React from "react";
-import { IonGrid, IonList, IonItem, IonCol, IonRow, IonSlide, IonText } from "@ionic/react";
+import { IonGrid, IonList, IonItem, IonCol, IonRow, IonSlide, IonText, IonIcon } from "@ionic/react";
 import ItemDividerGaa from "../../../../textComponents/dividerHeaders/itemDividerGaa";
+import { ellipsisHorizontal } from "ionicons/icons";
 
 import '../../appTutorial.css'
 
@@ -26,6 +27,8 @@ return (
             <IonItem lines="none" id="slideItem"><IonText >Fixture Played? Click the tick icon to add it as a Results</IonText></IonItem>
             <IonItem lines="none" id="slideItem"><IonText >Made a mistake on the fixture? Use the Edit icon or Delete icon to remove or edit the Fixture</IonText> </IonItem>
           </IonList>
+          <IonIcon id="iconTut" icon={ellipsisHorizontal} />
+
         </IonCol>
       </IonRow>
 

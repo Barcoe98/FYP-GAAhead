@@ -1,6 +1,7 @@
 import React from "react";
-import { IonGrid, IonList, IonItem, IonCol, IonRow, IonSlide, IonText } from "@ionic/react";
+import { IonGrid, IonList, IonItem, IonCol, IonRow, IonSlide, IonText, IonIcon } from "@ionic/react";
 import ItemDividerTeal from "../../../../textComponents/dividerHeaders/itemDividerTeal";
+import { clipboardOutline } from "ionicons/icons";
 
 import '../../appTutorial.css'
 
@@ -25,6 +26,8 @@ return (
             <ItemDividerTeal dividerLabel="Player Details Page"></ItemDividerTeal>
             <IonItem lines="none" id="slideItem"><IonText>Displays player details such as position, age, contact details and more</IonText> </IonItem>
           </IonList>
+          <IonIcon id="iconTut" icon={clipboardOutline} />
+
         </IonCol>
       </IonRow>
 
