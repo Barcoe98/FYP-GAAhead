@@ -21,6 +21,8 @@ const AddFixturePage = () => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [venue, setVenue] = useState("");
+  const [panel, setPanel] = useState("");
+
   const [competition, setCompetition] = useState("");
 
   const { currentUser } = useAuth();
@@ -68,6 +70,7 @@ const AddFixturePage = () => {
       time,
       date,
       competition,
+      panel
     };
 
     if (hTeam === "") {
@@ -123,6 +126,7 @@ const AddFixturePage = () => {
         date={date}
         venue={venue}
         competition={competition}
+        panel={panel}
         setAwayTeamImg={handleAwayCrestChange}
         setHomeTeamImg={handleHomeCrestChange}
         setHomeTeam={(e) => setHomeTeam(e.detail.value)}
@@ -131,6 +135,8 @@ const AddFixturePage = () => {
         setDate={(e) => setDate(e.detail.value)}
         setVenue={(e) => setVenue(e.detail.value)}
         setCompetition={(e) => setCompetition(e.detail.value)}
+        setPanel={(e) => setPanel(e.detail.value)}
+
         handleAdd={handleAdd}
         btnName="Add Fixture"
       ></FixtureForm>

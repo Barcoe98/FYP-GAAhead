@@ -40,6 +40,10 @@ const FixtureDetailsPage = ({ fixture }) => {
           statTitle="Venue" 
           statValue={fixture?.venue}>
         </StatContent>
+        <StatContent 
+          statTitle="Panel" 
+          statValue={fixture?.panel}>
+        </StatContent>
 
         </div>
       </IonList>

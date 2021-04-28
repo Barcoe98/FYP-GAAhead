@@ -29,11 +29,6 @@ ion-page {
   font-size: medium;
 }
 
-/* Logo for both teams*/
-#rLogo {
-  background-image: url("https://res.cloudinary.com/dmikx06rt/image/upload/v1617222477/FYP-GAAhead/b_wCrest_d2vjke.jpg");
-}
-
 /* Team Names of result*/
 #rTeamName {
   color: black;

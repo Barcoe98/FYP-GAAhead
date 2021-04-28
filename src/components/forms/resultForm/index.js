@@ -88,7 +88,7 @@ const ResultForm = ({
 
           {/*Match Notes Input Fields & Labels*/ }
           <ItemDividerPurple dividerLabel="Match Notes"></ItemDividerPurple>
-          <ContentArea text={notes} setNotes={setNotes} txtAreaLbl="Match Notes" placeholderText="Enter Match Notes"></ContentArea>         
+          <ContentArea text={notes} setText={setNotes} txtAreaLbl="Match Notes" placeholderText="Enter Match Notes"></ContentArea>         
 
           
           {/* Add Button*/ }

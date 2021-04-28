@@ -6,6 +6,7 @@ import AlertError from "../../components/alerts/errorAlert";
 
 import { firestore } from "../../firebase";
 import { useAuth } from "../../contexts/authContext";
+import PageHeader from "../../components/headers";
 
 
 const ResultListPage = () => {
@@ -49,7 +50,7 @@ const ResultListPage = () => {
 
   return (
     <IonPage color="secondary">
-      <PageHeaderAdd title="Results" href="/manager/result/add"></PageHeaderAdd>
+      <PageHeader title="Results"></PageHeader>
       <IonContent>
         <IonList id="bg-col">
           {results.map((result) => (

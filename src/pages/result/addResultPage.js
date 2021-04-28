@@ -168,13 +168,20 @@ function getFixtureDetails() {
       hPenalties: hPenalties, aPenalties: aPenalties,
       hFouls: hFouls, aFouls: aFouls,
       hYCard: hYCard, aYCard: aYCard,
-      hRCard: hRCard, aRCard: aRCard,
-      
+      hRCard: hRCard, aRCard: aRCard,    
     };
     
     await resultRef.add(resultData);
-    history.goBack();
-    console.log('added Stats')
+
+    const fixture = firestore
+      .collection("users")
+      .doc(currentUser?.uid)
+      .collection("fixtures")
+      .doc(id);
+
+    await fixture.delete();
+    console.log("Confirm Okay");
+    history.push("/manager/result/list");
   };
 
   return (

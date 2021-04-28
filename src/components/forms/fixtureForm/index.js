@@ -8,7 +8,7 @@ import ItemDividerGaa from "../../textComponents/dividerHeaders/itemDividerGaa";
 
 
 const FixtureForm = ({ homeTeamImg, setHomeTeamImg, awayTeamImg, setAwayTeamImg,  homeTeam, awayTeam, setHomeTeam, setAwayTeam, date, setDate, time, setTime, venue, 
-  setVenue, competition, setCompetition, handleAdd, btnName
+  setVenue, competition, setCompetition, handleAdd, btnName, panel, setPanel
 }) => {
   return (
       <IonGrid id="wr-pg-bg">
@@ -83,6 +83,18 @@ const FixtureForm = ({ homeTeamImg, setHomeTeamImg, awayTeamImg, setAwayTeamImg,
             type="string"
           ></TextInputField>
         </IonRow>
+
+         {/* Competition Input Fields & Labels*/}
+         <IonRow>
+         <TextInputField
+           size="12"
+           label="Panel"
+           text={panel}
+           setText={setPanel}
+           placeholderText="Panel"
+           type="string"
+         ></TextInputField>
+       </IonRow>
 
         {/* Add Button*/}
         <IonRow>

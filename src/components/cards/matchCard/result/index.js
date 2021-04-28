@@ -14,7 +14,7 @@ const ResultCard = ({ result }) => {
         <IonRow size="12">
           <IonCol size="3">
             <IonRow id="rLogo">
-              <IonImg src="https://res.cloudinary.com/dmikx06rt/image/upload/v1617222477/FYP-GAAhead/b_wCrest_d2vjke.jpg"></IonImg>
+              <IonImg src={result.hTeamCrest}></IonImg>
             </IonRow>
             <IonRow id="rTeamName">{result.hTeam}</IonRow>
           </IonCol>
@@ -35,7 +35,7 @@ const ResultCard = ({ result }) => {
 
           <IonCol size="3">
             <IonRow id="rLogo">
-              <IonImg src="https://res.cloudinary.com/dmikx06rt/image/upload/v1617222477/FYP-GAAhead/b_wCrest_d2vjke.jpg"></IonImg>
+              <IonImg src={result.aTeamCrest}></IonImg>
             </IonRow>
             <IonRow id="rTeamName">{result.aTeam}</IonRow>
           </IonCol>
