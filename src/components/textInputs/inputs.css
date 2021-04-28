@@ -28,6 +28,20 @@
   border-radius: 4px;
 }
 
+#itm-divider-gaa {
+  color: white;
+  font-size: larger;
+  display: block;
+  margin: auto;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #005E82;
+  border-radius: 4px;
+}
+
+
 /* CSS ID or input fields*/
 #itm-divider-red {
   color: black;
@@ -85,11 +99,14 @@
 
 /* CSS ID or input fields*/
 #itm-divider-prpl {
-  color: black;
+  color: white;
   font-size: larger;
+  display: block;
+  margin: auto;
   text-align: center;
-  padding: 4px;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
   background-color: #5856d6;
-  opacity: 0.95;
   border-radius: 4px;
 }

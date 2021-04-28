@@ -4,14 +4,16 @@ import PageHeader from "../../components/headers";
 
 import { useAuth } from "../../contexts/authContext";
 import { firestore } from "../../firebase";
-import { useHistory } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import ResultForm from "../../components/forms/resultForm/index";
 
 const AddResultPage = () => {
 
   const { currentUser } = useAuth();
-  const managerId = '1kK33jibmLZ2RAEb7lF4u9g9STf2'
-  const id = 'team_stats'
+  const teamId = '1kK33jibmLZ2RAEb7lF4u9g9STf2'
+  const docId = 'team_stats'
+  const { id } = useParams();
+
   var result;
   const history = useHistory();
 
@@ -58,42 +60,65 @@ const AddResultPage = () => {
   var [teamPenalties, setTeamPenalties] = useState()
   var [teamYCards, setTeamYCards] = useState()
   var [teamRCards, setTeamRCards] = useState()
-  
 
+  const [hTeam, setHTeam] = useState("");
+  const [aTeam, setATeam] = useState("");
+  const [hTeamCrest, setHTeamCrest] = useState("");
+  const [aTeamCrest, setATeamCrest] = useState();
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
+  const [venue, setVenue] = useState("");
+  const [competition, setCompetition] = useState("");
+  
+function getFixtureDetails() {
+  const ref = firestore
+  .collection("users")
+  .doc(teamId)
+  .collection("fixtures")
+  .doc(id);
+
+  ref.get(id).then(doc => {
+    const fixture = { id: doc.id, ...doc.data() };
+    //set Team Attributes to matching in DB
+    setHTeam(fixture?.hTeam)
+    setHTeamCrest(fixture?.hTeamCrest)
+    setATeam(fixture?.aTeam)
+    setATeamCrest(fixture?.aTeamCrest)
+    setTime(fixture?.time)
+    setDate(fixture?.date)
+    setVenue(fixture?.venue)
+    setCompetition(fixture?.competition)
+  });
+}
   useEffect(() => {
+
+    getFixtureDetails()
 
     const ref = firestore
       .collection("users")
-      .doc(managerId)
+      .doc(teamId)
       .collection("team_stats")
-      .doc(id);
+      .doc(docId);
 
-    ref.get(id).then(doc => {
-      
-      if (!doc.exists) {
-        console.log('No such document!');
-        history.goBack();
-      } else {
-        const result = { id: doc.id, ...doc.data() };
-
-        //set Team Attributes to matching in DB
-        setTeamGames(result?.games)
-        setTeamBlocks(result?.blocks)
-        setTeamHooks(result?.hooks)
-        setTeamGoals(result?.goals)
-        setTeamPoints(result?.points)
-        setTeamShots(result?.shots)
-        setTeamWides(result?.wides)
-        setTeamFrees(result?.frees)
-        setTeamFree65s(result?.free65s)
-        setTeamPuckouts(result?.puckouts)
-        setTeamPenalties(result?.penalties)
-        setTeamFouls(result?.fouls)
-        setTeamRCards(result?.rCards)
-        setTeamYCards(result?.yCards)
-      }
+    ref.get(docId).then(doc => {
+      const result = { id: doc.id, ...doc.data() };
+      //set Team Attributes to matching in DB
+      setTeamGames(result?.games)
+      setTeamBlocks(result?.blocks)
+      setTeamHooks(result?.hooks)
+      setTeamGoals(result?.goals)
+      setTeamPoints(result?.points)
+      setTeamShots(result?.shots)
+      setTeamWides(result?.wides)
+      setTeamFrees(result?.frees)
+      setTeamFree65s(result?.free65s)
+      setTeamPuckouts(result?.puckouts)
+      setTeamPenalties(result?.penalties)
+      setTeamFouls(result?.fouls)
+      setTeamRCards(result?.rCards)
+      setTeamYCards(result?.yCards)
     });
-  }, [history, id]);
+  }, [history, docId]);
 
 
   const handleAdd = async () => {
@@ -125,11 +150,12 @@ const AddResultPage = () => {
 
     const resultRef = firestore
       .collection("users")
-      .doc(managerId)
+      .doc(teamId)
       .collection("results");
 
     const resultData = {
-      notes,
+      hTeam, hTeamCrest, aTeamCrest, aTeam, time, date, venue, competition,
+      notes, 
       hGoals: hGoals, aGoals: aGoals,
       hPoints: hPoints, aPoints: aPoints,
       hHooks: hHooks, aHooks: aHooks,

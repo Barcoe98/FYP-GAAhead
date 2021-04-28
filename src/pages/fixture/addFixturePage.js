@@ -18,9 +18,6 @@ const AddFixturePage = () => {
   const [aTeam, setAwayTeam] = useState("");
   const [hTeamCrest, setHTeamCrest] = useState("");
   const [aTeamCrest, setATeamCrest] = useState();
-  const [homeScore, setHomeScore] = useState("");
-  const [awayScore, setAwayScore] = useState("");
-
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [venue, setVenue] = useState("");
@@ -122,8 +119,6 @@ const AddFixturePage = () => {
         awayTeamImg={aTeamCrest}
         homeTeam={hTeam}
         awayTeam={aTeam}
-        homeScore={homeScore}
-        awayScore={awayScore}
         time={time}
         date={date}
         venue={venue}
@@ -131,9 +126,7 @@ const AddFixturePage = () => {
         setAwayTeamImg={handleAwayCrestChange}
         setHomeTeamImg={handleHomeCrestChange}
         setHomeTeam={(e) => setHomeTeam(e.detail.value)}
-        setHomeScore={(e) => setHomeScore(e.detail.value)}
         setAwayTeam={(e) => setAwayTeam(e.detail.value)}
-        setAwayScore={(e) => setAwayScore(e.detail.value)}
         setTime={(e) => setTime(e.detail.value)}
         setDate={(e) => setDate(e.detail.value)}
         setVenue={(e) => setVenue(e.detail.value)}

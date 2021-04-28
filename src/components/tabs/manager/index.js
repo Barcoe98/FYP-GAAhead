@@ -85,8 +85,11 @@ const ManagerTabs = () => {
         <Route path="/manager/workout/:id"><WorkoutRoutineDetailsPage></WorkoutRoutineDetailsPage></Route>
         <Route exact path="/manager/workout/add"><AddWorkoutRoutinePage></AddWorkoutRoutinePage></Route>
         <Route exact path="/manager/workout/list"><WorkoutRoutineListPage></WorkoutRoutineListPage></Route>
+
         <Route path="/manager/result/:id"><ResultDetailsPage></ResultDetailsPage></Route>
         <Route exact path="/manager/result/add"><AddResultPage></AddResultPage></Route>
+        <Route path="/manager/result/add/:id"><AddResultPage></AddResultPage></Route>
+
         <Route exact path="/manager/result/list"><ResultListPage></ResultListPage></Route>
 
         <Route path="/manager/fixture/:id"><FixtureDetailsPage></FixtureDetailsPage></Route>

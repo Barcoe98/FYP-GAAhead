@@ -1,7 +1,9 @@
 import React from "react";
-import { IonContent, IonList, IonText } from "@ionic/react";
+import { IonContent, IonRow, IonCol, IonList, IonText } from "@ionic/react";
 import VersusBar from "../../../textComponents/matchStats/matchVersusBar";
-import StatCol from "../../../textComponents/matchStats/index";
+import StatCol from "../../../textComponents/matchStats/statCol";
+import { formatDate, formatTime } from '../../../../contexts/formatContext'
+import StatContent from "../../../textComponents/statContent";
 
 import "../matchDetails.css";
 
@@ -10,16 +12,37 @@ const ResultDetailsPage = ({ result }) => {
     <IonContent>
       <IonList id="bg-col">
         <VersusBar
+          competition={result?.competition}
           hTeam={result?.hTeam}
           hGoals={result?.hGoals}
           hPoints={result?.hPoints}
           aGoals={result?.aGoals}
           aPoints={result?.aPoints}
           aTeam={result?.aTeam}
-        ></VersusBar>
+          hTeamCrest={result?.hTeamCrest}
+          aTeamCrest={result?.aTeamCrest}>
+        </VersusBar>
 
-        <div id="sectionContent">
-          <h5 color="dark" id="sectionTitle">Match Stats</h5>
+        <div id="sectionContent">      
+          <IonRow size="3" id="vsBarHeader">
+            <IonCol size="6">Match Details</IonCol>
+          </IonRow>
+          <StatContent 
+            statTitle="Date" 
+            statValue={formatDate(result?.date)}>
+          </StatContent>
+          <StatContent 
+            statTitle="Time" 
+            statValue={formatTime(result?.time)}>
+          </StatContent>
+          <StatContent 
+            statTitle="Venue" 
+            statValue={result?.venue}>
+          </StatContent>
+
+          <IonRow size="3" id="vsBarHeader">
+          <IonCol size="6">Match Statistics</IonCol>
+        </IonRow>
           <StatCol
             homeStat={result?.hTeam}
             statTitle=""
@@ -81,10 +104,7 @@ const ResultDetailsPage = ({ result }) => {
             awayStat={result?.aRCard}
           ></StatCol>
 
-          <hr id="contentDivider"></hr>
-          <h5 color="dark" id="sectionTitle">
-            Match Notes
-          </h5>
+          <IonRow size="3" id="vsBarHeader"><IonCol size="6">Match Notes</IonCol></IonRow>
           <IonText>{result?.notes}</IonText>
         </div>
       </IonList>

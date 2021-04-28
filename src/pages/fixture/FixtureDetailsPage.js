@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { IonPage } from "@ionic/react";
+import { IonButton, IonPage } from "@ionic/react";
 import PageHeaderDelete from "../../components/headers/deleteHeader/index";
 import FixtureDetails from "../../components/topicDetails/match/fixture/index";
 import AlertDelete from "../../components/alerts/deleteAlert";
@@ -8,6 +8,7 @@ import { useParams, useHistory } from "react-router-dom";
 import { firestore } from "../../firebase";
 import { useAuth } from "../../contexts/authContext";
 import AlertError from "../../components/alerts/errorAlert";
+import LinkButton from "../../components/buttons/linkButton/index"
 
 import '../pages.css'
 
@@ -71,7 +72,7 @@ const FixtureDetailsPage = () => {
 
 
   return (
-    <IonPage>
+    <IonPage id="bg-col">
       <PageHeaderDelete
         title=""
         action={() => setDelAlert(true)}
@@ -91,6 +92,7 @@ const FixtureDetailsPage = () => {
         showAlert={showAlert} 
         msg={errorMessage}>
       </AlertError>
+      <LinkButton btnName="Add to Results" href={"/manager/result/add/" + id}></LinkButton>
       
     </IonPage>
   );

@@ -1,10 +1,11 @@
 import React from "react";
-import { IonContent, IonList } from "@ionic/react";
+import { IonContent, IonList, IonRow, IonCol } from "@ionic/react";
 import FixtureVersusBar from "../../../textComponents/fixture/fixtureVersusBar";
 import { formatDate, formatTime } from '../../../../contexts/formatContext'
 import StatContent from "../../../textComponents/statContent";
 
 import "../matchDetails.css";
+import ItemDividerGaa from "../../../textInputs/itemDividerGaa";
 
 const FixtureDetailsPage = ({ fixture }) => {
   return (
@@ -18,10 +19,11 @@ const FixtureDetailsPage = ({ fixture }) => {
         ></FixtureVersusBar>
 
         <div id="sectionContent">
-        <h5 color="dark" id="sectionTitle">Fixture Details</h5>
+       
+        <ItemDividerGaa dividerLabel="Fixture Details"></ItemDividerGaa>
 
         <StatContent 
-          statTitle="Date" 
+          statTitle="Date"
           statValue={formatDate(fixture?.date)}>
         </StatContent>
         <StatContent 
