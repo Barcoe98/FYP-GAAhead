@@ -10,7 +10,7 @@ const EditMyProfileForm = ({ imgSrc, handleImgChange, btnTitle, handleAdd, teamN
          
       {/*Profile Image Input Fields & Labels*/ }
       <IonRow>
-        <ImageInputField label="Cover Photo" imgSrc={imgSrc} handleImgChange={handleImgChange} ></ImageInputField>
+        <ImageInputField label="Team Crest" imgSrc={imgSrc} handleImgChange={handleImgChange} ></ImageInputField>
       </IonRow>
 
       {/*Name Input Fields & Labels*/ }

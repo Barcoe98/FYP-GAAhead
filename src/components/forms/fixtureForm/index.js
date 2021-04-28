@@ -3,8 +3,10 @@ import {IonGrid,  IonRow,  IonCol,  IonLabel, IonItemDivider, IonButton} from "@
 import TextInputField from "../../textInputs/textInputField";
 import DateInputField from "../../textInputs/dateInputField";
 import TimeInputField from "../../textInputs/timeInputField";
+import ImageInputField from '../../textInputs/imageInputField'
 
-const FixtureForm = ({ homeTeam, awayTeam, setHomeTeam, setAwayTeam, date, setDate, time, setTime, venue, 
+
+const FixtureForm = ({ homeTeamImg, setHomeTeamImg, awayTeamImg, setAwayTeamImg,  homeTeam, awayTeam, setHomeTeam, setAwayTeam, date, setDate, time, setTime, venue, 
   setVenue, competition, setCompetition, handleAdd, btnName
 }) => {
   return (
@@ -17,8 +19,14 @@ const FixtureForm = ({ homeTeam, awayTeam, setHomeTeam, setAwayTeam, date, setDa
           </IonCol>
         </IonRow>
 
+        
         {/*Input Fields & Labels*/}
         <IonRow>
+          <ImageInputField size="12" label="Home Team Crest" imgSrc={homeTeamImg} 
+          handleImgChange={setHomeTeamImg} ></ImageInputField>
+          <ImageInputField size="12" label="Away Team Crest" imgSrc={awayTeamImg} 
+          handleImgChange={setAwayTeamImg} ></ImageInputField>
+
           <TextInputField
             size="6"
             label="Home Team Name"
@@ -35,6 +43,8 @@ const FixtureForm = ({ homeTeam, awayTeam, setHomeTeam, setAwayTeam, date, setDa
             placeholderText="Away Team Name"
             type="string"
           ></TextInputField>
+
+
         </IonRow>
 
         {/* Date & Time Input Fields & Labels*/}

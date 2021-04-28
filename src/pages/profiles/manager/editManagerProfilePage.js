@@ -12,7 +12,7 @@ import "../../pages.css";
 
 const EditManagerProfilePage = () => {
 
-  const [coverImg, setCoverImg] = useState("https://res.cloudinary.com/dmikx06rt/image/upload/v1619458552/placeholderProfile2_z5vadh.jpg");
+  const [teamCrest, setTeamCrest] = useState("https://res.cloudinary.com/dmikx06rt/image/upload/v1619458552/placeholderProfile2_z5vadh.jpg");
   const [fullName, setFullName] = useState("");
   const [teamName, setTeamName] = useState();
 
@@ -33,11 +33,11 @@ const EditManagerProfilePage = () => {
   const handleImgChange = async (event) => {
     const file = event.target.files[0]
     const imgUrl = URL.createObjectURL(file)
-    setCoverImg(imgUrl)
+    setTeamCrest(imgUrl)
   }
 
   const handleAdd = async () => {
-    const data = { coverImg, fullName, teamName };
+    const data = { teamCrest, fullName, teamName };
 
     if (fullName === "") {
       setErrorMessage('No Name Entered')
@@ -48,7 +48,7 @@ const EditManagerProfilePage = () => {
       setShowAlert(true)
     } 
     else {
-      data.coverImg = await saveImg(coverImg)
+      data.coverImg = await saveImg(teamCrest)
       const ref = firestore
       .collection("users")
       .doc(currentUser?.uid)
@@ -63,7 +63,7 @@ const EditManagerProfilePage = () => {
       <PageHeader title="Update Profile Details"></PageHeader>
 
       <EditMyProfileForm
-        coverImg={coverImg}
+        coverImg={teamCrest}
         handleImgChange={handleImgChange}
         btnTitle="Update Profile"
         fullName={fullName} teamName={teamName} 

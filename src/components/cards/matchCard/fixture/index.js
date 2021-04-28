@@ -13,9 +13,9 @@ const MatchCard = ({ fixture }) => {
         <IonRow size="12">
           <IonCol size="4">
             <IonRow id="fLogo">
-              <IonImg src="https://res.cloudinary.com/dmikx06rt/image/upload/v1617222477/FYP-GAAhead/b_wCrest_d2vjke.jpg"></IonImg>
+              <IonImg src={fixture.hTeamCrest}></IonImg>
             </IonRow>
-            <IonRow id="fTeamName">{fixture.homeTeam}</IonRow>
+            <IonRow id="fTeamName">{fixture.hTeam}</IonRow>
           </IonCol>
 
           <IonCol size="4">
@@ -32,9 +32,9 @@ const MatchCard = ({ fixture }) => {
 
           <IonCol size="4">
             <IonRow id="fLogo">
-              <IonImg src="https://res.cloudinary.com/dmikx06rt/image/upload/v1617222477/FYP-GAAhead/b_wCrest_d2vjke.jpg"></IonImg>
+              <IonImg src={fixture.aTeamCrest}></IonImg>
             </IonRow>
-            <IonRow id="fTeamName">{fixture.awayTeam}</IonRow>
+            <IonRow id="fTeamName">{fixture.aTeam}</IonRow>
           </IonCol>
         </IonRow>
       </IonGrid>

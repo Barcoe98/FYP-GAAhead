@@ -13,6 +13,8 @@ const FixtureDetailsPage = ({ fixture }) => {
         <FixtureVersusBar
           hTeam={fixture?.hTeam}
           aTeam={fixture?.aTeam}
+          hCrest={fixture?.hTeamCrest}
+          aCrest={fixture?.aTeamCrest}
         ></FixtureVersusBar>
 
         <div id="sectionContent">
