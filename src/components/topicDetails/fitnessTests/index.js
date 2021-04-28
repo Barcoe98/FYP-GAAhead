@@ -24,19 +24,19 @@ const FitnessTestDetails = ({ fitnessTest }) => {
           <h5 color="dark" id="sectionTitle">
             Warm Up
           </h5>
-          <IonText>{fitnessTest?.warmUp}</IonText>
+          <IonText id="contentText">{fitnessTest?.warmUp}</IonText>
 
           <hr id="contentDivider"></hr>
           <h5 color="dark" id="sectionTitle">
             Exercises
           </h5>
-          <IonText>{fitnessTest?.exercises}</IonText>
+          <IonText id="contentText">{fitnessTest?.exercises}</IonText>
 
           <hr id="contentDivider"></hr>
           <h5 color="dark" id="sectionTitle">
             Warm Down
           </h5>
-          <IonText>{fitnessTest?.warmDown}</IonText>
+          <IonText id="contentText">{fitnessTest?.warmDown}</IonText>
         </div>
 
         <LinkButton

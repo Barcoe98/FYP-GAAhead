@@ -18,6 +18,10 @@
   text-align: justify;
   opacity: 0.9;
 }
+#contentText{
+  font-size: medium;
+  padding: 6px;
+}
 
 /* Line to Divide sections*/
 #contentDivider {

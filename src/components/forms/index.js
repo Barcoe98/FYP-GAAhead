@@ -15,7 +15,7 @@ const Form = ({formTitle, btnTitle, title, setTitle, time, setTime, date, setDat
           {/*Title Input Fields & Labels*/ }
           <IonRow id>
             <IonCol  size="12">
-              <IonItem color="light" id="rnd-input">
+              <IonItem color="dark" id="rnd-input">
                 <IonLabel position="stacked">Title</IonLabel>
                 <IonInput required clearInput="true" position="stacked" pattern="" placeholder="Enter Title" value={title} type="text"
                 onIonChange={setTitle}></IonInput>
@@ -44,7 +44,7 @@ const Form = ({formTitle, btnTitle, title, setTitle, time, setTime, date, setDat
           {/*Total Calories Input Fields & Labels*/ }
           <IonRow>
             <IonCol>
-            <IonItem color="light" id="rnd-input">
+            <IonItem color="dark" id="rnd-input">
             <IonLabel>Difficulty</IonLabel>  
             <IonSelect color="secondary" value={difficulty} onIonChange={setDifficulty} placeholder="Select One">  
               <ion-select-option color="dark"value="easy">Easy</ion-select-option>  
