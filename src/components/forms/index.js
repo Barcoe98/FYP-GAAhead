@@ -1,6 +1,6 @@
 import React from "react";
-import { IonContent, IonInput, IonGrid, IonRow, IonCol,IonLabel, IonItemDivider, IonItem, IonSelect, IonButton, IonLoading} from '@ionic/react';
-import ItemDivider from '../../components/textInputs/itemDivider'
+import { IonContent, IonInput, IonGrid, IonRow, IonCol,IonLabel, IonItemDivider, IonItem, IonSelect, IonButton} from '@ionic/react';
+import ItemDividerYlw from '../../components/textComponents/dividerHeaders/itemDividerYlw'
 import ContentArea from '../../components/textInputs/contentArea'
 import DateInputField from "../textInputs/dateInputField";
 import TimeInputField from "../textInputs/timeInputField";
@@ -63,15 +63,15 @@ const Form = ({formTitle, btnTitle, title, setTitle, time, setTime, date, setDat
           </IonRow>
 
           {/*Warm Up Stretches Input Fields & Labels*/ }
-          <ItemDivider dividerLabel="Warm Up"></ItemDivider>
+          <ItemDividerYlw dividerLabel="Warm Up"></ItemDividerYlw>
           <ContentArea text={warmUp} setText={setWarmUp} txtAreaLbl="Details" placeholderText="Enter Warm Up Details"></ContentArea>
 
           {/*Exercises Input Fields & Labels*/ }
-          <ItemDivider dividerLabel="Exercises"></ItemDivider>
+          <ItemDividerYlw dividerLabel="Exercises"></ItemDividerYlw>
           <ContentArea text={exercises} setText={setExercises} txtAreaLbl="Details" placeholderText="Enter Exercise Details"></ContentArea>
 
           {/*Warm Down Input Fields & Labels*/ }
-          <ItemDivider dividerLabel="Warm Down"></ItemDivider>
+          <ItemDividerYlw dividerLabel="Warm Down"></ItemDividerYlw>
           <ContentArea text={warmDown} setText={setWarmDown} txtAreaLbl="Details" placeholderText="Enter Warm Down Details"></ContentArea>
 
           {/* Add Button*/ }

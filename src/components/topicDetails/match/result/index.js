@@ -4,6 +4,7 @@ import VersusBar from "../../../textComponents/matchStats/matchVersusBar";
 import StatCol from "../../../textComponents/matchStats/statCol";
 import { formatDate, formatTime } from '../../../../contexts/formatContext'
 import StatContent from "../../../textComponents/statContent";
+import ItemDividerPrpl from "../../../textComponents/dividerHeaders/itemDividerPurple";
 
 import "../matchDetails.css";
 
@@ -24,9 +25,8 @@ const ResultDetailsPage = ({ result }) => {
         </VersusBar>
 
         <div id="sectionContent">      
-          <IonRow size="3" id="vsBarHeader">
-            <IonCol size="6">Match Details</IonCol>
-          </IonRow>
+        <ItemDividerPrpl dividerLabel="Fixture Details"></ItemDividerPrpl>
+
           <StatContent 
             statTitle="Date" 
             statValue={formatDate(result?.date)}>

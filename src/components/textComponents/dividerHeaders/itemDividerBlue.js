@@ -1,11 +1,12 @@
 import React from "react";
 import { IonRow, IonCol, IonLabel, IonItemDivider } from "@ionic/react";
+import './dividers.css'
 
-const ItemDividerTeal = ({ dividerLabel }) => {
+const ItemDividerBlue = ({ dividerLabel }) => {
   return (
     <IonRow>
       <IonCol>
-        <IonItemDivider id="itm-divider-teal">
+        <IonItemDivider id="header-divider-blue">
           <IonLabel>{dividerLabel}</IonLabel>
         </IonItemDivider>
       </IonCol>
@@ -13,4 +14,4 @@ const ItemDividerTeal = ({ dividerLabel }) => {
   );
 };
 
-export default ItemDividerTeal;
+export default ItemDividerBlue;

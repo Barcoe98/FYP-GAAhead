@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import {IonContent, IonList, IonText, IonCol,  IonGrid,  IonRow} from "@ionic/react";
 import LogoutButton from '../../../buttons/logoutButton/index'
 import AlertLogout from "../../../alerts/logoutAlert";
+import LinkButton from "../../../buttons/linkButton";
 
 import { firestore } from "../../../../firebase";
 import { useHistory } from "react-router-dom";
 import { useAuth } from "../../../../contexts/authContext";
-import LinkButton from "../../../buttons/linkButton";
 
 
 const ManagerProfileDetails = () => {
@@ -30,7 +30,6 @@ const ManagerProfileDetails = () => {
       history.push('/login')
       console.log("Confirm Logout");
   };
-
 
 return (
   <IonContent>

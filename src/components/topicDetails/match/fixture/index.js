@@ -1,11 +1,11 @@
 import React from "react";
-import { IonContent, IonList, IonRow, IonCol } from "@ionic/react";
+import { IonContent, IonList } from "@ionic/react";
 import FixtureVersusBar from "../../../textComponents/fixture/fixtureVersusBar";
 import { formatDate, formatTime } from '../../../../contexts/formatContext'
 import StatContent from "../../../textComponents/statContent";
+import ItemDividerGaa from "../../../textComponents/dividerHeaders/itemDividerGaa";
 
 import "../matchDetails.css";
-import ItemDividerGaa from "../../../textInputs/itemDividerGaa";
 
 const FixtureDetailsPage = ({ fixture }) => {
   return (

@@ -1,8 +1,8 @@
 import React from "react";
-import { IonContent, IonGrid, IonRow, IonCol,IonLabel, IonItemDivider, IonButton, IonLoading } from '@ionic/react';
+import { IonContent, IonGrid, IonRow, IonCol, IonButton, IonLoading } from '@ionic/react';
 import TextInputField from '../../textInputs/textInputField'
 import ContentArea from "../../textInputs/contentArea";
-import ItemDivider from "../../textInputs/itemDivider";
+import ItemDividerPurple from "../../textComponents/dividerHeaders/itemDividerPurple";
 
 
 const ResultForm = ({
@@ -17,13 +17,8 @@ const ResultForm = ({
     <IonContent id="wr-pg-bg">
         <IonGrid id="wr-pg-bg">
 
-          <IonRow>
-            <IonCol>
-              <IonItemDivider id="itm-divider-red">
-                <IonLabel>Match Result Details</IonLabel>
-              </IonItemDivider>
-            </IonCol>
-          </IonRow>
+
+        <ItemDividerPurple dividerLabel="Match Result Details"></ItemDividerPurple>
 
           {/*Input Fields & Labels*/ }
           <IonRow>
@@ -36,7 +31,7 @@ const ResultForm = ({
           </IonRow>
 
           {/*Shots Input Fields & Labels*/ }
-          <ItemDivider dividerLabel="Shots & Wides"></ItemDivider>
+          <ItemDividerPurple dividerLabel="Shots & Wides"></ItemDividerPurple>
           <IonRow>
             <TextInputField  size="6" label="Home Shots"  text={homeShots} setText={setHomeShots} placeholderText="Home Shots" type="number" ></TextInputField>
             <TextInputField  size="6" label="Away Shots"  text={awayShots} setText={setAwayShots} placeholderText="Away Shots" type="number" ></TextInputField>
@@ -51,7 +46,7 @@ const ResultForm = ({
           </IonRow>
 
           {/*Free's Input Fields & Labels*/ }
-          <ItemDivider dividerLabel="Free's & 65's"></ItemDivider>
+          <ItemDividerPurple dividerLabel="Free's & 65's"></ItemDividerPurple>
           <IonRow>
             <TextInputField  size="6" label="Home Frees"  text={homeFrees} setText={setHomeFrees} placeholderText="Home Frees" type="number"></TextInputField>
             <TextInputField  size="6" label="Away Frees"  text={awayFrees} setText={setAwayFrees} placeholderText="Away Frees" type="number"></TextInputField>
@@ -62,7 +57,7 @@ const ResultForm = ({
           </IonRow>
 
           {/*Hooks & Blocks Input Fields & Labels*/ }
-          <ItemDivider dividerLabel="Hooks & Blocks"></ItemDivider>
+          <ItemDividerPurple dividerLabel="Hooks & Blocks"></ItemDividerPurple>
           <IonRow>
             <TextInputField  size="6" label="Home Blocks"   text={homeBlocks}  setText={setHomeBlocks} placeholderText="Home Blocks" type="number" ></TextInputField>
             <TextInputField  size="6" label="Away Blocks"  text={awayBlocks} setText={setAwayBlocks} placeholderText="Away Hooks" type="number" ></TextInputField>
@@ -73,7 +68,7 @@ const ResultForm = ({
           </IonRow>
 
           {/*Fouls & Cards Input Fields & Labels*/ }
-          <ItemDivider dividerLabel="Fouls & Cards"></ItemDivider>
+          <ItemDividerPurple dividerLabel="Fouls & Cards"></ItemDividerPurple>
           <IonRow>
             <TextInputField  size="6" label="Home Fouls"  text={homeFouls} setText={setHomeFouls} placeholderText="Home Fouls" type="number"></TextInputField>
             <TextInputField  size="6" label="Away Fouls"  text={awayFouls} setText={setAwayFouls} placeholderText="Away Fouls" type="number"></TextInputField>
@@ -92,7 +87,7 @@ const ResultForm = ({
           </IonRow>
 
           {/*Match Notes Input Fields & Labels*/ }
-          <ItemDivider dividerLabel="Match Notes"></ItemDivider>
+          <ItemDividerPurple dividerLabel="Match Notes"></ItemDividerPurple>
           <ContentArea text={notes} setNotes={setNotes} txtAreaLbl="Match Notes" placeholderText="Enter Match Notes"></ContentArea>         
 
           

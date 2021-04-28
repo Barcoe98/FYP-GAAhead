@@ -1,0 +1,111 @@
+/* red - #ff3b30*/
+/* yellow - #ffcc00*/
+/* orange - #ff9500*/
+/* green - #4cd963*/
+/* teal blue - #5ac7fa*/
+/* blue - #007bff*/
+/* purple - #5856d6*/
+/* pink - #ff2d54*/
+
+/* CSS ID or input fields*/
+#header-divider-teal {
+  color: black;
+  font-size: larger;
+  text-align: center;
+  padding: 4px;
+  background-color: #5ac7fa;
+  opacity: 0.95;
+  border-radius: 4px;
+}
+
+#header-divider-gaa {
+  color: white;
+  font-size: larger;
+  display: block;
+  margin: auto;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #005E82;
+  border-radius: 4px;
+}
+
+
+/* CSS ID or input fields*/
+#header-divider-red {
+  color: black;
+  font-size: larger;
+  text-align: center;
+  padding: 4px;
+  background-color: #ff3b30;
+  opacity: 0.95;
+  border-radius: 4px;
+}
+
+/* CSS ID or input fields*/
+#header-divider-org {
+  color: black;
+  font-size: larger;
+  text-align: center;
+  padding: 4px;
+  background-color: #ff9500;
+  opacity: 0.95;
+  border-radius: 4px;
+}
+
+/* CSS ID or input fields*/
+#header-divider-ylw {
+  color: black;
+  font-size: larger;
+  text-align: center;
+  padding: 4px;
+  background-color: #ffcc00;
+  opacity: 0.95;
+  border-radius: 4px;
+}
+
+/* CSS ID or input fields*/
+#header-divider-grn {
+  color: black;
+  font-size: larger;
+  text-align: center;
+  padding: 4px;
+  background-color: #4cd963;
+  opacity: 0.95;
+  border-radius: 4px;
+}
+
+/* CSS ID or input fields*/
+#header-divider-blue {
+  color: black;
+  font-size: larger;
+  text-align: center;
+  padding: 4px;
+  background-color: #007bff;
+  opacity: 0.95;
+  border-radius: 4px;
+}
+
+/* CSS ID or input fields*/
+#header-divider-prpl {
+  color: white;
+  font-size: larger;
+  display: block;
+  margin: auto;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #5856d6;
+  border-radius: 4px;
+}
+
+/* Add Fitness Test */
+/* CSS ID or input fields*/
+#rnd-input {
+  border: 2px solid black;
+  color: black;
+  border-radius: 8px;
+  background-color: grey;
+}

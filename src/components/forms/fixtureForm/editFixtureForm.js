@@ -1,7 +1,7 @@
 import React from "react";
-import { IonGrid, IonRow, IonButton, IonCol } from "@ionic/react";
+import { IonGrid, IonRow } from "@ionic/react";
 import TextInputField from "../../textInputs/textInputField";
-import ItemDivider from "../../textInputs/itemDivider";
+import ItemDividerGaa from "../../textComponents/dividerHeaders/itemDividerGaa";
 import PlayerDropDown from "../../textComponents/matchStats/index";
 
 const TeamSheetForm = ({
@@ -18,7 +18,8 @@ const TeamSheetForm = ({
 
   return (
       <IonGrid id="wr-pg-bg">
-      <ItemDivider dividerLabel="Match Fixture Details"></ItemDivider>
+
+      <ItemDividerGaa dividerLabel="Update Match Fixture Details"></ItemDividerGaa>
 
         {/*Input Fields & Labels*/}
         <IonRow>
@@ -84,36 +85,36 @@ const TeamSheetForm = ({
           ></TextInputField>
         </IonRow>
 
-        <ItemDivider dividerLabel="Team Sheet"></ItemDivider>
+        <ItemDividerGaa dividerLabel="Team Sheet"></ItemDividerGaa>
 
-        <ItemDivider dividerLabel="Goal Keeper"></ItemDivider>
+        <ItemDividerGaa dividerLabel="Goal Keeper"></ItemDividerGaa>
           <PlayerDropDown players={players} setValue={setPosition1} positionValue={position1} positionNumber="1"></PlayerDropDown>
 
-        <ItemDivider dividerLabel="Full Back Line"></ItemDivider>
+        <ItemDividerGaa dividerLabel="Full Back Line"></ItemDividerGaa>
           <PlayerDropDown players={players} setValue={setPosition2} positionValue={position2} positionNumber="2"></PlayerDropDown>
           <PlayerDropDown players={players} setValue={setPosition3} positionValue={position3} positionNumber="3"></PlayerDropDown>
           <PlayerDropDown players={players} setValue={setPosition4} positionValue={position4} positionNumber="4"></PlayerDropDown>
 
-        <ItemDivider dividerLabel="Half Back Line"></ItemDivider>
+        <ItemDividerGaa dividerLabel="Half Back Line"></ItemDividerGaa>
           <PlayerDropDown players={players} setValue={setPosition5} positionValue={position5} positionNumber="5"></PlayerDropDown>
           <PlayerDropDown players={players} setValue={setPosition6} positionValue={position6} positionNumber="6"></PlayerDropDown>
           <PlayerDropDown players={players} setValue={setPosition7} positionValue={position7} positionNumber="7"></PlayerDropDown>
 
-        <ItemDivider dividerLabel="Midfield"></ItemDivider>
+        <ItemDividerGaa dividerLabel="Midfield"></ItemDividerGaa>
           <PlayerDropDown players={players} setValue={setPosition8}positionValue={position8} positionNumber="8"></PlayerDropDown>
           <PlayerDropDown players={players} setValue={setPosition9} positionValue={position9} positionNumber="9"></PlayerDropDown>
           
-        <ItemDivider dividerLabel="Half Forward Line"></ItemDivider>
+        <ItemDividerGaa dividerLabel="Half Forward Line"></ItemDividerGaa>
           <PlayerDropDown players={players} setValue={setPosition10} positionValue={position10} positionNumber="10"></PlayerDropDown>
           <PlayerDropDown players={players} setValue={setPosition11} positionValue={position11} positionNumber="11"></PlayerDropDown>
           <PlayerDropDown players={players} setValue={setPosition12} positionValue={position12} positionNumber="12"></PlayerDropDown>
 
-        <ItemDivider dividerLabel="Full Forward Line"></ItemDivider>
+        <ItemDividerGaa dividerLabel="Full Forward Line"></ItemDividerGaa>
           <PlayerDropDown players={players} setValue={setPosition13} positionValue={position13} positionNumber="13"></PlayerDropDown>
           <PlayerDropDown players={players} setValue={setPosition14} positionValue={position14} positionNumber="14"></PlayerDropDown>
           <PlayerDropDown players={players} setValue={setPosition15} positionValue={position15} positionNumber="15"></PlayerDropDown>
 
-        <ItemDivider dividerLabel="Subs"></ItemDivider>
+        <ItemDividerGaa dividerLabel="Subs"></ItemDividerGaa>
           <PlayerDropDown players={players} setValue={setPosition16} positionValue={position16} positionNumber="16"></PlayerDropDown>
           <PlayerDropDown players={players} setValue={setPosition17} positionValue={position17} positionNumber="17"></PlayerDropDown>
           <PlayerDropDown players={players} setValue={setPosition18} positionValue={position18} positionNumber="18"></PlayerDropDown>

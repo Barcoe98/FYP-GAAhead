@@ -1,9 +1,10 @@
 import React from "react";
-import {IonGrid,  IonRow,  IonCol,  IonLabel, IonItemDivider, IonButton} from "@ionic/react";
+import {IonGrid,  IonRow,  IonCol, IonButton} from "@ionic/react";
 import TextInputField from "../../textInputs/textInputField";
 import DateInputField from "../../textInputs/dateInputField";
 import TimeInputField from "../../textInputs/timeInputField";
 import ImageInputField from '../../textInputs/imageInputField'
+import ItemDividerGaa from "../../textComponents/dividerHeaders/itemDividerGaa";
 
 
 const FixtureForm = ({ homeTeamImg, setHomeTeamImg, awayTeamImg, setAwayTeamImg,  homeTeam, awayTeam, setHomeTeam, setAwayTeam, date, setDate, time, setTime, venue, 
@@ -11,15 +12,9 @@ const FixtureForm = ({ homeTeamImg, setHomeTeamImg, awayTeamImg, setAwayTeamImg,
 }) => {
   return (
       <IonGrid id="wr-pg-bg">
-        <IonRow>
-          <IonCol>
-            <IonItemDivider id="itm-divider-red">
-              <IonLabel>Match Fixture Details</IonLabel>
-            </IonItemDivider>
-          </IonCol>
-        </IonRow>
 
-        
+        <ItemDividerGaa dividerLabel="Match Fixture Details"></ItemDividerGaa>
+
         {/*Input Fields & Labels*/}
         <IonRow>
           <ImageInputField size="12" label="Home Team Crest" imgSrc={homeTeamImg} 

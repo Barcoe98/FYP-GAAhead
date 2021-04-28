@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { IonContent, IonRow, IonGrid, IonList, IonText, IonItemDivider, IonCol, IonLabel} from "@ionic/react";
+import { IonContent, IonRow, IonGrid, IonList, IonText} from "@ionic/react";
 import Stat from "../../../textComponents/index";
 import StatContent from "../../../textComponents/statContent";
 import AlertLogout from "../../../alerts/logoutAlert";
 import LogoutButton from '../../../buttons/logoutButton/index'
-import ItemDividerTeal from "../../../textInputs/itemDividerTeal"
+import ItemDividerTeal from "../../../textComponents/dividerHeaders/itemDividerTeal"
 
 import { firestore } from "../../../../firebase";
 import { useAuth } from "../../../../contexts/authContext";

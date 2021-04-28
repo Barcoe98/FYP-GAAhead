@@ -1,6 +1,6 @@
 import React from "react";
 import { IonContent, IonInput, IonGrid, IonRow, IonCol,IonLabel, IonItem, IonButton } from '@ionic/react';
-import ItemDivider from '../../textInputs/itemDivider'
+import ItemDividerBlue from '../../textComponents/dividerHeaders/itemDividerBlue'
 import FormInputArea from '../../textInputs/formInputArea'
 import DateInputField from "../../textInputs/dateInputField";
 
@@ -84,31 +84,31 @@ const AddJournalForm = ({ imgSrc, handleImgChange, btnTitle, title, setTitle, da
       </IonRow>
 
       {/*Breakfast Input Fields & Labels*/ }
-      <ItemDivider dividerLabel="Breakfast"></ItemDivider>
+      <ItemDividerBlue dividerLabel="Breakfast"></ItemDividerBlue>
       <FormInputArea cal={breakfastCal} setCal={setBreakfastCal} meal={breakfast} setMeal={setBreakfast} 
         placeholderTextCal="Enter Calories for Breakfast" placeholderTextMeal="Enter Food Details for Breakfast">
       </FormInputArea>
 
       {/*Lunch Input Fields & Labels*/ }
-      <ItemDivider dividerLabel="Lunch"></ItemDivider>
+      <ItemDividerBlue dividerLabel="Lunch"></ItemDividerBlue>
       <FormInputArea cal={lunchCal} setCal={setLunchCal} meal={lunch} setMeal={setLunch} 
         placeholderTextCal="Enter Calories for Lunch" placeholderTextMeal="Enter Food Details for Lunch">
       </FormInputArea>
 
       {/*Dinner Input Fields & Labels*/ }
-      <ItemDivider dividerLabel="Dinner"></ItemDivider>
+      <ItemDividerBlue dividerLabel="Dinner"></ItemDividerBlue>
       <FormInputArea cal={dinnerCal} setCal={setDinnerCal} meal={dinner} setMeal={setDinner} 
         placeholderTextCal="Enter Calories for Dinner" placeholderTextMeal="Enter Food Details for Dinner">
       </FormInputArea>
 
       {/*Supper Input Fields & Labels*/ }
-      <ItemDivider dividerLabel="Supper"></ItemDivider>
+      <ItemDividerBlue dividerLabel="Supper"></ItemDividerBlue>
       <FormInputArea cal={supperCal} setCal={setSupperCal} meal={supper} setMeal={setSupper} 
         placeholderTextCal="Enter Calories for Supper" placeholderTextMeal="Enter Food Details for Supper">
       </FormInputArea>
 
       {/*Snacks Input Fields & Labels*/ }
-      <ItemDivider dividerLabel="Snacks"></ItemDivider>
+      <ItemDividerBlue dividerLabel="Snacks"></ItemDividerBlue>
       <FormInputArea cal={snacksCal} setCal={setSnacksCal} meal={snacks} setMeal={setSnacks} 
         placeholderTextCal="Enter Calories for Snacks" placeholderTextMeal="Enter Food Details for Snacks">
       </FormInputArea>
