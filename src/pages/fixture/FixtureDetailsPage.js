@@ -11,6 +11,7 @@ import AlertError from "../../components/alerts/errorAlert";
 import LinkButton from "../../components/buttons/linkButton/index"
 
 import '../pages.css'
+import PageHeaderFixtureDetails from "../../components/headers/fixtureDetailsHeader";
 
 const FixtureDetailsPage = () => {
   const { currentUser } = useAuth();
@@ -73,11 +74,12 @@ const FixtureDetailsPage = () => {
 
   return (
     <IonPage id="bg-col">
-      <PageHeaderDelete
+      <PageHeaderFixtureDetails
         title=""
         action={() => setDelAlert(true)}
-        href="/manager/fixture/edit/:id"
-      ></PageHeaderDelete>
+        hrefEdit="/manager/fixture/edit/:id"
+        href={"/manager/result/add/" + id}
+      ></PageHeaderFixtureDetails>
       <FixtureDetails fixture={fixture}></FixtureDetails>
 
       <AlertDelete
@@ -92,7 +94,6 @@ const FixtureDetailsPage = () => {
         showAlert={showAlert} 
         msg={errorMessage}>
       </AlertError>
-      <LinkButton btnName="Add to Results" href={"/manager/result/add/" + id}></LinkButton>
       
     </IonPage>
   );
