@@ -24,19 +24,19 @@ const WorkoutRoutineDetails = ({ workoutRoutine }) => {
           <h5 color="dark" id="sectionTitle">
             warm Up
           </h5>
-          <IonText>{workoutRoutine?.warmUp}</IonText>
+          <IonText id="contentText">{workoutRoutine?.warmUp}</IonText>
 
           <hr id="contentDivider"></hr>
           <h5 color="dark" id="sectionTitle">
             Exercises
           </h5>
-          <IonText>{workoutRoutine?.exercises}</IonText>
+          <IonText id="contentText">{workoutRoutine?.exercises}</IonText>
 
           <hr id="contentDivider"></hr>
           <h5 color="dark" id="sectionTitle">
             Warm Down
           </h5>
-          <IonText>{workoutRoutine?.warmDown}</IonText>
+          <IonText id="contentText">{workoutRoutine?.warmDown}</IonText>
         </div>
       </IonList>
     </IonContent>

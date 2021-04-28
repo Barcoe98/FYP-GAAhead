@@ -52,7 +52,7 @@ const PlayerListPage = () => {
                 src="https://res.cloudinary.com/dmikx06rt/image/upload/v1614630566/FYP-GAAhead/profilePic_boakip.jpg"
               ></IonImg>
               <IonGrid>
-                <IonRow id="pName">{myProfile.name}</IonRow>
+                <IonRow id="pName">{myProfile.fullName}</IonRow>
                 <IonRow id="pAge">{myProfile.position}</IonRow>
               </IonGrid>
             </IonCard>

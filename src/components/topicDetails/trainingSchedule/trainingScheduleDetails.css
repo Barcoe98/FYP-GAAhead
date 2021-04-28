@@ -27,6 +27,13 @@
   margin-top: 16px;
 }
 
+#contentTextTs{
+  font-size: medium;
+  padding: 10px;
+  margin: 5px;
+
+}
+
 /* CSS for background Image*/
 #ts-bg-img {
   background-image: url("https://res.cloudinary.com/dmikx06rt/image/upload/v1614342908/FYP-GAAhead/dumbbell-1966702_640_nnljil.jpg");

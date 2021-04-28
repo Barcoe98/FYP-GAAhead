@@ -15,6 +15,7 @@ import { firestore } from "../../firebase";
 import { useAuth } from "../../contexts/authContext";
 import Stat from "../../components/textComponents/index";
 import StatContent from "../../components/textComponents/statContent";
+import PanelPlayerProfileDetails from "../../components/topicDetails/team/index";
 
 
 import "./player.css";
@@ -22,6 +23,8 @@ import "./player.css";
 const PlayerDetailsPage = () => {
   const { id } = useParams();
   const [player, setPlayer] = useState(null);
+  const [injuries, setInjuries] = useState([]);
+
   const { currentUser } = useAuth();
   const history = useHistory();
 
@@ -32,6 +35,15 @@ const PlayerDetailsPage = () => {
   var [teamId, setTeamId] = useState();
 
   useEffect(() => {
+    const ref2 = firestore.collection("users").doc(id).collection("injuries")
+    //snapshot of doc 
+    ref2.get().then((snapshot) => {
+    const docs = snapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+    setInjuries(docs);
+    });
 
     const ref = firestore
     .collection("users")
@@ -65,45 +77,7 @@ const PlayerDetailsPage = () => {
   return (
     <IonPage>
       <IonContent>
-        <IonList id="p-bg-color">
-          <div id="p-bg-img"></div>
-          <h1 id="sectionTitle">{player?.name}</h1>
-
-          <div id="sectionContent">
-            <IonGrid>
-              <IonRow>
-                <Stat stat={player?.age} statTitle="Age"></Stat>
-                <Stat stat={player?.height} statTitle="Height"></Stat>
-                <Stat stat={player?.weight} statTitle="Weight"></Stat>
-                <Stat stat={player?.position} statTitle="Position"></Stat>
-              </IonRow>
-            </IonGrid>
-
-            <hr id="contentDivider"></hr>
-            
-            <IonText id="myContentTitle">Player Stats</IonText>
-            <StatContent valueColSize="3" titleColSize="9" statTitle="Speed(100m)" statValue="8.27"></StatContent>
-            <StatContent valueColSize="3" titleColSize="9" statTitle="Hooks" statValue="7"></StatContent>
-            <StatContent valueColSize="3" titleColSize="9" statTitle="Blocks" statValue="4"></StatContent>
-            <StatContent valueColSize="3" titleColSize="9" statTitle="Distance Covered" statValue="12.5"></StatContent>
-
-            <hr id="contentDivider"></hr>
-            <h5 id="sectionTitle">Injuries History</h5>
-            <StatContent valueColSize="5" titleColSize="7" statTitle="Total Injuries" statValue={player?.totalInjuries}></StatContent>
-            <StatContent valueColSize="5" titleColSize="7" statTitle="Most Recent Injury" statValue={player?.mostRecentInjury}></StatContent>
-            <StatContent valueColSize="5" titleColSize="7" statTitle="Recover Length" statValue={player?.recoveryLength}></StatContent>
-
-
-            <hr id="contentDivider"></hr>
-            <h5 id="sectionTitle">Contact Details</h5>
-            <StatContent valueColSize="5" titleColSize="7" statTitle="Email" statValue={player?.email}></StatContent>
-            <StatContent valueColSize="5" titleColSize="7" statTitle="Mobile Number" statValue={player?.mobNumber}></StatContent>
-
-            <hr id="contentDivider"></hr>
-            <h5 id="sectionTitle">More</h5>
-            <IonText>{player?.More}</IonText>
-          </div>
-        </IonList>
+        <PanelPlayerProfileDetails injuries={injuries} profileDetails={player}></PanelPlayerProfileDetails>
       </IonContent>
     </IonPage>
   );

@@ -3,6 +3,8 @@ import { IonGrid } from "@ionic/react";
 import ItemDividerGrn from "../../textComponents/dividerHeaders/itemDividerGrn";
 import PlayerDropDown from "../../textComponents/matchStats/index";
 import TextInputField from '../../textInputs/textInputField'
+import DateInputField from '../../textInputs/dateInputField'
+
 
 
 const TeamSheetForm = ({ players, date, setDate, opponent, setOpponent,
@@ -20,7 +22,13 @@ const TeamSheetForm = ({ players, date, setDate, opponent, setOpponent,
 
         <ItemDividerGrn dividerLabel="Team Sheet"></ItemDividerGrn>
           <TextInputField  size="6" label="Opponent Name"  text={opponent}  setText={setOpponent} placeholderText="Enter Opponents Name" type="text" ></TextInputField>
-          <TextInputField  size="6" label="Date"  text={date}  setText={setDate} placeholderText="Enter Date" type="text" ></TextInputField>
+          <DateInputField 
+            label="Date" 
+            size="6" 
+            text={date}
+            setText={setDate}
+            placeholderText="Date"
+          ></DateInputField>
 
 
         <ItemDividerGrn dividerLabel="Goal Keeper"></ItemDividerGrn>
@@ -56,8 +64,6 @@ const TeamSheetForm = ({ players, date, setDate, opponent, setOpponent,
           <PlayerDropDown players={players} setValue={setPosition18} positionValue={position18} positionNumber="18"></PlayerDropDown>
           <PlayerDropDown players={players} setValue={setPosition19} positionValue={position19} positionNumber="19"></PlayerDropDown>
           <PlayerDropDown players={players} setValue={setPosition20} positionValue={position20} positionNumber="20"></PlayerDropDown>
-
-
 
       </IonGrid>
   );

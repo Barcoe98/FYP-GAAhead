@@ -24,6 +24,12 @@
   margin-top: 16px;
 }
 
+#contentText{
+  font-size: medium;
+  padding: 10px;
+  margin: 10px;
+
+}
 
 /* CSS for background Image*/
 #wr-bg-img {

@@ -46,20 +46,20 @@ const AddResultPage = () => {
   var [aRCard, setARCard] = useState();
   var [notes, setNotes] = useState('');
 
-  var [teamGames, setTeamGames] = useState()
-  var [teamGoals, setTeamGoals] = useState()
-  var [teamPoints, setTeamPoints] = useState()
-  var [teamBlocks, setTeamBlocks] = useState()
-  var [teamHooks, setTeamHooks] = useState()
-  var [teamWides, setTeamWides] = useState()
-  var [teamShots, setTeamShots] = useState()
-  var [teamFree65s, setTeamFree65s] = useState()
-  var [teamFrees, setTeamFrees] = useState()
-  var [teamPuckouts, setTeamPuckouts] = useState()
-  var [teamFouls, setTeamFouls] = useState()
-  var [teamPenalties, setTeamPenalties] = useState()
-  var [teamYCards, setTeamYCards] = useState()
-  var [teamRCards, setTeamRCards] = useState()
+  var [teamGames, setTeamGames] = useState(0)
+  var [teamGoals, setTeamGoals] = useState(0)
+  var [teamPoints, setTeamPoints] = useState(0)
+  var [teamBlocks, setTeamBlocks] = useState(0)
+  var [teamHooks, setTeamHooks] = useState(0)
+  var [teamWides, setTeamWides] = useState(0)
+  var [teamShots, setTeamShots] = useState(0)
+  var [teamFree65s, setTeamFree65s] = useState(0)
+  var [teamFrees, setTeamFrees] = useState(0)
+  var [teamPuckouts, setTeamPuckouts] = useState(0)
+  var [teamFouls, setTeamFouls] = useState(0)
+  var [teamPenalties, setTeamPenalties] = useState(0)
+  var [teamYCards, setTeamYCards] = useState(0)
+  var [teamRCards, setTeamRCards] = useState(0)
 
   const [hTeam, setHTeam] = useState("");
   const [aTeam, setATeam] = useState("");

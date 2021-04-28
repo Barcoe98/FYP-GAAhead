@@ -2,6 +2,7 @@ import React from "react";
 import { IonContent, IonList, IonText } from "@ionic/react";
 import StatBar from "../../textComponents/statBar";
 import { formatDate, formatTime } from '../../../contexts/formatContext'
+import ItemDividerTeal from "../../textComponents/dividerHeaders/itemDividerTeal";
 
 
 import "./trainingScheduleDetails.css";
@@ -20,23 +21,15 @@ const TrainingScheduleDetails = ({ trainingSchedule }) => {
             dateVar={formatDate(trainingSchedule?.date)}
           ></StatBar>
 
-          <hr id="contentDivider"></hr>
-          <h5 color="dark" id="sectionTitle">
-            Warm Up
-          </h5>
-          <IonText>{trainingSchedule?.warmUp}</IonText>
+          <ItemDividerTeal dividerLabel="Warm Up"></ItemDividerTeal>
+          <div id="contentTextTs">{trainingSchedule?.warmUp}</div>
 
-          <hr id="contentDivider"></hr>
-          <h5 color="dark" id="sectionTitle">
-            Exercises
-          </h5>
-          <IonText>{trainingSchedule?.exercises}</IonText>
+          <ItemDividerTeal dividerLabel="Exercises"></ItemDividerTeal>
+          <div id="contentTextTs">{trainingSchedule?.exercises}</div>
 
-          <hr id="contentDivider"></hr>
-          <h5 color="dark" id="sectionTitle">
-            Warm Down
-          </h5>
-          <IonText>{trainingSchedule?.warmDown}</IonText>
+          <ItemDividerTeal dividerLabel="Warm Down"></ItemDividerTeal>
+          <div id="contentTextTs">{trainingSchedule?.warmDown}</div>
+
         </div>
       </IonList>
     </IonContent>

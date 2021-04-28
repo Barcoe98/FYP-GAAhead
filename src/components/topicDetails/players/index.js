@@ -17,7 +17,7 @@ const PlayerProfileDetails = ({profileDetails}) => {
     <PageHeader title="My Profile"></PageHeader>
       <IonList id="bg-col">
         <div id="my-bg">
-          <img id="myProfileImg" alt="me" src="https://res.cloudinary.com/dmikx06rt/image/upload/v1614630566/FYP-GAAhead/profilePic_boakip.jpg" />
+          <img id="myProfileImg" alt="me" src={profileDetails.imgUrl} />
           <IonText id="myName">{profileDetails?.name}</IonText>
           <IonText id="myEmail">{profileDetails?.email}</IonText>
         </div>

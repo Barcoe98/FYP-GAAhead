@@ -15,6 +15,9 @@ const EditFixturePage = () => {
   const history = useHistory();
   const { id } = useParams();
 
+  const [date, setDate] = useState("");
+  const [opponent, setOpponent] = useState("");
+
   var [position1, setPosition1] = useState("");
   var [position2, setPosition2] = useState("");
   var [position3, setPosition3] = useState("");
@@ -65,7 +68,7 @@ const EditFixturePage = () => {
   }, [currentUser?.uid]);
 
   const handleAdd = async () => {
-    const data = {
+    const data = { date, opponent,
       position1, position2, position3, position4, position5,
       position6, position7, position8, position9, position10,
       position11, position12, position13, position14, position15,
@@ -87,6 +90,10 @@ const EditFixturePage = () => {
 
       <TeamSheetForm
         players={players} 
+        date={date}
+        setDate={(e) => setDate(e.detail.value)}
+        opponent={opponent}
+        setOpponent={(e) => setOpponent(e.detail.value)}
         setPosition1={(e) => setPosition1(e.detail.value)} position1={position1}
         setPosition2={(e) => setPosition2(e.detail.value)} position2={position2}
         setPosition3={(e) => setPosition3(e.detail.value)} position3={position3} 

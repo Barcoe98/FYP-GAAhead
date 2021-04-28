@@ -18,9 +18,11 @@
   text-align: justify;
   opacity: 0.9;
 }
+
 #contentText{
   font-size: medium;
-  padding: 6px;
+  padding: 5px;
+  margin: 5px;
 }
 
 /* Line to Divide sections*/

@@ -23,13 +23,6 @@ const TeamSheetPage = () => {
     .doc(currentUser?.uid)
 
     ref.get(currentUser?.uid).then(doc => {
-      
-      if (!doc.exists) {
-        console.log('No such document');
-        setErrorMessage('No Team Data Available, Join a Team')
-        setShowAlert(true)
-        //history.goBack();
-      } else {
         const userDoc = { id: doc.id, ...doc.data() };
 
         //set TeamId Attributes to matching in DB
@@ -49,7 +42,6 @@ const TeamSheetPage = () => {
         }));
         setTeamSheets(docs);
       });
-      }
   })
 
 }, [currentUser?.uid]);

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { IonContent, IonRow, IonGrid, IonList, IonText} from "@ionic/react";
+import { IonContent, IonRow, IonGrid, IonList, IonText, IonCard, IonImg} from "@ionic/react";
 import Stat from "../../../textComponents/index";
 import StatContent from "../../../textComponents/statContent";
 import AlertLogout from "../../../alerts/logoutAlert";
 import LogoutButton from '../../../buttons/logoutButton/index'
 import ItemDividerTeal from "../../../textComponents/dividerHeaders/itemDividerTeal"
+import InjuryDividerTeal from "../../../textComponents/dividerHeaders/injuryDividerTeal"
+
 
 import { firestore } from "../../../../firebase";
 import { useAuth } from "../../../../contexts/authContext";
@@ -16,8 +18,9 @@ import "../myProfile.css";
 const PlayerProfileDetails = () => {
 
   const [profileDetails, setProfileDetails] = useState();
-  const { currentUser, logOut } = useAuth();
+  const [injuries, setInjuries] = useState();
 
+  const { currentUser, logOut } = useAuth();
   const history = useHistory();
   const [logoutAlert, setAlert] = useState(false);
 
@@ -27,6 +30,17 @@ const PlayerProfileDetails = () => {
       const profileDetails = { id: doc.id, ...doc.data() };
       setProfileDetails(profileDetails);
     });
+
+    const ref = firestore.collection("users").doc(currentUser?.uid).collection("injuries")
+      //snapshot of doc 
+      ref.get().then((snapshot) => {
+      const docs = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setInjuries(docs);
+    });
+
   }, [currentUser?.uid]);
 
   async function handleLogout() {
@@ -75,10 +89,25 @@ const PlayerProfileDetails = () => {
         </div>
 
         <div id="myContent">
-          <ItemDividerTeal dividerLabel="Injury History"> </ItemDividerTeal>
-          <StatContent statTitle="Total Injuries" statValue="8.27"></StatContent>
-          <StatContent statTitle="Most Recent Injury" statValue="Right Leg"></StatContent>
-          <StatContent statTitle="Recovery Period" statValue="14"></StatContent>
+        <ItemDividerTeal dividerLabel="Injury Details"> </ItemDividerTeal>
+        <StatContent statTitle="Injury" statValue="Recover Length"></StatContent>
+
+          {injuries.map((myProfile) => (
+            <IonCard
+              id="playerGridCards"
+              key={myProfile.id}
+              routerLink={("/manager/team/panel/", myProfile.id)}
+            >
+              <IonImg
+                id="pImage"
+                src="https://res.cloudinary.com/dmikx06rt/image/upload/v1614630566/FYP-GAAhead/profilePic_boakip.jpg"
+              ></IonImg>
+              <IonGrid>
+                <IonRow id="pName">{myProfile.injur}</IonRow>
+                <IonRow id="pAge">{myProfile.position}</IonRow>
+              </IonGrid>
+            </IonCard>
+          ))}
         </div>
       </IonList>
 

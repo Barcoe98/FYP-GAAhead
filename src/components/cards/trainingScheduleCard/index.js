@@ -1,12 +1,14 @@
 import React from "react";
 import { IonIcon, IonCol, IonRow, IonGrid, IonCard } from "@ionic/react";
 import { flame, calendar, time } from "ionicons/icons";
+import { formatDate, formatTime } from '../../../contexts/formatContext'
+
 import "./trainingScheduleCard.css";
 
 const TrainingScheduleCard = ({ tSchedule }) => {
   return (
     <IonCard
-      id="tsGridCards"
+      id="tshGridCards"
       key={tSchedule.id}
       routerLink={("/manager/trainingschedule/", tSchedule.id)}
     >
@@ -17,7 +19,7 @@ const TrainingScheduleCard = ({ tSchedule }) => {
             <IonIcon icon={calendar}></IonIcon>
           </IonCol>
           <IonCol id="tsDate" size="10">
-            {tSchedule.date}
+            {formatDate(tSchedule.date)}
           </IonCol>
         </IonRow>
         <IonRow>
@@ -25,7 +27,7 @@ const TrainingScheduleCard = ({ tSchedule }) => {
             <IonIcon icon={time}></IonIcon>
           </IonCol>
           <IonCol id="tsTime" size="10">
-            {tSchedule.time}
+            {formatTime(tSchedule.time)}
           </IonCol>
         </IonRow>
         <IonRow>

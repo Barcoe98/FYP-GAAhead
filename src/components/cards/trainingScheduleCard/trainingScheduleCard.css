@@ -1,9 +1,9 @@
 /* Training Schedule Cards*/
 /* Training Schedule in Grid View CSS*/
-#teamGridCards {
+#tshGridCards {
    width: 40%;
    display: inline-block;
-   background-color: #4cd963;
+   background-color: #5ac7fa;
    color: whitesmoke;
    margin-bottom: -1%;
 }

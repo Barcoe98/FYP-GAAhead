@@ -11,7 +11,7 @@ import {
 
 import { trashBinOutline, createOutline, list } from "ionicons/icons";
 
-const PageHeaderResults = ({ title, action, href }) => {
+const PageHeaderResults = ({ title, action, href, listHref}) => {
   return (
     <IonHeader>
       <IonToolbar mode="md">
@@ -26,7 +26,7 @@ const PageHeaderResults = ({ title, action, href }) => {
           <IonButton color="light" onclick={action}>
           <IonIcon icon={trashBinOutline} />
           </IonButton>
-          <IonButton color="light" href={href}>
+          <IonButton color="light" href={listHref}>
           <IonIcon icon={list} />
           </IonButton>
         </IonButtons>

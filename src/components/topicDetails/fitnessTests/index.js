@@ -3,6 +3,7 @@ import { IonContent, IonList, IonText } from "@ionic/react";
 import LinkButton from "../../buttons/linkButton/index";
 import StatBar from "../../textComponents/statBar";
 import { formatDate, formatTime } from '../../../contexts/formatContext'
+import ItemDividerGrn from "../../textComponents/dividerHeaders/itemDividerGrn";
 
 import "./fitnessTestDetails.css";
 
@@ -20,23 +21,14 @@ const FitnessTestDetails = ({ fitnessTest }) => {
             dateVar={formatDate(fitnessTest?.date)}
           ></StatBar>
 
-          <hr id="contentDivider"></hr>
-          <h5 color="dark" id="sectionTitle">
-            Warm Up
-          </h5>
-          <IonText id="contentText">{fitnessTest?.warmUp}</IonText>
+          <ItemDividerGrn dividerLabel="Warm Up"></ItemDividerGrn>
+          <div id="contentText">{fitnessTest?.warmUp}</div>
 
-          <hr id="contentDivider"></hr>
-          <h5 color="dark" id="sectionTitle">
-            Exercises
-          </h5>
-          <IonText id="contentText">{fitnessTest?.exercises}</IonText>
+          <ItemDividerGrn dividerLabel="Exercises"></ItemDividerGrn>
+          <div id="contentText">{fitnessTest?.exercises}</div>
 
-          <hr id="contentDivider"></hr>
-          <h5 color="dark" id="sectionTitle">
-            Warm Down
-          </h5>
-          <IonText id="contentText">{fitnessTest?.warmDown}</IonText>
+          <ItemDividerGrn dividerLabel="Warm Down"></ItemDividerGrn>
+          <div id="contentText">{fitnessTest?.warmDown}</div>
         </div>
 
         <LinkButton

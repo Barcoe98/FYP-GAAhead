@@ -9,6 +9,7 @@ import ContactUs from "../../../pages/navBarPages/contactUsPage";
 
 import PlayerProfilePage from "../../../pages/profiles/player/playerProfilePage";
 import EditPlayerProfilePage from "../../../pages/profiles/player/editPlayerProfilePage";
+import AddInjuryPage from "../../../pages/navBarPages/player/AddInjuryPage";
 
 import MyTeamPage from "../../../pages/navBarPages/player/myTeamPage";
 import ResetTeamStatsPage from "../../../pages/navBarPages/player/JoinTeamPage";
@@ -49,6 +50,7 @@ const PlayerTabs = () => {
 
     <Route path="/player/my-profile"><PlayerProfilePage></PlayerProfilePage></Route>
     <Route path="/player/my-profile/edit"><EditPlayerProfilePage></EditPlayerProfilePage></Route>
+    <Route path="/player/my-profile/injury/add"><AddInjuryPage></AddInjuryPage></Route>
 
     <Route path="/player/my-team"><MyTeamPage></MyTeamPage></Route>
 

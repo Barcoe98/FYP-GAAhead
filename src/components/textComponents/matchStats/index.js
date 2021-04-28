@@ -9,7 +9,7 @@ const PlayerDropDown = ({ players, positionNumber, positionValue, setValue }) =>
     <IonLabel>{positionNumber}</IonLabel>
       <IonSelect value={positionValue} onIonChange={setValue} interface="popover">
         {players.map((player) => (
-          <IonSelectOption key={player.name} value={player.name} >{player.name}</IonSelectOption>
+          <IonSelectOption key={player.fullName} value={player.fullName} >{player.fullName}</IonSelectOption>
         ))}
       </IonSelect>
   </IonItem>
