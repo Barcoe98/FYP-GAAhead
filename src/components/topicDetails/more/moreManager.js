@@ -21,7 +21,7 @@ return (
 
     <IonRow>
       <IonCol id="morePgYlw" size="10">
-        <ion-router-link id="morePgLink" href="/player/app-tutorial">App Tutorial</ion-router-link>
+        <ion-router-link id="morePgLink" href="/manager/app-tutorial">App Tutorial</ion-router-link>
       </IonCol>
       <IonCol id="morePgYlw" size="2">
         <IonIcon id="morePgLink" icon={chevronForwardOutline}></IonIcon>

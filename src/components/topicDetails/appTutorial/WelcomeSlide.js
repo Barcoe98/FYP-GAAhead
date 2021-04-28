@@ -2,8 +2,7 @@ import React from "react";
 import { IonGrid, IonCol, IonRow, IonSlide, IonText, IonIcon } from "@ionic/react";
 import { chevronForwardOutline } from "ionicons/icons";
 
-import '../appTutorial.css'
-
+import './appTutorial.css'
 
 const WelcomeSlide = () => {
 return (

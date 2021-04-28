@@ -1,14 +1,18 @@
 import React from "react";
-import { IonContent, IonSlides, IonSlide, IonText } from "@ionic/react";
+import { IonContent, IonSlides } from "@ionic/react";
+
+import WelcomeSlide from "../WelcomeSlide";
+import NavSlide from "./navBarSlides/navSlide";
+import FixtureSlide from "./gamesSlides/fixtureSlide";
+import ResultsSlide from "./gamesSlides/resultsSlide";
+import PlannerSlide from'./navBarSlides/plannerSlide';
+import PanelSlide from "./myTeamSlides/panelSlide";
+import TeamStatsSlide from './myTeamSlides/teamStatsSlide';
+import TeamSheetsSlide from './myTeamSlides/teamSheetsSlide';
+
+import MoreSlide from "./navBarSlides/moreSlide";
 
 import '../appTutorial.css'
-import WelcomeSlide from "./WelcomeSlide";
-import SlideTwo from "./slideTwo";
-import SlideThree from "./navSlide";
-import JournalSlide from "./journalSlide";
-import MyProfileSlide from "./myProfileSlide";
-import MoreSlide from "./moreSlide";
-
 
 // Optional parameters to pass to the swiper instance.
 // See http://idangero.us/swiper/api/ for valid options.
@@ -22,11 +26,14 @@ return (
   <IonContent id="bg-col">
     <IonSlides pager={true} options={slideOpts}>
       <WelcomeSlide></WelcomeSlide>
-      <SlideThree></SlideThree>
-      <JournalSlide></JournalSlide>
-      <MyProfileSlide></MyProfileSlide>
+      <NavSlide></NavSlide>
+      <FixtureSlide></FixtureSlide>      
+      <ResultsSlide></ResultsSlide>
+      <PlannerSlide></PlannerSlide>
+      <PanelSlide></PanelSlide>
+      <TeamStatsSlide></TeamStatsSlide>
+      <TeamSheetsSlide></TeamSheetsSlide>
       <MoreSlide></MoreSlide>
-      <SlideTwo></SlideTwo>
     </IonSlides>
   </IonContent>
   );

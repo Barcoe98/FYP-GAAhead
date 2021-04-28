@@ -52,17 +52,21 @@ const ManagerTabs = () => {
   return (
     <IonTabs id="ManagerNavbar">
       <IonRouterOutlet>
-        
-        <Route exact path="/manager/app-tutorial"><AppTutorial></AppTutorial></Route>
-        <Route exact path="/contact-us"><ContactUs></ContactUs></Route>
-        <Route exact path="/manager/more"><MorePage></MorePage></Route>
-        
-        <Route path="/manager/my-profile"><ManagerProfileDetails></ManagerProfileDetails></Route>
-        <Route path="/manager/my-profile/edit"><EditManagerProfileDetails></EditManagerProfileDetails></Route>
 
+        {/* Nav Pages*/}
         <Route path="/manager/match"><MatchPage></MatchPage></Route>
         <Route exact path="/manager/team"><TeamPage></TeamPage> </Route>
         <Route exact path="/manager/planner"><PlannerPage></PlannerPage></Route>
+        <Route exact path="/manager/more"><MorePage></MorePage></Route>
+        
+        {/* More Pages*/}
+        <Route exact path="/manager/app-tutorial"><AppTutorial></AppTutorial></Route>
+        <Route exact path="/contact-us"><ContactUs></ContactUs></Route>
+
+        <Route path="/manager/my-profile"><ManagerProfileDetails></ManagerProfileDetails></Route>
+        <Route path="/manager/my-profile/edit"><EditManagerProfileDetails></EditManagerProfileDetails></Route>
+
+    
 
         <Route exact path="/manager/team-stats/reset"> <ResetTeamStatsPage></ResetTeamStatsPage></Route>
         <Route path="/manager/team-stats/:id"> <MoreTeamStatsDetailsPage></MoreTeamStatsDetailsPage></Route>
@@ -115,7 +119,7 @@ const ManagerTabs = () => {
         </IonTabButton>
         <IonTabButton id="ManagerNavbar" tab="team" href="/manager/team">
           <IonIcon icon={peopleOutline} />
-          <IonLabel>Team</IonLabel>
+          <IonLabel>My Team</IonLabel>
         </IonTabButton>
         <IonTabButton id="ManagerNavbar" tab="more" href="/manager/more">
           <IonIcon icon={ellipsisHorizontalOutline} />

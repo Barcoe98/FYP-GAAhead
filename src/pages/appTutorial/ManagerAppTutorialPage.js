@@ -1,11 +1,11 @@
 import React from "react";
 import {IonPage} from "@ionic/react";
-import PlayerAppTutorial from "../../components/topicDetails/appTutorial/player/index";
+import ManagerAppTutorial from "../../components/topicDetails/appTutorial/manager/index";
 
 const ManagerAppTutorialPage = () => {
   return (
     <IonPage>
-      <PlayerAppTutorial></PlayerAppTutorial>
+      <ManagerAppTutorial></ManagerAppTutorial>
     </IonPage>
   );
 };
