@@ -32,12 +32,7 @@ const FitnessTestDetailsPage = () => {
 
     ref.get(currentUser?.uid).then(doc => {
       
-      if (!doc.exists) {
-        console.log('No such document');
-        setErrorMessage('No Team Data Available, Join a Team')
-        setShowAlert(true)
-        //history.goBack();
-      } else {
+    
         const userDoc = { id: doc.id, ...doc.data() };
 
         //set ManagerId Attributes to matching in DB
@@ -53,7 +48,6 @@ const FitnessTestDetailsPage = () => {
           const data = { id: doc.id, ...doc.data() };
           setFitnessTest(data);
         });
-      }
     });
   }, [currentUser?.uid, id]);
 
