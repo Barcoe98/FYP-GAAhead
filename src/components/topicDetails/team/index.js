@@ -1,18 +1,13 @@
-import React, { useEffect, useState } from "react";
-import {  IonContent, IonRow, IonGrid, IonList, IonText, IonCard, IonImg} from "@ionic/react";
-
+import React from "react";
+import { IonContent, IonRow, IonGrid, IonList, IonText} from "@ionic/react";
 import Stat from "../../textComponents/index";
 import StatContent from "../../textComponents/statContent";
 import ItemDividerTeal from "../../../components/textComponents/dividerHeaders/itemDividerTeal"
 
-import { firestore } from "../../../firebase";
-import { useAuth } from "../../../contexts/authContext";
-
 import "../myProfile/myProfile.css";
 
-
 const PanelPlayerProfileDetails = ({profileDetails, injuries }) => {
-  
+
   return (
     <IonContent>
       <IonList id="bg-col">
@@ -32,12 +27,11 @@ const PanelPlayerProfileDetails = ({profileDetails, injuries }) => {
         </IonGrid>
 
         <ItemDividerTeal dividerLabel="Injury Details"> </ItemDividerTeal>
-          <StatContent statTitle="Injury" statValue="Recover Length"></StatContent>
+          <StatContent statTitle="Injury" statValue="Recovery Time(weeks)"></StatContent>
 
           {injuries.map((injury) => (
            <StatContent statTitle={injury.injury} statValue={injury.recoveryTime}></StatContent>
           ))}
-
         </div>
       </IonList>
     </IonContent>

@@ -6,9 +6,11 @@ import { firestore } from "../../firebase";
 import { useAuth } from "../../contexts/authContext";
 
 import "./player.css";
+import PlayerCard from "../../components/cards/playerCard";
 
 const PlayerListPage = () => {
-  const [players, setPlayers] = useState([]);
+  const [players, setPlayers] = useState([0]);
+  const [teamId, setTeamId]= useState("")
   const { currentUser } = useAuth();
 
   useEffect(() => {
@@ -20,9 +22,10 @@ const PlayerListPage = () => {
   
       const userDoc = { id: doc.id, ...doc.data() };
 
+      setTeamId(userDoc?.teamId)
       //grab users profiles where teamId is equal to the current manager team ID
       const ref = firestore
-      .collection("users").where("teamId", '==', userDoc?.teamId)
+      .collection("users").where("teamId", '==', "1kK33jibmLZ2RAEb7lF4u9g9STf2")
 
       //snapshot of doc 
       ref.get().then((snapshot) => {
@@ -42,20 +45,7 @@ const PlayerListPage = () => {
       <IonContent>
         <IonList id="bg-col">
           {players.map((myProfile) => (
-            <IonCard
-              id="playerGridCards"
-              key={myProfile.id}
-              routerLink={("/manager/team/panel/", myProfile.id)}
-            >
-              <IonImg
-                id="pImage"
-                src="https://res.cloudinary.com/dmikx06rt/image/upload/v1614630566/FYP-GAAhead/profilePic_boakip.jpg"
-              ></IonImg>
-              <IonGrid>
-                <IonRow id="pName">{myProfile.fullName}</IonRow>
-                <IonRow id="pAge">{myProfile.position}</IonRow>
-              </IonGrid>
-            </IonCard>
+          <PlayerCard key={myProfile.id} myProfile={myProfile}></PlayerCard>
           ))}
         </IonList>
       </IonContent>

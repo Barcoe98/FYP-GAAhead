@@ -1,0 +1,47 @@
+/* Player Cards in Grid View CSS*/
+#playerGridCards {
+  width: 40%;
+  display: inline-block;
+  background-color: black;
+  color: whitesmoke;
+  margin-bottom: -1%;
+  opacity: 0.9;
+}
+
+#pList {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* Player Title CSS*/
+#pName {
+  font-size: large;
+  font-weight: bold;
+  /*top - right - bottom - left*/
+  padding: 6px 0px 0px 0px;
+}
+
+/* Player Age, Position CSS*/
+#pAge,
+#pPosition {
+  /*top - right - bottom - left*/
+  padding: 2px 0px 0px 0px;
+  opacity: 0.8;
+}
+
+/* CSS for background color*/
+#p-bg-color {
+  background-color: black;
+  opacity: 0.95;
+}
+
+/* CSS for background Image*/
+#p-bg-img {
+  background-image: url("https://res.cloudinary.com/dmikx06rt/image/upload/v1614630566/FYP-GAAhead/profilePic_boakip.jpg");
+  opacity: 0.9;
+  min-height: 280px;
+  max-height: 400px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}

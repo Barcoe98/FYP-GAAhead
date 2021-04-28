@@ -80,7 +80,7 @@ const PlayerProfilePage = () => {
                <StatContent valueColSize="7" titleColSize="5" statTitle="Team Id:" statValue={profileDetails?.teamId}></StatContent>
         
                <InjuryDividerTeal dividerLabel="Injury Details" href="/player/my-profile/injury/add"></InjuryDividerTeal>
-               <StatContent statTitle="Injury" statValue="Recover Length"></StatContent>
+               <StatContent statTitle="Injury" statValue="Recovery Time(Weeks)"></StatContent>
      
                {injuries.map((injury) => (
                 <StatContent statTitle={injury.injury} statValue={injury.recoveryTime}></StatContent>
