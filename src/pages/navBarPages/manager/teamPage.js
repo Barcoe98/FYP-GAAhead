@@ -2,7 +2,7 @@ import React from "react";
 import { IonContent, IonPage, IonRow, IonGrid, IonCol } from "@ionic/react";
 import TitleHeader from "../../../components/headers/titeHeader";
 
-import "../../pages.css";
+import "../navBarPages.css";
 
 const TeamPage = () => {
   return (
@@ -11,15 +11,15 @@ const TeamPage = () => {
       <IonContent id="pg-Sze">
         <IonGrid>
           <IonRow>
-            <IonCol id="navBtnRed" size="12">
+            <IonCol id="navBtnPanel" size="12">
               <ion-router-link id="navLnk" href="/manager/team/panel/list">
-                My Team
+                Panel
               </ion-router-link>
             </IonCol>
           </IonRow>
 
           <IonRow>
-            <IonCol id="navStatsBtn" size="12">
+            <IonCol id="navBtnStats" size="12">
               <ion-router-link id="navLnk" href="/manager/team-stats">
                 Team Statistics
               </ion-router-link>
@@ -27,7 +27,7 @@ const TeamPage = () => {
           </IonRow>
 
           <IonRow>
-          <IonCol id="navPanelBtn" size="12">
+          <IonCol id="navBtnTeamSheets" size="12">
             <ion-router-link id="navLnk" href="/manager/team-sheet/list">
               Team Sheets
             </ion-router-link>

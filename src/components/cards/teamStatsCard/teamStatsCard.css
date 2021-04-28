@@ -3,9 +3,10 @@
 #tStatsGridCards {
    width: 40%;
    display: inline-block;
-   background-color: #5856d6;
+   background-color: #ff3b30;
    color: whitesmoke;
    margin-bottom: -1%;
+   opacity: 0.8;
 }
 
 /* Text for Training Schedule Cards*/

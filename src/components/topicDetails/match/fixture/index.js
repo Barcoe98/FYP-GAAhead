@@ -11,6 +11,9 @@ const FixtureDetailsPage = ({ fixture }) => {
   return (
     <IonContent>
       <IonList id="bg-col">
+
+      <ItemDividerGaa dividerLabel="Fixture Details"></ItemDividerGaa>
+
         <FixtureVersusBar
           hTeam={fixture?.hTeam}
           aTeam={fixture?.aTeam}
@@ -20,7 +23,6 @@ const FixtureDetailsPage = ({ fixture }) => {
 
         <div id="sectionContent">
        
-        <ItemDividerGaa dividerLabel="Fixture Details"></ItemDividerGaa>
 
         <StatContent 
           statTitle="Date"

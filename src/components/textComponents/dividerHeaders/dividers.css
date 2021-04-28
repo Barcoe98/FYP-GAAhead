@@ -9,95 +9,80 @@
 
 /* CSS ID or input fields*/
 #header-divider-teal {
-  color: black;
-  font-size: larger;
-  text-align: center;
-  padding: 4px;
   background-color: #5ac7fa;
+  color: white;
+  font-size: large;
+  padding: 6px;
   opacity: 0.95;
   border-radius: 4px;
 }
 
 #header-divider-gaa {
-  color: white;
-  font-size: larger;
-  display: block;
-  margin: auto;
-  text-align: center;
-  border-radius: 10px;
-  padding: 10px;
-  margin-top: 10px;
   background-color: #005E82;
-  border-radius: 4px;
-}
-
-
-/* CSS ID or input fields*/
-#header-divider-red {
-  color: black;
-  font-size: larger;
-  text-align: center;
-  padding: 4px;
-  background-color: #ff3b30;
+  color: white;
+  font-size: large;
+  padding: 6px;
   opacity: 0.95;
   border-radius: 4px;
 }
 
 /* CSS ID or input fields*/
-#header-divider-org {
-  color: black;
-  font-size: larger;
-  text-align: center;
-  padding: 4px;
+#header-divider-red {
+  background-color: #ff3b30;
+  color: white;
+  font-size: large;
+  padding: 6px;
+  opacity: 0.95;
+  border-radius: 4px;
+}
+
+/* CSS ID or input fields*/
+#header-divider-org {  
   background-color: #ff9500;
+  color: white;
+  font-size: large;
+  padding: 6px;
   opacity: 0.95;
   border-radius: 4px;
 }
 
 /* CSS ID or input fields*/
 #header-divider-ylw {
-  color: black;
-  font-size: larger;
-  text-align: center;
-  padding: 4px;
   background-color: #ffcc00;
+  color: white;
+  font-size: large;
+  padding: 6px;
   opacity: 0.95;
   border-radius: 4px;
 }
 
 /* CSS ID or input fields*/
 #header-divider-grn {
-  color: black;
-  font-size: larger;
-  text-align: center;
-  padding: 4px;
   background-color: #4cd963;
+  color: white;
+  font-size: large;
+  padding: 6px;
   opacity: 0.95;
   border-radius: 4px;
 }
 
 /* CSS ID or input fields*/
 #header-divider-blue {
-  color: black;
-  font-size: larger;
-  text-align: center;
-  padding: 4px;
   background-color: #007bff;
+  color: white;
+  font-size: large;
+  padding: 6px;
   opacity: 0.95;
   border-radius: 4px;
 }
 
 /* CSS ID or input fields*/
 #header-divider-prpl {
-  color: white;
-  font-size: larger;
-  display: block;
-  margin: auto;
-  text-align: center;
-  border-radius: 10px;
-  padding: 10px;
-  margin-top: 10px;
   background-color: #5856d6;
+  color: white;
+  font-size: large;
+  padding: 6px;
+  opacity: 0.95;
   border-radius: 4px;
 }
 
@@ -105,7 +90,7 @@
 /* CSS ID or input fields*/
 #rnd-input {
   border: 2px solid black;
-  color: black;
+  color: white;
   border-radius: 8px;
   background-color: grey;
 }

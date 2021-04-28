@@ -10,13 +10,7 @@ const Form = ({formTitle, btnTitle, title, setTitle, time, setTime, date, setDat
   return (
     <IonContent id="bg-col">
         <IonGrid id="bg-col">
-          <IonRow>
-            <IonCol>
-              <IonItemDivider id="itm-divider-red">
-                <IonLabel>{formTitle}</IonLabel>
-              </IonItemDivider>
-            </IonCol>
-          </IonRow>
+        <ItemDividerYlw dividerLabel={formTitle}></ItemDividerYlw>
 
           {/*Title Input Fields & Labels*/ }
           <IonRow id>

@@ -3,13 +3,9 @@ import { IonRow, IonCol, IonGrid, IonImg } from "@ionic/react";
 
 import "../matchStats/matchStats.css";
 
-const VersusBar = ({ hCrest, aCrest, hTeam, aTeam, competition }) => {
+const VersusBar = ({ hCrest, aCrest, hTeam, aTeam }) => {
   return (
     <IonGrid id="bg-col">
-      
-      <IonRow size="3" id="fixtureVsBarHeader">
-        <IonCol size="12">{competition}</IonCol>
-      </IonRow>
 
       <IonRow size="12">
 

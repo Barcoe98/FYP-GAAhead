@@ -1,5 +1,7 @@
 import React from "react";
 import { IonContent, IonGrid, IonCol, IonList, IonRow, IonText } from "@ionic/react";
+import ItemDividerRed from "../../textComponents/dividerHeaders/itemDividerRed";
+
 import "./teamStats.css";
 
 const TeamStats = ({ teamStats }) => {
@@ -8,6 +10,8 @@ const TeamStats = ({ teamStats }) => {
     <IonContent>
       <IonList id="bg-col">
         <div id="statContent">
+        <ItemDividerRed dividerLabel="Team Statistics"></ItemDividerRed>
+
           <IonGrid>
             <IonRow>
               <IonCol size="10"><IonText color="dark" id="statTitle">Games Played</IonText></IonCol>

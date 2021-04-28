@@ -2,7 +2,7 @@ import React from "react";
 import { IonContent, IonPage, IonGrid, IonCol, IonRow } from "@ionic/react";
 import TitleHeader from "../../../components/headers/titeHeader";
 
-import "../../pages.css";
+import "../navBarPages.css";
 
 
 const MatchesPage = () => {
@@ -12,7 +12,7 @@ const MatchesPage = () => {
       <IonContent id="pg-Sze">
         <IonGrid>
           <IonRow>
-            <IonCol id="navBtnRed" size="12">
+            <IonCol id="navBtnFixtures" size="12">
               <ion-router-link id="navLnk" href="/manager/fixture/list">
                 Fixtures
               </ion-router-link>
@@ -20,7 +20,7 @@ const MatchesPage = () => {
           </IonRow>
 
           <IonRow>
-            <IonCol id="navBtnTeal" size="12">
+            <IonCol id="navBtnResults" size="12">
               <ion-router-link id="navLnk" href="/manager/result/list">
                 Results
               </ion-router-link>

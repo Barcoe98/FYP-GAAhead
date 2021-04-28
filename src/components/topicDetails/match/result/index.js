@@ -1,5 +1,5 @@
 import React from "react";
-import { IonContent, IonRow, IonCol, IonList, IonText } from "@ionic/react";
+import { IonContent, IonList, IonText } from "@ionic/react";
 import VersusBar from "../../../textComponents/matchStats/matchVersusBar";
 import StatCol from "../../../textComponents/matchStats/statCol";
 import { formatDate, formatTime } from '../../../../contexts/formatContext'
@@ -12,6 +12,7 @@ const ResultDetailsPage = ({ result }) => {
   return (
     <IonContent>
       <IonList id="bg-col">
+
         <VersusBar
           competition={result?.competition}
           hTeam={result?.hTeam}
@@ -25,7 +26,7 @@ const ResultDetailsPage = ({ result }) => {
         </VersusBar>
 
         <div id="sectionContent">      
-        <ItemDividerPrpl dividerLabel="Fixture Details"></ItemDividerPrpl>
+        <ItemDividerPrpl dividerLabel="Match Details"></ItemDividerPrpl>
 
           <StatContent 
             statTitle="Date" 
@@ -40,9 +41,8 @@ const ResultDetailsPage = ({ result }) => {
             statValue={result?.venue}>
           </StatContent>
 
-          <IonRow size="3" id="vsBarHeader">
-          <IonCol size="6">Match Statistics</IonCol>
-        </IonRow>
+          <ItemDividerPrpl dividerLabel="Match Statistics"></ItemDividerPrpl>
+
           <StatCol
             homeStat={result?.hTeam}
             statTitle=""
@@ -104,7 +104,7 @@ const ResultDetailsPage = ({ result }) => {
             awayStat={result?.aRCard}
           ></StatCol>
 
-          <IonRow size="3" id="vsBarHeader"><IonCol size="6">Match Notes</IonCol></IonRow>
+          <ItemDividerPrpl dividerLabel="Match Notes"></ItemDividerPrpl>
           <IonText>{result?.notes}</IonText>
         </div>
       </IonList>
