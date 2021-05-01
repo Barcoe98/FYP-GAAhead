@@ -15,6 +15,7 @@ import { useHistory } from "react-router-dom";
 import PageHeaderEdit from "../../../components/headers/editHeader";
 
 import "../../pages.css";
+import LinkButton from "../../../components/buttons/linkButton";
 
 const PlayerProfilePage = () => {
 
@@ -85,6 +86,8 @@ const PlayerProfilePage = () => {
                {injuries.map((injury) => (
                 <StatContent statTitle={injury.injury} statValue={injury.recoveryTime}></StatContent>
                ))}
+               <LinkButton href="/player/my-profile/injury/add" btnName="Add Injury"></LinkButton>
+
              </div>
            </IonList>
      

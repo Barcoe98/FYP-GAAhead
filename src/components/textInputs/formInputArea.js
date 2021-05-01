@@ -6,7 +6,7 @@ const FormInputArea = ({ cal, setCal, meal, setMeal, placeholderTextMeal, placeh
   return (
     <IonRow>
     <IonCol>
-      <IonItem color="light" id="rnd-input">
+      <IonItem color="dark" id="rnd-input">
         <IonLabel position="stacked">Calories</IonLabel>
         <IonInput
           placeholder={placeholderTextCal}

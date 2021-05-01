@@ -1,33 +1,34 @@
-import React, { useState } from "react";
-import { IonPage, IonCol, IonDatetime } from "@ionic/react";
+import React, { useState, useEffect} from "react";
+import { IonPage, IonContent, IonRow, IonCol, IonButton } from "@ionic/react";
 import PageHeader from "../../components/headers";
-import EditFixtureForm from "../../components/forms/fixtureForm/index";
-import AlertError from "../../components/alerts/errorAlert";
+import TeamSheetForm from "../../components/forms/fixtureForm/editFixtureForm";
 
 import { firestore, storage } from "../../firebase";
-import { useHistory } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { useAuth } from "../../contexts/authContext";
+import EditFixtureForm from "../../components/forms/fixtureForm";
 
 
-const AddFixturePage = () => {
-
-  const [errorMessage, setErrorMessage] = useState();
-  const [showAlert, setShowAlert] = useState(false);
+const EditFixturePage = () => {
+  const [players, setPlayers] = useState([]);
+  
+  const { currentUser } = useAuth();
+  const history = useHistory();
+  const { id } = useParams();
 
   const [hTeam, setHomeTeam] = useState("");
   const [aTeam, setAwayTeam] = useState("");
   const [hTeamCrest, setHTeamCrest] = useState("");
   const [aTeamCrest, setATeamCrest] = useState();
+
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [venue, setVenue] = useState("");
+  const [competition, setCompetition] = useState("");
   const [panel, setPanel] = useState("");
 
-  const [competition, setCompetition] = useState("");
+  const [fixture, setFixture] = useState();
 
-  const { currentUser } = useAuth();
-  const history = useHistory();
-  
   async function saveAwayCrest(blobUrl) {
     const ref = storage.ref('users/' + currentUser.uid + '/images/fixtures/away' + Date.now())
     const res = await fetch(blobUrl)
@@ -58,65 +59,66 @@ const AddFixturePage = () => {
     setATeamCrest(imgUrl)
   }
 
- 
+  useEffect(() => {
 
-  const handleAdd = async () => {
+    
+    const ref = firestore
+    .collection("users")
+    .doc(currentUser?.uid)
+
+    ref.get(currentUser?.uid).then(doc => {
+        const userDoc = { id: doc.id, ...doc.data() };
+
+        const ref = firestore
+        .collection("users")
+        .doc(userDoc?.teamId)
+        .collection("fixtures")
+        .doc(id);
+  
+        ref.get(id).then((doc) => {
+          const data = { id: doc.id, ...doc.data() };
+          setFixture(data);
+        });
+    });
+
+
+    setAwayTeam(fixture?.aTeam)
+    setHomeTeam(fixture?.hTeam)
+    setDate(fixture?.date)
+    setTime(fixture?.time)
+    setVenue(fixture?.venue)
+    setCompetition(fixture?.competition)
+    setPanel(fixture?.panel)
+    setHTeamCrest(fixture?.hTeamCrest)
+    setATeamCrest(fixture?.aTeamCrest)
+
+  }, [currentUser?.uid, fixture?.aTeam, fixture?.competition, fixture?.date, fixture?.hTeam, fixture?.time, fixture?.venue, id]);
+
+
+
+  const handleEdit = async () => {
     const data = {
-      hTeamCrest,
-      aTeamCrest,
-      hTeam,
-      aTeam,
-      venue,
-      time,
-      date,
-      competition,
-      panel
-    };
+      hTeam, aTeam, venue, time, date, competition, panel, hTeamCrest, aTeamCrest
+     };
 
-    if (hTeam === "") {
-      setErrorMessage('No Home Team Entered')
-      setShowAlert(true)
-    }
-
-    if (hTeamCrest === "") {
-      setHTeamCrest("https://firebasestorage.googleapis.com/v0/b/fyp-gaahead-development.appspot.com/o/app%2Fimages%2Fbadge-placeholder.png?alt=media&token=2089bf78-0353-4cd8-b27e-29465392b5e1")
-    }
-    else if (aTeam === "") {
-      setErrorMessage('No Away Team Entered')
-      setShowAlert(true)
-    }
-    else if (date === "") {
-      setErrorMessage('No Date Entered')
-      setShowAlert(true)
-    }    
-    else if (time === "") {
-      setErrorMessage('No Time Entered')
-      setShowAlert(true)
-    }
-    else if (venue === '') {
-      setErrorMessage('No Venue Entered')
-      setShowAlert(true)
-    }
-    else if (competition === "") {
-      setErrorMessage('No Competition Entered')
-      setShowAlert(true)
-    }
-    else {
-      data.aTeamCrest = await saveAwayCrest(aTeamCrest)
-      data.hTeamCrest = await saveHomeCrest(hTeamCrest)
+     data.aTeamCrest = await saveAwayCrest(aTeamCrest)
+     data.hTeamCrest = await saveHomeCrest(hTeamCrest)
       const ref = firestore
       .collection("users")
       .doc(currentUser?.uid)
-      .collection("fixtures");
+      .collection("fixtures")
+      .doc(id);
 
-      await ref.add(data);
+      await ref.update(data);
       history.goBack();
-    }
   };
 
   return (
     <IonPage id="bg-col">
-      <PageHeader title="Add Match Fixture"></PageHeader>
+    <IonContent id="wr-pg-bg">
+
+      <PageHeader title="Edit Match Fixture"></PageHeader>
+
       <EditFixtureForm
         homeTeamImg={hTeamCrest}
         awayTeamImg={aTeamCrest}
@@ -136,20 +138,16 @@ const AddFixturePage = () => {
         setVenue={(e) => setVenue(e.detail.value)}
         setCompetition={(e) => setCompetition(e.detail.value)}
         setPanel={(e) => setPanel(e.detail.value)}
+        handleAdd={handleEdit}
+        btnName="Update Fixture"
+        players={players} >
+      </EditFixtureForm>
 
-        handleAdd={handleAdd}
-        btnName="Add Fixture"
-      ></EditFixtureForm>
+     
 
-      <AlertError 
-        setShowAlert={() => setShowAlert(false)} 
-        alertHeader='Please Fill All Required Fields'
-        showAlert={showAlert} 
-        msg={errorMessage}>
-      </AlertError>
-
-    </IonPage>
+    </IonContent>
+  </IonPage>
   );
 };
 
-export default AddFixturePage;
+export default EditFixturePage;

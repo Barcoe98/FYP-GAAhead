@@ -24,7 +24,7 @@ const Login = () => {
       //Set errors to false before attempting sign in
       await login(email, pword);
       setLoggedIn(true);
-      history.push("/manager/planner");
+      history.push("/more");
     } catch {
       //Set loading to false after attempted login
       //set errors to true and display error message

@@ -18,7 +18,7 @@ const AddJournalForm = ({ imgSrc, handleImgChange, btnTitle, title, setTitle, da
         {/*Title Input Fields & Labels*/ }
       <IonRow>
         <IonCol  size="12">
-          <IonItem color="primary" id="rnd-input">
+          <IonItem color="dark" id="rnd-input">
             <IonLabel position="stacked">Image</IonLabel>
             <img id="placeholderImg" src={imgSrc}  alt ="PlaceholderImage"></img>
             <input id="imgInput" type="file" accept="image/*" onChange={handleImgChange}></input>
@@ -29,9 +29,9 @@ const AddJournalForm = ({ imgSrc, handleImgChange, btnTitle, title, setTitle, da
       {/*Title Input Fields & Labels*/ }
       <IonRow>
         <IonCol  size="12">
-          <IonItem color="primary" id="rnd-input">
+          <IonItem color="dark" id="rnd-input">
             <IonLabel position="stacked">Title</IonLabel>
-            <IonInput required clearInput="true" position="stacked" pattern="" placeholder="Enter Title" value={title} type="text"
+            <IonInput required  position="stacked" pattern="" placeholder="Enter Title" value={title} type="text"
             onIonChange={setTitle}></IonInput>
           </IonItem>
         </IonCol>
@@ -49,9 +49,9 @@ const AddJournalForm = ({ imgSrc, handleImgChange, btnTitle, title, setTitle, da
         />
 
         <IonCol  size="6">
-        <IonItem color="primary" id="rnd-input">
+        <IonItem color="dark" id="rnd-input">
           <IonLabel position="stacked">Total Calories</IonLabel>
-          <IonInput required clearInput="true" position="stacked" pattern="" placeholder="Enter Calories" value={ttlCal} type="number"
+          <IonInput required  position="stacked" pattern="" placeholder="Enter Calories" value={ttlCal} type="number"
           onIonChange={setTtlCal}></IonInput>
         </IonItem>
       </IonCol>
@@ -59,25 +59,25 @@ const AddJournalForm = ({ imgSrc, handleImgChange, btnTitle, title, setTitle, da
 
       <IonRow>
         <IonCol size="4">
-          <IonItem color="primary" id="rnd-input">
+          <IonItem color="dark" id="rnd-input">
             <IonLabel position="stacked">Water</IonLabel>
-            <IonInput required clearInput="true" position="stacked" placeholder="Enter Water" value={water} type="number" 
+            <IonInput required  position="stacked" placeholder="Enter Water" value={water} type="number" 
             onIonChange={setWater}></IonInput>
             </IonItem>         
         </IonCol>
 
         <IonCol size="4">
-          <IonItem color="primary" id="rnd-input">
+          <IonItem color="dark" id="rnd-input">
             <IonLabel position="stacked">Steps</IonLabel>
-            <IonInput required clearInput="true" position="stacked" placeholder="Enter Steps" value={steps} type="number" 
+            <IonInput required  position="stacked" placeholder="Enter Steps" value={steps} type="number" 
             onIonChange={setSteps}></IonInput>
           </IonItem>          
         </IonCol>
 
         <IonCol size="4">
-          <IonItem color="primary" id="rnd-input">
+          <IonItem color="dark" id="rnd-input">
             <IonLabel position="stacked">Sleep</IonLabel>
-            <IonInput required clearInput="true" position="stacked" placeholder="Enter Hrs of sleep" value={sleep} type="number" 
+            <IonInput required  position="stacked" placeholder="Enter Hrs of sleep" value={sleep} type="number" 
             onIonChange={setSleep}></IonInput>
           </IonItem>          
         </IonCol>

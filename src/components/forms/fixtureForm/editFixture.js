@@ -7,12 +7,13 @@ import ImageInputField from '../../textInputs/imageInputField'
 import ItemDividerGaa from "../../textComponents/dividerHeaders/itemDividerGaa";
 
 
-const EditFixtureForm = ({ homeTeamImg, setHomeTeamImg, awayTeamImg, setAwayTeamImg,  homeTeam, awayTeam, setHomeTeam, setAwayTeam, date, setDate, time, setTime, venue, 
+const FixtureForm = ({ homeTeamImg, setHomeTeamImg, awayTeamImg, setAwayTeamImg,  homeTeam, awayTeam, setHomeTeam, setAwayTeam, date, setDate, time, setTime, venue, 
   setVenue, competition, setCompetition, handleAdd, btnName, panel, setPanel
 }) => {
   return (
       <IonGrid id="wr-pg-bg">
 
+        <ItemDividerGaa dividerLabel="Match Fixture Details"></ItemDividerGaa>
 
         {/*Input Fields & Labels*/}
         <IonRow>
@@ -115,4 +116,4 @@ const EditFixtureForm = ({ homeTeamImg, setHomeTeamImg, awayTeamImg, setAwayTeam
   );
 };
 
-export default EditFixtureForm;
+export default FixtureForm;

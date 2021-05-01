@@ -34,12 +34,7 @@ const FixtureDetailsPage = () => {
 
     ref.get(currentUser?.uid).then(doc => {
       
-      if (!doc.exists) {
-        console.log('No such document');
-        setErrorMessage('No Team Data Available, Join a Team')
-        setShowAlert(true)
-        //history.goBack();
-      } else {
+     
         const userDoc = { id: doc.id, ...doc.data() };
 
         //set ManagerId Attributes to matching in DB
@@ -55,7 +50,7 @@ const FixtureDetailsPage = () => {
           const data = { id: doc.id, ...doc.data() };
           setFixture(data);
         });
-      }
+      
     });
   }, [currentUser?.uid, id]);
 
@@ -77,7 +72,7 @@ const FixtureDetailsPage = () => {
       <PageHeaderFixtureDetails
         title=""
         action={() => setDelAlert(true)}
-        hrefEdit="/manager/fixture/edit/:id"
+        hrefEdit={"/manager/fixture/edit/" + id }
         href={"/manager/result/add/" + id}
       ></PageHeaderFixtureDetails>
       <FixtureDetails fixture={fixture}></FixtureDetails>

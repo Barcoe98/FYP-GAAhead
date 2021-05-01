@@ -34,6 +34,8 @@ import ResultListPage from "../../../pages/result/ResultListPage";
 import FixtureListPage from "../../../pages/fixture/FixtureListPage";
 import FixtureDetailsPage from "../../../pages/fixture/FixtureDetailsPage";
 
+import TeamSheetListPage from "../../../pages/teamSheets/TeamSheetListPage";
+import TeamSheetDetailsPage from "../../../pages/teamSheets/TeamSheetDetailsPage";
 
 const PlayerTabs = () => {
   return (
@@ -44,7 +46,7 @@ const PlayerTabs = () => {
     <Route exact path="/diary-entries/list"><DiaryEntriesListPage></DiaryEntriesListPage></Route>
     <Route exact path="/diary-entries/add"><AddDiaryEntryPage></AddDiaryEntryPage></Route>
 
-    <Route exact path="/player/more"><MorePage></MorePage></Route>
+    <Route exact path="/more"><MorePage></MorePage></Route>
     <Route exact path="/player/app-tutorial"><AppTutorial></AppTutorial></Route>
     <Route exact path="/contact-us"><ContactUs></ContactUs></Route>
 
@@ -53,6 +55,9 @@ const PlayerTabs = () => {
     <Route path="/player/my-profile/injury/add"><AddInjuryPage></AddInjuryPage></Route>
 
     <Route path="/player/my-team"><MyTeamPage></MyTeamPage></Route>
+
+    <Route exact path="/team-sheet/:id"><TeamSheetDetailsPage></TeamSheetDetailsPage></Route>
+    <Route exact path="/team-sheet/list"><TeamSheetListPage></TeamSheetListPage></Route>
 
     <Route exact path="/player/join/team"><ResetTeamStatsPage></ResetTeamStatsPage></Route>
     <Route exact path="/team/panel/list"><PlayerListPage></PlayerListPage></Route>
@@ -96,7 +101,7 @@ const PlayerTabs = () => {
           <IonLabel>My Profile</IonLabel>
         </IonTabButton>
 
-        <IonTabButton id="PlayerNavbar" tab="more" href="/player/more">
+        <IonTabButton id="PlayerNavbar" tab="more" href="/more">
           <IonIcon icon={ellipsisHorizontalOutline} />
           <IonLabel>More</IonLabel>
         </IonTabButton>

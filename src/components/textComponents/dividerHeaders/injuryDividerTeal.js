@@ -4,20 +4,17 @@ import { addOutline } from "ionicons/icons";
 
 import './dividers.css'
 
-const InjuryDividerTeal = ({ dividerLabel, href }) => {
+const InjuryDividerTeal = ({ dividerLabel }) => {
   return (
     <IonRow>
-      <IonCol size="10">
+     
+      <IonCol size="12">
         <IonItemDivider id="header-divider-teal">
           <IonLabel>{dividerLabel}</IonLabel>
         </IonItemDivider>
       </IonCol>
 
-      <IonCol size="2">
-          <IonButton fill="clear" href={href}>
-          <IonIcon slot="end" icon={addOutline} />
-          </IonButton>
-      </IonCol>
+     
     </IonRow>
   );
 };

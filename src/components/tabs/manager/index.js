@@ -33,7 +33,7 @@ import AddResultPage from "../../../pages/result/addResultPage";
 import FixtureListPage from "../../../pages/fixture/FixtureListPage";
 import FixtureDetailsPage from "../../../pages/fixture/FixtureDetailsPage";
 import AddFixturePage from "../../../pages/fixture/addFixturePage";
-import UpdateFixturePage from "../../../pages/fixture/updateFixturePage";
+import UpdateFixturePage from "../../../pages/fixture/editFixturePage";
 
 import PlayerListPage from "../../../pages/team/PlayerListPage";
 import PlayerDetailsPage from "../../../pages/team/PlayerDetailsPage";
@@ -41,8 +41,7 @@ import PlayerDetailsPage from "../../../pages/team/PlayerDetailsPage";
 import TeamSheetListPage from "../../../pages/teamSheets/TeamSheetListPage";
 import TeamSheetDetailsPage from "../../../pages/teamSheets/TeamSheetDetailsPage";
 import AddTeamSheetPage from "../../../pages/teamSheets/AddTeamSheetPage";
-
-import ResetTeamStatsPage from "../../../pages/teamStats/ResetTeamStatsPage";
+import ResetTeamStatisticsPage from "../../../pages/teamStats/ResetTeamStatsPage"
 import MoreTeamStatsDetailsPage from "../../../pages/teamStats/MoreTeamStatsDetailsPage";
 import MoreTeamStatsListPage from "../../../pages/teamStats/MoreTeamStatsListPage";
 import TeamStatsPage from "../../../pages/teamStats/TeamStatsPage";
@@ -57,7 +56,7 @@ const ManagerTabs = () => {
         <Route path="/manager/match"><MatchPage></MatchPage></Route>
         <Route exact path="/manager/team"><TeamPage></TeamPage> </Route>
         <Route exact path="/manager/planner"><PlannerPage></PlannerPage></Route>
-        <Route exact path="/manager/more"><MorePage></MorePage></Route>
+        <Route exact path="/more"><MorePage></MorePage></Route>
         
         {/* More Pages*/}
         <Route exact path="/manager/app-tutorial"><AppTutorial></AppTutorial></Route>
@@ -68,7 +67,7 @@ const ManagerTabs = () => {
 
     
 
-        <Route exact path="/manager/team-stats/reset"> <ResetTeamStatsPage></ResetTeamStatsPage></Route>
+        <Route exact path="/manager/teamstats/reset"> <ResetTeamStatisticsPage></ResetTeamStatisticsPage></Route>
         <Route path="/manager/team-stats/:id"> <MoreTeamStatsDetailsPage></MoreTeamStatsDetailsPage></Route>
         <Route exact path="/manager/team-stats/more"> <MoreTeamStatsListPage></MoreTeamStatsListPage></Route>
         <Route exact path="/manager/team-stats"> <TeamStatsPage></TeamStatsPage></Route>
@@ -121,7 +120,7 @@ const ManagerTabs = () => {
           <IonIcon icon={peopleOutline} />
           <IonLabel>My Team</IonLabel>
         </IonTabButton>
-        <IonTabButton id="ManagerNavbar" tab="more" href="/manager/more">
+        <IonTabButton id="ManagerNavbar" tab="more" href="/more">
           <IonIcon icon={ellipsisHorizontalOutline} />
           <IonLabel>More</IonLabel>
         </IonTabButton>

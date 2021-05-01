@@ -22,7 +22,7 @@
   font-weight: bold;
 }
 #navBtnFixtures{
-  background-color:#4cd963;
+  background-color:#ff2d54;
   background-image: url("https://firebasestorage.googleapis.com/v0/b/fyp-gaahead-development.appspot.com/o/app%2Fimages%2Fhurl%26ball2.jfif?alt=media&token=fc9f0d3a-fa97-4288-9db3-e79c59a0edc7");
   background-blend-mode: multiply;
   background-repeat: no-repeat;
@@ -36,7 +36,7 @@
 
 /*Planner  Page*/
 #navBtnFtest{
-  background-color:#4cd963;
+  background-color:#5ac7fa;
   background-image: url("https://firebasestorage.googleapis.com/v0/b/fyp-gaahead-development.appspot.com/o/app%2Fimages%2Fhurl%26ball2.jfif?alt=media&token=fc9f0d3a-fa97-4288-9db3-e79c59a0edc7");
   background-blend-mode: multiply;
   background-repeat: no-repeat;
@@ -73,6 +73,7 @@
 /*Team  Page*/
 #navBtnStats{
   background-color:#ff2d54;
+  background-image: url("https://res.cloudinary.com/dmikx06rt/image/upload/v1618671742/FYP-GAAhead/analytics-1799648_640_rqbc71.png");
   background-blend-mode: multiply;
   background-repeat: no-repeat;
   background-size: cover;
@@ -82,7 +83,7 @@
   font-weight: bold;
 }
 #navBtnTeamSheets{
-  background-color:#4cd963;
+  background-color:#ff9500;
   background-image: url("https://firebasestorage.googleapis.com/v0/b/fyp-gaahead-development.appspot.com/o/app%2Fimages%2FSeating.jpg?alt=media&token=c2f175e5-b63d-4809-b18f-1da7c2fc9de1");
   background-blend-mode: multiply;
   background-repeat: no-repeat;
@@ -93,7 +94,8 @@
   font-weight: bold;
 }
 #navBtnPanel{
-  background-color:#007bff;
+  background-color:#4cd963;
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/fyp-gaahead-development.appspot.com/o/app%2Fimages%2FSeating.jpg?alt=media&token=c2f175e5-b63d-4809-b18f-1da7c2fc9de1");
   background-blend-mode: multiply;
   background-repeat: no-repeat;
   background-size: cover;

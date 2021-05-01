@@ -17,6 +17,11 @@
   border-radius: 4px;
 }
 
+/* CSS ID or input fields*/
+#header-icon-teal {
+  background-color: #5ac7fa;
+}
+
 #header-divider-gaa {
   background-color: #005E82;
   color: white;

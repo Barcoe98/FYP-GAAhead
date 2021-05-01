@@ -12,7 +12,7 @@ return (
 
     <IonRow>
       <IonCol id="morePgRed" size="10">
-        <ion-router-link id="morePgLink"  href="/manager/my-profile">Join Team</ion-router-link>
+        <ion-router-link id="morePgLink"  href="/player/join/team">Join Team</ion-router-link>
       </IonCol>
       <IonCol id="morePgRed" size="2">
         <IonIcon id="morePgLink" icon={chevronForwardOutline}></IonIcon>

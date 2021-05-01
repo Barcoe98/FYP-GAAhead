@@ -2,6 +2,7 @@ import React from "react";
 import { IonContent, IonList, IonText, IonImg} from "@ionic/react";
 import DiaryStatBar from "../../textComponents/diary/index";
 import MealHeader from "../../textComponents/diary/mealHeader";
+import { formatDate, formatTime } from '../../../contexts/formatContext'
 
 import "./diaryEntry.css";
 
@@ -13,7 +14,7 @@ return (
     <IonList id="bg-col">
     
     <IonText id="dTitle">{diaryEntry?.title}</IonText>
-    <IonText id="dDate">{diaryEntry?.date}</IonText>
+    <IonText id="dDate">{formatDate(diaryEntry?.date)}</IonText>
       <IonImg id="img" alt="me" 
         src={diaryEntry?.imgUrl} />
       
