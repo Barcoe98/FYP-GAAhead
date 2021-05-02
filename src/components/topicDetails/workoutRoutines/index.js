@@ -1,8 +1,8 @@
 import React from "react";
-import { IonContent, IonList, IonText } from "@ionic/react";
+import { IonContent, IonList } from "@ionic/react";
 import StatBar from "../../textComponents/statBar";
 import { formatDate, formatTime } from '../../../contexts/formatContext'
-
+import ItemDividerBlue from "../../textComponents/dividerHeaders/itemDividerBlue";
 
 import "./workoutRoutineDetails.css";
 
@@ -20,23 +20,15 @@ const WorkoutRoutineDetails = ({ workoutRoutine }) => {
             dateVar={formatDate(workoutRoutine?.date)}
           ></StatBar>
 
-          <hr id="contentDivider"></hr>
-          <h5 color="dark" id="sectionTitle">
-            warm Up
-          </h5>
-          <IonText id="contentText">{workoutRoutine?.warmUp}</IonText>
+          <ItemDividerBlue dividerLabel="Warm Up"></ItemDividerBlue>
+          <div id="contentTextTs">{workoutRoutine?.warmUp}</div>
 
-          <hr id="contentDivider"></hr>
-          <h5 color="dark" id="sectionTitle">
-            Exercises
-          </h5>
-          <IonText id="contentText">{workoutRoutine?.exercises}</IonText>
+          <ItemDividerBlue dividerLabel="Exercises"></ItemDividerBlue>
+          <div id="contentTextTs">{workoutRoutine?.exercises}</div>
 
-          <hr id="contentDivider"></hr>
-          <h5 color="dark" id="sectionTitle">
-            Warm Down
-          </h5>
-          <IonText id="contentText">{workoutRoutine?.warmDown}</IonText>
+          <ItemDividerBlue dividerLabel="Warm Down"></ItemDividerBlue>
+          <div id="contentTextTs">{workoutRoutine?.warmDown}</div>
+
         </div>
       </IonList>
     </IonContent>

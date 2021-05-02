@@ -12,7 +12,7 @@ return (
 
     <IonRow>
       <IonCol id="morePgRed" size="10">
-        <ion-router-link id="morePgLink"  href="/player/join/team">Join Team</ion-router-link>
+        <ion-router-link color ="dark" id="morePgLink"  href="/player/join/team">Join Team</ion-router-link>
       </IonCol>
       <IonCol id="morePgRed" size="2">
         <IonIcon id="morePgLink" icon={chevronForwardOutline}></IonIcon>
@@ -30,7 +30,7 @@ return (
 
     <IonRow>
       <IonCol id="morePgBlue" size="10">
-        <ion-router-link id="morePgLink" href="/contact-us">Contact Us</ion-router-link>
+        <ion-router-link color ="dark" id="morePgLink" href="/contact-us">Contact Us</ion-router-link>
       </IonCol>
       <IonCol id="morePgBlue" size="2">
         <IonIcon id="morePgLink" icon={chevronForwardOutline}></IonIcon>

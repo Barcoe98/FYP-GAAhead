@@ -1,9 +1,8 @@
 import React from "react";
-import { IonContent, IonList, IonText } from "@ionic/react";
+import { IonContent, IonList } from "@ionic/react";
 import StatBar from "../../textComponents/statBar";
 import { formatDate, formatTime } from '../../../contexts/formatContext'
 import ItemDividerTeal from "../../textComponents/dividerHeaders/itemDividerTeal";
-
 
 import "./trainingScheduleDetails.css";
 
