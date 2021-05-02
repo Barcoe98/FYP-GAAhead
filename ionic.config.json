@@ -1,5 +1,7 @@
 {
   "name": "Gaahead",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "react"
 }
