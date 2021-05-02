@@ -20,6 +20,8 @@ import TeamStatsPage from "../../../pages/teamStats/TeamStatsPage";
 import DiaryEntriesListPage from "../../../pages/diary/DiaryEntryListPage";
 import DiaryEntryDetailsPage from "../../../pages/diary/DiaryEntryDetailsPage";
 import AddDiaryEntryPage from "../../../pages/diary/addDiaryEntry";
+import EditDiaryEntryPage from "../../../pages/diary/editDiaryEntryPage";
+
 
 import TrainingScheduleDetailsPage from "../../../pages/trainingSchedule/TrainingScheduleDetailsPage";
 import TrainingScheduleListPage from "../../../pages/trainingSchedule/TrainingScheduleListPage";
@@ -45,6 +47,7 @@ const PlayerTabs = () => {
     <Route path="/diary-entries/:id"><DiaryEntryDetailsPage></DiaryEntryDetailsPage></Route>
     <Route exact path="/diary-entries/list"><DiaryEntriesListPage></DiaryEntriesListPage></Route>
     <Route exact path="/diary-entries/add"><AddDiaryEntryPage></AddDiaryEntryPage></Route>
+    <Route path="/diary-entries/edit/:id"><EditDiaryEntryPage></EditDiaryEntryPage></Route>
 
     <Route exact path="/more"><MorePage></MorePage></Route>
     <Route exact path="/player/app-tutorial"><AppTutorial></AppTutorial></Route>

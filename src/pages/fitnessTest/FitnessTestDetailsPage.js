@@ -66,7 +66,10 @@ const FitnessTestDetailsPage = () => {
 
   return (
     <IonPage>
-      <PageHeaderResults title="" href="" listHref={"http://localhost:3000/manager/fitness/test/results/list/" + id} action={() => setDelAlert(true)}></PageHeaderResults>
+      <PageHeaderResults title="" href={"/manager/fitness/test/edit/" + id }
+        listHref={"/manager/fitness/test/results/list/" + id} 
+        action={() => setDelAlert(true)}>
+      </PageHeaderResults>
 
       <FitnessTestDetails fitnessTest={fitnessTest}></FitnessTestDetails>
       

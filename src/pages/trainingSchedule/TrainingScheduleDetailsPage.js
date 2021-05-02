@@ -61,7 +61,8 @@ useEffect(() => {
     <IonPage>
       <PageHeaderDelete
         title=""
-        action={() => setDelAlert(true)}>
+        action={() => setDelAlert(true)}
+        href={"/manager/trainingschedule/edit/" + id }>
       </PageHeaderDelete>
       <TrainingScheduleDetails trainingSchedule={trainingSchedule}></TrainingScheduleDetails>
       <AlertDelete

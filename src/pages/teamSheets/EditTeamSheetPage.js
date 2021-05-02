@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from "react";
 import { IonPage, IonContent, IonRow, IonCol, IonButton } from "@ionic/react";
 import PageHeader from "../../components/headers";
-import TeamSheetForm from "../../components/forms/fixtureForm/editFixtureForm";
+import TeamSheetForm from "../../components/forms/teamSheetForm/index";
 
 import { firestore } from "../../firebase";
 import { useParams, useHistory } from "react-router-dom";
@@ -10,20 +10,14 @@ import { useAuth } from "../../contexts/authContext";
 
 const EditFixturePage = () => {
   const [players, setPlayers] = useState([]);
-  
+  const [teamSheet, setTeamSheet] = useState([]);
+
   const { currentUser } = useAuth();
   const history = useHistory();
   const { id } = useParams();
 
-  const [hTeam, setHomeTeam] = useState("");
-  const [aTeam, setAwayTeam] = useState("");
-  const [homeScore, setHomeScore] = useState("");
-  const [awayScore, setAwayScore] = useState("");
-
   const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
-  const [venue, setVenue] = useState("");
-  const [competition, setCompetition] = useState("");
+  const [opponent, setOpponent] = useState("");
 
   var [position1, setPosition1] = useState("");
   var [position2, setPosition2] = useState("");
@@ -47,11 +41,36 @@ const EditFixturePage = () => {
   var [position20, setPosition20] = useState("");
 
   useEffect(() => {
-    const ref = firestore
+
+    const ref= firestore
+    .collection("users")
+    .doc(currentUser?.uid)
+    .collection("team_sheets")
+    .doc(id);
+
+    ref.get(id).then((doc) => {
+      const data = { id: doc.id, ...doc.data() };
+      setTeamSheet(data);
+    });
+
+    setOpponent(teamSheet?.opponent)
+    setDate(teamSheet?.date)
+    setPosition1(teamSheet?.position1); setPosition11(teamSheet?.position11)
+    setPosition2(teamSheet?.position2); setPosition12(teamSheet?.position12)
+    setPosition3(teamSheet?.position3); setPosition13(teamSheet?.position13)
+    setPosition4(teamSheet?.position4); setPosition14(teamSheet?.position14)
+    setPosition5(teamSheet?.position5); setPosition15(teamSheet?.position15)
+    setPosition6(teamSheet?.position6); setPosition16(teamSheet?.position16)
+    setPosition7(teamSheet?.position7); setPosition17(teamSheet?.position17)
+    setPosition8(teamSheet?.position8); setPosition18(teamSheet?.position18)
+    setPosition9(teamSheet?.position9); setPosition19(teamSheet?.position19)
+    setPosition10(teamSheet?.position10); setPosition20(teamSheet?.position20)
+
+    const pRef = firestore
     .collection("users")
     .doc(currentUser?.uid)
 
-    ref.get(currentUser?.uid).then(doc => {
+    pRef.get(currentUser?.uid).then(doc => {
       
       if (!doc.exists) {
         //history.goBack();
@@ -72,53 +91,42 @@ const EditFixturePage = () => {
       }
     })
 
-  }, [currentUser?.uid]);
+  }, [currentUser?.uid, id, teamSheet?.date, teamSheet?.opponent, 
+    teamSheet?.position1, teamSheet?.position10, teamSheet?.position11, 
+    teamSheet?.position12, teamSheet?.position13, teamSheet?.position14, 
+    teamSheet?.position15, teamSheet?.position16, teamSheet?.position17, 
+    teamSheet?.position18, teamSheet?.position19, teamSheet?.position2, 
+    teamSheet?.position20, teamSheet?.position3, teamSheet?.position4, 
+    teamSheet?.position5, teamSheet?.position6, teamSheet?.position7, 
+    teamSheet?.position8, teamSheet?.position9]);
 
-
-  const handleEdit = async () => {
-    const data = {
-      hTeam, aTeam, venue, time, date, competition,
+  const handleAdd = async () => {
+    const data = { date, opponent,
       position1, position2, position3, position4, position5,
       position6, position7, position8, position9, position10,
       position11, position12, position13, position14, position15,
       position16, position17, position18, position19, position20
      };
-
       const ref = firestore
       .collection("users")
       .doc(currentUser?.uid)
-      .collection("fixtures")
-      .doc(id);
+      .collection("team_sheets");
 
-      await ref.update(data);
+      await ref.add(data);
       history.goBack();
   };
 
   return (
     <IonPage id="bg-col">
-    <IonContent id="wr-pg-bg">
-
-      <PageHeader title="Update Match Fixture"></PageHeader>
+    <IonContent>
+      <PageHeader title="Edit Team Sheet"></PageHeader>
 
       <TeamSheetForm
-        homeTeam={hTeam}
-        awayTeam={aTeam}
-        homeScore={homeScore}
-        awayScore={awayScore}
-        time={time}
-        date={date}
-        venue={venue}
-        competition={competition}
-        setHomeTeam={(e) => setHomeTeam(e.detail.value)}
-        setHomeScore={(e) => setHomeScore(e.detail.value)}
-        setAwayTeam={(e) => setAwayTeam(e.detail.value)}
-        setAwayScore={(e) => setAwayScore(e.detail.value)}
-        setTime={(e) => setTime(e.detail.value)}
-        setDate={(e) => setDate(e.detail.value)}
-        setVenue={(e) => setVenue(e.detail.value)}
-        setCompetition={(e) => setCompetition(e.detail.value)}
-        handleEdit={handleEdit}
         players={players} 
+        date={date}
+        setDate={(e) => setDate(e.detail.value)}
+        opponent={opponent}
+        setOpponent={(e) => setOpponent(e.detail.value)}
         setPosition1={(e) => setPosition1(e.detail.value)} position1={position1}
         setPosition2={(e) => setPosition2(e.detail.value)} position2={position2}
         setPosition3={(e) => setPosition3(e.detail.value)} position3={position3} 
@@ -144,13 +152,13 @@ const EditFixturePage = () => {
       <IonRow>
         <IonCol>
           <IonButton
-            onClick={handleEdit}
+            onClick={handleAdd}
             id="btnTheme"
             expand="block"
             color="dark"
             fill="solid"
             type="submit">
-            Update Fixture
+            Edit Team Sheet
           </IonButton>
         </IonCol>
       </IonRow>

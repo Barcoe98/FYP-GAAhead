@@ -28,7 +28,7 @@ const WorkoutRoutineDetails = ({ workoutRoutine }) => {
 
           <ItemDividerBlue dividerLabel="Warm Down"></ItemDividerBlue>
           <div id="contentTextTs">{workoutRoutine?.warmDown}</div>
-
+          
         </div>
       </IonList>
     </IonContent>

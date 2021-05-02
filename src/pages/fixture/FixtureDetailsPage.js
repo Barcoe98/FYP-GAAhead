@@ -34,9 +34,7 @@ const FixtureDetailsPage = () => {
 
     ref.get(currentUser?.uid).then(doc => {
       
-     
         const userDoc = { id: doc.id, ...doc.data() };
-
         //set ManagerId Attributes to matching in DB
         setTeamId(userDoc?.teamId)
 

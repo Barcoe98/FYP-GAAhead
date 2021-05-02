@@ -60,7 +60,8 @@ const TeamSheetDetailsPage = () => {
     <IonPage>
       <PageHeaderDelete   
         title=""
-        action={() => setDelAlert(true)}>
+        action={() => setDelAlert(true)}
+        href={"/manager/team-sheet/edit/" + id }>
       </PageHeaderDelete>
 
       <TeamSheet teamSheet={teamSheet}></TeamSheet>

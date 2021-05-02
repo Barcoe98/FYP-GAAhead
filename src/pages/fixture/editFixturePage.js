@@ -1,12 +1,11 @@
 import React, { useState, useEffect} from "react";
 import { IonPage, IonContent, IonRow, IonCol, IonButton } from "@ionic/react";
 import PageHeader from "../../components/headers";
-import TeamSheetForm from "../../components/forms/fixtureForm/editFixtureForm";
+import EditFixtureForm from "../../components/forms/fixtureForm";
 
 import { firestore, storage } from "../../firebase";
 import { useParams, useHistory } from "react-router-dom";
 import { useAuth } from "../../contexts/authContext";
-import EditFixtureForm from "../../components/forms/fixtureForm";
 
 
 const EditFixturePage = () => {
@@ -60,8 +59,6 @@ const EditFixturePage = () => {
   }
 
   useEffect(() => {
-
-    
     const ref = firestore
     .collection("users")
     .doc(currentUser?.uid)
@@ -81,7 +78,6 @@ const EditFixturePage = () => {
         });
     });
 
-
     setAwayTeam(fixture?.aTeam)
     setHomeTeam(fixture?.hTeam)
     setDate(fixture?.date)
@@ -92,7 +88,7 @@ const EditFixturePage = () => {
     setHTeamCrest(fixture?.hTeamCrest)
     setATeamCrest(fixture?.aTeamCrest)
 
-  }, [currentUser?.uid, fixture?.aTeam, fixture?.competition, fixture?.date, fixture?.hTeam, fixture?.time, fixture?.venue, id]);
+  }, [currentUser?.uid, fixture?.aTeam, fixture?.aTeamCrest, fixture?.competition, fixture?.date, fixture?.hTeam, fixture?.hTeamCrest, fixture?.panel, fixture?.time, fixture?.venue, id]);
 
 
 
@@ -142,8 +138,6 @@ const EditFixturePage = () => {
         btnName="Update Fixture"
         players={players} >
       </EditFixtureForm>
-
-     
 
     </IonContent>
   </IonPage>

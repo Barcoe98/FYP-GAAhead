@@ -26,7 +26,7 @@ const DiaryDetailsPage = () => {
       const diaryEntries = { id: doc.id, ...doc.data() };
       setDiaryEntry(diaryEntries);
     });
-  }, [id]);
+  }, [currentUser?.uid, id]);
 
   const handleDelete = async () => {
     const resultRef = firestore
@@ -42,7 +42,8 @@ const DiaryDetailsPage = () => {
   return (
     <IonPage>
       <PageHeaderDelete title=""
-        action={() => setDelAlert(true)}>
+        action={() => setDelAlert(true)}
+        href={"/manager/diary-entries/edit/" + id }>
       </PageHeaderDelete>
       <DiaryDetails diaryEntry={diaryEntry}></DiaryDetails>
 

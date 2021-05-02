@@ -60,6 +60,7 @@ const WorkoutDetailsPage = () => {
       <PageHeaderDelete
         title=""
         action={() => setDelAlert(true)}
+        href={"/manager/workout/edit/" + id }
       ></PageHeaderDelete>
       <WorkoutDetails workoutRoutine={workout}></WorkoutDetails>
       <AlertDelete
